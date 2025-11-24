@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Calendar, User, Tag, Search, Loader2, Check } from 'lucide-react';
-import { UNIFIED_ASSET } from '../assets/images';
 import { Link } from 'react-router-dom';
 
 export const blogPosts = [

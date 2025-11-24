@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Share2, Twitter, Facebook, Linkedin, Clock, User } from 'lucide-react';
-import { UNIFIED_ASSET } from '../assets/images';
 import { blogPosts } from './Blog';
 
 const BlogDetail: React.FC = () => {
@@ -20,7 +19,7 @@ const BlogDetail: React.FC = () => {
         date: post ? post.date : "",
         readTime: post ? '6 min read' : '8 min read',
         category: post ? post.category : 'Insights',
-        image: post ? post.image : UNIFIED_ASSET,
+        image: post ? post.image : "/assets/image.svg",
         // Keep some default HTML content; you can replace this with CMS content later
         content: `
             <p class="mb-6 text-xl leading-relaxed text-gray-700">${post ? post.excerpt : 'Article content goes here.'}</p>
@@ -211,7 +210,7 @@ const BlogDetail: React.FC = () => {
                     {/* Author Box */}
                     <div className="flex items-center gap-6 bg-gray-50 p-8 rounded-3xl">
                          <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                             <img src={UNIFIED_ASSET} alt={article.author} className="w-full h-full object-cover" />
+                             <img src="/assets/image.svg" alt={article.author} className="w-full h-full object-cover" />
                          </div>
                          <div>
                              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Written by</p>

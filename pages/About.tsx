@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { UNIFIED_ASSET } from '../assets/images';
 
 const About: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);

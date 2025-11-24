@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { ArrowLeft, UploadCloud, Loader2, CheckCircle, AlertCircle, Send, Link as LinkIcon } from 'lucide-react';
-import { UNIFIED_ASSET } from '../assets/images';
 
 const Apply: React.FC = () => {
   const location = useLocation();

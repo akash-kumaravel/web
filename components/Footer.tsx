@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Twitter, Linkedin } from 'lucide-react';
-import { COMPANY_LOGO } from '../assets/images';
 
 const Footer: React.FC = () => {
   return (
@@ -16,7 +15,7 @@ const Footer: React.FC = () => {
             <div className="mb-6">
               <div className="bg-white p-3 rounded-xl inline-block">
                 <img 
-                  src={COMPANY_LOGO} 
+                  src="/assets/logo.svg" 
                   alt="MEMO Softwares" 
                   className="h-10 w-auto object-contain" 
                 />

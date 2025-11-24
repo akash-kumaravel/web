@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Briefcase, ArrowRight, Coffee, Globe, Heart, Zap, Monitor, Users } from 'lucide-react';
-import { UNIFIED_ASSET } from '../assets/images';
 import { Link } from 'react-router-dom';
 
 const jobs = [
@@ -49,8 +48,8 @@ const Careers: React.FC = () => {
         
         {/* Hero Section */}
         <div className="bg-black text-white pt-40 pb-32 rounded-b-[4rem] relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full opacity-20" 
-                 style={{background: `url(${UNIFIED_ASSET}) center/cover no-repeat`}}></div>
+              <div className="absolute top-0 left-0 w-full h-full opacity-20" 
+                  style={{background: `url("/assets/image.svg") center/cover no-repeat`}}></div>
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black"></div>
             
             <div className="container mx-auto px-6 relative z-10 text-center">
@@ -144,7 +143,7 @@ const Careers: React.FC = () => {
              <div className="flex w-[200%] animate-marquee-slow">
                  {[1,2,3,4].map((i) => (
                      <div key={i} className="w-1/4 aspect-video relative px-2">
-                         <img src={UNIFIED_ASSET} className="w-full h-full object-cover rounded-3xl grayscale hover:grayscale-0 transition-all duration-500" alt="Culture" />
+                         <img src="/assets/image.svg" className="w-full h-full object-cover rounded-3xl grayscale hover:grayscale-0 transition-all duration-500" alt="Culture" />
                      </div>
                  ))}
              </div>

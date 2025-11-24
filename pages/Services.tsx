@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { UNIFIED_ASSET } from '../assets/images';
 import { ArrowRight, CheckCircle2, Code, Database, Globe, Smartphone, Server, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

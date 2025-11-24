@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Phone, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
-import { UNIFIED_ASSET } from '../assets/images';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({

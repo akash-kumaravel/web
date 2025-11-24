@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Star, Box, Code, PenTool, Video, ArrowLeft, ArrowUpRight, MousePointer2, Globe, Award, Plus, Minus, Linkedin, Twitter, Loader2, CheckCircle, AlertCircle, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Testimonial } from '../types';
-import { UNIFIED_ASSET } from '../assets/images';
+// Images are served from the public `assets` folder. Use direct public paths instead of importing from assets module.
 import { blogPosts } from './Blog';
 
 // Mock Data
@@ -13,7 +13,7 @@ const testimonials: Testimonial[] = [
     role: "CEO",
     company: "TechNova",
     text: "MEMO InfoTech completely modernized our software infrastructure. The new platform increased our operational efficiency by 200% in just three months.",
-    image: UNIFIED_ASSET
+    image: "/assets/image.svg"
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     role: "Director",
     company: "Orbital Inc",
     text: "Their team in Nagercoil works at a world-class level. The app they built for us is robust, scalable, and user-friendly.",
-    image: UNIFIED_ASSET
+    image: "/assets/image.svg"
   },
   {
     id: 3,
@@ -29,16 +29,16 @@ const testimonials: Testimonial[] = [
     role: "Founder",
     company: "GreenScape",
     text: "Professional, technical, and incredibly talented. MEMO InfoTech is the IT partner you want if you're ready to scale your business.",
-    image: UNIFIED_ASSET
+    image: "/assets/image.svg"
   }
 ];
 
 const teamMembers = [
-  { name: "Alex Void", role: "Technical Director", img: UNIFIED_ASSET },
-  { name: "Nika Sol", role: "Lead Developer", img: UNIFIED_ASSET },
-  { name: "Jaxon Steele", role: "Solutions Architect", img: UNIFIED_ASSET },
-  { name: "Maya Green", role: "Project Manager", img: UNIFIED_ASSET },
-  { name: "Davide R.", role: "UI/UX Specialist", img: UNIFIED_ASSET },
+  { name: "Alex Void", role: "Technical Director", img: "/assets/image.svg" },
+  { name: "Nika Sol", role: "Lead Developer", img: "/assets/image.svg" },
+  { name: "Jaxon Steele", role: "Solutions Architect", img: "/assets/image.svg" },
+  { name: "Maya Green", role: "Project Manager", img: "/assets/image.svg" },
+  { name: "Davide R.", role: "UI/UX Specialist", img: "/assets/image.svg" },
 ];
 
 const serviceList = [

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { NavItem } from '../types';
-import { COMPANY_LOGO } from '../assets/images';
 
 const navItems: NavItem[] = [
   { label: 'Home', path: '/' },
@@ -37,7 +36,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
           <img 
-            src={COMPANY_LOGO} 
+            src="/assets/logo.svg" 
             alt="MEMO Softwares" 
             className="h-10 md:h-12 w-auto object-contain" 
           />
