@@ -49,7 +49,7 @@ const serviceList = [
 ];
 
 const faqs = [
-    { q: "How long does a typical software project take?", a: "Timelines vary by scope. A simple website might take 4-6 weeks, while complex custom software could take 3-6 months. We prioritize quality and security." },
+    { q: "How long names a typical software project take?", a: "Timelines vary by scope. A simple website might take 4-6 weeks, while complex custom software could take 3-6 months. We prioritize quality and security." },
     { q: "Do you provide services in Nagercoil?", a: "Yes, we are Nagercoil's leading IT company, providing Web Development, Graphic Design, and Explainer Videos to local and global clients." },
     { q: "What is your pricing structure?", a: "We operate on both project-based and retainer models. We believe in transparency and will provide a detailed proposal after our discovery session." },
     { q: "Do you create Motion Posters and Explainer Videos?", a: "Absolutely. We have a dedicated creative team specializing in high-end Motion Posters, 3D Animation, and Explainer Videos for brands." }
@@ -345,7 +345,7 @@ const Home: React.FC = () => {
              poster="/assets/home.png"
              aria-label="Explainer video showcasing MEMO InfoTech's IT solutions in Nagercoil"
            >
-             Your browser does not support the video tag.
+             Your browser names not support the video tag.
            </video>
            <div className="sr-only">Explainer video showcasing MEMO InfoTech's IT solutions in Nagercoil</div>
            <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
@@ -503,31 +503,28 @@ const Home: React.FC = () => {
           
           {/* Horizontal Accordion Container */}
           <div className="flex flex-col md:flex-row min-h-[80vh] md:h-[600px] w-full gap-2">
-             {teamMembers.map((member, idx) => (
+             {[
+               { img: "/assets/f1.png", title: "Design 1" },
+               { img: "/assets/f2.png", title: "Design 2" },
+               { img: "/assets/f3.png", title: "Design 3" },
+               { img: "/assets/f4.png", title: "Design 4" },
+               { img: "/assets/f5.png", title: "Design 5" }
+             ].map((item, idx) => (
                <div 
                   key={idx} 
                   className="relative flex-1 overflow-hidden transition-all duration-500 ease-in-out hover:flex-[3] group rounded-3xl cursor-pointer min-h-[200px]"
                >
-                  <img src={member.img} alt={member.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0" />
+                  <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0" />
                   <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-colors duration-300"></div>
                   
                   {/* Vertical Text (Default) */}
                   <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                     <h3 className="text-white font-bold text-2xl tracking-widest uppercase transform md:-rotate-90 whitespace-nowrap">{member.name}</h3>
+                     <h3 className="text-white font-bold text-2xl tracking-widest uppercase transform md:-rotate-90 whitespace-nowrap">{item.title}</h3>
                   </div>
 
                   {/* Expanded Info (Hover) */}
                   <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col justify-end h-full">
-                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 font-['Syne']">{member.name}</h3>
-                     <p className="text-[#007BFF] font-bold text-lg uppercase tracking-wider mb-4">{member.role}</p>
-                     <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity delay-200">
-                        <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#007BFF] transition-colors">
-                            <Linkedin size={18} />
-                        </button>
-                        <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#007BFF] transition-colors">
-                            <Twitter size={18} />
-                        </button>
-                     </div>
+                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 font-['Syne']">{item.title}</h3>
                   </div>
                </div>
              ))}
@@ -691,7 +688,7 @@ const Home: React.FC = () => {
                     value={contactForm.name}
                     onChange={handleContactChange}
                     className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-[#007BFF] focus:border-transparent outline-none transition-all text-black placeholder-gray-400" 
-                    placeholder="John Doe" 
+                    placeholder="user name" 
                     required
                   />
                 </div>
@@ -703,7 +700,7 @@ const Home: React.FC = () => {
                     value={contactForm.email}
                     onChange={handleContactChange}
                     className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-[#007BFF] focus:border-transparent outline-none transition-all text-black placeholder-gray-400" 
-                    placeholder="john@company.com" 
+                    placeholder="user@company.com" 
                     required
                   />
                 </div>

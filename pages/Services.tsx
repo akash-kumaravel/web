@@ -88,17 +88,17 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full bg-gray-100">
-        
-        {/* Minimal Hero */}
-        <div className="pt-40 pb-20 px-6 container mx-auto text-center">
-             <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter mb-8">
-                 OUR <span className="text-[#007BFF]">CRAFT</span>
-             </h1>
-             <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-                 We offer a holistic suite of digital services in Nagercoil. From custom software to immersive websites, we handle it all with precision.
-             </p>
-        </div>
+        <div ref={containerRef} className="w-full bg-gray-100">
+                {/* Header - Projects style */}
+                <div className="pt-40 pb-20 container mx-auto px-6 text-center">
+                    <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter">
+                        SERVICES <br/>
+                        <span className="text-white bg-[#007BFF] px-6 transform -skew-x-12 inline-block">OFFERED</span>
+                    </h1>
+                    <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
+                        We offer a holistic suite of digital services in Nagercoil. From custom software to immersive websites, we handle it all with precision.
+                    </p>
+                </div>
 
         {/* Tech Stack Marquee removed as requested */}
 

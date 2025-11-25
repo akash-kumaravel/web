@@ -128,20 +128,18 @@ const Blog: React.FC = () => {
     };
 
     return (
-        <div ref={containerRef} className="pt-32 pb-20 w-full bg-white">
-            <div className="container mx-auto px-6">
-                
-                {/* Hero / Header */}
-                <div className="mb-20 flex flex-col lg:flex-row items-end justify-between gap-10 border-b border-gray-100 pb-10">
-                    <div>
-                        <h1 className="blog-hero-text text-5xl md:text-[4rem] font-bold font-['Syne'] text-black mb-4 tracking-tighter leading-none">
-                            INSIGHTS
-                        </h1>
-                        <p className="blog-hero-text text-xl text-gray-500 max-w-xl">
-                            Exploring the intersection of design, technology, and culture.
-                        </p>
-                    </div>
-                </div>
+                <div ref={containerRef} className="pt-40 pb-20 w-full bg-white">
+                        <div className="container mx-auto px-6 text-center">
+                                {/* Header - Projects style */}
+                                <div className="overflow-hidden mb-2">
+                                    <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter">
+                                        BLOG <br/>
+                                        <span className="text-white bg-[#007BFF] px-6 transform -skew-x-12 inline-block">INSIGHTS</span>
+                                    </h1>
+                                    <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
+                                        Exploring the intersection of design, technology, and culture.
+                                    </p>
+                                </div>
 
                 {/* Category Filter */}
                 <div className="flex flex-wrap gap-4 mb-16 blog-hero-text">

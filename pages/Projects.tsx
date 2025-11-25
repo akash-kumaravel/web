@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowUpRight, Globe, Smartphone, PenTool, Layers } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Projects: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -78,12 +79,12 @@ const Projects: React.FC = () => {
     <div ref={containerRef} className="w-full bg-white overflow-x-hidden">
         
         {/* Header */}
-        <div className="pt-40 pb-20 container mx-auto px-6">
+        <div className="pt-40 pb-20 container mx-auto px-6 text-center">
             <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter">
                 SELECTED <br/>
                 <span className="text-white bg-[#007BFF] px-6 transform -skew-x-12 inline-block">WORKS</span>
             </h1>
-            <p className="mt-10 text-xl text-gray-500 max-w-2xl font-medium">
+            <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
                 A curated journey through our digital disciplines. Scroll to explore our expertise in Web, Mobile, Branding, and Art.
             </p>
         </div>
@@ -194,7 +195,7 @@ const Projects: React.FC = () => {
                 <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                     {[1,2,3,4,5,6].map((i) => (
                         <div key={i} className="graphic-item break-inside-avoid relative group cursor-pointer">
-                            <img src="/assets/image.svg" className="w-full h-auto rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 grayscale hover:grayscale-0" alt="Graphic Art" />
+                            <img src={`/assets/m${i}.png`} className="w-full h-auto rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 grayscale hover:grayscale-0" alt={`Graphic Art ${i}`} />
                             <div className="absolute bottom-6 left-6 bg-white px-6 py-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                                 <span className="font-bold text-black">Art Piece #{i}</span>
                             </div>
@@ -206,9 +207,9 @@ const Projects: React.FC = () => {
 
         <div className="py-20 bg-[#007BFF] text-center">
              <h2 className="text-4xl font-bold text-white font-['Syne'] mb-8">Ready to start your project?</h2>
-             <button className="bg-black text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-black transition-all shadow-2xl">
+             <Link to="/contact" className="inline-block bg-black text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-black transition-all shadow-2xl">
                  Get a Quote
-             </button>
+             </Link>
         </div>
 
     </div>

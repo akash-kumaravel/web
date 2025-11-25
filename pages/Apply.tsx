@@ -108,7 +108,7 @@ const Apply: React.FC = () => {
                                 value={formData.fullName}
                                 onChange={handleChange}
                                 className="w-full bg-white border border-gray-200 p-4 rounded-xl focus:outline-none focus:border-[#007BFF] focus:ring-1 focus:ring-[#007BFF] transition-all text-black" 
-                                placeholder="John Doe" 
+                                placeholder="user name" 
                                 required
                             />
                         </div>
@@ -120,7 +120,7 @@ const Apply: React.FC = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 className="w-full bg-white border border-gray-200 p-4 rounded-xl focus:outline-none focus:border-[#007BFF] focus:ring-1 focus:ring-[#007BFF] transition-all text-black" 
-                                placeholder="john@example.com" 
+                                placeholder="user@example.com" 
                                 required
                             />
                         </div>
@@ -132,7 +132,7 @@ const Apply: React.FC = () => {
                                 value={formData.phone}
                                 onChange={handleChange}
                                 className="w-full bg-white border border-gray-200 p-4 rounded-xl focus:outline-none focus:border-[#007BFF] focus:ring-1 focus:ring-[#007BFF] transition-all text-black" 
-                                placeholder="+91 98765 43210" 
+                                placeholder="+91 63699 57006" 
                                 required
                             />
                         </div>

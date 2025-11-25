@@ -83,24 +83,19 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="pt-32 pb-20 w-full bg-white overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-            {/* Header */}
-            <div className="overflow-hidden mb-2">
-                <h1 className="about-hero-text text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter">
-                    Who We Are
-                </h1>
-            </div>
-            <div className="mb-10">
-                <span className="about-hero-text inline-block text-white bg-[#007BFF] px-6 py-1 text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none tracking-tighter transform -rotate-2 shadow-[8px_8px_0px_#000]">
-                    MEMO InfoTech
-                </span>
-            </div>
-            
-            <p className="about-hero-text text-2xl text-gray-600 mb-20 leading-relaxed border-l-4 border-[#007BFF] pl-8">
-                MEMO InfoTech is Nagercoil's premier IT solutions provider, situated at the intersection of robust engineering and digital strategy. We exist to empower businesses through technology.
-            </p>
+        <div ref={containerRef} className="pt-40 pb-20 w-full bg-white overflow-hidden">
+            <div className="container mx-auto px-6 text-center">
+                <div className="max-w-4xl mx-auto">
+                    {/* Header - Projects style */}
+                    <div className="overflow-hidden mb-2">
+                        <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter">
+                            ABOUT <br/>
+                            <span className="text-white bg-[#007BFF] px-6 transform -skew-x-12 inline-block">US</span>
+                        </h1>
+                        <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
+                            Learn about our journey, values, and the team behind MEMO InfoTech.
+                        </p>
+                    </div>
 
             {/* Content Section 1 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24 items-start">

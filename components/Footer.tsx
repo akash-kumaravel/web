@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-6 uppercase tracking-wider">Get in Touch</h4>
             <p className="font-medium mb-2 text-blue-50">info@memoinfotech.com</p>
-            <p className="font-medium mb-2 text-blue-50">+91 98765 43210</p>
+            <p className="font-medium mb-2 text-blue-50">+91 63699 57006</p>
             <p className="font-medium text-blue-50">
               WCC Road, Near Collectorate<br />
               Nagercoil, Tamil Nadu 629001
