@@ -13,7 +13,7 @@ const testimonials: Testimonial[] = [
     role: "CEO",
     company: "TechNova",
     text: "MEMO InfoTech completely modernized our software infrastructure. The new platform increased our operational efficiency by 200% in just three months.",
-    image: "/assets/image.svg"
+    image: "/assets/t1.png"
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     role: "Director",
     company: "Orbital Inc",
     text: "Their team in Nagercoil works at a world-class level. The app they built for us is robust, scalable, and user-friendly.",
-    image: "/assets/image.svg"
+    image: "/assets/t2.png"
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const testimonials: Testimonial[] = [
     role: "Founder",
     company: "GreenScape",
     text: "Professional, technical, and incredibly talented. MEMO InfoTech is the IT partner you want if you're ready to scale your business.",
-    image: "/assets/image.svg"
+    image: "/assets/t3.png"
   }
 ];
 
