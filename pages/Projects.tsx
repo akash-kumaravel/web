@@ -75,6 +75,15 @@ const Projects: React.FC = () => {
     }
   }, []);
 
+    // SEO: set page title & description
+    useEffect(() => {
+        document.title = 'MEMO InfoTech — Projects | Portfolio of Web & Design';
+        const desc = 'Selected works from MEMO InfoTech: modern web apps, branding, and graphic design showcases.';
+        let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+        if (meta) meta.content = desc;
+        else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
+    }, []);
+
   return (
     <div ref={containerRef} className="w-full bg-white overflow-x-hidden">
         
@@ -87,26 +96,17 @@ const Projects: React.FC = () => {
             <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
                 A curated journey through our digital disciplines. Scroll to explore our expertise in Web, Mobile, Branding, and Art.
             </p>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memoinfotech.com/" },
-                  { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://memoinfotech.com/projects" }
-                ]
-            })}} />
-        </div>
+                        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                                "@context": "https://schema.org",
+                                "@type": "BreadcrumbList",
+                                "itemListElement": [
+                                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memoinfotech.com/" },
+                                    { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://memoinfotech.com/projects" }
+                                ]
+                        })}} />
+                </div>
 
-  // SEO: set page title & description
-  useEffect(() => {
-    document.title = 'MEMO InfoTech — Projects | Portfolio of Web & Design';
-    const desc = 'Selected works from MEMO InfoTech: modern web apps, branding, and graphic design showcases.';
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (meta) meta.content = desc;
-    else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
-  }, []);
-
-        {/* SECTION 1: WEB DESIGN (Horizontal Scroll) */}
+                {/* SECTION 1: WEB DESIGN (Horizontal Scroll) */}
         <div ref={webContainerRef} className="relative bg-black text-white">
              <div className="absolute top-10 left-10 z-10 flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20">
                  <Globe size={20} className="text-[#007BFF]" />

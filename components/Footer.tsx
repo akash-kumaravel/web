@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
             <div className="mb-6">
               <div className="bg-white p-3 rounded-xl inline-block">
                 <img 
-                  src="/assets/metalogo.svg" 
+                  src="/assets/logo.svg" 
                   alt="MEMO InfoTech" 
                   className="h-10 w-auto object-contain" 
                 />
