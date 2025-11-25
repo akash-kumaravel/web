@@ -13,6 +13,15 @@ const Contact: React.FC = () => {
 
   const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3VFvRPhyO1nftU3yiexcbnFe6UJBCUd5AJyOrSB0pONxG_RIJ9K4MryGsPXwY4g/exec";
 
+    // SEO: set page title & description
+    React.useEffect(() => {
+        document.title = 'Contact — MEMO InfoTech';
+        const desc = 'Contact MEMO InfoTech for web development, branding, and motion design services. Start your project or inquire about careers.';
+        let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+        if (meta) meta.content = desc;
+        else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
+    }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -87,8 +96,8 @@ const Contact: React.FC = () => {
                      </div>
 
                      <div className="mt-20 p-6 bg-[#222] rounded-2xl border border-white/10 hover:border-[#007BFF] transition-colors">
-                        <p className="text-gray-300 italic">"MEMO InfoTech helped us scale our business to new heights. The best IT decision we ever made."</p>
-                        <p className="mt-4 font-bold text-[#007BFF]">- CEO, TechGiant</p>
+                        <p className="text-gray-300 italic">"We don’t just deliver projects. We build relationships"</p>
+                        <p className="mt-4 font-bold text-[#007BFF]">- CEO, Akash Kumaravel</p>
                      </div>
                 </div>
 

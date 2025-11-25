@@ -101,6 +101,15 @@ const Blog: React.FC = () => {
         }
     }, []);
 
+    // SEO: set page title & description
+    useEffect(() => {
+        document.title = 'MEMO InfoTech — Blog | Insights on Design & Tech';
+        const desc = 'Read MEMO InfoTech insights on web design, branding, and technology. Latest articles on UX, performance, and creative direction.';
+        let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+        if (meta) meta.content = desc;
+        else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
+    }, []);
+
     const handleSubscribe = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!email) return;
@@ -139,6 +148,17 @@ const Blog: React.FC = () => {
                                     <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
                                         Exploring the intersection of design, technology, and culture.
                                     </p>
+                                    <div className="mt-6">
+                                        <Link to="/contact" className="inline-block bg-[#007BFF] text-white px-6 py-3 rounded-full font-bold hover:bg-black transition-colors">Contact Us</Link>
+                                    </div>
+                                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                                        "@context": "https://schema.org",
+                                        "@type": "BreadcrumbList",
+                                        "itemListElement": [
+                                          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memoinfotech.com/" },
+                                          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://memoinfotech.com/blog" }
+                                        ]
+                                    })}} />
                                 </div>
 
                 {/* Category Filter */}

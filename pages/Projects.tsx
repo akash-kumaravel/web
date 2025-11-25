@@ -87,7 +87,24 @@ const Projects: React.FC = () => {
             <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
                 A curated journey through our digital disciplines. Scroll to explore our expertise in Web, Mobile, Branding, and Art.
             </p>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memoinfotech.com/" },
+                  { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://memoinfotech.com/projects" }
+                ]
+            })}} />
         </div>
+
+  // SEO: set page title & description
+  useEffect(() => {
+    document.title = 'MEMO InfoTech — Projects | Portfolio of Web & Design';
+    const desc = 'Selected works from MEMO InfoTech: modern web apps, branding, and graphic design showcases.';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (meta) meta.content = desc;
+    else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
+  }, []);
 
         {/* SECTION 1: WEB DESIGN (Horizontal Scroll) */}
         <div ref={webContainerRef} className="relative bg-black text-white">

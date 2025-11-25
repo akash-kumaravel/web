@@ -98,7 +98,24 @@ const Services: React.FC = () => {
                     <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
                         We offer a holistic suite of digital services in Nagercoil. From custom software to immersive websites, we handle it all with precision.
                     </p>
+                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memoinfotech.com/" },
+                                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://memoinfotech.com/services" }
+                            ]
+                    })}} />
                 </div>
+
+    // SEO: set page title & description
+    useEffect(() => {
+        document.title = 'MEMO InfoTech — Services | Web Development & Branding Nagercoil';
+        const desc = 'Services: Custom Software, Website Design, Mobile Apps, and Digital Branding from MEMO InfoTech in Nagercoil.';
+        let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+        if (meta) meta.content = desc;
+        else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
+    }, []);
 
         {/* Tech Stack Marquee removed as requested */}
 

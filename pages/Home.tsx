@@ -75,6 +75,19 @@ const Home: React.FC = () => {
   const horizontalContainerRef = useRef<HTMLDivElement>(null);
 
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  // SEO: set page title & description
+  useEffect(() => {
+    document.title = 'MEMO InfoTech — Home | Nagercoil Web Development & Design';
+    const desc = 'MEMO InfoTech — Premier Web Development, Graphic Design, and Motion Posters in Nagercoil. We build websites, brand identities, and explainer videos.';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (meta) meta.content = desc;
+    else {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = desc;
+      document.head.appendChild(meta);
+    }
+  }, []);
   const [heroMousePos, setHeroMousePos] = useState({ x: 0, y: 0 });
   const [activeServiceIndex, setActiveServiceIndex] = useState(0);
   const [statsTriggered, setStatsTriggered] = useState(false);

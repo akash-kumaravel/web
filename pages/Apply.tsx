@@ -24,6 +24,15 @@ const Apply: React.FC = () => {
       window.scrollTo(0, 0);
   }, []);
 
+    // SEO: set page title & description
+    useEffect(() => {
+        document.title = 'Apply — Careers at MEMO InfoTech';
+        const desc = 'Apply to open positions at MEMO InfoTech. Submit your resume and portfolio for consideration.';
+        let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+        if (meta) meta.content = desc;
+        else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
+    }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };

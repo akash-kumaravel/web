@@ -64,6 +64,16 @@ const BlogDetail: React.FC = () => {
     }
   }, [id]);
 
+    // SEO: dynamic title & meta based on article
+    useEffect(() => {
+        const title = article.title ? `${article.title} — MEMO InfoTech` : 'Article — MEMO InfoTech';
+        document.title = title;
+        const desc = article.subtitle || 'Read this article from MEMO InfoTech on design and technology.';
+        let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+        if (meta) meta.content = desc;
+        else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
+    }, [article.title, article.subtitle]);
+
     const getShareUrl = () => {
         try {
             // Prefer a clean site URL for sharing

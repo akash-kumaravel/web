@@ -43,6 +43,15 @@ const Careers: React.FC = () => {
     }
   }, []);
 
+    // SEO: set page title & description
+    useEffect(() => {
+        document.title = 'Careers — MEMO InfoTech | Join Our Team';
+        const desc = 'Explore open positions at MEMO InfoTech. Join our team of designers, engineers, and creatives in Nagercoil.';
+        let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+        if (meta) meta.content = desc;
+        else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
+    }, []);
+
   return (
     <div ref={containerRef} className="w-full bg-white">
         

@@ -82,6 +82,15 @@ const About: React.FC = () => {
     }
   }, []);
 
+    // SEO: set page title & description
+    useEffect(() => {
+        document.title = 'MEMO InfoTech — About Us';
+        const desc = 'About MEMO InfoTech — Our story, values, and team based in Nagercoil providing web development and design services.';
+        let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+        if (meta) meta.content = desc;
+        else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
+    }, []);
+
   return (
         <div ref={containerRef} className="pt-40 pb-20 w-full bg-white overflow-hidden">
             <div className="container mx-auto px-6 text-center">
@@ -95,6 +104,19 @@ const About: React.FC = () => {
                         <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
                             Learn about our journey, values, and the team behind MEMO InfoTech.
                         </p>
+                        <div className="mt-6 flex items-center justify-center gap-4">
+                            <a href="/services" className="inline-block bg-[#007BFF] text-white px-5 py-2 rounded-full font-bold hover:bg-black transition-colors">Our Services</a>
+                            <a href="/contact" className="inline-block bg-black text-white px-5 py-2 rounded-full font-bold hover:bg-[#007BFF] transition-colors">Contact Us</a>
+                        </div>
+                        {/* Breadcrumb structured data for About */}
+                        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                                "@context": "https://schema.org",
+                                "@type": "BreadcrumbList",
+                                "itemListElement": [
+                                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memoinfotech.com/" },
+                                    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://memoinfotech.com/about" }
+                                ]
+                        })}} />
                     </div>
 
             {/* Content Section 1 */}
