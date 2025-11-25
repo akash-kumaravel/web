@@ -103,8 +103,8 @@ const Blog: React.FC = () => {
 
     // SEO: set page title & description
     useEffect(() => {
-        document.title = 'MEMO InfoTech — Blog | Insights on Design & Tech';
-        const desc = 'Read MEMO InfoTech insights on web design, branding, and technology. Latest articles on UX, performance, and creative direction.';
+        document.title = 'Blog — Insights on Design & Technology';
+        const desc = 'Actionable articles on web design, performance, branding, and product strategy. Practical guides for designers and developers.';
         let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
         if (meta) meta.content = desc;
         else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }

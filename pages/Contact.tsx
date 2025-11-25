@@ -16,7 +16,7 @@ const Contact: React.FC = () => {
     // SEO: set page title & description
     React.useEffect(() => {
         document.title = 'Contact — MEMO InfoTech';
-        const desc = 'Contact MEMO InfoTech for web development, branding, and motion design services. Start your project or inquire about careers.';
+        const desc = 'Contact MEMO InfoTech for web development, branding, and motion design services. Start your project or inquire about partnerships and careers.';
         let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
         if (meta) meta.content = desc;
         else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
                             </div>
                             <div>
                                 <p className="text-gray-400 text-sm uppercase">Visit us</p>
-                                <p className="text-xl font-bold">WCC Road, Nagercoil, TN</p>
+                                <p className="text-xl font-bold">India</p>
                             </div>
                         </div>
                      </div>

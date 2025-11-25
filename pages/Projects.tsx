@@ -77,8 +77,8 @@ const Projects: React.FC = () => {
 
     // SEO: set page title & description
     useEffect(() => {
-        document.title = 'MEMO InfoTech — Projects | Portfolio of Web & Design';
-        const desc = 'Selected works from MEMO InfoTech: modern web apps, branding, and graphic design showcases.';
+        document.title = 'Projects — Case Studies & Portfolio';
+        const desc = 'Selected case studies: modern web apps, branding, and graphic design. See results, process, and impact across industries.';
         let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
         if (meta) meta.content = desc;
         else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }

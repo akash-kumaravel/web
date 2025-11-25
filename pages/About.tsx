@@ -84,8 +84,8 @@ const About: React.FC = () => {
 
     // SEO: set page title & description
     useEffect(() => {
-        document.title = 'MEMO InfoTech — About Us';
-        const desc = 'About MEMO InfoTech — Our story, values, and team based in Nagercoil providing web development and design services.';
+        document.title = 'About MEMO InfoTech — Mission & Team';
+        const desc = 'Learn how MEMO InfoTech crafts digital products combining engineering, design, and growth strategy. Our team delivers scalable websites, apps, and brand experiences.';
         let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
         if (meta) meta.content = desc;
         else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
@@ -93,10 +93,10 @@ const About: React.FC = () => {
 
   return (
         <div ref={containerRef} className="pt-40 pb-20 w-full bg-white overflow-hidden">
-            <div className="container mx-auto px-6 text-center">
+            <div className="container mx-auto px-6">
                 <div className="max-w-4xl mx-auto">
-                    {/* Header - Projects style */}
-                    <div className="overflow-hidden mb-2">
+                    {/* Header - Projects style (keep header centered only) */}
+                    <div className="overflow-hidden mb-2 text-center">
                         <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter">
                             ABOUT <br/>
                             <span className="text-white bg-[#007BFF] px-6 transform -skew-x-12 inline-block">US</span>
@@ -124,7 +124,7 @@ const About: React.FC = () => {
                 <div>
                     <h3 className="text-3xl font-bold mb-6 text-black reveal-text">Our Story</h3>
                     <p className="text-gray-500 leading-loose mb-6">
-                        Founded in 2014, MEMO InfoTech began with a mission to bring world-class IT services to Nagercoil. Our founders, a team of passionate software engineers, believed that high-quality technology solutions should be accessible to businesses of all sizes.
+                        Founded in 2014, MEMO InfoTech began with a mission to bring world-class IT services to market. Our founders, a team of passionate software engineers, believed that high-quality technology solutions should be accessible to businesses of all sizes.
                     </p>
                     <p className="text-gray-500 leading-loose">
                         Over the last decade, we have evolved from a small local team into a leading IT firm, serving clients globally. Yet, our core philosophy remains unchanged: Technology must solve problems. Technology must drive growth. Technology must work.
@@ -132,7 +132,7 @@ const About: React.FC = () => {
                 </div>
                 <div className="relative group">
                     <div className="reveal-image rounded-[3rem] overflow-hidden shadow-2xl">
-                        <img src="/assets/about.png" alt="MEMO InfoTech office and team in Nagercoil" className="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" />
+                        <img src="/assets/about.png" alt="MEMO InfoTech office and team collaboration" className="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" />
                     </div>
                     <div className="absolute -bottom-10 -left-10 bg-[#007BFF] text-white p-8 rounded-3xl shadow-xl max-w-xs transform rotate-3 group-hover:rotate-0 transition-transform z-10">
                         <p className="font-bold text-xl">"We don't just write code. We build futures."</p>
@@ -148,11 +148,11 @@ const About: React.FC = () => {
                     <div className="timeline-line absolute left-0 top-0 bottom-0 w-1 bg-gray-200 origin-top h-full"></div>
 
                     {[
-                        { year: "2014", title: "The Inception", desc: "Founded in Nagercoil, Tamil Nadu." },
-                        { year: "2016", title: "First Major Contract", desc: "Delivered enterprise software for a regional logistics firm." },
-                        { year: "2018", title: "Team Expansion", desc: "Moved to a larger facility to accommodate our growing team of developers." },
-                        { year: "2021", title: "Global Reach", desc: "Started serving international clients in the US and UK." },
-                        { year: "2024", title: "MEMO InfoTech 2.0", desc: "Launching our AI and Machine Learning division." }
+                        { year: "2022", title: "Company Founded", desc: "MEMO InfoTech was established to provide modern digital solutions, helping businesses grow with reliable technology and smart innovation." },
+                        { year: "2023", title: "First Major Contract", desc: "Delivered our first large-scale enterprise software project for a regional logistics company, setting the foundation for long-term success." },
+                        { year: "2024", title: "Team Expansion", desc: "Our rapid growth led us to move into a larger facility and expand our team of developers, designers, and technology experts." },
+                        { year: "2025", title: "Global Reach", desc: "Started serving international clients across the US and UK, building a strong global footprint and industry recognition." },
+                        { year: "2026", title: "MEMO InfoTech 2.0", desc: "Launching our advanced AI & Machine Learning division, offering intelligent automation, predictive analytics, and next-gen digital transformation services." }
                     ].map((item, idx) => (
                         <div key={idx} className="timeline-item relative pl-10 group">
                              <div className="absolute -left-[7px] top-1 w-4 h-4 bg-white border-4 border-[#007BFF] rounded-full group-hover:scale-150 transition-transform z-10"></div>
@@ -175,7 +175,7 @@ const About: React.FC = () => {
                         Once we have the blueprint, we build. We use modern technologies like React, Node.js, Python, and Cloud Infrastructure to create robust software solutions. We believe in Agile methodology, ensuring rapid iteration and constant feedback loops.
                     </p>
                     <p>
-                        But technology is just the tool. The strength of our company comes from our people. We are a dedicated team of developers, testers, and project managers right here in Nagercoil. We take pride in our work and own the outcome.
+                        But technology is just the tool. The strength of our company comes from our people. We are a dedicated team of developers, testers, and project managers committed to excellence. We take pride in our work and own the outcome.
                     </p>
                     <p>
                          From the initial concept to final deployment and maintenance, we are your partners. We test rigorously. We optimize relentlessly. In a competitive digital world, we ensure your IT infrastructure is a strategic asset, not a bottleneck.

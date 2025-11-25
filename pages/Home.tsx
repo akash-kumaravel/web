@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     name: "Marcus Chen",
     role: "Director",
     company: "Orbital Inc",
-    text: "Their team in Nagercoil works at a world-class level. The app they built for us is robust, scalable, and user-friendly.",
+    text: "Their team delivers at a world-class level. The app they built for us is robust, scalable, and user-friendly.",
     image: "/assets/t2.png"
   },
   {
@@ -42,7 +42,7 @@ const teamMembers = [
 ];
 
 const serviceList = [
-  { icon: <Code />, title: "Website Development", desc: "Custom websites and software solutions tailored to your business needs in Nagercoil.", img: "/assets/p1.png" },
+  { icon: <Code />, title: "Website Development", desc: "Custom websites and software solutions tailored to your business needs and goals.", img: "/assets/p1.png" },
   { icon: <Globe />, title: "Graphic & Logo Design", desc: "High-impact poster design, logos, and brand identity services.", img: "/assets/p2.png" },
   { icon: <Box />, title: "Mobile Applications", desc: "Native and cross-platform apps for iOS and Android.", img: "/assets/p3.png" },
   { icon: <Video />, title: "Motion & Explainers", desc: "Engaging motion posters and explainer videos that drive conversions.", img: "/assets/p4.png" }
@@ -50,7 +50,7 @@ const serviceList = [
 
 const faqs = [
     { q: "How long names a typical software project take?", a: "Timelines vary by scope. A simple website might take 4-6 weeks, while complex custom software could take 3-6 months. We prioritize quality and security." },
-    { q: "Do you provide services in Nagercoil?", a: "Yes, we are Nagercoil's leading IT company, providing Web Development, Graphic Design, and Explainer Videos to local and global clients." },
+    { q: "Do you work with global clients?", a: "Yes, we serve clients worldwide. Our services span web development, graphic design, and explainer videos for local and international projects." },
     { q: "What is your pricing structure?", a: "We operate on both project-based and retainer models. We believe in transparency and will provide a detailed proposal after our discovery session." },
     { q: "Do you create Motion Posters and Explainer Videos?", a: "Absolutely. We have a dedicated creative team specializing in high-end Motion Posters, 3D Animation, and Explainer Videos for brands." }
 ];
@@ -77,8 +77,8 @@ const Home: React.FC = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   // SEO: set page title & description
   useEffect(() => {
-    document.title = 'MEMO InfoTech — Home | Nagercoil Web Development & Design';
-    const desc = 'MEMO InfoTech — Premier Web Development, Graphic Design, and Motion Posters in Nagercoil. We build websites, brand identities, and explainer videos.';
+    document.title = 'MEMO InfoTech — Digital Product & Design Studio';
+    const desc = 'MEMO InfoTech builds high-converting websites, brand identities, and motion content. Strategic web development, UX, and creative services to grow your business.';
     let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (meta) meta.content = desc;
     else {
@@ -284,7 +284,7 @@ const Home: React.FC = () => {
         <div className="flex-1 z-10 hero-text text-center lg:text-left">
           <div className="inline-block px-4 py-2 bg-blue-50 border border-blue-100 rounded-full mb-6">
             <span className="text-sm font-bold text-[#007BFF] uppercase tracking-wider flex items-center gap-2">
-                <Star size={14} fill="currentColor" /> Best IT Company in Nagercoil
+                <Star size={14} fill="currentColor" /> Award-Winning Software Company
             </span>
           </div>
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter mb-8">
@@ -298,7 +298,7 @@ const Home: React.FC = () => {
             Technology
           </h1>
           <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-            We are Nagercoil's premier IT agency specializing in Website Development, Poster Design, Explainer Videos, and Motion Graphics. We turn ideas into digital masterpieces.
+            We are a premier Software Company specializing in Website Development, Brand Design, Explainer Videos, and Motion Graphics. We turn ideas into digital experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Link to="/contact" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
@@ -317,7 +317,7 @@ const Home: React.FC = () => {
             <div className="w-full aspect-[4/5] max-w-[500px] rounded-[3rem] overflow-hidden shadow-2xl relative bg-gray-100 mx-auto lg:mx-0">
               <img
                 src="/assets/home.png"
-                alt="IT Professional Nagercoil"
+                alt="Creative Professional at Work"
                 className="w-full h-full object-cover hover:scale-105 transition-all duration-700"
               />
             </div>
@@ -329,7 +329,7 @@ const Home: React.FC = () => {
                 {[1,2,3,4,5].map(i => <Star key={i} size={16} fill="currentColor" />)}
               </div>
               <p className="font-bold text-black">5-Star Rating</p>
-              <p className="text-xs text-gray-400">Best in Nagercoil</p>
+              <p className="text-xs text-gray-400">Trusted Worldwide</p>
             </div>
 
             {/* Floating Circle Badge - Using heroCount for immediate animation */}
@@ -356,11 +356,11 @@ const Home: React.FC = () => {
              loop
              playsInline
              poster="/assets/home.png"
-             aria-label="Explainer video showcasing MEMO InfoTech's IT solutions in Nagercoil"
+             aria-label="Explainer video showcasing digital product solutions and services"
            >
              Your browser names not support the video tag.
            </video>
-           <div className="sr-only">Explainer video showcasing MEMO InfoTech's IT solutions in Nagercoil</div>
+           <div className="sr-only">Explainer video showcasing digital product solutions and services</div>
            <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
                 <div className="w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-white/50 flex items-center justify-center backdrop-blur-md hover:scale-110 transition-transform cursor-pointer group">
                     <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-white border-b-[10px] border-b-transparent ml-1 group-hover:border-l-[#007BFF]"></div>
@@ -375,7 +375,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { num: counts.companies, suffix: '+', label: 'Clients in Nagercoil & Global' },
+              { num: counts.companies, suffix: '+', label: 'Happy Clients Worldwide' },
               { num: counts.years, suffix: '+', label: 'Years Experience' },
               { num: counts.hours, suffix: '+', label: 'Websites Delivered' },
               { num: counts.revenue, suffix: '%', label: 'Client Growth' }
@@ -415,7 +415,7 @@ const Home: React.FC = () => {
              {horizontalWorks.map((work, i) => (
                  <div key={i} className="horizontal-item w-[16.666%] h-full p-4 md:p-20 flex items-center justify-center bg-white border-r border-gray-100">
                      <div className="w-full h-full relative rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-2xl">
-                         <img src={work.img} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" alt={`${work.title} - Best Design Nagercoil`} />
+                         <img src={work.img} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" alt={`${work.title} — Design Portfolio`} />
                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent p-6 md:p-10 flex flex-col justify-end">
                              <span className="text-[#007BFF] font-bold uppercase tracking-widest mb-2">{work.cat}</span>
                              <h3 className="text-4xl md:text-6xl font-bold text-white font-['Syne']">{work.title}</h3>
@@ -511,7 +511,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
              <h2 className="text-5xl md:text-[4rem] font-bold mb-6 font-['Syne'] text-black leading-none">The <span className="text-[#007BFF]">Collective</span></h2>
-             <p className="text-gray-500 max-w-2xl mx-auto">Engineers, Designers, and Strategists driving innovation in Nagercoil.</p>
+             <p className="text-gray-500 max-w-2xl mx-auto">Engineers, Designers, and Strategists committed to digital excellence.</p>
           </div>
           
           {/* Horizontal Accordion Container */}
@@ -578,7 +578,7 @@ const Home: React.FC = () => {
              <div className="flex justify-between items-end mb-16">
                  <div>
                     <h2 className="text-5xl md:text-[4rem] font-bold font-['Syne'] mb-4 text-black leading-none">Recently <span className="text-[#007BFF]">Added</span></h2>
-                    <p className="text-gray-500">Latest insights on Web Design, Branding, and Tech from Nagercoil.</p>
+                    <p className="text-gray-500">Latest insights on Web Design, Branding, and Digital Strategy.</p>
                  </div>
                  <Link to="/blog" className="hidden md:flex items-center gap-2 font-bold text-black hover:text-[#007BFF] transition-colors">
                      View all articles <ArrowRight size={20} />
@@ -686,7 +686,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="bg-white rounded-[4rem] p-10 md:p-20 shadow-2xl flex flex-col lg:flex-row gap-20 transform hover:scale-[1.01] transition-transform duration-500">
             <div className="lg:w-1/2">
-              <img src="/assets/contact.png" className="w-full h-full object-cover rounded-3xl transition-all duration-700" alt="Contact MEMO InfoTech Nagercoil" />
+              <img src="/assets/contact.png" className="w-full h-full object-cover rounded-3xl transition-all duration-700" alt="Contact our Software Company team" />
             </div>
             <div className="lg:w-1/2">
               <h2 className="text-5xl font-bold mb-4 font-['Syne'] text-black">Let's Build <br/>The Future</h2>

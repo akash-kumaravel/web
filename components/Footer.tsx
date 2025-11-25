@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="font-medium mb-6 text-blue-50">
-              Nagercoil's leading IT company. We build robust software, stunning websites, and digital strategies that drive growth.
+              MEMO InfoTech is a leading Software Company. We build robust software, stunning websites, and digital strategies that drive growth.
             </p>
             <div className="flex gap-4">
               <a href="https://www.instagram.com/memoinfotech?igsh=NjJ4bGoyMXA0bGI1" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white text-[#007BFF] rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all hover:scale-110" aria-label="MEMO InfoTech Instagram">
@@ -65,8 +65,7 @@ const Footer: React.FC = () => {
             <p className="font-medium mb-2 text-blue-50">info@memoinfotech.com</p>
             <p className="font-medium mb-2 text-blue-50">+91 63699 57006</p>
             <p className="font-medium text-blue-50">
-              WCC Road, Near Collectorate<br />
-              Nagercoil, Tamil Nadu 629001
+              South India
             </p>
           </div>
         </div>

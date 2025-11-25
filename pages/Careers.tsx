@@ -3,11 +3,11 @@ import { Briefcase, ArrowRight, Coffee, Globe, Heart, Zap, Monitor, Users } from
 import { Link } from 'react-router-dom';
 
 const jobs = [
-    { id: 1, role: "Senior Product Designer", type: "Full-time", loc: "San Francisco", dept: "Design" },
+    { id: 1, role: "Senior Product Designer", type: "Full-time", loc: "Remote", dept: "Design" },
     { id: 2, role: "Frontend Engineer (React/WebGL)", type: "Full-time", loc: "Remote", dept: "Engineering" },
     { id: 3, role: "Motion Graphics Artist", type: "Contract", loc: "Remote", dept: "Creative" },
-    { id: 4, role: "Project Manager", type: "Full-time", loc: "New York", dept: "Operations" },
-    { id: 5, role: "Brand Strategist", type: "Full-time", loc: "London", dept: "Strategy" }
+    { id: 4, role: "Project Manager", type: "Full-time", loc: "Remote", dept: "Operations" },
+    { id: 5, role: "Brand Strategist", type: "Full-time", loc: "Remote", dept: "Strategy" }
 ];
 
 const perks = [
@@ -45,8 +45,8 @@ const Careers: React.FC = () => {
 
     // SEO: set page title & description
     useEffect(() => {
-        document.title = 'Careers — MEMO InfoTech | Join Our Team';
-        const desc = 'Explore open positions at MEMO InfoTech. Join our team of designers, engineers, and creatives in Nagercoil.';
+        document.title = 'Careers — Join MEMO InfoTech';
+        const desc = 'Explore open roles for designers, developers, and product specialists. Learn about benefits, culture, and how we work.';
         let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
         if (meta) meta.content = desc;
         else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }

@@ -14,7 +14,7 @@ const services = [
     {
         id: "02",
         title: "Website Design",
-        description: "Websites should be destinations. We specialize in high-performance Website Development in Nagercoil using React, Next.js, and WebGL to create digital flagship stores that captivate and convert.",
+        description: "Websites should be destinations. We specialize in high-performance web development using React, Next.js, and WebGL to create digital flagship stores that captivate and convert.",
         features: ["Responsive Web Design", "E-commerce Platforms", "CMS Development", "Interactive 3D Elements", "SEO Optimization"],
         color: "bg-[#007BFF]",
         textColor: "text-white"
@@ -89,8 +89,8 @@ const Services: React.FC = () => {
 
     // SEO: set page title & description
     useEffect(() => {
-        document.title = 'MEMO InfoTech — Services | Web Development & Branding Nagercoil';
-        const desc = 'Services: Custom Software, Website Design, Mobile Apps, and Digital Branding from MEMO InfoTech in Nagercoil.';
+        document.title = 'Services — Web Development, Design & Motion';
+        const desc = 'Custom web development, mobile apps, UI/UX design, branding, and motion graphics. Full-stack engineering and creative services focused on performance and conversion.';
         let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
         if (meta) meta.content = desc;
         else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
@@ -105,7 +105,7 @@ const Services: React.FC = () => {
                         <span className="text-white bg-[#007BFF] px-6 transform -skew-x-12 inline-block">OFFERED</span>
                     </h1>
                     <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
-                        We offer a holistic suite of digital services in Nagercoil. From custom software to immersive websites, we handle it all with precision.
+                        We offer a holistic suite of digital services. From custom software to immersive websites, we handle it all with precision.
                     </p>
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                             "@context": "https://schema.org",
