@@ -156,47 +156,48 @@ const Projects: React.FC = () => {
         </div>
 
         {/* SECTION 3: BRANDING / LOGOS (Grid) */}
-        <div className="logo-section py-32 bg-black text-white">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-20">
-                     <div>
-                        <div className="inline-flex items-center gap-3 border border-white/20 px-6 py-2 rounded-full mb-6">
+        
+                           <section className="py-32 bg-gray-50 overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 border border-white/20 px-6 py-2 rounded-full mb-6">
                             <Layers size={20} className="text-[#007BFF]" />
                             <span className="font-bold uppercase tracking-widest text-sm">Identity & Logos</span>
                         </div>
-                        <h2 className="text-5xl md:text-7xl font-bold font-['Syne']">Mark of <br/>Excellence</h2>
-                     </div>
-                     <p className="text-gray-400 max-w-md text-right hidden md:block">
-                         Timeless symbols crafted for forward-thinking brands.
-                     </p>
-                </div>
+             <h2 className="text-5xl md:text-[4rem] font-bold mb-6 font-['Syne'] text-black leading-none">The <span className="text-[#007BFF]">Collective</span></h2>
+             <p className="text-gray-500 max-w-2xl mx-auto">Engineers, Designers, and Strategists committed to digital excellence.</p>
+          </div>
+          
+          {/* Horizontal Accordion Container */}
+          <div className="flex flex-col md:flex-row min-h-[80vh] md:h-[600px] w-full gap-2">
+             {[
+               { img: "/assets/f1.png", title: "Design 1" },
+               { img: "/assets/f2.png", title: "Design 2" },
+               { img: "/assets/f3.png", title: "Design 3" },
+               { img: "/assets/f4.png", title: "Design 4" },
+               { img: "/assets/f5.png", title: "Design 5" }
+             ].map((item, idx) => (
+               <div 
+                  key={idx} 
+                  className="relative flex-1 overflow-hidden transition-all duration-500 ease-in-out hover:flex-[3] group rounded-3xl cursor-pointer min-h-[200px]"
+               >
+                  <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0" />
+                  <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-colors duration-300"></div>
+                  
+                  {/* Vertical Text (Default) */}
+                  <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
+                     <h3 className="text-white font-bold text-2xl tracking-widest uppercase transform md:-rotate-90 whitespace-nowrap">{item.title}</h3>
+                  </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
-                    {[1,2,3,4,5,6,7,8].map((i) => (
-                        <div key={i} className="logo-grid-item aspect-square border border-white/10 relative overflow-hidden group cursor-pointer">
-                             {/* Background Image */}
-                             <img 
-                                 src={`/assets/l${i}.png`} 
-                                 alt={`Logo project ${i} - MEMO InfoTech`} 
-                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                             />
-
-                             {/* Content */}
-                             <div className="absolute inset-0 flex flex-col items-center justify-center z-10 p-4 text-center">
-                                  <div className="w-12 h-12 md:w-16 md:h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                     <ArrowUpRight className="text-white" size={24} />
-                                  </div>
-                                  <h3 className="text-xl md:text-2xl font-bold font-['Syne'] text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Brand {i}</h3>
-                                  <p className="text-xs text-gray-300 uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Identity System</p>
-                             </div>
-                             
-                             {/* Border Glow */}
-                             <div className="absolute inset-0 border-4 border-transparent group-hover:border-[#007BFF]/30 transition-colors duration-500 pointer-events-none"></div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+                  {/* Expanded Info (Hover) */}
+                  <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col justify-end h-full">
+                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 font-['Syne']">{item.title}</h3>
+                  </div>
+               </div>
+             ))}
+          </div>
         </div>
+      </section>
 
         {/* SECTION 4: GRAPHIC DESIGN (Masonry) */}
         <div className="graphic-section py-32 bg-white">
