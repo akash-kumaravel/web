@@ -147,25 +147,7 @@ const Careers: React.FC = () => {
             </div>
         </div>
 
-        {/* Culture / Image Strip */}
-        <div className="pb-20 overflow-hidden">
-             <div className="flex w-[200%] animate-marquee-slow">
-                 {[1,2,3,4].map((i) => (
-                     <div key={i} className="w-1/4 aspect-video relative px-2">
-                         <img src={`/assets/r${i}.png`} className="w-full h-full object-cover rounded-3xl grayscale hover:grayscale-0 transition-all duration-500" alt={`Culture ${i}`} />
-                     </div>
-                 ))}
-             </div>
-             <style>{`
-                @keyframes marquee-slow {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(-50%); }
-                }
-                .animate-marquee-slow {
-                    animation: marquee-slow 40s linear infinite;
-                }
-             `}</style>
-        </div>
+
 
     </div>
   );
