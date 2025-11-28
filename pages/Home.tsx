@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Star, Box, Code, PenTool, Video, ArrowLeft, ArrowUpRight, MousePointer2, Globe, Award, Plus, Minus, Linkedin, Twitter, Loader2, CheckCircle, AlertCircle, Send } from 'lucide-react';
+import { ArrowRight, Star, Box, Code, PenTool, Video, ArrowLeft, ArrowUpRight, MousePointer2, Globe, Award, Plus, Minus, Linkedin, Twitter, Loader2, CheckCircle, AlertCircle, Send, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Testimonial } from '../types';
 // Images are served from the public `assets` folder. Use direct public paths instead of importing from assets module.
@@ -646,7 +646,46 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="bg-white rounded-[4rem] p-10 md:p-20 shadow-2xl flex flex-col lg:flex-row gap-20 transform hover:scale-[1.01] transition-transform duration-500">
             <div className="lg:w-1/2">
-              <img src="/assets/contact.png" className="w-full h-full object-cover rounded-3xl transition-all duration-700" alt="Contact our Software Company team" />
+              <div className="bg-black text-white p-12 rounded-[3rem] relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-[#007BFF] blur-[80px] opacity-50"></div>
+                <h3 className="text-3xl font-bold mb-8">Contact Info</h3>
+                <div className="space-y-8">
+                  <div className="flex items-center gap-6 group">
+                    <div className="w-12 h-12 rounded-full bg-[#222] flex items-center justify-center text-[#007BFF] group-hover:bg-[#007BFF] group-hover:text-white transition-all">
+                      <Mail />
+                    </div>
+                    <div>
+                      <p className="text-gray-400 text-sm uppercase">Email us</p>
+                      <p className="text-xl font-bold">info@memoinfotech.com</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-6 group">
+                    <div className="w-12 h-12 rounded-full bg-[#222] flex items-center justify-center text-[#007BFF] group-hover:bg-[#007BFF] group-hover:text-white transition-all">
+                      <Phone />
+                    </div>
+                    <div>
+                      <p className="text-gray-400 text-sm uppercase">Call us</p>
+                      <p className="text-xl font-bold">+91 63699 57006</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-6 group">
+                    <div className="w-12 h-12 rounded-full bg-[#222] flex items-center justify-center text-[#007BFF] group-hover:bg-[#007BFF] group-hover:text-white transition-all">
+                      <MapPin />
+                    </div>
+                    <div>
+                      <p className="text-gray-400 text-sm uppercase">Visit us</p>
+                      <p className="text-xl font-bold">India</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-20 p-6 bg-[#222] rounded-2xl border border-white/10 hover:border-[#007BFF] transition-colors">
+                  <p className="text-gray-300 italic">"We don’t just deliver projects. We build relationships"</p>
+                  <p className="mt-4 font-bold text-[#007BFF]">- CEO, Akash Kumaravel</p>
+                </div>
+              </div>
             </div>
             <div className="lg:w-1/2">
               <h2 className="text-5xl font-bold mb-4 font-['Syne'] text-black">Let's Build <br/>The Future</h2>
