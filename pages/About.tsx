@@ -198,15 +198,7 @@ const About: React.FC = () => {
             </div>
 
             {/* OFFICE GALLERY */}
-            <div>
-                <h3 className="text-3xl font-bold mb-12 text-black">Life at MEMO InfoTech</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
-                    <div className="reveal-image col-span-2 row-span-2 rounded-3xl overflow-hidden shadow-lg"><img src="/assets/life1.png" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" alt="Life at MEMO - team gathering" /></div>
-                    <div className="reveal-image rounded-3xl overflow-hidden shadow-lg"><img src="/assets/life2.png" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" alt="Life at MEMO - workspace" /></div>
-                    <div className="reveal-image rounded-3xl overflow-hidden shadow-lg"><img src="/assets/life3.png" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" alt="Life at MEMO - brainstorming" /></div>
-                    <div className="reveal-image col-span-2 rounded-3xl overflow-hidden shadow-lg"><img src="/assets/life4.png" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" alt="Life at MEMO - office event" /></div>
-                </div>
-            </div>
+
 
         </div>
       </div>
