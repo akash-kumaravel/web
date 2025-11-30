@@ -76,7 +76,7 @@ const Careers: React.FC = () => {
         {/* Values / Perks Section */}
         <div className="py-32 container mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-                <h2 className="text-5xl font-bold font-['Syne'] text-black">Why <span className="text-[#007BFF]">NeonFlux?</span></h2>
+                <h2 className="text-5xl font-bold font-['Syne'] text-black">Why <span className="text-[#007BFF]">MEMO InfoTech?</span></h2>
                 <p className="text-gray-500 max-w-md mt-4 md:mt-0">We take care of our people so they can take care of the work.</p>
             </div>
             <div className="perks-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -123,7 +123,7 @@ const Careers: React.FC = () => {
                                     <div>
                                         <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">The Role</h4>
                                         <p className="leading-relaxed text-sm">
-                                            We are looking for an experienced individual to join our award-winning team. 
+                                            We are looking for an experienced individual to join our team. 
                                             You will work directly with our creative director and clients to build immersive digital experiences.
                                         </p>
                                     </div>

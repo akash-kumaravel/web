@@ -17,17 +17,17 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: "Marcus Chen",
-    role: "Director",
-    company: "Orbital Inc",
-    text: "Their team delivers at a world-class level. The app they built for us is robust, scalable, and user-friendly.",
+    name: "Arun Raj",
+    role: "CEO",
+    company: "STEP IN",
+    text: "Their team delivers at a professional level. The app they built for us is billing software.",
     image: "/assets/t2.png"
   },
   {
     id: 3,
-    name: "Elena Rodriguez",
+    name: "Rizwan",
     role: "Founder",
-    company: "GreenScape",
+    company: " Muhibah restaurant",
     text: "Professional, technical, and incredibly talented. MEMO InfoTech is the IT partner you want if you're ready to scale your business.",
     image: "/assets/t3.png"
   }
@@ -215,8 +215,8 @@ const Home: React.FC = () => {
           const steps = 60;
           const intervalTime = duration / steps;
           
-          // Updated targets: years set to 3 as requested
-          const targets = { companies: 2000, years: 3, hours: 800, revenue: 150 };
+          // Updated targets: companies set to 30, years set to 3
+          const targets = { companies: 30, years: 3, hours: 15, revenue: 80 };
           let currentStep = 0;
 
           const timer = setInterval(() => {
@@ -284,7 +284,7 @@ const Home: React.FC = () => {
         <div className="flex-1 z-10 hero-text text-center lg:text-left">
           <div className="inline-block px-4 py-2 bg-blue-50 border border-blue-100 rounded-full mb-6">
             <span className="text-sm font-bold text-[#007BFF] uppercase tracking-wider flex items-center gap-2">
-                <Star size={14} fill="currentColor" /> Award-Winning Software Company
+                <Star size={14} fill="currentColor" /> Software Company
             </span>
           </div>
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter mb-8">
@@ -329,7 +329,7 @@ const Home: React.FC = () => {
                 {[1,2,3,4,5].map(i => <Star key={i} size={16} fill="currentColor" />)}
               </div>
               <p className="font-bold text-black">5-Star Rating</p>
-              <p className="text-xs text-gray-400">Trusted Worldwide</p>
+          
             </div>
 
             {/* Floating Circle Badge - Using heroCount for immediate animation */}
@@ -375,7 +375,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { num: counts.companies, suffix: '+', label: 'Happy Clients Worldwide' },
+              { num: counts.companies, suffix: '+', label: 'Happy Clients ' },
               { num: counts.years, suffix: '+', label: 'Years Experience' },
               { num: counts.hours, suffix: '+', label: 'Websites Delivered' },
               { num: counts.revenue, suffix: '%', label: 'Client Growth' }
@@ -666,7 +666,7 @@ const Home: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-gray-400 text-sm uppercase">Call us</p>
-                      <p className="text-xl font-bold">+91 63699 57006</p>
+                      <p className="text-xl font-bold">+91 6374433734</p>
                     </div>
                   </div>
 
@@ -675,7 +675,7 @@ const Home: React.FC = () => {
                       <MapPin />
                     </div>
                     <div>
-                      <p className="text-gray-400 text-sm uppercase">Visit us</p>
+                      <p className="text-gray-400 text-sm uppercase"> </p>
                       <p className="text-xl font-bold">India</p>
                     </div>
                   </div>

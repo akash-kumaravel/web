@@ -7,6 +7,21 @@ export const blogPosts = [
         id: 1,
         title: "The Psychology of Minimalist Web Design in 2025",
         excerpt: "Why less is more, and how cognitive load affects conversion rates in the modern digital landscape.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">Minimalist design is more than an aesthetic — it's a strategy that reduces cognitive load, improves usability, and helps users complete tasks faster. In 2025, minimalism continues to evolve: it's not just about removing elements, it's about prioritising intent and micro-interactions.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Why Cognitive Load Matters</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">When users are presented with fewer choices and clearer visual hierarchy, decision-making becomes easier. That leads to higher conversion rates and fewer support requests. Minimalist interfaces guide attention to key actions using contrast, spacing, and motion.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">Practical Steps</h3>
+            <ul class="list-disc pl-6 mb-6 text-gray-600">
+                <li>Audit every element: keep only items that serve a clear user task.</li>
+                <li>Use spacing and typography to establish hierarchy rather than color alone.</li>
+                <li>Design microcopy and affordances to reduce ambiguity.</li>
+            </ul>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Start with analytics: identify the top user flows and progressively remove noise from those paths. Minimalism should be informed by data, not just taste.</p>
+        `,
         category: "Design",
         author: "Alex Void",
         date: "Oct 12, 2024",
@@ -17,6 +32,25 @@ export const blogPosts = [
         id: 2,
         title: "Three.js and The Future of Immersive Web",
         excerpt: "Pushing the boundaries of browser capability with WebGL and hardware acceleration.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">Three.js has democratized 3D on the web. As browsers get faster and GPUs become more powerful, immersive web experiences are moving from novelty into mainstream product features — from interactive product previews to full-brand experiences.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">When To Use 3D</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Use WebGL/Three.js when 3D materially improves user understanding or conversion: product configurators, visual storytelling, spatial data visualizations. Avoid 3D for pure decoration where it increases load time.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">Performance Tips</h3>
+            <ul class="list-disc pl-6 mb-6 text-gray-600">
+                <li>Use LOD (Level of Detail) and texture atlases to reduce draw calls.</li>
+                <li>Prefer baked lighting where possible and keep shader complexity low.</li>
+                <li>Fallback gracefully to static images on low-end devices.</li>
+            </ul>
+
+            <pre class="bg-gray-100 p-4 rounded mb-6 overflow-auto"><code>const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+// Keep scene graph shallow, reuse geometries and materials</code></pre>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">When implemented thoughtfully, 3D can deliver memorable interactions without sacrificing accessibility or performance.</p>
+        `,
         category: "Development",
         author: "Jaxon Steele",
         date: "Oct 08, 2024",
@@ -27,6 +61,21 @@ export const blogPosts = [
         id: 3,
         title: "AI-Driven Branding: A New Era",
         excerpt: "How generative AI is helping agencies create more personalized and dynamic brand identities.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">Generative AI is reshaping how brands are created and scaled. From rapid concept exploration to on-the-fly asset generation, AI tools allow teams to iterate faster and explore directions that would have been time-prohibitive before.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Opportunities & Risks</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">AI accelerates ideation, but brand strategy still needs human input. The best outcomes come from hybrid workflows where AI proposes variations and humans curate and refine the final direction.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">Practical Workflow</h3>
+            <ol class="list-decimal pl-6 mb-6 text-gray-600">
+                <li>Define brand constraints (color, tone, audience).</li>
+                <li>Generate multiple visual directions using AI tools.</li>
+                <li>Human review and refine, then produce production-ready assets.</li>
+            </ol>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Use AI to increase throughput, not as a replacement for strategic thinking. This ensures brand consistency and long-term value.</p>
+        `,
         category: "Strategy",
         author: "Sasha B.",
         date: "Sep 28, 2024",
@@ -37,6 +86,21 @@ export const blogPosts = [
         id: 4,
         title: "Sustainable Digital Design",
         excerpt: "Reducing the carbon footprint of your website through optimized assets and green hosting.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">Sustainable design isn't just ethical — it improves user experience and performance. By reducing asset sizes, optimizing delivery, and choosing responsible infrastructure, teams can lower energy usage and page load times.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Key Strategies</h2>
+            <ul class="list-disc pl-6 mb-6 text-gray-600">
+                <li>Optimize images (AVIF/WebP) and serve responsive sizes.</li>
+                <li>Eliminate render-blocking resources and use server-side compression.</li>
+                <li>Adopt efficient hosting providers and CDNs with renewable energy.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">Measuring Impact</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Measure performance with Core Web Vitals and use tools that estimate Carbon per Page View. Small improvements compound across millions of views.</p>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Sustainability is a design constraint — treat it like accessibility: baked into workflows, not an afterthought.</p>
+        `,
         category: "Insights",
         author: "Nika Sol",
         date: "Sep 20, 2024",
@@ -47,6 +111,18 @@ export const blogPosts = [
         id: 5,
         title: "Typography Trends for the Bold",
         excerpt: "Why kinetic typography is taking over hero sections across the awwwards ecosystem.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">Typography sets tone and personality. In 2025, variable fonts, expressive letterforms, and kinetic type are enabling designers to create bold, performant typographic systems that scale across devices.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Trends to Try</h2>
+            <ul class="list-disc pl-6 mb-6 text-gray-600">
+                <li>Variable fonts for responsive weight and width control.</li>
+                <li>Kinetic type with reduced motion options for accessibility.</li>
+                <li>High-contrast pairings that maintain legibility at small sizes.</li>
+            </ul>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Always test for legibility across devices and include user preferences for reduced motion. Typography should amplify content, not distract from it.</p>
+        `,
         category: "Design",
         author: "Alex Void",
         date: "Sep 15, 2024",
@@ -57,6 +133,18 @@ export const blogPosts = [
         id: 6,
         title: "The Death of the Cookie",
         excerpt: "Navigating the privacy-first web and what it means for your marketing analytics.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">Cookies are fading as third-party tracking is restricted across browsers. Marketers and product teams must adapt to a model that favors first-party data, contextual signals, and privacy-preserving measurement.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Alternatives to Third-Party Cookies</h2>
+            <ul class="list-disc pl-6 mb-6 text-gray-600">
+                <li>Invest in first-party data collection and consented email lists.</li>
+                <li>Leverage server-side analytics and aggregated measurement techniques.</li>
+                <li>Use contextual targeting and cohort-based attribution methods.</li>
+            </ul>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Plan for a cookieless future by auditing your current tracking, mapping critical events to server-side pipelines, and educating stakeholders about changes in attribution.</p>
+        `,
         category: "Strategy",
         author: "Maya Green",
         date: "Sep 10, 2024",

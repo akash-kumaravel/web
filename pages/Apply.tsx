@@ -141,7 +141,7 @@ const Apply: React.FC = () => {
                                 value={formData.phone}
                                 onChange={handleChange}
                                 className="w-full bg-white border border-gray-200 p-4 rounded-xl focus:outline-none focus:border-[#007BFF] focus:ring-1 focus:ring-[#007BFF] transition-all text-black" 
-                                placeholder="+91 63699 57006" 
+                                placeholder="+91 6374433734" 
                                 required
                             />
                         </div>

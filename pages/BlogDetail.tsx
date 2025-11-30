@@ -20,8 +20,8 @@ const BlogDetail: React.FC = () => {
         readTime: post ? '6 min read' : '8 min read',
         category: post ? post.category : 'Insights',
         image: post ? post.image : "/assets/image.svg",
-        // Keep some default HTML content; you can replace this with CMS content later
-        content: `
+        // Use post.content when available, otherwise keep the default placeholder HTML
+        content: post && (post as any).content ? (post as any).content : `
             <p class="mb-6 text-xl leading-relaxed text-gray-700">${post ? post.excerpt : 'Article content goes here.'}</p>
             <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Article Details</h2>
             <p class="mb-6 text-lg leading-relaxed text-gray-600">Full article content should be supplied by your CMS or data source. This is placeholder content for the demo.</p>
@@ -225,7 +225,7 @@ const BlogDetail: React.FC = () => {
                          <div>
                              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Written by</p>
                              <h3 className="text-xl font-bold text-black mb-2">{article.author}</h3>
-                             <p className="text-gray-500 text-sm">Creative Director at NeonFlux. Obsessed with grid systems, brutalism, and good coffee.</p>
+                             <p className="text-gray-500 text-sm">Creative Director at MEMO InfoTech. Obsessed with grid systems, brutalism, and good coffee.</p>
                          </div>
                     </div>
                 </div>

@@ -124,7 +124,7 @@ const About: React.FC = () => {
                 <div>
                     <h3 className="text-3xl font-bold mb-6 text-black reveal-text">Our Story</h3>
                     <p className="text-gray-500 leading-loose mb-6">
-                        Founded in 2014, MEMO InfoTech began with a mission to bring world-class IT services to market. Our founders, a team of passionate software engineers, believed that high-quality technology solutions should be accessible to businesses of all sizes.
+                        Founded in 2022, MEMO InfoTech began with a mission to bring world-class IT services to market. Our founders, a team of passionate software engineers, believed that high-quality technology solutions should be accessible to businesses of all sizes.
                     </p>
                     <p className="text-gray-500 leading-loose">
                         Over the last decade, we have evolved from a small local team into a leading IT firm, serving clients globally. Yet, our core philosophy remains unchanged: Technology must solve problems. Technology must drive growth. Technology must work.
@@ -151,8 +151,7 @@ const About: React.FC = () => {
                         { year: "2022", title: "Company Founded", desc: "MEMO InfoTech was established to provide modern digital solutions, helping businesses grow with reliable technology and smart innovation." },
                         { year: "2023", title: "First Major Contract", desc: "Delivered our first large-scale enterprise software project for a regional logistics company, setting the foundation for long-term success." },
                         { year: "2024", title: "Team Expansion", desc: "Our rapid growth led us to move into a larger facility and expand our team of developers, designers, and technology experts." },
-                        { year: "2025", title: "Global Reach", desc: "Started serving international clients across the US and UK, building a strong global footprint and industry recognition." },
-                        { year: "2026", title: "MEMO InfoTech 2.0", desc: "Launching our advanced AI & Machine Learning division, offering intelligent automation, predictive analytics, and next-gen digital transformation services." }
+                        { year: "2025", title: "Global Reach", desc: "Started serving international clients across Dubai , building a strong global footprint and industry recognition." },
                     ].map((item, idx) => (
                         <div key={idx} className="timeline-item relative pl-10 group">
                              <div className="absolute -left-[7px] top-1 w-4 h-4 bg-white border-4 border-[#007BFF] rounded-full group-hover:scale-150 transition-transform z-10"></div>
