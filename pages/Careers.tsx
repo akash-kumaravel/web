@@ -12,11 +12,11 @@ const jobs = [
 
 const perks = [
     { icon: <Coffee />, title: "Remote First", desc: "Work from anywhere in the world." },
-    { icon: <Heart />, title: "Full Health", desc: "100% coverage for you and dependents." },
-    { icon: <Zap />, title: "Latest Tech", desc: "MacBook Pro M3 + 4K Monitors." },
+    { icon: <Heart />, title: "Creative Freedom", desc: "Share ideas, explore new concepts, and influence real products." },
+    { icon: <Zap />, title: "Real Impact", desc: "Your work will directly shape the company’s products and direction." },
     { icon: <Globe />, title: "Retreats", desc: "Annual global team meetups." },
     { icon: <Monitor />, title: "Education", desc: "$2k annual learning budget." },
-    { icon: <Users />, title: "Equity", desc: "Generous stock options package." }
+    { icon: <Users />, title: "Friendly Team", desc: "Collaborative, supportive, and chill work culture." }
 ];
 
 const Careers: React.FC = () => {
