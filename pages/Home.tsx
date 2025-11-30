@@ -9,10 +9,10 @@ import { blogPosts } from './Blog';
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sarah Jenkins",
-    role: "CEO",
+    name: "Nithin",
+    role: "Founder",
     company: "TechNova",
-    text: "MEMO InfoTech completely modernized our software infrastructure. The new platform increased our operational efficiency by 200% in just three months.",
+    text: "MEMO InfoTech completely modernized our software infrastructure. The Build bullling software for us.",
     image: "/assets/t1.png"
   },
   {
@@ -355,7 +355,7 @@ const Home: React.FC = () => {
              muted
              loop
              playsInline
-             poster="/assets/home.png"
+             poster="/assets/poster.png"
              aria-label="Explainer video showcasing digital product solutions and services"
            >
              Your browser names not support the video tag.
