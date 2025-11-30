@@ -122,7 +122,7 @@ const Projects: React.FC = () => {
                              
                              <div className="absolute bottom-10 left-10 z-20">
                                  <h2 className="text-6xl font-bold font-['Syne'] mb-2">Project {i}</h2>
-                                 <p className="text-gray-300 uppercase tracking-widest">E-Commerce / 2024</p>
+                                 <p className="text-gray-300 uppercase tracking-widest">Website / 2024</p>
                              </div>
                              <div className="absolute top-10 right-10 z-20 bg-white text-black w-20 h-20 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 cursor-pointer hover:scale-110">
                                  <ArrowUpRight size={32} />

@@ -58,11 +58,11 @@ const faqs = [
 // blogPosts imported from ./Blog to keep a single source of truth
 
 const horizontalWorks = [
-  { title: "Cyber Drift", cat: "Automotive", img: "/assets/h1.png" },
-  { title: "Neon Health", cat: "Medical", img: "/assets/h2.png" },
-  { title: "Void Fashion", cat: "E-commerce", img: "/assets/h3.png" },
-  { title: "Nexus AI", cat: "SaaS", img: "/assets/h4.png" },
-  { title: "Solstice", cat: "Real Estate", img: "/assets/h5.png" },
+  { title: "Background Remover", cat: "website", img: "/assets/h1.png" },
+  { title: "Hivili", cat: "website", img: "/assets/h2.png" },
+  { title: "Cloud Bestie", cat: "Cloud Storage", img: "/assets/h3.png" },
+  { title: "Nexus", cat: "website", img: "/assets/h4.png" },
+  { title: "Solstice", cat: "website", img: "/assets/h5.png" },
 ];
 
 const Home: React.FC = () => {
