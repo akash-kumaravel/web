@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
             <p className="font-medium mb-2 text-blue-50">info@memoinfotech.com</p>
             <p className="font-medium mb-2 text-blue-50">+91 6374433734</p>
             <p className="font-medium text-blue-50">
-              South India
+               
             </p>
           </div>
         </div>
@@ -73,8 +73,8 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center font-semibold text-sm text-blue-100">
           <p>© 2024 MEMO InfoTech. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <a href="#" className="hover:text-white">Terms of Service</a>
+            <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-white">Terms of Service</Link>
           </div>
         </div>
       </div>

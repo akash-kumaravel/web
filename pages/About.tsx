@@ -102,7 +102,7 @@ const About: React.FC = () => {
                             <span className="text-white bg-[#007BFF] px-6 transform -skew-x-12 inline-block">US</span>
                         </h1>
                         <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
-                            Learn about our journey, values, and the team behind MEMO InfoTech.
+                            Discover our story, how we work, and why we're building the future of digital solutions.
                         </p>
                         <div className="mt-6 flex items-center justify-center gap-4">
                             <a href="/services" className="inline-block bg-[#007BFF] text-white px-5 py-2 rounded-full font-bold hover:bg-black transition-colors">Our Services</a>
@@ -124,10 +124,18 @@ const About: React.FC = () => {
                 <div>
                     <h3 className="text-3xl font-bold mb-6 text-black reveal-text">Our Story</h3>
                     <p className="text-gray-500 leading-loose mb-6">
-                        Founded in 2022, MEMO InfoTech began with a mission to bring world-class IT services to market. Our founders, a team of passionate software engineers, believed that high-quality technology solutions should be accessible to businesses of all sizes.
+                        MEMO InfoTech was founded in 2022 by Akash Kumaravel, a passionate technologist and product-focused creator who believed that quality IT solutions should be accessible, scalable, and engineered with real purpose.
                     </p>
+                    <p className="text-gray-500 leading-loose mb-6">
+                        What started as a small independent initiative has now grown into a trusted IT partner for businesses across India and beyond. From day one, our goal has been simple:
+                    </p>
+                    <ul className="text-gray-500 leading-loose mb-6 space-y-2">
+                        <li className="font-semibold">Build technology that solves problems.</li>
+                        <li className="font-semibold">Build technology that works.</li>
+                        <li className="font-semibold">Build technology that grows with your business.</li>
+                    </ul>
                     <p className="text-gray-500 leading-loose">
-                        Over the last decade, we have evolved from a small local team into a leading IT firm, serving clients globally. Yet, our core philosophy remains unchanged: Technology must solve problems. Technology must drive growth. Technology must work.
+                        At MEMO InfoTech, we don't just develop software—we design digital ecosystems that help companies operate smarter, faster, and more efficiently.
                     </p>
                 </div>
                 <div className="relative group">
@@ -148,10 +156,10 @@ const About: React.FC = () => {
                     <div className="timeline-line absolute left-0 top-0 bottom-0 w-1 bg-gray-200 origin-top h-full"></div>
 
                     {[
-                        { year: "2022", title: "Company Founded", desc: "MEMO InfoTech was established to provide modern digital solutions, helping businesses grow with reliable technology and smart innovation." },
-                        { year: "2023", title: "First Major Contract", desc: "Delivered our first large-scale enterprise software project for a regional logistics company, setting the foundation for long-term success." },
-                        { year: "2024", title: "Team Expansion", desc: "Our rapid growth led us to move into a larger facility and expand our team of developers, designers, and technology experts." },
-                        { year: "2025", title: "Global Reach", desc: "Started serving international clients across Dubai , building a strong global footprint and industry recognition." },
+                        { year: "2022", title: "The Beginning", desc: "MEMO InfoTech was launched by Akash Kumaravel to deliver modern, reliable, and high-performance digital solutions." },
+                        { year: "2023", title: "Our Breakthrough", desc: "We secured our first major project by delivering a full-stack business application that opened doors to enterprise-level opportunities." },
+                        { year: "2024", title: "Scaling Up", desc: "Our team expanded with skilled developers, designers, and tech specialists, allowing us to take on larger and more complex projects." },
+                        { year: "2025", title: "Global Presence", desc: "MEMO InfoTech began serving international clients, building strong credibility in regions like Dubai and strengthening our global footprint." },
                     ].map((item, idx) => (
                         <div key={idx} className="timeline-item relative pl-10 group">
                              <div className="absolute -left-[7px] top-1 w-4 h-4 bg-white border-4 border-[#007BFF] rounded-full group-hover:scale-150 transition-transform z-10"></div>
@@ -163,37 +171,93 @@ const About: React.FC = () => {
                 </div>
             </div>
 
-            {/* Content Section 2 (Long Text) */}
+            {/* Content Section 2: How We Work */}
             <div className="mb-24">
-                <h3 className="text-3xl font-bold mb-8 text-black">The Methodology</h3>
-                <div className="space-y-8 text-lg text-gray-600 leading-loose">
-                    <p>
-                        Our process is a precise blend of data-driven strategy and engineering excellence. We start by understanding your business logic. We ask the technical questions. Scalability? Security? User load? We define the architecture before writing a single line of code.
-                    </p>
-                    <p>
-                        Once we have the blueprint, we build. We use modern technologies like React, Node.js, Python, and Cloud Infrastructure to create robust software solutions. We believe in Agile methodology, ensuring rapid iteration and constant feedback loops.
-                    </p>
-                    <p>
-                        But technology is just the tool. The strength of our company comes from our people. We are a dedicated team of developers, testers, and project managers committed to excellence. We take pride in our work and own the outcome.
-                    </p>
-                    <p>
-                         From the initial concept to final deployment and maintenance, we are your partners. We test rigorously. We optimize relentlessly. In a competitive digital world, we ensure your IT infrastructure is a strategic asset, not a bottleneck.
-                    </p>
+                <h3 className="text-3xl font-bold mb-12 text-black">How We Work</h3>
+                <p className="text-lg text-gray-600 leading-loose mb-12">
+                    Every project at MEMO InfoTech follows a process built on clarity, engineering discipline, and strong technical understanding.
+                </p>
+                <div className="space-y-12">
+                    <div>
+                        <h4 className="text-2xl font-bold mb-4 text-black">1. Discovery & Strategy</h4>
+                        <p className="text-lg text-gray-600 leading-loose mb-4">
+                            We begin by understanding your business logic and asking the right technical questions:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2 text-gray-600 mb-4">
+                            <li>How will it scale?</li>
+                            <li>How secure must it be?</li>
+                            <li>What is the expected user load?</li>
+                            <li>What systems need integration?</li>
+                        </ul>
+                        <p className="text-lg text-gray-600 leading-loose font-semibold">
+                            We design the system architecture before writing a single line of code.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 className="text-2xl font-bold mb-4 text-black">2. Engineering & Development</h4>
+                        <p className="text-lg text-gray-600 leading-loose mb-4">
+                            Using modern technologies like React, Node.js, Python, Next.js, and cloud infrastructure, we build scalable software with a strong foundation.
+                        </p>
+                        <p className="text-lg text-gray-600 leading-loose">
+                            Our development is Agile—fast iterations, continuous feedback, and transparent progress.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 className="text-2xl font-bold mb-4 text-black">3. Quality & Optimization</h4>
+                        <p className="text-lg text-gray-600 leading-loose mb-4">
+                            We ensure that every product is:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                            <li>Tested thoroughly</li>
+                            <li>Optimized for performance</li>
+                            <li>Built to handle real-world usage</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="text-2xl font-bold mb-4 text-black">4. Long-Term Partnership</h4>
+                        <p className="text-lg text-gray-600 leading-loose">
+                            Our relationship doesn't end at deployment. We maintain, update, and scale your application as your business grows.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            {/* Values Grid */}
-            <div className="values-grid grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
-                {[
-                    { title: "Integrity", desc: "We deliver what we promise." },
-                    { title: "Innovation", desc: "We embrace the latest tech." },
-                    { title: "Excellence", desc: "Code quality matters to us." }
-                ].map((val, idx) => (
-                    <div key={idx} className="value-card bg-black text-white p-10 rounded-3xl hover:bg-[#007BFF] hover:shadow-[0_10px_40px_rgba(0,123,255,0.4)] transition-all duration-300 group cursor-default">
-                        <h4 className="text-2xl font-bold mb-4 group-hover:translate-x-2 transition-transform">{val.title}</h4>
-                        <p className="text-gray-400 group-hover:text-blue-100">{val.desc}</p>
-                    </div>
-                ))}
+            {/* The Founder Section */}
+            <div className="mb-24 bg-gray-50 p-12 rounded-3xl">
+                <h3 className="text-3xl font-bold mb-8 text-black">The Founder – Akash Kumaravel</h3>
+                <p className="text-lg text-gray-600 leading-loose mb-6">
+                    MEMO InfoTech is led by Akash Kumaravel, a UI/UX designer, product designer, and tech entrepreneur from Tamil Nadu. His vision is to build an IT company that goes beyond code—focusing on user experience, innovation, and long-term business impact.
+                </p>
+                <p className="text-lg text-gray-600 leading-loose">
+                    Under his leadership, MEMO InfoTech continues to push boundaries in web development, design, automation, and cloud-based digital solutions.
+                </p>
+            </div>
+
+            {/* Why Choose MEMO InfoTech */}
+            <div className="mb-32">
+                <h3 className="text-3xl font-bold mb-12 text-black">Why Choose MEMO InfoTech?</h3>
+                <div className="values-grid grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {[
+                        { icon: "✓", title: "Real-World Problems", desc: "Strong focus on real-world business problems" },
+                        { icon: "✓", title: "Clean Architecture", desc: "Clean architecture and future-ready engineering" },
+                        { icon: "✓", title: "Transparent Communication", desc: "Transparent communication & on-time delivery" },
+                        { icon: "✓", title: "Founder-Led", desc: "Designed and led by a passionate founder committed to high standards" }
+                    ].map((val, idx) => (
+                        <div key={idx} className="value-card bg-black text-white p-10 rounded-3xl hover:bg-[#007BFF] hover:shadow-[0_10px_40px_rgba(0,123,255,0.4)] transition-all duration-300 group cursor-default">
+                            <div className="text-4xl font-bold mb-4 text-[#007BFF] group-hover:text-white transition-colors">{val.icon}</div>
+                            <h4 className="text-2xl font-bold mb-4 group-hover:translate-x-2 transition-transform">{val.title}</h4>
+                            <p className="text-gray-400 group-hover:text-blue-100">{val.desc}</p>
+                        </div>
+                    ))}
+                </div>
+                <div className="mt-12 p-8 bg-[#007BFF]/10 border-l-4 border-[#007BFF] rounded-lg">
+                    <p className="text-lg text-gray-700 font-semibold">
+                        At MEMO InfoTech, we combine creativity, technology, and strategy to build solutions that matter.
+                    </p>
+                </div>
             </div>
 
             {/* OFFICE GALLERY */}
