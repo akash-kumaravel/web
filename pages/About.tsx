@@ -229,7 +229,7 @@ const About: React.FC = () => {
             <div className="mb-24 bg-gray-50 p-12 rounded-3xl">
                 <h3 className="text-3xl font-bold mb-8 text-black">The Founder – Akash Kumaravel</h3>
                 <p className="text-lg text-gray-600 leading-loose mb-6">
-                    MEMO InfoTech is led by Akash Kumaravel, a UI/UX designer, product designer, and tech entrepreneur from Tamil Nadu. His vision is to build an IT company that goes beyond code—focusing on user experience, innovation, and long-term business impact.
+                    MEMO InfoTech is Founded by Akash Kumaravel. His vision is to build an IT company that goes beyond code—focusing on user experience, innovation, and long-term business impact.
                 </p>
                 <p className="text-lg text-gray-600 leading-loose">
                     Under his leadership, MEMO InfoTech continues to push boundaries in web development, design, automation, and cloud-based digital solutions.
