@@ -236,17 +236,6 @@ const About: React.FC = () => {
                 </p>
             </div>
 
-            {/* The CEO Section */}
-            <div className="mb-24 bg-gray-50 p-12 rounded-3xl">
-                <h3 className="text-3xl font-bold mb-8 text-black">The CEO – Libna</h3>
-                <p className="text-lg text-gray-600 leading-loose mb-6">
-                    Our CEO, Libna, leads MEMO InfoTech's strategic direction and day-to-day operations, focusing on growth, client success, and building strong company culture.
-                </p>
-                <p className="text-lg text-gray-600 leading-loose">
-                    With a focus on operational excellence and people-first leadership, Libna helps ensure we deliver reliable, impactful solutions for our clients.
-                </p>
-            </div>
-
             {/* Why Choose MEMO InfoTech */}
             <div className="mb-32">
                 <h3 className="text-3xl font-bold mb-12 text-black">Why Choose MEMO InfoTech?</h3>
