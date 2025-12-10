@@ -76,7 +76,7 @@ const Home: React.FC = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   // SEO: set page title & description
   useEffect(() => {
-    document.title = 'MEMO InfoTech — Digital Product & Design Studio';
+    document.title = 'MEMO InfoTech — IT Solutions & Services';
     const desc = 'MEMO InfoTech builds high-converting websites, brand identities, and motion content. Strategic web development, UX, and creative services to grow your business.';
     let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (meta) meta.content = desc;
@@ -760,5 +760,6 @@ const Home: React.FC = () => {
     </div>
   );
 };
+
 
 export default Home;
