@@ -655,7 +655,7 @@ const Home: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-gray-400 text-sm uppercase">Email us</p>
-                      <p className="text-xl font-bold">info@memoinfotech.com</p>
+                      <p className="text-xl font-bold">hello@memoinfotech.com</p>
                     </div>
                   </div>
 
@@ -763,3 +763,4 @@ const Home: React.FC = () => {
 
 
 export default Home;
+
