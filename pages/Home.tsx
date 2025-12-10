@@ -61,8 +61,7 @@ const horizontalWorks = [
   { title: "Background Remover", cat: "website", img: "/assets/h1.png" },
   { title: "Hivili", cat: "website", img: "/assets/h2.png" },
   { title: "Cloud Bestie", cat: "Cloud Storage", img: "/assets/h3.png" },
-  { title: "Nexus", cat: "website", img: "/assets/h4.png" },
-  { title: "Solstice", cat: "website", img: "/assets/h5.png" },
+  { title: "Nexus", cat: "website", img: "/assets/h4.png" }
 ];
 
 const Home: React.FC = () => {
@@ -395,12 +394,12 @@ const Home: React.FC = () => {
        {/* HORIZONTAL SCROLL GALLERY */}
        <section ref={horizontalContainerRef} className="relative bg-white overflow-hidden">
           {/* 
-            We used w-[600%] because we have 6 items. 
-            Each item will be 16.666% width of the container (which equals 100% of viewport width).
+            We use w-[500%] because we have 5 items (title + 4 works).
+            Each item will be 20% width of the container (which equals 100% of viewport width).
           */}
-          <div ref={horizontalRef} className="flex w-[600%] h-screen">
+          <div ref={horizontalRef} className="flex w-[500%] h-screen">
              {/* Title Panel */}
-             <div className="horizontal-item w-[16.666%] h-full flex items-center justify-center bg-black text-white px-6 md:px-20 relative border-r border-white/10">
+             <div className="horizontal-item w-[20%] h-full flex items-center justify-center bg-black text-white px-6 md:px-20 relative border-r border-white/10">
                  <div className="absolute inset-0 opacity-20" style={{backgroundImage: 'radial-gradient(#007BFF 1px, transparent 1px)', backgroundSize: '40px 40px'}}></div>
                  <div className="relative z-10 text-center md:text-left">
                      <h2 className="text-6xl md:text-[4rem] font-bold font-['Syne'] leading-none">Recent <br/> <span className="text-[#007BFF]">Masterpieces</span></h2>
@@ -413,7 +412,7 @@ const Home: React.FC = () => {
              
              {/* Project Panels */}
              {horizontalWorks.map((work, i) => (
-                 <div key={i} className="horizontal-item w-[16.666%] h-full p-4 md:p-20 flex items-center justify-center bg-white border-r border-gray-100">
+             <div key={i} className="horizontal-item w-[20%] h-full p-4 md:p-20 flex items-center justify-center bg-white border-r border-gray-100">
                      <div className="w-full h-full relative rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-2xl">
                          <img src={work.img} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" alt={`${work.title} — Design Portfolio`} />
                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent p-6 md:p-10 flex flex-col justify-end">
