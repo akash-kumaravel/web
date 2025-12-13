@@ -151,24 +151,21 @@ const courses = [
 const initialTestimonials = [
   {
     name: "Sarah Chen",
-    role: "Frontend Developer",
-    company: "Tech Startup",
+    course: "Frontend Web Development",
     text: "The Academy courses transformed my career. I went from junior to senior developer in 6 months.",
     image: "/assets/t1.png",
     rating: 5
   },
   {
     name: "Marcus Johnson",
-    role: "UI/UX Designer",
-    company: "Design Studio",
+    course: "UI/UX Design Master Course",
     text: "Excellent instructors and real-world projects. This is exactly what I needed to level up.",
     image: "/assets/t2.png",
     rating: 5
   },
   {
     name: "Priya Patel",
-    role: "Full Stack Developer",
-    company: "Enterprise Solutions",
+    course: "Full Stack Web Development",
     text: "Outstanding community support and mentorship. Highly recommended for career changers.",
     image: "/assets/t3.png",
     rating: 5
@@ -191,7 +188,7 @@ const Academy: React.FC = () => {
 
   const [testimonialsState, setTestimonialsState] = useState<typeof initialTestimonials>(initialTestimonials);
   const [isClientSide, setIsClientSide] = useState(false);
-  const [reviewForm, setReviewForm] = useState({ name: '', role: '', company: '', rating: '5', text: '', imageData: '', imageName: '' });
+  const [reviewForm, setReviewForm] = useState({ name: '', course: '', rating: '5', text: '', imageData: '', imageName: '' });
   const [reviewImageError, setReviewImageError] = useState('');
   const [reviewStatus, setReviewStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   
@@ -223,7 +220,11 @@ const Academy: React.FC = () => {
         const raw = localStorage.getItem('academy_testimonials');
         if (raw) {
           const parsed = JSON.parse(raw);
-          setTestimonialsState(parsed);
+          const normalized = parsed.map((t: any) => ({
+            ...t,
+            course: t.course || t.role || t.company || ''
+          }));
+          setTestimonialsState(normalized);
         }
       } catch (err) {
         console.error('Failed to load testimonials from localStorage:', err);
@@ -298,8 +299,9 @@ const Academy: React.FC = () => {
     setReviewStatus('submitting');
     const newTestimonial = {
       name: reviewForm.name || 'Anonymous',
-      role: reviewForm.role || 'Student',
-      company: reviewForm.company || '',
+      course: reviewForm.course || '',
+      role: reviewForm.course || 'Student',
+      company: '',
       text: reviewForm.text || '',
       image: reviewForm.imageData && reviewForm.imageData.length > 0 ? reviewForm.imageData : '/assets/t4.png',
       rating: Number(reviewForm.rating) || 5
@@ -313,14 +315,13 @@ const Academy: React.FC = () => {
 
     // Optimistic UI update
     setTestimonialsState(prev => [newTestimonial, ...prev]);
-    setReviewForm({ name: '', role: '', company: '', rating: '5', text: '', imageData: '', imageName: '' });
+    setReviewForm({ name: '', course: '', rating: '5', text: '', imageData: '', imageName: '' });
 
     try {
       const form = new FormData();
       form.append('type', 'testimonial');
       form.append('name', newTestimonial.name);
-      form.append('role', newTestimonial.role);
-      form.append('company', newTestimonial.company);
+      form.append('course', newTestimonial.course);
       form.append('text', newTestimonial.text);
       form.append('rating', String(newTestimonial.rating));
 
@@ -608,37 +609,35 @@ const Academy: React.FC = () => {
                   required
                   className="w-full px-4 py-3 rounded-full bg-black/40 border border-white/10 text-white placeholder-gray-300"
                 />
-                <input
-                  type="text"
-                  name="role"
-                  value={reviewForm.role}
+                <select
+                  name="course"
+                  value={reviewForm.course}
                   onChange={handleReviewChange}
-                  placeholder="Your role (e.g., Student, Designer)"
-                  className="w-full px-4 py-3 rounded-full bg-black/40 border border-white/10 text-white placeholder-gray-300"
-                />
+                  required
+                  className="w-full px-4 py-3 rounded-full bg-black/40 border border-white/10 text-white"
+                >
+                  <option value="">Select course</option>
+                  {courses.map((c) => (
+                    <option key={c.id} value={c.title}>{c.title}</option>
+                  ))}
+                </select>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <input
-                  type="text"
-                  name="company"
-                  value={reviewForm.company}
-                  onChange={handleReviewChange}
-                  placeholder="Company (optional)"
-                  className="w-full px-4 py-3 rounded-full bg-black/40 border border-white/10 text-white placeholder-gray-300"
-                />
-                <select
-                  name="rating"
-                  value={reviewForm.rating}
-                  onChange={handleReviewChange}
-                  className="w-full px-4 py-3 rounded-full bg-black/40 border border-white/10 text-white"
-                >
-                  <option value="5">5 - Excellent</option>
-                  <option value="4">4 - Very Good</option>
-                  <option value="3">3 - Good</option>
-                  <option value="2">2 - Fair</option>
-                  <option value="1">1 - Poor</option>
-                </select>
+                <div>
+                  <select
+                    name="rating"
+                    value={reviewForm.rating}
+                    onChange={handleReviewChange}
+                    className="w-full px-4 py-3 rounded-full bg-black/40 border border-white/10 text-white"
+                  >
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="1">1 - Poor</option>
+                  </select>
+                </div>
               </div>
 
               <div className="mb-4">
@@ -717,7 +716,9 @@ const Academy: React.FC = () => {
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-white">{testimonial.name}</h4>
-                        <p className="text-gray-400 text-sm">{testimonial.role} at {testimonial.company}</p>
+                        <p className="text-gray-400 text-sm">
+                          {testimonial.course ? `Course: ${testimonial.course}` : ''}
+                        </p>
                       </div>
                     </div>
                   </div>
