@@ -776,7 +776,7 @@ const Academy: React.FC = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-6 py-3 bg-white border-2 border-gray-200 rounded-full focus:outline-none focus:border-[#007BFF] transition-colors"
-                    placeholder="+91 6374433734"
+                    placeholder="+1 (555) 123-4567"
                   />
                 </div>
                 <div>
@@ -867,4 +867,3 @@ const Academy: React.FC = () => {
 };
 
 export default Academy;
-
