@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Apply from './pages/Apply';
+import Academy from './pages/Academy';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Route path="/projects" element={<Projects />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/apply" element={<Apply />} />
+          <Route path="/academy" element={<Academy />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />

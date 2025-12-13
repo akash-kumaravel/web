@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Marquee animation for testimonials */
+.marquee-track {
+  display: flex;
+  gap: 1rem;
+  animation: marquee 30s linear infinite;
+  width: fit-content;
+}
+
+.marquee-container {
+  overflow: hidden;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
