@@ -358,7 +358,7 @@ const Academy: React.FC = () => {
   return (
     <div className="w-full bg-white">
       {/* HERO SECTION */}
-      <section className="pt-40 pb-24 bg-gradient-to-b from-black to-[#1a1a1a] text-white">
+      <section className="pt-40 pb-24 bg-gradient-to-b from-black to-[#000000] text-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-6xl md:text-[4rem] font-bold font-['Syne'] mb-6 leading-tight">
