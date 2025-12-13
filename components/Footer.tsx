@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Instagram, Twitter, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
@@ -41,21 +40,22 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-6 uppercase tracking-wider">Company</h4>
             <ul className="space-y-3 font-medium text-blue-50">
-              <li><Link to="/about" className="hover:text-white hover:underline decoration-2 underline-offset-4">About Us</Link></li>
-              <li><Link to="/careers" className="hover:text-white hover:underline decoration-2 underline-offset-4">Careers</Link></li>
-              <li><Link to="/projects" className="hover:text-white hover:underline decoration-2 underline-offset-4">Projects</Link></li>
-              <li><Link to="/blog" className="hover:text-white hover:underline decoration-2 underline-offset-4">Blog</Link></li>
-              <li><Link to="/contact" className="hover:text-white hover:underline decoration-2 underline-offset-4">Contact</Link></li>
+              <li><a href="/about/" className="hover:text-white hover:underline decoration-2 underline-offset-4">About Us</a></li>
+              <li><a href="/careers/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Careers</a></li>
+              <li><a href="/projects/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Projects</a></li>
+              <li><a href="/blog/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Blog</a></li>
+              <li><a href="/contact/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Contact</a></li>
+              <li><a href="/academy/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Academy</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold text-lg mb-6 uppercase tracking-wider">Services</h4>
             <ul className="space-y-3 font-medium text-blue-50">
-              <li><Link to="/services" className="hover:text-white hover:underline decoration-2 underline-offset-4">Software Development</Link></li>
-              <li><Link to="/services" className="hover:text-white hover:underline decoration-2 underline-offset-4">Web Development</Link></li>
-              <li><Link to="/services" className="hover:text-white hover:underline decoration-2 underline-offset-4">Mobile Apps</Link></li>
-              <li><Link to="/services" className="hover:text-white hover:underline decoration-2 underline-offset-4">Digital Marketing</Link></li>
+              <li><a href="/services/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Software Development</a></li>
+              <li><a href="/services/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Web Development</a></li>
+              <li><a href="/services/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Mobile Apps</a></li>
+              <li><a href="/services/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Digital Marketing</a></li>
             </ul>
           </div>
 
@@ -73,8 +73,8 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center font-semibold text-sm text-blue-100">
           <p>© 2024 MEMO InfoTech. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="hover:text-white">Terms of Service</Link>
+            <a href="/privacy-policy/" className="hover:text-white">Privacy Policy</a>
+            <a href="/terms-of-service/" className="hover:text-white">Terms of Service</a>
           </div>
         </div>
       </div>

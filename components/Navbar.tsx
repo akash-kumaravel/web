@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { NavItem } from '../types';
 
 const navItems: NavItem[] = [
   { label: 'Home', path: '/' },
-  { label: 'About Us', path: '/about' },
+  { label: 'About', path: '/about' },
   { label: 'Services', path: '/services' },
   { label: 'Academy', path: '/academy' },
   { label: 'Projects', path: '/projects' },
@@ -27,6 +27,8 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const normalize = (p: string) => (p ? p.replace(/\/+$/, '') : '/');
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -35,34 +37,39 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
+        <a href="/" className="flex items-center gap-2 group">
           <img 
             src="/assets/logo.svg" 
             alt="MEMO InfoTech" 
             className="h-10 md:h-12 w-auto object-contain" 
           />
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`text-sm font-bold uppercase tracking-wide hover:text-[#007BFF] transition-colors relative group ${
-                location.pathname === item.path ? 'text-black' : 'text-black'
-              }`}
-            >
-              {item.label}
-              <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#007BFF] transform origin-left transition-transform duration-300 ${location.pathname === item.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
-            </Link>
-          ))}
-          <Link 
-             to="/contact"
+          {navItems.map((item) => {
+            const href = item.path === '/' ? '/' : `${item.path}/`;
+            const isActive = normalize(location.pathname) === normalize(item.path);
+            return (
+              <a
+                key={item.path}
+                href={href}
+                className={`text-sm font-bold uppercase tracking-wide hover:text-[#007BFF] transition-colors relative group ${
+                  isActive ? 'text-black' : 'text-black'
+                }`}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {item.label}
+                <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#007BFF] transform origin-left transition-transform duration-300 ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+              </a>
+            );
+          })}
+          <a
+             href="/contact/"
              className="px-6 py-2 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] hover:shadow-[0_0_15px_rgba(0,123,255,0.5)] transition-all duration-300 hover:-translate-y-0.5"
           >
             Let's Talk
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile Toggle */}
@@ -77,16 +84,19 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white border-t border-gray-100 p-6 lg:hidden shadow-xl flex flex-col gap-4 h-screen">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className="text-xl font-bold text-black hover:text-[#007BFF] pl-2 border-l-4 border-transparent hover:border-[#007BFF] transition-all"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const href = item.path === '/' ? '/' : `${item.path}/`;
+            return (
+              <a
+                key={item.path}
+                href={href}
+                className="text-xl font-bold text-black hover:text-[#007BFF] pl-2 border-l-4 border-transparent hover:border-[#007BFF] transition-all"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </div>
       )}
     </header>
