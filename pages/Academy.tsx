@@ -189,14 +189,8 @@ const Academy: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const enrollRef = useRef<HTMLDivElement>(null);
 
-  const [testimonialsState, setTestimonialsState] = useState(() => {
-    try {
-      const raw = localStorage.getItem('academy_testimonials');
-      return raw ? JSON.parse(raw) : initialTestimonials;
-    } catch {
-      return initialTestimonials;
-    }
-  });
+  const [testimonialsState, setTestimonialsState] = useState<typeof initialTestimonials>(initialTestimonials);
+  const [isClientSide, setIsClientSide] = useState(false);
   const [reviewForm, setReviewForm] = useState({ name: '', role: '', company: '', rating: '5', text: '', imageData: '', imageName: '' });
   const [reviewImageError, setReviewImageError] = useState('');
   const [reviewStatus, setReviewStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -219,7 +213,24 @@ const Academy: React.FC = () => {
       document.head.appendChild(meta);
     }
     window.scrollTo(0, 0);
+    setIsClientSide(true);
   }, []);
+
+  // Load testimonials from localStorage on client side only
+  useEffect(() => {
+    if (isClientSide) {
+      try {
+        const raw = localStorage.getItem('academy_testimonials');
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          setTestimonialsState(parsed);
+        }
+      } catch (err) {
+        console.error('Failed to load testimonials from localStorage:', err);
+        // Keep initial testimonials if there's an error
+      }
+    }
+  }, [isClientSide]);
 
   const categories = ["All", "Web Development", "Design", "Data", "Business", "Creative", "Programming"];
 
@@ -332,12 +343,15 @@ const Academy: React.FC = () => {
 
     // Persist testimonials to localStorage so reviews survive refresh
     useEffect(() => {
-      try {
-        localStorage.setItem('academy_testimonials', JSON.stringify(testimonialsState));
-      } catch {
-        // ignore storage errors
+      if (isClientSide) {
+        try {
+          localStorage.setItem('academy_testimonials', JSON.stringify(testimonialsState));
+        } catch (err) {
+          console.error('Failed to save testimonials to localStorage:', err);
+          // ignore storage errors
+        }
       }
-    }, [testimonialsState]);
+    }, [testimonialsState, isClientSide]);
 
     // Testimonials use a CSS marquee animation now (no JS scrolling)
 
