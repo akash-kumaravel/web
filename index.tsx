@@ -12,7 +12,10 @@ function ensureFavicon(href: string) {
       link.rel = 'icon';
       head.appendChild(link);
     }
-    link.type = 'image/svg+xml';
+    // set correct MIME type based on file extension
+    if (href.endsWith('.png')) link.type = 'image/png';
+    else if (href.endsWith('.svg')) link.type = 'image/svg+xml';
+    else link.type = 'image/png';
     link.href = href;
   } catch (e) {
     // silent fallback in environments without DOM (e.g. SSR build steps)
