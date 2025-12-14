@@ -493,18 +493,10 @@ const Academy: React.FC = () => {
                     </div>
 
                     {/* Stats */}
-                    <div className="flex items-center justify-between text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
+                    <div className="flex items-center text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
                       <div className="flex items-center gap-1">
                         <Clock size={16} />
                         {course.duration}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Users size={16} />
-                        {course.students}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Star size={16} className="fill-yellow-400 text-yellow-400" />
-                        {course.rating}
                       </div>
                     </div>
 
