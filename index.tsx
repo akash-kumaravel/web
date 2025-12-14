@@ -12,10 +12,16 @@ function ensureFavicon(href: string) {
       link.rel = 'icon';
       head.appendChild(link);
     }
-    // set correct MIME type based on file extension
-    if (href.endsWith('.png')) link.type = 'image/png';
-    else if (href.endsWith('.svg')) link.type = 'image/svg+xml';
-    else link.type = 'image/png';
+    // set correct MIME type and sizes for PNG favicon
+    if (href.endsWith('.png')) {
+      link.type = 'image/png';
+      try { (link as any).sizes = '32x32'; } catch {}
+    } else if (href.endsWith('.svg')) {
+      link.type = 'image/svg+xml';
+    } else {
+      link.type = 'image/png';
+      try { (link as any).sizes = '32x32'; } catch {}
+    }
     link.href = href;
   } catch (e) {
     // silent fallback in environments without DOM (e.g. SSR build steps)
