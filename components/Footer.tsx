@@ -42,22 +42,22 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-lg mb-6 uppercase tracking-wider">Company</h3>
             <ul className="space-y-3 font-medium text-white">
-              <li><a href="/about/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">About Us</a></li>
-              <li><a href="/careers/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Careers</a></li>
-              <li><a href="/projects/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Projects</a></li>
-              <li><a href="/blog/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Blog</a></li>
-              <li><a href="/contact/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Contact</a></li>
-              <li><a href="/academy/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Academy</a></li>
+              <li><a href="https://www.memoinfotech.com/about/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">About Us</a></li>
+              <li><a href="https://www.memoinfotech.com/careers/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Careers</a></li>
+              <li><a href="https://www.memoinfotech.com/projects/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Projects</a></li>
+              <li><a href="https://www.memoinfotech.com/blog/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Blog</a></li>
+              <li><a href="https://www.memoinfotech.com/contact/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Contact</a></li>
+              <li><a href="https://www.memoinfotech.com/academy/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Academy</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-bold text-lg mb-6 uppercase tracking-wider">Services</h3>
             <ul className="space-y-3 font-medium text-white">
-              <li><a href="/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Software Development</a></li>
-              <li><a href="/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Web Development</a></li>
-              <li><a href="/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Mobile Apps</a></li>
-              <li><a href="/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Digital Marketing</a></li>
+              <li><a href="https://www.memoinfotech.com/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Software Development</a></li>
+              <li><a href="https://www.memoinfotech.com/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Web Development</a></li>
+              <li><a href="https://www.memoinfotech.com/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Mobile Apps</a></li>
+              <li><a href="https://www.memoinfotech.com/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Digital Marketing</a></li>
             </ul>
           </div>
 
@@ -73,10 +73,10 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center font-semibold text-sm text-blue-100">
-          <p>© 2024 MEMO InfoTech. All rights reserved.</p>
+            <p>© 2024 MEMO InfoTech. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="/privacy-policy/" className="hover:text-white">Privacy Policy</a>
-            <a href="/terms-of-service/" className="hover:text-white">Terms of Service</a>
+            <a href="https://www.memoinfotech.com/privacy-policy/" className="hover:text-white">Privacy Policy</a>
+            <a href="https://www.memoinfotech.com/terms-of-service/" className="hover:text-white">Terms of Service</a>
           </div>
         </div>
       </div>

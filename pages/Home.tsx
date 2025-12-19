@@ -300,12 +300,12 @@ const Home: React.FC = () => {
             We are a premier Software Company specializing in Website Development, Brand Design, Explainer Videos, and Motion Graphics. We turn ideas into digital experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Link to="/contact" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+            <a href="/contact" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
               Start Your Project <ArrowRight size={20} />
-            </Link>
-            <Link to="/services" className="px-8 py-4 bg-black text-white rounded-full font-bold text-lg hover:bg-gray-800 transition-all transform hover:-translate-y-1">
+            </a>
+            <a href="/services" className="px-8 py-4 bg-black text-white rounded-full font-bold text-lg hover:bg-gray-800 transition-all transform hover:-translate-y-1">
               Our Services
-            </Link>
+            </a>
           </div>
         </div>
 

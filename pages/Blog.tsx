@@ -237,7 +237,7 @@ const Blog: React.FC = () => {
                                         Exploring the intersection of design, technology, and culture.
                                     </p>
                                     <div className="mt-6">
-                                        <Link to="/contact" className="inline-block bg-[#007BFF] text-white px-6 py-3 rounded-full font-bold hover:bg-black transition-colors">Contact Us</Link>
+                                        <a href="/contact" className="inline-block bg-[#007BFF] text-white px-6 py-3 rounded-full font-bold hover:bg-black transition-colors">Contact Us</a>
                                     </div>
                                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                                         "@context": "https://schema.org",

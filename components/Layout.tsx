@@ -18,6 +18,18 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  useEffect(() => {
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://www.memoinfotech.com';
+    const canonicalHref = `${origin}${window.location.pathname}`;
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'canonical';
+      document.head.appendChild(link);
+    }
+    link.href = canonicalHref;
+  });
+
   return (
     <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
       <ScrollToTop />

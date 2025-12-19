@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, CheckCircle2, Code, Database, Globe, Smartphone, Server, Shield } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const services = [
     {
@@ -146,13 +145,13 @@ const Services: React.FC = () => {
                              ))}
                          </div>
 
-                         <Link to="/contact" className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
+                         <a href="/contact" className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
                             ${service.textColor === 'text-white' 
                                 ? 'bg-white text-black hover:bg-[#007BFF] hover:text-white' 
                                 : 'bg-black text-white hover:bg-[#007BFF]'}
                          `}>
                              Start a Project <ArrowRight size={20} />
-                         </Link>
+                         </a>
                      </div>
 
                      {/* Image / Visual */}

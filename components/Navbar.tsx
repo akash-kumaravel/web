@@ -28,6 +28,12 @@ const Navbar: React.FC = () => {
   }, []);
 
   const normalize = (p: string) => (p ? p.replace(/\/+$/, '') : '/');
+  const origin = typeof window !== 'undefined' ? window.location.origin : 'https://www.memoinfotech.com';
+  const makeHref = (p: string) => {
+    if (!p) return origin + '/';
+    const path = p === '/' ? '/' : p.endsWith('/') ? p : `${p}/`;
+    return `${origin}${path}`;
+  };
 
   return (
     <header
@@ -37,7 +43,7 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 group">
+        <a href={makeHref('/')} className="flex items-center gap-2 group">
           <img 
             src="/assets/logo.svg" 
             alt="MEMO InfoTech" 
@@ -50,7 +56,7 @@ const Navbar: React.FC = () => {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navItems.map((item) => {
-            const href = item.path === '/' ? '/' : `${item.path}/`;
+            const href = makeHref(item.path);
             const isActive = normalize(location.pathname) === normalize(item.path);
             return (
               <a
@@ -66,8 +72,8 @@ const Navbar: React.FC = () => {
               </a>
             );
           })}
-          <a
-             href="/contact/"
+           <a
+             href={makeHref('/contact')}
              className="px-6 py-2 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] hover:shadow-[0_0_15px_rgba(0,123,255,0.5)] transition-all duration-300 hover:-translate-y-0.5"
           >
             Let's Talk
@@ -90,7 +96,7 @@ const Navbar: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white border-t border-gray-100 p-6 lg:hidden shadow-xl flex flex-col gap-4 h-screen" id="mobile-menu">
           {navItems.map((item) => {
-            const href = item.path === '/' ? '/' : `${item.path}/`;
+            const href = makeHref(item.path);
             return (
               <a
                 key={item.path}

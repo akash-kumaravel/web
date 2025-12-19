@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowUpRight, Globe, Smartphone, PenTool, Layers } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const Projects: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -225,9 +224,9 @@ const Projects: React.FC = () => {
 
         <div className="py-20 bg-[#007BFF] text-center">
              <h2 className="text-4xl font-bold text-white font-['Syne'] mb-8">Ready to start your project?</h2>
-             <Link to="/contact" className="inline-block bg-black text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-black transition-all shadow-2xl">
+             <a href="/contact" className="inline-block bg-black text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-black transition-all shadow-2xl">
                  Get a Quote
-             </Link>
+             </a>
         </div>
 
     </div>
