@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://memoinfotech.com/sitemap.xml
+
 # Disallow specific bot patterns
 User-agent: AhrefsBot
 Disallow: /
