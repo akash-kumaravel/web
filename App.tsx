@@ -4,6 +4,12 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
+import WebsiteDevelopment from './pages/services/WebsiteDevelopment';
+import WebDesign from './pages/services/WebDesign';
+import UIUXDesign from './pages/services/UIUXDesign';
+import AppDevelopment from './pages/services/AppDevelopment';
+import Branding from './pages/services/Branding';
+import GraphicDesign from './pages/services/GraphicDesign';
 import Projects from './pages/Projects';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
@@ -22,6 +28,12 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/website-development" element={<WebsiteDevelopment />} />
+          <Route path="/services/web-design" element={<WebDesign />} />
+          <Route path="/services/ui-ux-design" element={<UIUXDesign />} />
+          <Route path="/services/app-development" element={<AppDevelopment />} />
+          <Route path="/services/branding" element={<Branding />} />
+          <Route path="/services/graphic-design" element={<GraphicDesign />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/apply" element={<Apply />} />
