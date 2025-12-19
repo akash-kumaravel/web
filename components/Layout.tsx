@@ -19,8 +19,8 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   useEffect(() => {
-    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://www.memoinfotech.com';
-    const canonicalHref = `${origin}${window.location.pathname}`;
+    const PREFERRED_ORIGIN = 'https://www.memoinfotech.com';
+    const canonicalHref = `${PREFERRED_ORIGIN}${window.location.pathname}`;
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {
       link = document.createElement('link');
@@ -37,12 +37,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <div className="bg-white/5">
         <div className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <span className="font-semibold mr-3">Quick Links:</span>
-          <a href="/about/" className="mr-3 hover:underline">About</a>
-          <a href="/services/" className="mr-3 hover:underline">Services</a>
-          <a href="/projects/" className="mr-3 hover:underline">Projects</a>
-          <a href="/academy/" className="mr-3 hover:underline">Academy</a>
-          <a href="/blog/" className="mr-3 hover:underline">Blog</a>
-          <a href="/contact/" className="mr-3 hover:underline">Contact</a>
+          <a href="https://www.memoinfotech.com/about/" className="mr-3 hover:underline">About</a>
+          <a href="https://www.memoinfotech.com/services/" className="mr-3 hover:underline">Services</a>
+          <a href="https://www.memoinfotech.com/projects/" className="mr-3 hover:underline">Projects</a>
+          <a href="https://www.memoinfotech.com/academy/" className="mr-3 hover:underline">Academy</a>
+          <a href="https://www.memoinfotech.com/blog/" className="mr-3 hover:underline">Blog</a>
+          <a href="https://www.memoinfotech.com/contact/" className="mr-3 hover:underline">Contact</a>
         </div>
       </div>
       <main className="flex-grow">{children}</main>

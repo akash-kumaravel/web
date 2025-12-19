@@ -28,11 +28,10 @@ const Navbar: React.FC = () => {
   }, []);
 
   const normalize = (p: string) => (p ? p.replace(/\/+$/, '') : '/');
-  const origin = typeof window !== 'undefined' ? window.location.origin : 'https://www.memoinfotech.com';
+  const PREFERRED_ORIGIN = 'https://www.memoinfotech.com';
   const makeHref = (p: string) => {
-    if (!p) return origin + '/';
-    const path = p === '/' ? '/' : p.endsWith('/') ? p : `${p}/`;
-    return `${origin}${path}`;
+    const path = !p || p === '/' ? '/' : p.endsWith('/') ? p : `${p}/`;
+    return `${PREFERRED_ORIGIN}${path}`;
   };
 
   return (
