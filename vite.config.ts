@@ -18,6 +18,34 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      build: {
+        target: 'esnext',
+        minify: 'terser',
+        terserOptions: {
+          compress: {
+            drop_console: true,
+            drop_debugger: true
+          }
+        },
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              'react-vendors': ['react', 'react-dom', 'react-router-dom'],
+              'ui-vendors': ['lucide-react'],
+            },
+            chunkFileNames: 'assets/chunk-[name]-[hash].js',
+            entryFileNames: 'assets/index-[hash].js',
+            assetFileNames: 'assets/[name]-[hash][extname]'
+          }
+        },
+        cssCodeSplit: true,
+        reportCompressedSize: false,
+        sourcemap: false,
+      },
+      optimizeDeps: {
+        include: ['react', 'react-dom', 'react-router-dom', 'lucide-react']
       }
     };
 });
+

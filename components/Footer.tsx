@@ -16,7 +16,9 @@ const Footer: React.FC = () => {
                 <img 
                   src="/assets/logo.svg" 
                   alt="MEMO InfoTech" 
-                  className="h-10 w-auto object-contain" 
+                  className="h-10 w-auto object-contain"
+                  width={40}
+                  height={40}
                 />
               </div>
             </div>
@@ -38,32 +40,32 @@ const Footer: React.FC = () => {
 
           {/* Links */}
           <div>
-            <h4 className="font-bold text-lg mb-6 uppercase tracking-wider">Company</h4>
-            <ul className="space-y-3 font-medium text-blue-50">
-              <li><a href="/about/" className="hover:text-white hover:underline decoration-2 underline-offset-4">About Us</a></li>
-              <li><a href="/careers/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Careers</a></li>
-              <li><a href="/projects/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Projects</a></li>
-              <li><a href="/blog/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Blog</a></li>
-              <li><a href="/contact/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Contact</a></li>
-              <li><a href="/academy/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Academy</a></li>
+            <h3 className="font-bold text-lg mb-6 uppercase tracking-wider">Company</h3>
+            <ul className="space-y-3 font-medium text-white">
+              <li><a href="/about/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">About Us</a></li>
+              <li><a href="/careers/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Careers</a></li>
+              <li><a href="/projects/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Projects</a></li>
+              <li><a href="/blog/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Blog</a></li>
+              <li><a href="/contact/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Contact</a></li>
+              <li><a href="/academy/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Academy</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-6 uppercase tracking-wider">Services</h4>
-            <ul className="space-y-3 font-medium text-blue-50">
-              <li><a href="/services/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Software Development</a></li>
-              <li><a href="/services/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Web Development</a></li>
-              <li><a href="/services/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Mobile Apps</a></li>
-              <li><a href="/services/" className="hover:text-white hover:underline decoration-2 underline-offset-4">Digital Marketing</a></li>
+            <h3 className="font-bold text-lg mb-6 uppercase tracking-wider">Services</h3>
+            <ul className="space-y-3 font-medium text-white">
+              <li><a href="/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Software Development</a></li>
+              <li><a href="/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Web Development</a></li>
+              <li><a href="/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Mobile Apps</a></li>
+              <li><a href="/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Digital Marketing</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold text-lg mb-6 uppercase tracking-wider">Get in Touch</h4>
-            <p className="font-medium mb-2 text-blue-50">hello@memoinfotech.com</p>
-            <p className="font-medium mb-2 text-blue-50">+91 6374433734</p>
+            <h3 className="font-bold text-lg mb-6 uppercase tracking-wider">Get in Touch</h3>
+            <p className="font-medium mb-2 text-white">hello@memoinfotech.com</p>
+            <p className="font-medium mb-2 text-white">+91 6374433734</p>
             <p className="font-medium text-blue-50">
                
             </p>

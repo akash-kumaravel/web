@@ -41,7 +41,9 @@ const Navbar: React.FC = () => {
           <img 
             src="/assets/logo.svg" 
             alt="MEMO InfoTech" 
-            className="h-10 md:h-12 w-auto object-contain" 
+            className="h-10 md:h-12 w-auto object-contain"
+            width={48}
+            height={48}
           />
         </a>
 
@@ -76,6 +78,9 @@ const Navbar: React.FC = () => {
         <button
           className="lg:hidden text-black hover:text-[#007BFF] transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -83,7 +88,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white border-t border-gray-100 p-6 lg:hidden shadow-xl flex flex-col gap-4 h-screen">
+        <div className="absolute top-full left-0 w-full bg-white border-t border-gray-100 p-6 lg:hidden shadow-xl flex flex-col gap-4 h-screen" id="mobile-menu">
           {navItems.map((item) => {
             const href = item.path === '/' ? '/' : `${item.path}/`;
             return (

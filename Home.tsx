@@ -281,8 +281,8 @@ const Home: React.FC = () => {
              style={{ transform: `translate(${heroMousePos.x * -30}px, ${heroMousePos.y * -30}px)` }} />
 
         <div className="flex-1 z-10 hero-text text-center lg:text-left">
-          <div className="inline-block px-4 py-2 bg-blue-50 border border-blue-100 rounded-full mb-6">
-            <span className="text-sm font-bold text-[#007BFF] uppercase tracking-wider flex items-center gap-2">
+          <div className="inline-block px-4 py-2 bg-blue-100 border border-[#007BFF] rounded-full mb-6">
+            <span className="text-sm font-bold text-[#0056b3] uppercase tracking-wider flex items-center gap-2">
                 <Star size={14} fill="currentColor" /> Software Company
             </span>
           </div>
@@ -318,6 +318,8 @@ const Home: React.FC = () => {
                 src="/assets/home.png"
                 alt="Creative Professional at Work"
                 className="w-full h-full object-cover hover:scale-105 transition-all duration-700"
+                width={500}
+                height={625}
               />
             </div>
             
@@ -414,7 +416,7 @@ const Home: React.FC = () => {
              {horizontalWorks.map((work, i) => (
              <div key={i} className="horizontal-item w-[20%] h-full p-4 md:p-20 flex items-center justify-center bg-white border-r border-gray-100">
                      <div className="w-full h-full relative rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-2xl">
-                         <img src={work.img} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" alt={`${work.title} — Design Portfolio`} />
+                         <img src={work.img} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" alt={`${work.title} — Design Portfolio`} width={364} height={468} />
                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent p-6 md:p-10 flex flex-col justify-end">
                              <span className="text-[#007BFF] font-bold uppercase tracking-widest mb-2">{work.cat}</span>
                              <h3 className="text-4xl md:text-6xl font-bold text-white font-['Syne']">{work.title}</h3>
@@ -444,7 +446,7 @@ const Home: React.FC = () => {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-                        <p className={`transition-colors ${activeServiceIndex === idx ? 'text-blue-100' : 'text-gray-400 group-hover:text-white'}`}>
+                        <p className={`transition-colors ${activeServiceIndex === idx ? 'text-white' : 'text-gray-400 group-hover:text-white'}`}>
                             {item.desc}
                         </p>
                       </div>
@@ -459,7 +461,9 @@ const Home: React.FC = () => {
                 <img 
                     src={serviceList[activeServiceIndex].img} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                    alt={`MEMO InfoTech Service - ${serviceList[activeServiceIndex].title}`} 
+                    alt={`MEMO InfoTech Service - ${serviceList[activeServiceIndex].title}`}
+                    width={500}
+                    height={500}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#007BFF]/80 via-transparent to-transparent opacity-90"></div>
                 <div className="absolute bottom-10 left-10 transform translate-y-0 transition-transform duration-500">
@@ -546,8 +550,8 @@ const Home: React.FC = () => {
              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                  {blogPosts.slice(0,3).map((post, idx) => (
                      <Link to={`/blog/${post.id}`} key={idx} className="group cursor-pointer">
-                         <div className="rounded-[2rem] overflow-hidden mb-6 relative">
-                       <img src={post.image} alt={post.title} className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
+                         <div className="rounded-[2rem] overflow-hidden mb-6 relative aspect-video">
+                       <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" width={364} height={256} />
                              <div className="absolute top-4 left-4 bg-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-black">
                                  {post.category}
                              </div>
@@ -599,8 +603,8 @@ const Home: React.FC = () => {
                                      "{t.text}"
                                  </p>
                                  <div className="flex items-center gap-4">
-                                     <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#007BFF]">
-                                         <img src={t.image} className="w-full h-full object-cover" alt={t.name} />
+                                     <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#007BFF] flex-shrink-0">
+                                         <img src={t.image} className="w-14 h-14 object-cover" alt={t.name} width={56} height={56} />
                                      </div>
                                      <div className="text-left">
                                          <h4 className="text-xl font-bold text-white">{t.name}</h4>
@@ -612,7 +616,7 @@ const Home: React.FC = () => {
                      </div>
 
                      {/* Navigation Dots */}
-                     <div className="flex gap-3 mt-12 z-20">
+                     <div className="flex gap-3 mt-12 z-20" role="tablist">
                          {testimonials.map((_, i) => (
                              <button 
                                 key={i}
@@ -620,15 +624,18 @@ const Home: React.FC = () => {
                                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                                     i === activeTestimonial ? 'bg-[#007BFF] scale-125' : 'bg-gray-700 hover:bg-gray-500'
                                 }`}
+                                aria-label={`Go to testimonial ${i + 1}`}
+                                aria-selected={i === activeTestimonial}
+                                role="tab"
                              />
                          ))}
                      </div>
                      
                      {/* Side Arrows */}
-                     <button onClick={prevTestimonial} className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#007BFF] hover:border-[#007BFF] hover:text-white transition-all z-20 hidden md:flex">
+                     <button onClick={prevTestimonial} className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#007BFF] hover:border-[#007BFF] hover:text-white transition-all z-20 hidden md:flex" aria-label="Previous testimonial">
                         <ArrowLeft />
                      </button>
-                     <button onClick={nextTestimonial} className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#007BFF] hover:border-[#007BFF] hover:text-white transition-all z-20 hidden md:flex">
+                     <button onClick={nextTestimonial} className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#007BFF] hover:border-[#007BFF] hover:text-white transition-all z-20 hidden md:flex" aria-label="Next testimonial">
                         <ArrowRight />
                      </button>
                  </div>
