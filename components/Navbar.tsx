@@ -37,18 +37,14 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 group flex-shrink-0">
-          <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center flex-shrink-0">
-            <img 
-              src="/assets/logo.svg" 
-              alt="MEMO InfoTech" 
-              className="h-10 md:h-12 w-auto object-contain"
-              width={48}
-              height={48}
-              loading="eager"
-              decoding="async"
-            />
-          </div>
+        <a href="/" className="flex items-center gap-2 group">
+          <img 
+            src="/assets/logo.svg" 
+            alt="MEMO InfoTech" 
+            className="h-10 md:h-12 w-auto object-contain"
+            width={48}
+            height={48}
+          />
         </a>
 
         {/* Desktop Nav */}
