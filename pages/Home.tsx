@@ -468,12 +468,12 @@ const Home: React.FC = () => {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row gap-6 mt-8">
-                <Link to="/services" className="flex-1 py-4 bg-[#007BFF] text-white rounded-full font-bold text-center hover:bg-white hover:text-[#007BFF] transition-all shadow-lg hover:shadow-[#007BFF]/50">
+                <a href="https://www.memoinfotech.com/services/" className="flex-1 py-4 bg-[#007BFF] text-white rounded-full font-bold text-center hover:bg-white hover:text-[#007BFF] transition-all shadow-lg hover:shadow-[#007BFF]/50">
                   See how we work
-                </Link>
-                <Link to="/careers" className="flex-1 py-4 border border-white/20 rounded-full font-bold text-center hover:bg-white hover:text-black transition-colors">
+                </a>
+                <a href="https://www.memoinfotech.com/careers/" className="flex-1 py-4 border border-white/20 rounded-full font-bold text-center hover:bg-white hover:text-black transition-colors">
                   Meet our experts
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -539,9 +539,9 @@ const Home: React.FC = () => {
                     <h2 className="text-5xl md:text-[4rem] font-bold font-['Syne'] mb-4 text-black leading-none">Recently <span className="text-[#007BFF]">Added</span></h2>
                     <p className="text-gray-500">Latest insights on Web Design, Branding, and Digital Strategy.</p>
                  </div>
-                 <Link to="/blog" className="hidden md:flex items-center gap-2 font-bold text-black hover:text-[#007BFF] transition-colors">
-                     View all articles <ArrowRight size={20} />
-                 </Link>
+                 <a href="https://www.memoinfotech.com/blog/" className="hidden md:flex items-center gap-2 font-bold text-black hover:text-[#007BFF] transition-colors">
+                   View all articles <ArrowRight size={20} />
+                 </a>
              </div>
              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                  {blogPosts.slice(0,3).map((post, idx) => (

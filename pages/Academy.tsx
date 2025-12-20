@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { BookOpen, Users, Award, Clock, ArrowRight, Star, Zap, Code, PenTool, Video, CheckCircle, AlertCircle, Loader2, Search, Filter } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const courses = [
   {
@@ -369,11 +368,11 @@ const Academy: React.FC = () => {
               Learn from industry experts and master in-demand skills. Our comprehensive courses are designed to accelerate your career growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="#courses" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+              <a href="#courses" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
                 Explore Courses <ArrowRight size={20} />
-              </Link>
-              <Link
-                to="#enroll"
+              </a>
+              <a
+                href="#enroll"
                 onClick={(e) => {
                   e.preventDefault();
                   enrollRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -381,7 +380,7 @@ const Academy: React.FC = () => {
                 className="px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-200 transition-all transform hover:-translate-y-1"
               >
                 Start Learning
-              </Link>
+              </a>
             </div>
           </div>
 

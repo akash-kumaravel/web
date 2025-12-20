@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Briefcase, ArrowRight, Coffee, Globe, Heart, Zap, Monitor, Users } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const jobs = [
     { id: 1, role: "Senior Product Designer", type: "Full-time", loc: "Remote", dept: "Design" },
@@ -137,9 +136,9 @@ const Careers: React.FC = () => {
                                         </ul>
                                     </div>
                                 </div>
-                                <Link to={`/apply?position=${encodeURIComponent(job.role)}`} className="block w-full py-4 bg-[#007BFF] text-white font-bold rounded-xl hover:bg-white hover:text-black transition-all text-center">
+                                <a href={`https://www.memoinfotech.com/apply?position=${encodeURIComponent(job.role)}`} className="block w-full py-4 bg-[#007BFF] text-white font-bold rounded-xl hover:bg-white hover:text-black transition-all text-center">
                                     Apply for this Position
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </div>

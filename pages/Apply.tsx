@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { ArrowLeft, UploadCloud, Loader2, CheckCircle, AlertCircle, Send, Link as LinkIcon } from 'lucide-react';
 
 const Apply: React.FC = () => {
@@ -80,9 +80,9 @@ const Apply: React.FC = () => {
   return (
     <div className="pt-32 pb-20 w-full bg-white min-h-screen">
       <div className="container mx-auto px-6 max-w-4xl">
-        <Link to="/careers" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest mb-8 hover:text-[#007BFF] transition-colors">
+        <a href="https://www.memoinfotech.com/careers/" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest mb-8 hover:text-[#007BFF] transition-colors">
             <ArrowLeft size={16} /> Back to Careers
-        </Link>
+        </a>
         
         <div className="text-center mb-16">
             <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] mb-6 text-black leading-none">
@@ -103,9 +103,9 @@ const Apply: React.FC = () => {
                     <p className="text-gray-500 mb-8 max-w-md">
                         Thank you for applying to MEMO InfoTech. Our team will review your application and get back to you shortly.
                     </p>
-                    <Link to="/" className="px-8 py-4 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] transition-all">
+                    <a href="https://www.memoinfotech.com/" className="px-8 py-4 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] transition-all">
                         Return Home
-                    </Link>
+                    </a>
                  </div>
             ) : (
                 <form onSubmit={handleSubmit} className="space-y-8">
