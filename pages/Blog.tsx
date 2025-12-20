@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Calendar, User, Tag, Search, Loader2, Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export const blogPosts = [
     {
@@ -267,7 +266,7 @@ const Blog: React.FC = () => {
 
                 {/* Featured Post (Only show if All is selected or category matches) */}
                 {activeCategory === "All" && (
-                    <Link to={`/blog/${featuredPost.id}`} className="block mb-24 group cursor-pointer">
+                    <a href={`/blog/${featuredPost.id}`} className="block mb-24 group cursor-pointer">
                         <div className="relative rounded-[3rem] overflow-hidden h-[60vh] w-full mb-8 shadow-2xl">
                             <img src={featuredPost.image} alt={featuredPost.title} className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 md:p-16 flex flex-col justify-end items-start">
@@ -287,7 +286,7 @@ const Blog: React.FC = () => {
                 {/* Post Grid */}
                 <div className="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
                     {filteredPosts.filter(p => activeCategory === "All" ? !p.featured : true).map((post) => (
-                        <Link to={`/blog/${post.id}`} key={post.id} className="blog-card group cursor-pointer flex flex-col h-full">
+                        <a href={`/blog/${post.id}`} key={post.id} className="blog-card group cursor-pointer flex flex-col h-full">
                             <div className="rounded-3xl overflow-hidden mb-6 aspect-[4/3] relative shadow-md group-hover:shadow-2xl transition-all duration-500">
                                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide z-10">
                                     {post.category}
@@ -310,7 +309,7 @@ const Blog: React.FC = () => {
                                     Read Story <ArrowRight size={18} className="text-[#007BFF]" />
                                 </div>
                             </div>
-                        </Link>
+                        </a>
                     ))}
                 </div>
 

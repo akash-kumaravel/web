@@ -152,7 +152,7 @@ const BlogDetail: React.FC = () => {
             <div className="absolute inset-0 bg-black/40"></div>
             <div className="absolute bottom-0 left-0 w-full p-6 md:p-20 text-white z-10 bg-gradient-to-t from-black/80 to-transparent">
                 <div className="container mx-auto">
-                    <a href="https://www.memoinfotech.com/blog/" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest mb-6 hover:text-[#007BFF] transition-colors">
+                    <a href="/blog" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest mb-6 hover:text-[#007BFF] transition-colors">
                         <ArrowLeft size={16} /> Back to Insights
                     </a>
                     <div className="flex items-center gap-4 mb-4 text-sm font-bold uppercase tracking-wider text-[#007BFF]">
@@ -239,7 +239,7 @@ const BlogDetail: React.FC = () => {
                  <h2 className="text-4xl md:text-[4rem] font-bold font-['Syne'] mb-10 hover:text-[#007BFF] cursor-pointer transition-colors leading-none">
                      Three.js and The Future of Immersive Web
                  </h2>
-                 <a href="https://www.memoinfotech.com/blog/" className="inline-block px-10 py-4 border border-white rounded-full font-bold hover:bg-white hover:text-black transition-all">
+                 <a href="/blog" className="inline-block px-10 py-4 border border-white rounded-full font-bold hover:bg-white hover:text-black transition-all">
                      View All Articles
                  </a>
              </div>

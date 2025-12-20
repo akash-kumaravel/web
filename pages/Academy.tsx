@@ -846,12 +846,12 @@ const Academy: React.FC = () => {
           <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
             Don't miss out on our limited-time offer. Enroll in any course today and get 20% off!
           </p>
-          <Link
-            to="#enroll"
+          <a
+            href="#enroll"
             className="inline-block px-10 py-4 bg-white text-[#007BFF] rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1"
           >
             Get Started Now
-          </Link>
+          </a>
         </div>
       </section>
     </div>

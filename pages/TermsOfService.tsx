@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+// Using native anchors for crawl-critical CTAs
 import { ArrowLeft } from 'lucide-react';
 
 const TermsOfService: React.FC = () => {
@@ -20,7 +21,7 @@ const TermsOfService: React.FC = () => {
       <div className="container mx-auto px-6 max-w-4xl">
         {/* Header */}
         <div className="mb-12">
-          <a href="https://www.memoinfotech.com/" className="inline-flex items-center gap-2 text-[#007BFF] hover:text-black transition-colors mb-6 font-bold">
+          <a href="/" className="inline-flex items-center gap-2 text-[#007BFF] hover:text-black transition-colors mb-6 font-bold">
             <ArrowLeft size={18} /> Back to Home
           </a>
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black mb-4">

@@ -136,7 +136,7 @@ const Careers: React.FC = () => {
                                         </ul>
                                     </div>
                                 </div>
-                                <a href={`https://www.memoinfotech.com/apply?position=${encodeURIComponent(job.role)}`} className="block w-full py-4 bg-[#007BFF] text-white font-bold rounded-xl hover:bg-white hover:text-black transition-all text-center">
+                                <a href={`/apply?position=${encodeURIComponent(job.role)}`} className="block w-full py-4 bg-[#007BFF] text-white font-bold rounded-xl hover:bg-white hover:text-black transition-all text-center">
                                     Apply for this Position
                                 </a>
                             </div>

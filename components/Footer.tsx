@@ -77,7 +77,6 @@ const Footer: React.FC = () => {
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="https://www.memoinfotech.com/privacy-policy/" className="hover:text-white">Privacy Policy</a>
             <a href="https://www.memoinfotech.com/terms-of-service/" className="hover:text-white">Terms of Service</a>
-            <a href="https://www.memoinfotech.com/sitemap.html" className="hover:text-white">HTML Sitemap</a>
           </div>
         </div>
       </div>

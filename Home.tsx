@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Star, Box, Code, PenTool, Video, ArrowLeft, ArrowUpRight, MousePointer2, Globe, Award, Plus, Minus, Linkedin, Twitter, Loader2, CheckCircle, AlertCircle, Send, Mail, Phone, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+// Replaced `Link` usage with native anchors for crawl-critical CTAs to improve crawlability
 import { Testimonial } from '../types';
 // Images are served from the public `assets` folder. Use direct public paths instead of importing from assets module.
 import { blogPosts } from './Blog';
@@ -300,12 +300,12 @@ const Home: React.FC = () => {
             We are a premier Software Company specializing in Website Development, Brand Design, Explainer Videos, and Motion Graphics. We turn ideas into digital experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Link to="/contact" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+            <a href="/contact" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
               Start Your Project <ArrowRight size={20} />
-            </Link>
-            <Link to="/services" className="px-8 py-4 bg-black text-white rounded-full font-bold text-lg hover:bg-gray-800 transition-all transform hover:-translate-y-1">
+            </a>
+            <a href="/services" className="px-8 py-4 bg-black text-white rounded-full font-bold text-lg hover:bg-gray-800 transition-all transform hover:-translate-y-1">
               Our Services
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -472,12 +472,12 @@ const Home: React.FC = () => {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row gap-6 mt-8">
-                <Link to="/services" className="flex-1 py-4 bg-[#007BFF] text-white rounded-full font-bold text-center hover:bg-white hover:text-[#007BFF] transition-all shadow-lg hover:shadow-[#007BFF]/50">
+                <a href="/services" className="flex-1 py-4 bg-[#007BFF] text-white rounded-full font-bold text-center hover:bg-white hover:text-[#007BFF] transition-all shadow-lg hover:shadow-[#007BFF]/50">
                   See how we work
-                </Link>
-                <Link to="/careers" className="flex-1 py-4 border border-white/20 rounded-full font-bold text-center hover:bg-white hover:text-black transition-colors">
+                </a>
+                <a href="/careers" className="flex-1 py-4 border border-white/20 rounded-full font-bold text-center hover:bg-white hover:text-black transition-colors">
                   Meet our experts
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -543,13 +543,13 @@ const Home: React.FC = () => {
                     <h2 className="text-5xl md:text-[4rem] font-bold font-['Syne'] mb-4 text-black leading-none">Recently <span className="text-[#007BFF]">Added</span></h2>
                     <p className="text-gray-500">Latest insights on Web Design, Branding, and Digital Strategy.</p>
                  </div>
-                 <Link to="/blog" className="hidden md:flex items-center gap-2 font-bold text-black hover:text-[#007BFF] transition-colors">
-                     View all articles <ArrowRight size={20} />
-                 </Link>
+                 <a href="/blog" className="hidden md:flex items-center gap-2 font-bold text-black hover:text-[#007BFF] transition-colors">
+                   View all articles <ArrowRight size={20} />
+                 </a>
              </div>
              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                  {blogPosts.slice(0,3).map((post, idx) => (
-                     <Link to={`/blog/${post.id}`} key={idx} className="group cursor-pointer">
+                   <a href={`/blog/${post.id}`} key={idx} className="group cursor-pointer">
                          <div className="rounded-[2rem] overflow-hidden mb-6 relative aspect-video">
                        <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" width={364} height={256} />
                              <div className="absolute top-4 left-4 bg-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-black">
