@@ -43,44 +43,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog post detail pages -->
-  <url>
-    <loc>https://www.memoinfotech.com/blog/1/</loc>
-    <lastmod>2025-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.memoinfotech.com/blog/2/</loc>
-    <lastmod>2025-10-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.memoinfotech.com/blog/3/</loc>
-    <lastmod>2025-09-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.memoinfotech.com/blog/4/</loc>
-    <lastmod>2025-09-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.memoinfotech.com/blog/5/</loc>
-    <lastmod>2025-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.memoinfotech.com/blog/6/</loc>
-    <lastmod>2025-09-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
   <url>
     <loc>https://www.memoinfotech.com/contact/</loc>
     <lastmod>2025-10-10</lastmod>
