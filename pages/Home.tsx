@@ -315,15 +315,14 @@ const Home: React.FC = () => {
             </span>
           </div>
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter mb-8">
-            Best IT Company & Web Development in Nagercoil
-            <br />
+            Empowering Brands <br />
             <span className="relative inline-block">
-              Empowering Brands
+              Through Creative
               <svg className="absolute -bottom-2 left-0 w-full h-4 text-[#007BFF]" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
               </svg>
             </span> <br />
-            Through Creative Technology
+            Technology
           </h1>
           <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
             We are a premier Software Company specializing in Website Development, Brand Design, Explainer Videos, and Motion Graphics. We turn ideas into digital experiences.
