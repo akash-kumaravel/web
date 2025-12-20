@@ -560,7 +560,7 @@ const Home: React.FC = () => {
                          <div className="flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-black transition-colors">
                              Read Article <ArrowRight size={16} />
                          </div>
-                     </Link>
+                     </a>
                  ))}
              </div>
           </div>

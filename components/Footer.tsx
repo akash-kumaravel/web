@@ -66,9 +66,7 @@ const Footer: React.FC = () => {
             <h3 className="font-bold text-lg mb-6 uppercase tracking-wider">Get in Touch</h3>
             <p className="font-medium mb-2 text-white">hello@memoinfotech.com</p>
             <p className="font-medium mb-2 text-white">+91 6374433734</p>
-            <p className="font-medium text-blue-50">
-               
-            </p>
+            <p className="font-medium text-blue-50">Nagercoil, Tamil Nadu 629001, India</p>
           </div>
         </div>
 

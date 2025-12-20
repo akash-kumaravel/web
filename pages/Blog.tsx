@@ -280,7 +280,7 @@ const Blog: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                    </Link>
+                        </a>
                 )}
 
                 {/* Post Grid */}

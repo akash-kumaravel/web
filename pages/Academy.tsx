@@ -212,6 +212,37 @@ const Academy: React.FC = () => {
     setIsClientSide(true);
   }, []);
 
+  // Inject Course JSON-LD for all courses on this page (improves search visibility for course rich results)
+  useEffect(() => {
+    try {
+      const origin = window.location.origin || 'https://www.memoinfotech.com';
+      const courseLd = courses.map(c => ({
+        '@context': 'https://schema.org',
+        '@type': 'Course',
+        name: c.title,
+        description: c.description,
+        provider: {
+          '@type': 'Organization',
+          name: 'MEMO InfoTech',
+          sameAs: origin
+        },
+        url: `${origin}/academy#course-${c.id}`
+      }));
+
+      let s = document.getElementById('ld-courses') as HTMLScriptElement | null;
+      if (!s) {
+        s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.id = 'ld-courses';
+        document.head.appendChild(s);
+      }
+      s.text = JSON.stringify(courseLd);
+    } catch (err) {
+      // fail silently in non-browser environments
+      console.warn('Could not inject course JSON-LD', err);
+    }
+  }, []);
+
   // Load testimonials from localStorage on client side only
   useEffect(() => {
     if (isClientSide) {

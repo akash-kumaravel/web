@@ -75,8 +75,8 @@ const Home: React.FC = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   // SEO: set page title & description
   useEffect(() => {
-    document.title = 'MEMO InfoTech — IT Solutions & Services';
-    const desc = 'MEMO InfoTech builds high-converting websites, brand identities, and motion content. Strategic web development, UX, and creative services to grow your business.';
+    document.title = 'Best IT Company & Web Development in Nagercoil — MEMO InfoTech';
+    const desc = 'MEMO InfoTech — Best IT company in Nagercoil. We provide website development, graphic & logo design, mobile apps, motion posters, and custom software. Contact +91 6374433734 or hello@memoinfotech.com.';
     let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (meta) meta.content = desc;
     else {
@@ -84,6 +84,35 @@ const Home: React.FC = () => {
       meta.name = 'description';
       meta.content = desc;
       document.head.appendChild(meta);
+    }
+  }, []);
+
+  // Inject FAQPage JSON-LD for Home FAQs to improve rich results
+  useEffect(() => {
+    try {
+      const faqStructured = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(f => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: f.a
+          }
+        }))
+      };
+
+      let s = document.getElementById('ld-faq-home') as HTMLScriptElement | null;
+      if (!s) {
+        s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.id = 'ld-faq-home';
+        document.head.appendChild(s);
+      }
+      s.text = JSON.stringify(faqStructured);
+    } catch (err) {
+      console.warn('Could not inject FAQ JSON-LD', err);
     }
   }, []);
   const [heroMousePos, setHeroMousePos] = useState({ x: 0, y: 0 });
@@ -286,14 +315,15 @@ const Home: React.FC = () => {
             </span>
           </div>
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter mb-8">
-            Empowering Brands <br />
+            Best IT Company & Web Development in Nagercoil
+            <br />
             <span className="relative inline-block">
-              Through Creative
+              Empowering Brands
               <svg className="absolute -bottom-2 left-0 w-full h-4 text-[#007BFF]" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
               </svg>
             </span> <br />
-            Technology
+            Through Creative Technology
           </h1>
           <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
             We are a premier Software Company specializing in Website Development, Brand Design, Explainer Videos, and Motion Graphics. We turn ideas into digital experiences.
@@ -553,9 +583,9 @@ const Home: React.FC = () => {
                          </div>
                          <h3 className="text-2xl font-bold mb-4 group-hover:text-[#007BFF] transition-colors">{post.title}</h3>
                          <div className="flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-black transition-colors">
-                             Read Article <ArrowRight size={16} />
+                           Read Article <ArrowRight size={16} />
                          </div>
-                     </Link>
+                       </a>
                  ))}
              </div>
           </div>

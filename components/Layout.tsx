@@ -55,18 +55,44 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       logo: `${origin}/assets/logo.png`,
       sameAs: [
         'https://www.linkedin.com/company/memoinfotech',
-        'https://twitter.com/memoinfotech'
+        'https://x.com/memoinfotech',
+        'https://www.instagram.com/memoinfotech'
       ],
       contactPoint: [
         {
           '@type': 'ContactPoint',
-          telephone: '+91-6374433734',
+          telephone: '+91 6374433734',
           contactType: 'customer service',
           areaServed: 'IN'
         }
-      ]
+      ],
+      founder: { '@type': 'Person', name: 'Akash Kumaravel' },
+      foundingDate: '2022',
+      email: 'hello@memoinfotech.com'
     };
     upsertJsonLd('ld-org', org);
+
+    // LocalBusiness schema (helps Maps / local SEO)
+    const local = {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: 'MEMO InfoTech',
+      image: `${origin}/assets/logo.png`,
+      '@id': `${origin}#company`,
+      url: origin,
+      telephone: '+91 6374433734',
+      email: 'hello@memoinfotech.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Nagercoil',
+        addressLocality: 'Nagercoil',
+        addressRegion: 'Tamil Nadu',
+        postalCode: '629001',
+        addressCountry: 'IN'
+      },
+      openingHours: 'Mo,Tu,We,Th,Fr 09:00-18:00'
+    };
+    upsertJsonLd('ld-local', local);
 
     // WebSite + Sitelinks Searchbox
     const website = {
