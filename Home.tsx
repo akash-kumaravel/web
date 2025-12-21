@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Star, Box, Code, PenTool, Video, ArrowLeft, ArrowUpRight, MousePointer2, Globe, Award, Plus, Minus, Linkedin, Twitter, Loader2, CheckCircle, AlertCircle, Send, Mail, Phone, MapPin } from 'lucide-react';
 // Replaced `Link` usage with native anchors for crawl-critical CTAs to improve crawlability
-import { Testimonial } from '../types';
+import { Testimonial } from './types';
 // Images are served from the public `assets` folder. Use direct public paths instead of importing from assets module.
-import { blogPosts } from './Blog';
+import { blogPosts } from './pages/Blog';
 
 // Mock Data
 const testimonials: Testimonial[] = [
