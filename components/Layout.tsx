@@ -22,7 +22,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   useEffect(() => {
     const PREFERRED_ORIGIN = 'https://www.memoinfotech.com';
-    const origin = window.location.origin || PREFERRED_ORIGIN;
+    const origin = PREFERRED_ORIGIN;
     const canonicalHref = `${origin}${window.location.pathname}`;
 
     // Update canonical link
@@ -52,7 +52,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       '@type': 'Organization',
       name: 'MEMO InfoTech',
       url: origin,
-      logo: `${origin}/assets/logo.png`,
+      logo: `${origin}/assets/memo-infotech-logo.png`,
       sameAs: [
         'https://www.linkedin.com/company/memoinfotech',
         'https://x.com/memoinfotech',
@@ -77,7 +77,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       name: 'MEMO InfoTech',
-      image: `${origin}/assets/logo.png`,
+      image: `${origin}/assets/memo-infotech-logo.png`,
       '@id': `${origin}#company`,
       url: origin,
       telephone: '+91 6374433734',

@@ -29,8 +29,8 @@ function ensureFavicon(href: string) {
   }
 }
 
-// Set the meta/favicon to favicon.png so it mirrors how other logos are set in components
-ensureFavicon('/assets/favicon.png');
+// Set the meta/favicon to absolute production URL so crawlers see correct asset
+ensureFavicon('https://www.memoinfotech.com/assets/favicon.png');
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {

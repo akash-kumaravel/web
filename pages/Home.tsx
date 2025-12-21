@@ -97,7 +97,7 @@ const Home: React.FC = () => {
           '@type': 'Question',
           name: f.q,
           acceptedAnswer: {
-            '@type': 'Answer',
+              alt="Creative professional at work — Best IT company in Nagercoil - MEMO InfoTech"
             text: f.a
           }
         }))
