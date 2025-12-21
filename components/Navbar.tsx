@@ -43,9 +43,9 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <a href={makeHref('/')} className="flex items-center gap-2 group">
-          <img 
-            src="https://www.memoinfotech.com/assets/memo-infotech-logo.png" 
-            alt="MEMO InfoTech" 
+          <img
+            src="https://www.memoinfotech.com/assets/logo.svg"
+            alt="MEMO InfoTech"
             className="h-10 md:h-12 w-auto object-contain"
             width={48}
             height={48}

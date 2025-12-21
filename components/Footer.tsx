@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-1">
             <div className="mb-6">
               <div className="bg-white p-3 rounded-xl inline-block">
-                <img 
-                  src="https://www.memoinfotech.com/assets/memo-infotech-logo.png" 
-                  alt="MEMO InfoTech" 
+                <img
+                  src="https://www.memoinfotech.com/assets/logo.svg"
+                  alt="MEMO InfoTech"
                   className="h-10 w-auto object-contain"
                   width={40}
                   height={40}
