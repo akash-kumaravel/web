@@ -29,8 +29,8 @@ function ensureFavicon(href: string) {
   }
 }
 
-// Set the meta/favicon to Favicon.png so it mirrors how other logos are set in components
-ensureFavicon('/assets/Favicon.png');
+// Set the meta/favicon to favicon.png so it mirrors how other logos are set in components
+ensureFavicon('/assets/favicon.png');
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
