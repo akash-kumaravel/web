@@ -213,13 +213,16 @@ const Blog: React.FC = () => {
         try {
             await fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
-                body: form
+                body: form,
+                mode: 'no-cors'
             });
             setSubStatus('success');
             setEmail('');
+            setTimeout(() => setSubStatus('idle'), 5000);
         } catch (error) {
             console.error("Subscription error:", error);
             setSubStatus('error');
+            setTimeout(() => setSubStatus('idle'), 5000);
         }
     };
 

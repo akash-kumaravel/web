@@ -355,17 +355,13 @@ const Academy: React.FC = () => {
       form.append('text', newTestimonial.text);
       form.append('rating', String(newTestimonial.rating));
 
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        body: form
+        body: form,
+        mode: 'no-cors'
       });
-      if (response.ok) {
-        setReviewStatus('success');
-        setTimeout(() => setReviewStatus('idle'), 4000);
-      } else {
-        setReviewStatus('error');
-        setTimeout(() => setReviewStatus('idle'), 4000);
-      }
+      setReviewStatus('success');
+      setTimeout(() => setReviewStatus('idle'), 4000);
     } catch (err) {
       setReviewStatus('error');
       setTimeout(() => setReviewStatus('idle'), 4000);

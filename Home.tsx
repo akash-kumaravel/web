@@ -261,13 +261,16 @@ const Home: React.FC = () => {
     try {
         await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
-            body: form
+            body: form,
+            mode: 'no-cors'
         });
         setContactStatus('success');
         setContactForm({ name: '', email: '', message: '' });
+        setTimeout(() => setContactStatus('idle'), 5000);
     } catch (error) {
         console.error(error);
         setContactStatus('error');
+        setTimeout(() => setContactStatus('idle'), 5000);
     }
   };
 
