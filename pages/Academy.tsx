@@ -308,16 +308,20 @@ const Academy: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
+    
+    const form = new FormData(e.currentTarget as HTMLFormElement);
+    form.append('type', 'contact');
+    form.append('name', formData.fullName);
+    
     try {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        body: new FormData(e.currentTarget as HTMLFormElement),
+        body: form,
+        mode: 'no-cors'
       });
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ fullName: '', email: '', phone: '', course: '', message: '' });
-        setTimeout(() => setStatus('idle'), 5000);
-      }
+      setStatus('success');
+      setFormData({ fullName: '', email: '', phone: '', course: '', message: '' });
+      setTimeout(() => setStatus('idle'), 5000);
     } catch {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 5000);
