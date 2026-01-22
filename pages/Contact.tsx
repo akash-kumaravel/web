@@ -26,34 +26,48 @@ const Contact: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
 
-    const form = new FormData();
+    const form = new FormData(e.currentTarget);
     form.append('type', 'contact');
-    form.append('firstName', formData.firstName);
-    form.append('lastName', formData.lastName);
-    form.append('name', `${formData.firstName} ${formData.lastName}`); // Combined for convenience
-    form.append('email', formData.email);
+    form.append('name', `${formData.firstName} ${formData.lastName}`);
     
-    // Combine Subject and Message because the backend script only has a "Message" column
+    // Combine Subject and Message
     const combinedMessage = `[Subject: ${formData.subject}]\n\n${formData.message}`;
-    form.append('message', combinedMessage);
+    form.set('message', combinedMessage);
 
-    try {
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        body: form,
-        // explicitly no JSON headers, fetch handles multipart/form-data boundary automatically
-      });
-      
+    // Create a hidden iframe to submit the form (bypasses CORS)
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.name = 'hidden-form-frame';
+    document.body.appendChild(iframe);
+
+    const hiddenForm = document.createElement('form');
+    hiddenForm.method = 'POST';
+    hiddenForm.action = GOOGLE_SCRIPT_URL;
+    hiddenForm.target = 'hidden-form-frame';
+
+    for (const [key, value] of form.entries()) {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = String(value);
+      hiddenForm.appendChild(input);
+    }
+
+    document.body.appendChild(hiddenForm);
+    hiddenForm.submit();
+
+    // Clean up and show success
+    setTimeout(() => {
+      document.body.removeChild(hiddenForm);
+      document.body.removeChild(iframe);
       setStatus('success');
       setFormData({ firstName: '', lastName: '', email: '', subject: 'Project Inquiry', message: '' });
-    } catch (error) {
-      console.error("Submission error:", error);
-      setStatus('error');
-    }
+      setTimeout(() => setStatus('idle'), 5000);
+    }, 1500);
   };
 
   return (
