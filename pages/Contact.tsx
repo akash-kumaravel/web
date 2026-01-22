@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
 
@@ -38,36 +38,21 @@ const Contact: React.FC = () => {
     const combinedMessage = `[Subject: ${formData.subject}]\n\n${formData.message}`;
     form.set('message', combinedMessage);
 
-    // Create a hidden iframe to submit the form (bypasses CORS)
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    iframe.name = 'hidden-form-frame';
-    document.body.appendChild(iframe);
-
-    const hiddenForm = document.createElement('form');
-    hiddenForm.method = 'POST';
-    hiddenForm.action = GOOGLE_SCRIPT_URL;
-    hiddenForm.target = 'hidden-form-frame';
-
-    for (const [key, value] of form.entries()) {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = key;
-      input.value = String(value);
-      hiddenForm.appendChild(input);
-    }
-
-    document.body.appendChild(hiddenForm);
-    hiddenForm.submit();
-
-    // Clean up and show success
-    setTimeout(() => {
-      document.body.removeChild(hiddenForm);
-      document.body.removeChild(iframe);
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        body: form,
+        mode: 'no-cors'
+      });
+      
       setStatus('success');
       setFormData({ firstName: '', lastName: '', email: '', subject: 'Project Inquiry', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
-    }, 1500);
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+    }
   };
 
   return (

@@ -43,7 +43,7 @@ const Apply: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
 
@@ -62,47 +62,22 @@ const Apply: React.FC = () => {
       form.append('resume', file);
     }
 
-    // Create a hidden iframe to submit the form (bypasses CORS)
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    iframe.name = 'hidden-form-frame-apply';
-    document.body.appendChild(iframe);
-
-    const hiddenForm = document.createElement('form');
-    hiddenForm.method = 'POST';
-    hiddenForm.action = GOOGLE_SCRIPT_URL;
-    hiddenForm.target = 'hidden-form-frame-apply';
-    hiddenForm.enctype = 'multipart/form-data';
-
-    for (const [key, value] of form.entries()) {
-      if (value instanceof File) {
-        // For file inputs, we need to use a different approach
-        const input = document.createElement('input');
-        input.type = 'file';
-        input.name = key;
-        // Note: Direct file assignment won't work with hidden forms, 
-        // so we'll fall back to regular submit
-      } else {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = String(value);
-        hiddenForm.appendChild(input);
-      }
-    }
-
-    document.body.appendChild(hiddenForm);
-    hiddenForm.submit();
-
-    // Clean up and show success
-    setTimeout(() => {
-      document.body.removeChild(hiddenForm);
-      document.body.removeChild(iframe);
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        body: form,
+        mode: 'no-cors'
+      });
+      
       setStatus('success');
       setFormData({ fullName: '', email: '', phone: '', position: '', portfolio: '', coverLetter: '' });
       setFile(null);
       setTimeout(() => setStatus('idle'), 5000);
-    }, 1500);
+    } catch (error) {
+      console.error("Application error:", error);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+    }
   };
 
   return (
