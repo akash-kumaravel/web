@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3VFvRPhyO1nftU3yiexcbnFe6UJBCUd5AJyOrSB0pONxG_RIJ9K4MryGsPXwY4g/exec";
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzPw6ehwECGlSxJgtdtqBokzgkaDfeAZQ8Hxo611d0O9gpnGtkbp2I2KOj2DcEH5Mnoow/exec";
 
     // SEO: set page title & description
     React.useEffect(() => {

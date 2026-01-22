@@ -279,7 +279,7 @@ const Academy: React.FC = () => {
     setFilteredCourses(filtered);
   }, [searchTerm, selectedCategory]);
 
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3VFvRPhyO1nftU3yiexcbnFe6UJBCUd5AJyOrSB0pONxG_RIJ9K4MryGsPXwY4g/exec";
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzPw6ehwECGlSxJgtdtqBokzgkaDfeAZQ8Hxo611d0O9gpnGtkbp2I2KOj2DcEH5Mnoow/exec";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
