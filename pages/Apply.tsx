@@ -76,15 +76,6 @@ const Apply: React.FC = () => {
       console.error("Application error:", error);
       setStatus('error');
       setTimeout(() => setStatus('idle'), 5000);
-      
-      setStatus('success');
-      setFormData({ fullName: '', email: '', phone: '', position: '', portfolio: '', coverLetter: '' });
-      setFile(null);
-      setTimeout(() => setStatus('idle'), 5000);
-    } catch (error) {
-      console.error("Application error:", error);
-      setStatus('error');
-      setTimeout(() => setStatus('idle'), 5000);
     }
   };
 
