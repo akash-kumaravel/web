@@ -4,6 +4,7 @@ import { ArrowRight, Calendar, User, Tag, Search, Loader2, Check } from 'lucide-
 export const blogPosts = [
     {
         id: 1,
+        slug: "minimalist-web-design-2025",
         title: "The Psychology of Minimalist Web Design in 2025",
         excerpt: "Why less is more, and how cognitive load affects conversion rates in the modern digital landscape.",
         content: `
@@ -29,6 +30,7 @@ export const blogPosts = [
     },
     {
         id: 2,
+        slug: "threejs-immersive-web",
         title: "Three.js and The Future of Immersive Web",
         excerpt: "Pushing the boundaries of browser capability with WebGL and hardware acceleration.",
         content: `
@@ -58,6 +60,7 @@ const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     },
     {
         id: 3,
+        slug: "ai-driven-branding",
         title: "AI-Driven Branding: A New Era",
         excerpt: "How generative AI is helping agencies create more personalized and dynamic brand identities.",
         content: `
@@ -83,6 +86,7 @@ const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     },
     {
         id: 4,
+        slug: "sustainable-digital-design",
         title: "Sustainable Digital Design",
         excerpt: "Reducing the carbon footprint of your website through optimized assets and green hosting.",
         content: `
@@ -108,6 +112,7 @@ const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     },
     {
         id: 5,
+        slug: "typography-trends",
         title: "Typography Trends for the Bold",
         excerpt: "Why kinetic typography is taking over hero sections across the awwwards ecosystem.",
         content: `
@@ -130,6 +135,7 @@ const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     },
     {
         id: 6,
+        slug: "death-of-cookie",
         title: "The Death of the Cookie",
         excerpt: "Navigating the privacy-first web and what it means for your marketing analytics.",
         content: `
@@ -148,6 +154,79 @@ const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         author: "Maya Green",
         date: "Sep 10, 2024",
         image: "/assets/news 6.png",
+        featured: false
+    },
+    {
+        id: 7,
+        slug: "it-company-in-nagercoil",
+        title: "Best IT & Digital Solutions Company in Nagercoil – Memo InfoTech",
+        excerpt: "Looking for a trusted IT company in Nagercoil? Memo InfoTech offers complete digital solutions including web development, software, apps, SEO & branding.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">In today's digital-first world, businesses need a reliable IT partner to grow online and stay competitive. Memo InfoTech is a leading IT and digital solutions company in Nagercoil, offering complete technology and digital services under one roof. From website development and software solutions to digital marketing, branding, and mobile app development, we help startups, small businesses, and enterprises transform digitally with result-driven solutions.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Why Choose Memo InfoTech as Your IT Company in Nagercoil?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Choosing the right IT company can define your business success. Memo InfoTech stands out because we focus on quality, scalability, and measurable results.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4"><span class="inline-block w-4 h-4 bg-[#007BFF] rounded-full mr-3"></span>Local Expertise</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">We understand the business landscape of Nagercoil and Kanyakumari district, helping local businesses grow faster online.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4"><span class="inline-block w-4 h-4 bg-[#007BFF] rounded-full mr-3"></span>End-to-End Digital Solutions</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">No need to work with multiple vendors. We handle everything—from strategy to execution.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4"><span class="inline-block w-4 h-4 bg-[#007BFF] rounded-full mr-3"></span>Custom-Built Solutions</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Every business is unique. We deliver tailor-made IT solutions based on your goals, not templates.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4"><span class="inline-block w-4 h-4 bg-[#007BFF] rounded-full mr-3"></span>Affordable & Scalable</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">High-quality services at competitive pricing, suitable for startups and growing businesses.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Our Digital Solutions & IT Services in Nagercoil</h2>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4"><span class="inline-block w-4 h-4 bg-[#007BFF] rounded-full mr-3"></span>Website Design & Development</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">We design fast, responsive, and SEO-friendly websites that convert visitors into customers. We create web experiences optimized for search engines and user engagement.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4"><span class="inline-block w-4 h-4 bg-[#007BFF] rounded-full mr-3"></span>Software Development</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Custom software solutions to automate, manage, and scale your business operations efficiently. From enterprise applications to business process automation.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4"><span class="inline-block w-4 h-4 bg-[#007BFF] rounded-full mr-3"></span>Mobile App Development</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Android and iOS app development focused on performance, usability, and scalability. Native and cross-platform solutions tailored to your business needs.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4"><span class="inline-block w-4 h-4 bg-[#007BFF] rounded-full mr-3"></span>Digital Marketing & SEO</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">We help your business rank higher on Google, generate leads, and increase brand visibility through proven digital marketing strategies and SEO optimization.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4"><span class="inline-block w-4 h-4 bg-[#007BFF] rounded-full mr-3"></span>Branding & Graphic Design</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Build a powerful brand identity with logos, creatives, and visual systems that stand out and communicate your brand values effectively.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4"><span class="inline-block w-4 h-4 bg-[#007BFF] rounded-full mr-3"></span>UI/UX Design</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">User-centered designs that improve engagement, trust, and conversions. We create intuitive interfaces that delight users and achieve business goals.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Industries We Serve</h2>
+            <ul class="list-disc pl-6 mb-6 text-gray-600">
+                <li>Small & Medium Businesses</li>
+                <li>Startups</li>
+                <li>Educational Institutions</li>
+                <li>Retail & E-commerce</li>
+                <li>Healthcare</li>
+                <li>Service-Based Businesses</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Why Local Businesses in Nagercoil Trust Memo InfoTech</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Memo InfoTech is not just another IT firm. We are a long-term digital growth partner for businesses looking to scale with technology. Our transparent process, expert team, and focus on ROI make us one of the most trusted IT companies in Nagercoil.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Frequently Asked Questions</h2>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">Which is the best IT company in Nagercoil?</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Memo InfoTech is considered one of the best IT and digital solutions companies in Nagercoil due to its complete service offering, custom solutions, and strong client support.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">What services does Memo InfoTech offer?</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">We offer website development, software development, mobile app development, digital marketing, branding, UI/UX design, and complete digital solutions tailored to your business.</p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">Do you provide IT services outside Nagercoil?</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Yes, while we are based in Nagercoil, we serve clients across Tamil Nadu and India with the same quality and dedication.</p>
+        `,
+        category: "Insights",
+        author: "Memo InfoTech",
+        date: "Jan 22, 2025",
+        image: "/assets/news 7.png",
         featured: false
     }
 ];
@@ -269,7 +348,7 @@ const Blog: React.FC = () => {
 
                 {/* Featured Post (Only show if All is selected or category matches) */}
                 {activeCategory === "All" && (
-                    <a href={`/blog/${featuredPost.id}`} className="block mb-24 group cursor-pointer">
+                    <a href={`/blog/${(featuredPost as any).slug || featuredPost.id}`} className="block mb-24 group cursor-pointer">
                         <div className="relative rounded-[3rem] overflow-hidden h-[60vh] w-full mb-8 shadow-2xl">
                             <img src={featuredPost.image} alt={featuredPost.title} className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 md:p-16 flex flex-col justify-end items-start">
@@ -289,7 +368,7 @@ const Blog: React.FC = () => {
                 {/* Post Grid */}
                 <div className="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
                     {filteredPosts.filter(p => activeCategory === "All" ? !p.featured : true).map((post) => (
-                        <a href={`/blog/${post.id}`} key={post.id} className="blog-card group cursor-pointer flex flex-col h-full">
+                        <a href={`/blog/${(post as any).slug || post.id}`} key={post.id} className="blog-card group cursor-pointer flex flex-col h-full">
                             <div className="rounded-3xl overflow-hidden mb-6 aspect-[4/3] relative shadow-md group-hover:shadow-2xl transition-all duration-500">
                                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide z-10">
                                     {post.category}

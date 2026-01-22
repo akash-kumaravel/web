@@ -113,14 +113,19 @@ const Projects: React.FC = () => {
              </div>
 
              <div ref={webSectionRef} className="flex w-[400%] h-screen">
-                 {[1, 2, 3, 4].map((i) => (
-                     <div key={i} className="web-item w-screen h-screen flex items-center justify-center p-10 md:p-32 border-r border-white/10 relative">
+                 {[
+                   { name: "Background Remover", i: 1 },
+                   { name: "Hivili", i: 2 },
+                   { name: "Cloud Bestie", i: 3 },
+                   { name: "AI", i: 4 }
+                 ].map((project) => (
+                     <div key={project.i} className="web-item w-screen h-screen flex items-center justify-center p-10 md:p-32 border-r border-white/10 relative">
                          <div className="w-full h-full relative group perspective-1000">
                              <div className="absolute inset-0 bg-[#007BFF] rounded-[3rem] transform rotate-3 opacity-20 group-hover:rotate-6 transition-transform duration-500"></div>
-                             <img src={`/assets/image ${i}.png`} className="w-full h-full object-cover rounded-[3rem] shadow-2xl relative z-10 transform group-hover:scale-[1.02] transition-transform duration-700" alt={`Selected web project ${i} - MEMO InfoTech`} />
+                             <img src={`/assets/image ${project.i}.png`} className="w-full h-full object-cover rounded-[3rem] shadow-2xl relative z-10 transform group-hover:scale-[1.02] transition-transform duration-700" alt={`Selected web project ${project.i} - MEMO InfoTech`} />
                              
                              <div className="absolute bottom-10 left-10 z-20">
-                                 <h2 className="text-6xl font-bold font-['Syne'] mb-2">Project {i}</h2>
+                                 <h2 className="text-6xl font-bold font-['Syne'] mb-2">{project.name}</h2>
                                  <p className="text-gray-300 uppercase tracking-widest">Website / 2024</p>
                              </div>
                              <div className="absolute top-10 right-10 z-20 bg-white text-black w-20 h-20 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 cursor-pointer hover:scale-110">
@@ -170,11 +175,11 @@ const Projects: React.FC = () => {
           {/* Horizontal Accordion Container */}
           <div className="flex flex-col md:flex-row min-h-[80vh] md:h-[600px] w-full gap-2">
              {[
-               { img: "/assets/f1.png", title: "Design 1" },
-               { img: "/assets/f2.png", title: "Design 2" },
-               { img: "/assets/f3.png", title: "Design 3" },
-               { img: "/assets/f4.png", title: "Design 4" },
-               { img: "/assets/f5.png", title: "Design 5" }
+               { img: "/assets/f1.png", title: "Mahi's Fashion" },
+               { img: "/assets/f2.png", title: "Mahi's Fashion" },
+               { img: "/assets/f3.png", title: "CAD Point" },
+               { img: "/assets/f4.png", title: "Tech Fives" },
+               { img: "/assets/f5.png", title: "Knlox" }
              ].map((item, idx) => (
                <div 
                   key={idx} 
@@ -210,11 +215,18 @@ const Projects: React.FC = () => {
                 </div>
 
                 <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-                    {[1,2,3,4,5,6].map((i) => (
-                        <div key={i} className="graphic-item break-inside-avoid relative group cursor-pointer">
-                            <img src={`/assets/m${i}.png`} className="w-full h-auto rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 grayscale hover:grayscale-0" alt={`Graphic Art ${i}`} />
+                    {[
+                      { name: "Blacorng", i: 1 },
+                      { name: "Trumph Card", i: 2 },
+                      { name: "Coco short", i: 3 },
+                      { name: "DP icon", i: 4 },
+                      { name: "MD", i: 5 },
+                      { name: "Tech Fives", i: 6 }
+                    ].map((item) => (
+                        <div key={item.i} className="graphic-item break-inside-avoid relative group cursor-pointer">
+                            <img src={`/assets/m${item.i}.png`} className="w-full h-auto rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 grayscale hover:grayscale-0" alt={`Graphic Art ${item.i}`} />
                             <div className="absolute bottom-6 left-6 bg-white px-6 py-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                                <span className="font-bold text-black">Art Piece #{i}</span>
+                                <span className="font-bold text-black">{item.name}</span>
                             </div>
                         </div>
                     ))}

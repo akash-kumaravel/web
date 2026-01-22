@@ -8,9 +8,11 @@ const BlogDetail: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
     const [shareMsg, setShareMsg] = useState<string | null>(null);
 
-    // Look up the blog post by id and fall back to a default article
+    // Look up the blog post by id (numeric) or slug
     const postId = Number(id);
-    const post = blogPosts.find(p => p.id === postId);
+    const post = blogPosts.find(p => 
+      p.id === postId || (p as any).slug === id
+    );
 
     const article = {
         title: post ? post.title : "Article",
@@ -66,13 +68,20 @@ const BlogDetail: React.FC = () => {
 
     // SEO: dynamic title & meta based on article
     useEffect(() => {
-        const title = article.title ? `${article.title} — MEMO InfoTech` : 'Article — MEMO InfoTech';
+        let title = article.title ? `${article.title} — MEMO InfoTech` : 'Article — MEMO InfoTech';
+        let desc = article.subtitle || 'Read this article from MEMO InfoTech on design and technology.';
+        
+        // Custom meta for IT company blog post
+        if (post && (post as any).slug === 'it-company-in-nagercoil') {
+            title = 'Best IT & Digital Solutions Company in Nagercoil | Memo InfoTech';
+            desc = 'Looking for a trusted IT company in Nagercoil? Memo InfoTech offers complete digital solutions including web development, software, apps, SEO & branding. Call today.';
+        }
+        
         document.title = title;
-        const desc = article.subtitle || 'Read this article from MEMO InfoTech on design and technology.';
         let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
         if (meta) meta.content = desc;
         else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
-    }, [article.title, article.subtitle]);
+    }, [article.title, article.subtitle, post]);
 
     const getShareUrl = () => {
         try {
