@@ -161,7 +161,7 @@ const Blog: React.FC = () => {
     // Subscription State
     const [email, setEmail] = useState("");
     const [subStatus, setSubStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzPw6ehwECGlSxJgtdtqBokzgkaDfeAZQ8Hxo611d0O9gpnGtkbp2I2KOj2DcEH5Mnoow/exec";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxTk-Npq9H8Ah0YW6GcU4c8Xic0hOPTOW9KvZadLwKNPnr50u39qTyYZ3g79NnVyMx0/exec";
 
     const filteredPosts = activeCategory === "All" 
         ? blogPosts 
