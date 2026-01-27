@@ -191,59 +191,6 @@ const UIUXDesign: React.FC = () => {
         </div>
       </div>
 
-      {/* Case Studies */}
-      <div className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold font-['Syne'] text-black mb-4">Case Studies</h2>
-            <p className="text-xl text-gray-600">Real results from real clients</p>
-          </div>
-
-          <div className="space-y-8">
-            {caseStudies.map((study, i) => (
-              <div key={i} className={`p-10 rounded-3xl border-2 ${i % 2 === 0 ? 'bg-gray-50 border-gray-200' : 'bg-[#007BFF] border-[#0056cc]'}`}>
-                <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${i % 2 === 1 ? 'text-white' : ''}`}>
-                  <div>
-                    <h3 className={`text-3xl font-bold font-['Syne'] mb-4 ${i % 2 === 1 ? 'text-white' : 'text-black'}`}>
-                      {study.title}
-                    </h3>
-                    <p className={`text-sm font-semibold mb-6 ${i % 2 === 1 ? 'text-blue-100' : 'text-[#007BFF]'}`}>
-                      {study.client}
-                    </p>
-                    
-                    <div className="space-y-4">
-                      <div>
-                        <p className={`text-sm font-bold mb-2 ${i % 2 === 1 ? 'text-blue-100' : 'text-gray-600'}`}>Challenge</p>
-                        <p className={i % 2 === 1 ? 'text-blue-50' : 'text-gray-700'}>{study.challenge}</p>
-                      </div>
-                      <div>
-                        <p className={`text-sm font-bold mb-2 ${i % 2 === 1 ? 'text-blue-100' : 'text-gray-600'}`}>Solution</p>
-                        <p className={i % 2 === 1 ? 'text-blue-50' : 'text-gray-700'}>{study.solution}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col justify-center">
-                    <p className={`text-sm font-bold mb-6 ${i % 2 === 1 ? 'text-blue-100' : 'text-gray-600'}`}>Results</p>
-                    <p className={`mb-8 leading-relaxed ${i % 2 === 1 ? 'text-blue-50' : 'text-gray-700'}`}>
-                      {study.result}
-                    </p>
-                    
-                    <div className="grid grid-cols-3 gap-4">
-                      {study.metrics.map((metric, j) => (
-                        <div key={j} className={`p-4 rounded-lg text-center ${i % 2 === 1 ? 'bg-blue-400/20 text-white' : 'bg-gray-100 text-black'}`}>
-                          <p className="text-sm font-bold">{metric}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Business Benefits */}
       <div className="py-32 bg-[#007BFF] text-white">
         <div className="container mx-auto px-6">
@@ -279,33 +226,7 @@ const UIUXDesign: React.FC = () => {
             </a>
           </div>
 
-          {/* Connect services */}
-          <div className="mt-12 pt-12 border-t border-gray-200 text-center">
-            <p className="text-gray-600 mb-6 font-semibold">Connect with complementary services:</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a href="https://www.memoinfotech.com/web-design-development/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">Web Design</a>
-              <a href="https://www.memoinfotech.com/graphic-design-services/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">Graphic Design</a>
-              <a href="https://www.memoinfotech.com/mobile-app-development/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">Mobile Apps</a>
-              <a href="https://www.memoinfotech.com/software-development/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">Software Dev</a>
-              <a href="https://www.memoinfotech.com/digital-marketing-services/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">Digital Marketing</a>
-            </div>
-          </div>
 
-          {/* Stats */}
-          <div className="mt-20 grid grid-cols-3 gap-8">
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">100+</p>
-              <p className="text-gray-600 mt-2">Design Projects</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">4.9★</p>
-              <p className="text-gray-600 mt-2">Avg. Client Rating</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">15+</p>
-              <p className="text-gray-600 mt-2">Awards Won</p>
-            </div>
-          </div>
         </div>
       </div>
 
