@@ -276,7 +276,7 @@ const SoftwareDevelopment: React.FC = () => {
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">Let's create software that transforms your business and drives growth.</p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link href="https://www.memoinfotech.com/contact/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all shadow-lg">
+            <Link to="/contact" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all shadow-lg">
               Start Your Project <ArrowRight size={20} />
             </Link>
             <Link to="/services" className="inline-flex items-center gap-3 px-8 py-4 border-2 border-[#007BFF] text-[#007BFF] rounded-full font-bold hover:bg-[#007BFF] hover:text-white transition-all">
