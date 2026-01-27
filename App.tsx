@@ -13,6 +13,18 @@ import Apply from './pages/Apply';
 import Academy from './pages/Academy';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import WebDesignDevelopment from './pages/WebDesignDevelopment';
+import UIUXDesign from './pages/UIUXDesign';
+import MobileAppDevelopment from './pages/MobileAppDevelopment';
+import SoftwareDevelopment from './pages/SoftwareDevelopment';
+import GraphicDesignServices from './pages/GraphicDesignServices';
+import DigitalMarketingServices from './pages/DigitalMarketingServices';
+import ECommerceSolutions from './pages/ECommerceSolutions';
+import HostingCloudServices from './pages/HostingCloudServices';
+import AIAutomation from './pages/AIAutomation';
+import TestingQA from './pages/TestingQA';
+import TrainingConsulting from './pages/TrainingConsulting';
+import ContentDocumentation from './pages/ContentDocumentation';
 
 const App: React.FC = () => {
   return (
@@ -22,6 +34,18 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/web-design-development" element={<WebDesignDevelopment />} />
+          <Route path="/ui-ux-design" element={<UIUXDesign />} />
+          <Route path="/mobile-app-development" element={<MobileAppDevelopment />} />
+          <Route path="/software-development" element={<SoftwareDevelopment />} />
+          <Route path="/graphic-design-services" element={<GraphicDesignServices />} />
+          <Route path="/digital-marketing-services" element={<DigitalMarketingServices />} />
+          <Route path="/e-commerce-solutions" element={<ECommerceSolutions />} />
+          <Route path="/hosting-cloud-it" element={<HostingCloudServices />} />
+          <Route path="/ai-automation" element={<AIAutomation />} />
+          <Route path="/testing-qa" element={<TestingQA />} />
+          <Route path="/training-consulting" element={<TrainingConsulting />} />
+          <Route path="/content-documentation" element={<ContentDocumentation />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/apply" element={<Apply />} />

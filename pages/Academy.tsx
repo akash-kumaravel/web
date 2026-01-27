@@ -103,7 +103,7 @@ const courses = [
     students: 900,
     rating: 4.6,
     description: "Learn visual design for the web, responsive layouts, and modern CSS techniques for beautiful sites.",
-    image: "/assets/web design.png",
+    image: "/assets/Website Development.png",
     highlights: ["Responsive Design", "CSS Techniques", "Design Systems"]
   },
   {
@@ -224,7 +224,7 @@ const Academy: React.FC = () => {
         provider: {
           '@type': 'Organization',
           name: 'MEMO InfoTech',
-          sameAs: origin
+      image: "/assets/Website Development.png",
         },
         url: `${origin}/academy#course-${c.id}`
       }));
