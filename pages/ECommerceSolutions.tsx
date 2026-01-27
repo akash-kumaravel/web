@@ -238,21 +238,6 @@ const ECommerceSolutions: React.FC = () => {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="mt-20 grid grid-cols-3 gap-8">
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">100+</p>
-              <p className="text-gray-600 mt-2">Stores Launched</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">$500M+</p>
-              <p className="text-gray-600 mt-2">Client Sales Volume</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">99.9%</p>
-              <p className="text-gray-600 mt-2">Uptime SLA</p>
-            </div>
-          </div>
         </div>
       </div>
 

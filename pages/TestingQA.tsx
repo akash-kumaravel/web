@@ -238,21 +238,7 @@ const TestingQA: React.FC = () => {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="mt-20 grid grid-cols-3 gap-8">
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">500+</p>
-              <p className="text-gray-600 mt-2">QA Projects Completed</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">1M+</p>
-              <p className="text-gray-600 mt-2">Test Cases Executed</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">98%</p>
-              <p className="text-gray-600 mt-2">Bug Detection Rate</p>
-            </div>
-          </div>
+
         </div>
       </div>
 

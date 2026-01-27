@@ -327,21 +327,7 @@ const WebDesignDevelopment: React.FC = () => {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="mt-20 grid grid-cols-3 gap-8">
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">50+</p>
-              <p className="text-gray-600 mt-2">Projects Completed</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">200%</p>
-              <p className="text-gray-600 mt-2">Avg. ROI Improvement</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">99.9%</p>
-              <p className="text-gray-600 mt-2">Uptime Guarantee</p>
-            </div>
-          </div>
+
         </div>
       </div>
 

@@ -238,21 +238,6 @@ const AIAutomation: React.FC = () => {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="mt-20 grid grid-cols-3 gap-8">
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">150+</p>
-              <p className="text-gray-600 mt-2">AI Projects Delivered</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">$100M+</p>
-              <p className="text-gray-600 mt-2">Client Value Created</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">5x</p>
-              <p className="text-gray-600 mt-2">Average ROI Increase</p>
-            </div>
-          </div>
         </div>
       </div>
 

@@ -238,21 +238,7 @@ const GraphicDesignServices: React.FC = () => {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="mt-20 grid grid-cols-3 gap-8">
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">200+</p>
-              <p className="text-gray-600 mt-2">Creative Projects</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">30+</p>
-              <p className="text-gray-600 mt-2">Design Awards</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">4.9★</p>
-              <p className="text-gray-600 mt-2">Client Rating</p>
-            </div>
-          </div>
+
         </div>
       </div>
 
