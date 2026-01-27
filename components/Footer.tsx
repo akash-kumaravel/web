@@ -54,10 +54,12 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-lg mb-6 uppercase tracking-wider">Services</h3>
             <ul className="space-y-3 font-medium text-white">
-              <li><a href="https://www.memoinfotech.com/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Software Development</a></li>
-              <li><a href="https://www.memoinfotech.com/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Web Development</a></li>
-              <li><a href="https://www.memoinfotech.com/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Mobile Apps</a></li>
-              <li><a href="https://www.memoinfotech.com/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Digital Marketing</a></li>
+              <li><a href="https://www.memoinfotech.com/web-design-development/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Web Design & Development</a></li>
+              <li><a href="https://www.memoinfotech.com/ui-ux-design/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">UI/UX Design</a></li>
+              <li><a href="https://www.memoinfotech.com/mobile-app-development/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Mobile Apps</a></li>
+              <li><a href="https://www.memoinfotech.com/software-development/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Software Development</a></li>
+              <li><a href="https://www.memoinfotech.com/digital-marketing-services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Digital Marketing</a></li>
+              <li><a href="https://www.memoinfotech.com/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">View All Services</a></li>
             </ul>
           </div>
 

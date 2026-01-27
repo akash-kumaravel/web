@@ -243,14 +243,14 @@ const Services: React.FC = () => {
 
                          {serviceRoutes[index] ? (
                              <div className="flex flex-col sm:flex-row gap-4">
-                                 <Link to={serviceRoutes[index]} className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
+                                 <a href={`https://www.memoinfotech.com${serviceRoutes[index]}/`} className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
                                     ${service.textColor === 'text-white' 
                                         ? 'bg-white text-black hover:bg-[#007BFF] hover:text-white' 
                                         : 'bg-black text-white hover:bg-[#007BFF]'}
                                  `}>
                                      Learn More <ArrowRight size={20} />
-                                 </Link>
-                                 <a href="/contact" className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
+                                 </a>
+                                 <a href="https://www.memoinfotech.com/contact/" className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
                                     ${service.textColor === 'text-white' 
                                         ? 'border-2 border-white text-white hover:bg-white hover:text-black' 
                                         : 'border-2 border-black text-black hover:bg-black hover:text-white'}
@@ -259,7 +259,7 @@ const Services: React.FC = () => {
                                  </a>
                              </div>
                          ) : (
-                             <a href="/contact" className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
+                             <a href="https://www.memoinfotech.com/contact/" className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
                                 ${service.textColor === 'text-white' 
                                     ? 'bg-white text-black hover:bg-[#007BFF] hover:text-white' 
                                     : 'bg-black text-white hover:bg-[#007BFF]'}

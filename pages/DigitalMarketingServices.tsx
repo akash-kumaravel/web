@@ -140,9 +140,6 @@ const DigitalMarketingServices: React.FC = () => {
     <div className="w-full bg-gray-100">
       {/* Header */}
       <div className="pt-40 pb-20 container mx-auto px-6">
-        <Link to="/services" className="inline-flex items-center gap-2 text-[#007BFF] font-semibold mb-6 hover:gap-3 transition-all">
-          ← Back to Services
-        </Link>
         
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
@@ -274,27 +271,23 @@ const DigitalMarketingServices: React.FC = () => {
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">Let's create a marketing strategy that drives real growth and measurable results.</p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a href="/contact" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all shadow-lg">
-              Start Your Campaign <ArrowRight size={20} />
+            <a href="https://www.memoinfotech.com/contact/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all shadow-lg">
+              Start Your Project <ArrowRight size={20} />
             </a>
-            <Link to="/services" className="inline-flex items-center gap-3 px-8 py-4 border-2 border-[#007BFF] text-[#007BFF] rounded-full font-bold hover:bg-[#007BFF] hover:text-white transition-all">
+            <a href="https://www.memoinfotech.com/services/" className="inline-flex items-center gap-3 px-8 py-4 border-2 border-[#007BFF] text-[#007BFF] rounded-full font-bold hover:bg-[#007BFF] hover:text-white transition-all">
               View All Services
-            </Link>
+            </a>
           </div>
 
-          {/* Stats */}
-          <div className="mt-20 grid grid-cols-3 gap-8">
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">500+</p>
-              <p className="text-gray-600 mt-2">Campaigns Managed</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">$50M+</p>
-              <p className="text-gray-600 mt-2">Client Revenue Generated</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">400%</p>
-              <p className="text-gray-600 mt-2">Avg. ROI Improvement</p>
+          {/* Connect services */}
+          <div className="mt-12 pt-12 border-t border-gray-200 text-center">
+            <p className="text-gray-600 mb-6 font-semibold">Connect with complementary services:</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="https://www.memoinfotech.com/web-design-development/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">Web Design</a>
+              <a href="https://www.memoinfotech.com/graphic-design-services/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">Graphic Design</a>
+              <a href="https://www.memoinfotech.com/content-documentation/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">Content</a>
+              <a href="https://www.memoinfotech.com/e-commerce-solutions/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">E-Commerce</a>
+              <a href="https://www.memoinfotech.com/ai-automation/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">AI & Automation</a>
             </div>
           </div>
         </div>
@@ -304,3 +297,4 @@ const DigitalMarketingServices: React.FC = () => {
 };
 
 export default DigitalMarketingServices;
+

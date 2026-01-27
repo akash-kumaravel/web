@@ -168,9 +168,6 @@ const WebDesignDevelopment: React.FC = () => {
     <div className="w-full bg-gray-100">
       {/* Header */}
       <div className="pt-40 pb-20 container mx-auto px-6">
-        <Link to="/services" className="inline-flex items-center gap-2 text-[#007BFF] font-semibold mb-6 hover:gap-3 transition-all">
-          ← Back to Services
-        </Link>
         
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
@@ -363,12 +360,24 @@ const WebDesignDevelopment: React.FC = () => {
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">Let's create a stunning website that attracts customers and drives growth for your business. Our team is ready to discuss your project.</p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link to="/contact" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all shadow-lg">
+            <a href="https://www.memoinfotech.com/contact/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all shadow-lg">
               Start Your Project <ArrowRight size={20} />
-            </Link>
-            <Link to="/services" className="inline-flex items-center gap-3 px-8 py-4 border-2 border-[#007BFF] text-[#007BFF] rounded-full font-bold hover:bg-[#007BFF] hover:text-white transition-all">
+            </a>
+            <a href="https://www.memoinfotech.com/services/" className="inline-flex items-center gap-3 px-8 py-4 border-2 border-[#007BFF] text-[#007BFF] rounded-full font-bold hover:bg-[#007BFF] hover:text-white transition-all">
               View All Services
-            </Link>
+            </a>
+          </div>
+
+          {/* Connect services */}
+          <div className="mt-12 pt-12 border-t border-gray-200 text-center">
+            <p className="text-gray-600 mb-6 font-semibold">Connect with complementary services:</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="https://www.memoinfotech.com/ui-ux-design/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">UI/UX Design</a>
+              <a href="https://www.memoinfotech.com/graphic-design-services/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">Graphic Design</a>
+              <a href="https://www.memoinfotech.com/digital-marketing-services/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">Digital Marketing</a>
+              <a href="https://www.memoinfotech.com/e-commerce-solutions/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">E-Commerce</a>
+              <a href="https://www.memoinfotech.com/hosting-cloud-services/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black hover:shadow-lg transition-all">Hosting & Cloud</a>
+            </div>
           </div>
 
           {/* Stats */}
@@ -385,6 +394,51 @@ const WebDesignDevelopment: React.FC = () => {
               <p className="text-4xl font-bold text-[#007BFF] font-['Syne']">99.9%</p>
               <p className="text-gray-600 mt-2">Uptime Guarantee</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Services */}
+      <div className="py-32 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Related Services</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a href="https://www.memoinfotech.com/ui-ux-design/" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">UI/UX Design</h3>
+              <p className="text-gray-600 mb-4">Beautiful interfaces paired with your web development for seamless user experiences.</p>
+              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
+            </a>
+
+            <a href="https://www.memoinfotech.com/graphic-design-services/" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Graphic Design</h3>
+              <p className="text-gray-600 mb-4">Professional branding and visual assets to complement your web presence.</p>
+              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
+            </a>
+
+            <a href="https://www.memoinfotech.com/digital-marketing-services/" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Digital Marketing</h3>
+              <p className="text-gray-600 mb-4">Drive traffic and conversions for your website with targeted marketing strategies.</p>
+              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
+            </a>
+
+            <a href="https://www.memoinfotech.com/e-commerce-solutions/" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">E-Commerce Solutions</h3>
+              <p className="text-gray-600 mb-4">Build powerful online stores integrated with your website development.</p>
+              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
+            </a>
+
+            <a href="https://www.memoinfotech.com/hosting-cloud-services/" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Hosting & Cloud</h3>
+              <p className="text-gray-600 mb-4">Reliable hosting and infrastructure to keep your website running 24/7.</p>
+              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
+            </a>
+
+            <a href="https://www.memoinfotech.com/services/" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">All Services</h3>
+              <p className="text-gray-600 mb-4">Explore our complete range of digital services and solutions.</p>
+              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">View All →</span>
+            </a>
           </div>
         </div>
       </div>
