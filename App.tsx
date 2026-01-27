@@ -13,18 +13,18 @@ import Apply from './pages/Apply';
 import Academy from './pages/Academy';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
-import WebDesignDevelopment from './pages/WebDesignDevelopment';
-import UIUXDesign from './pages/UIUXDesign';
-import MobileAppDevelopment from './pages/MobileAppDevelopment';
-import SoftwareDevelopment from './pages/SoftwareDevelopment';
-import GraphicDesignServices from './pages/GraphicDesignServices';
-import DigitalMarketingServices from './pages/DigitalMarketingServices';
-import ECommerceSolutions from './pages/ECommerceSolutions';
-import HostingCloudServices from './pages/HostingCloudServices';
-import AIAutomation from './pages/AIAutomation';
-import TestingQA from './pages/TestingQA';
-import TrainingConsulting from './pages/TrainingConsulting';
-import ContentDocumentation from './pages/ContentDocumentation';
+import WebDesignDevelopment from './pages/services/WebDesignDevelopment';
+import UIUXDesign from './pages/services/UIUXDesign';
+import MobileAppDevelopment from './pages/services/MobileAppDevelopment';
+import SoftwareDevelopment from './pages/services/SoftwareDevelopment';
+import GraphicDesignServices from './pages/services/GraphicDesignServices';
+import DigitalMarketingServices from './pages/services/DigitalMarketingServices';
+import ECommerceSolutions from './pages/services/ECommerceSolutions';
+import HostingCloudServices from './pages/services/HostingCloudServices';
+import AIAutomation from './pages/services/AIAutomation';
+import TestingQA from './pages/services/TestingQA';
+import TrainingConsulting from './pages/services/TrainingConsulting';
+import ContentDocumentation from './pages/services/ContentDocumentation';
 
 const App: React.FC = () => {
   return (
