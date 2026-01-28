@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Instagram, Twitter, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
@@ -42,24 +43,24 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-lg mb-6 uppercase tracking-wider">Company</h3>
             <ul className="space-y-3 font-medium text-white">
-              <li><a href="https://www.memoinfotech.com/about/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">About Us</a></li>
-              <li><a href="https://www.memoinfotech.com/careers/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Careers</a></li>
-              <li><a href="https://www.memoinfotech.com/projects/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Projects</a></li>
-              <li><a href="https://www.memoinfotech.com/blog/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Blog</a></li>
-              <li><a href="https://www.memoinfotech.com/contact/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Contact</a></li>
-              <li><a href="https://www.memoinfotech.com/academy/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Academy</a></li>
+              <li><Link to="/about" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">About Us</Link></li>
+              <li><Link to="/careers" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Careers</Link></li>
+              <li><Link to="/projects" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Projects</Link></li>
+              <li><Link to="/blog" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Blog</Link></li>
+              <li><Link to="/contact" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Contact</Link></li>
+              <li><Link to="/academy" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Academy</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-bold text-lg mb-6 uppercase tracking-wider">Services</h3>
             <ul className="space-y-3 font-medium text-white">
-              <li><a href="https://www.memoinfotech.com/web-design-development/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Web Design & Development</a></li>
-              <li><a href="https://www.memoinfotech.com/ui-ux-design/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">UI/UX Design</a></li>
-              <li><a href="https://www.memoinfotech.com/mobile-app-development/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Mobile Apps</a></li>
-              <li><a href="https://www.memoinfotech.com/software-development/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Software Development</a></li>
-              <li><a href="https://www.memoinfotech.com/digital-marketing-services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Digital Marketing</a></li>
-              <li><a href="https://www.memoinfotech.com/services/" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">View All Services</a></li>
+              <li><Link to="/web-design-development" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Web Design & Development</Link></li>
+              <li><Link to="/ui-ux-design" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">UI/UX Design</Link></li>
+              <li><Link to="/mobile-app-development" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Mobile Apps</Link></li>
+              <li><Link to="/software-development" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Software Development</Link></li>
+              <li><Link to="/digital-marketing-services" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">Digital Marketing</Link></li>
+              <li><Link to="/services" className="hover:text-gray-100 hover:underline decoration-2 underline-offset-4">View All Services</Link></li>
             </ul>
           </div>
 
@@ -75,8 +76,8 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center font-semibold text-sm text-blue-100">
             <p>© 2024 MEMO InfoTech. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="https://www.memoinfotech.com/privacy-policy/" className="hover:text-white">Privacy Policy</a>
-            <a href="https://www.memoinfotech.com/terms-of-service/" className="hover:text-white">Terms of Service</a>
+            <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-white">Terms of Service</Link>
           </div>
         </div>
       </div>

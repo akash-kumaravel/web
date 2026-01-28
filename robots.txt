@@ -1,13 +1,62 @@
+# Default rules for all bots
 User-agent: *
 Allow: /
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.woff
+Allow: /*.woff2
+Allow: /*.ttf
+Allow: /*.eot
 
-Sitemap: https://www.memoinfotech.com/sitemap.xml
-
-# Disallow specific bot patterns
+# Disallow crawler patterns that cause issues
 User-agent: AhrefsBot
 Disallow: /
 
 User-agent: SemrushBot
 Disallow: /
 
-# Sitemap
+User-agent: DotBot
+Disallow: /
+
+# Allow Google Search Console and other Google services
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay for politeness
+User-agent: *
+Crawl-delay: 1
+Request-rate: 1/1s
+
+# Primary Sitemap
+Sitemap: https://www.memoinfotech.com/sitemap.xml
+Sitemap: https://www.memoinfotech.com/sitemap.html
+
+# Disable crawling of specific paths if needed
+# Disallow: /admin/
+# Disallow: /api/
+# Disallow: /private/
+
+# Allow indexing of important SPA routes
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /projects
+Allow: /academy
+Allow: /apply
+Allow: /careers
+Allow: /blog
+Allow: /contact
+Allow: /courses
+Allow: /enroll

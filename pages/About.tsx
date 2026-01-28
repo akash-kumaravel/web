@@ -1,7 +1,23 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { updateSEO, addBreadcrumbSchema } from '../utils/seo';
 
 const About: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    updateSEO({
+      title: 'About Us — Web Development & Design Agency | MEMO InfoTech',
+      description: 'Learn about MEMO InfoTech, a leading web development and design agency in Nagercoil. Discover our mission, team, and commitment to digital excellence.',
+      keywords: 'about MEMO InfoTech, web design agency, digital solutions provider, Nagercoil IT company',
+      canonicalUrl: 'https://www.memoinfotech.com/about/'
+    });
+    
+    addBreadcrumbSchema([
+      { name: 'Home', url: 'https://www.memoinfotech.com/' },
+      { name: 'About', url: 'https://www.memoinfotech.com/about/' }
+    ]);
+  }, []);
 
   useEffect(() => {
     const gsap = (window as any).gsap;
@@ -105,8 +121,8 @@ const About: React.FC = () => {
                             Discover our story, how we work, and why we're building the future of digital solutions.
                         </p>
                         <div className="mt-6 flex items-center justify-center gap-4">
-                            <a href="/services" className="inline-block bg-[#007BFF] text-white px-5 py-2 rounded-full font-bold hover:bg-black transition-colors">Our Services</a>
-                            <a href="/contact" className="inline-block bg-black text-white px-5 py-2 rounded-full font-bold hover:bg-[#007BFF] transition-colors">Contact Us</a>
+                            <Link to="/services" className="inline-block bg-[#007BFF] text-white px-5 py-2 rounded-full font-bold hover:bg-black transition-colors" aria-label="View All Services">Our Services</Link>
+                            <Link to="/contact" className="inline-block bg-black text-white px-5 py-2 rounded-full font-bold hover:bg-[#007BFF] transition-colors" aria-label="Contact MEMO InfoTech">Contact Us</Link>
                         </div>
                         {/* Breadcrumb structured data for About */}
                         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

@@ -4,18 +4,36 @@ import { Link } from 'react-router-dom';
 
 const GraphicDesignServices: React.FC = () => {
   useEffect(() => {
-    document.title = 'Graphic Design & Creative Services — Professional Design Solutions';
-    const desc = 'Professional graphic design, logo design, branding, social media creatives, video editing, and motion graphics services.';
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (meta) meta.content = desc;
+    // ==================== SEO: Meta Tags ====================
+    document.title = 'Graphic Design & Creative Services | Professional Logo & Branding Design';
+    const desc = 'Professional graphic design services. Logo design, branding, social media creatives, video editing, motion graphics. Award-winning creative team with 10+ years experience.';
+    
+    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (metaDesc) metaDesc.content = desc;
     else { 
-      meta = document.createElement('meta'); 
-      meta.name = 'description'; 
-      meta.content = desc; 
-      document.head.appendChild(meta); 
+      metaDesc = document.createElement('meta'); 
+      metaDesc.name = 'description'; 
+      metaDesc.content = desc; 
+      document.head.appendChild(metaDesc); 
     }
 
-    // Add Breadcrumb Schema
+    // OpenGraph Meta Tags (improves CTR in social & search previews)
+    const setOGMeta = (prop: string, content: string) => {
+      let og = document.querySelector(`meta[property="${prop}"]`) as HTMLMetaElement | null;
+      if (!og) {
+        og = document.createElement('meta');
+        og.setAttribute('property', prop);
+        document.head.appendChild(og);
+      }
+      og.content = content;
+    };
+
+    setOGMeta('og:title', 'Graphic Design & Creative Services | MEMO InfoTech');
+    setOGMeta('og:description', desc);
+    setOGMeta('og:type', 'website');
+    setOGMeta('og:url', 'https://www.memoinfotech.com/services/graphic-design-services/');
+
+    // ==================== SEO: Breadcrumb Schema ====================
     const breadcrumbSchema = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -36,41 +54,75 @@ const GraphicDesignServices: React.FC = () => {
           "@type": "ListItem",
           "position": 3,
           "name": "Graphic Design Services",
-          "item": "https://www.memoinfotech.com/graphic-design-services/"
+          "item": "https://www.memoinfotech.com/services/graphic-design-services/"
         }
       ]
     };
 
-    // Add Service Schema
+    // ==================== SEO: Service Schema ====================
     const serviceSchema = {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Graphic Design Services",
-      "description": "Professional graphic design, logo design, branding, social media creatives, video editing, and motion graphics services.",
+      "description": "Professional graphic design, logo design, branding, social media creatives, video editing, and motion graphics services. Award-winning creative design solutions.",
       "provider": {
         "@type": "Organization",
         "name": "MEMO InfoTech",
         "url": "https://www.memoinfotech.com",
         "logo": "https://www.memoinfotech.com/logo.png",
-        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"]
+        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-XXX-XXX-XXXX",
+          "contactType": "Customer Service"
+        }
       },
       "areaServed": "Worldwide",
-      "serviceType": "Graphic Design"
+      "serviceType": "Graphic Design",
+      "hasOfferingDetails": [
+        { "@type": "OfferingDetails", "name": "Logo Design", "priceRange": "Custom Quote" },
+        { "@type": "OfferingDetails", "name": "Brand Identity Design", "priceRange": "Custom Quote" },
+        { "@type": "OfferingDetails", "name": "Motion Graphics & Animation", "priceRange": "Custom Quote" }
+      ]
+    };
+
+    // ==================== SEO: Organization Schema ====================
+    const organizationSchema = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MEMO InfoTech",
+      "url": "https://www.memoinfotech.com",
+      "logo": "https://www.memoinfotech.com/logo.png",
+      "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-XXX-XXX-XXXX",
+        "contactType": "Customer Service"
+      }
     };
 
     const breadcrumbScript = document.createElement('script');
     breadcrumbScript.type = 'application/ld+json';
+    breadcrumbScript.async = true;
     breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
     document.head.appendChild(breadcrumbScript);
 
     const serviceScript = document.createElement('script');
     serviceScript.type = 'application/ld+json';
+    serviceScript.async = true;
     serviceScript.textContent = JSON.stringify(serviceSchema);
     document.head.appendChild(serviceScript);
+
+    const orgScript = document.createElement('script');
+    orgScript.type = 'application/ld+json';
+    orgScript.async = true;
+    orgScript.textContent = JSON.stringify(organizationSchema);
+    document.head.appendChild(orgScript);
 
     return () => {
       document.head.removeChild(breadcrumbScript);
       document.head.removeChild(serviceScript);
+      document.head.removeChild(orgScript);
     };
   }, []);
 
@@ -196,9 +248,8 @@ const GraphicDesignServices: React.FC = () => {
 
   return (
     <div className="w-full bg-gray-100">
-      {/* Header */}
-      <div className="pt-40 pb-20 container mx-auto px-6">
-        
+      {/* ==================== SEMANTIC HTML: Header with H1 ====================*/}
+      <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
             Graphic Design & Creative Services
@@ -207,33 +258,34 @@ const GraphicDesignServices: React.FC = () => {
             We bring your brand story to life through compelling visual content. From logos to animations, we create designs that resonate with your audience and drive results.
           </p>
         </div>
-      </div>
+      </header>
 
-      {/* Main Services Grid */}
-      <div className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16">Our Creative Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, i) => (
-              <div key={i} className="p-8 bg-gray-50 rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all duration-300 group">
-                <div className="text-[#007BFF] mb-4 group-hover:scale-110 transition-transform">
-                  {service.icon}
-                </div>
-                <h3 className="text-2xl font-bold font-['Syne'] text-black mb-4">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
-              </div>
-            ))}
+      <main className="w-full" role="main" aria-label="Main Content">
+        {/* ==================== Section 1: Creative Services ====================*/}
+        <section className="py-32 bg-white" aria-label="Our Creative Services" role="region">
+          <div className="container mx-auto px-6">
+            <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16">Our Graphic Design Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, i) => (
+                <article key={i} className="p-8 bg-gray-50 rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all duration-300 group">
+                  <div className="text-[#007BFF] mb-4 group-hover:scale-110 transition-transform" aria-hidden="true">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold font-['Syne'] text-black mb-4">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* Advanced Features Section */}
-      <div className="py-32 bg-black text-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold font-['Syne'] mb-4">Creative Excellence Features</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">Comprehensive creative services that bring your vision to life.</p>
-          </div>
+        {/* ==================== Section 2: Creative Excellence ====================*/}
+        <section className="py-32 bg-black text-white" aria-label="Creative Excellence Features" role="region">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold font-['Syne'] mb-4">Design Excellence &amp; Creative Capabilities</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">Comprehensive creative services that bring your brand vision to life.</p>
+            </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, i) => (
@@ -247,10 +299,10 @@ const GraphicDesignServices: React.FC = () => {
             ))}
           </div>
         </div>
-      </div>
+        </section>
 
-      {/* Business Benefits */}
-      <div className="py-32 bg-[#007BFF] text-white">
+        {/* Business Benefits */}
+        <section className="py-32 bg-[#007BFF] text-white" aria-label="Design Benefits" role="region">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold font-['Syne'] mb-4">Business Benefits</h2>
@@ -267,75 +319,75 @@ const GraphicDesignServices: React.FC = () => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* CTA */}
-      <div className="py-32 bg-white">
+      <section className="py-32 bg-white" aria-label="Call to Action" role="region">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold font-['Syne'] text-black mb-6">Ready to Create Amazing Visuals?</h2>
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">Let's bring your creative vision to life with stunning designs and content.</p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link to="/contact" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all shadow-lg">
+            <Link to="/contact" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all shadow-lg" aria-label="Start Your Graphic Design Project">
               Start Your Project <ArrowRight size={20} />
             </Link>
-            <Link to="/services" className="inline-flex items-center gap-3 px-8 py-4 border-2 border-[#007BFF] text-[#007BFF] rounded-full font-bold hover:bg-[#007BFF] hover:text-white transition-all">
+            <Link to="/services" className="inline-flex items-center gap-3 px-8 py-4 border-2 border-[#007BFF] text-[#007BFF] rounded-full font-bold hover:bg-[#007BFF] hover:text-white transition-all" aria-label="View All Services">
               View All Services
             </Link>
           </div>
 
 
         </div>
-      </div>
+      </section>
 
       {/* Related Services */}
-      <div className="py-32 bg-gray-50">
+      <section className="py-32 bg-gray-50" aria-label="Related Services" role="region">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Related Services</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link to="/services/ui-ux-design" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+            <Link to="/services/ui-ux-design" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about UI and UX Design">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">UI/UX Design</h3>
               <p className="text-gray-600 mb-4">Create cohesive visual brands with professional UI/UX design.</p>
               <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
             </Link>
 
-            <Link to="/services/web-design-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+            <Link to="/services/web-design-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Web Design and Development">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Web Design</h3>
               <p className="text-gray-600 mb-4">Bring your designs to life with responsive web development.</p>
               <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
             </Link>
 
-            <Link to="/services/digital-marketing-services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+            <Link to="/services/digital-marketing-services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Digital Marketing Services">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Digital Marketing</h3>
               <p className="text-gray-600 mb-4">Promote your designs with targeted marketing.</p>
               <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
             </Link>
 
-            <Link to="/services/content-documentation" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+            <Link to="/services/content-documentation" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Content Documentation">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Content</h3>
               <p className="text-gray-600 mb-4">Compelling content paired with stunning visuals.</p>
               <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
             </Link>
 
-            <Link to="/services/ai-automation" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+            <Link to="/services/ai-automation" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about AI Automation">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">AI & Automation</h3>
               <p className="text-gray-600 mb-4">Leverage AI for design optimization and personalization.</p>
               <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
             </Link>
 
-            <Link to="/services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+            <Link to="/services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="View all services">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">All Services</h3>
               <p className="text-gray-600 mb-4">Explore our complete range of digital services.</p>
               <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">View All →</span>
             </Link>
           </div>
         </div>
-      </div>
+      </section>
+      </main>
     </div>
   );
 };
 
 export default GraphicDesignServices;
-
 

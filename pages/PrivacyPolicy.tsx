@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-// Using native anchors for crawl-critical CTAs
+import { updateSEO, addBreadcrumbSchema } from '../utils/seo';
 import { ArrowLeft } from 'lucide-react';
 
 const PrivacyPolicy: React.FC = () => {

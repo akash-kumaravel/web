@@ -1,20 +1,21 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, CheckCircle2, Code, Database, Globe, Smartphone, Server, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { updateSEO } from '../utils/seo';
 
 const serviceRoutes: { [key: number]: string } = {
-  0: '/web-design-development',
-  1: '/ui-ux-design',
-  2: '/mobile-app-development',
-  3: '/software-development',
-  4: '/graphic-design-services',
-  5: '/digital-marketing-services',
-  6: '/e-commerce-solutions',
-  7: '/hosting-cloud-it',
-  8: '/ai-automation',
-  9: '/testing-qa',
-  10: '/training-consulting',
-  11: '/content-documentation'
+  0: '/services/web-design-development',
+  1: '/services/ui-ux-design',
+  2: '/services/mobile-app-development',
+  3: '/services/software-development',
+  4: '/services/graphic-design-services',
+  5: '/services/digital-marketing-services',
+  6: '/services/e-commerce-solutions',
+  7: '/services/hosting-cloud-it',
+  8: '/services/ai-automation',
+  9: '/services/testing-qa',
+  10: '/services/training-consulting',
+  11: '/services/content-documentation'
 };
 
 const services = [
@@ -184,11 +185,14 @@ const Services: React.FC = () => {
 
     // SEO: set page title & description
     useEffect(() => {
-        document.title = 'Services — Web Development, Design & Motion';
-        const desc = 'Custom web development, mobile apps, UI/UX design, branding, and motion graphics. Full-stack engineering and creative services focused on performance and conversion.';
-        let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-        if (meta) meta.content = desc;
-        else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
+        updateSEO({
+            title: 'Services — Web Development, Design, Mobile Apps & More | MEMO InfoTech',
+            description: 'Custom web development, mobile apps, UI/UX design, branding, graphic design, digital marketing, and motion graphics. Full-stack engineering and creative services focused on performance and conversion.',
+            keywords: 'web development services, mobile app development, UI UX design, graphic design, digital marketing, custom software',
+            ogTitle: 'Professional Digital Services - Web, Design & Development',
+            ogDescription: 'Expert services in web development, design, mobile apps, and digital solutions. Trusted by businesses across India.',
+            canonicalUrl: 'https://www.memoinfotech.com/services/'
+        });
     }, []);
 
   return (
@@ -243,29 +247,29 @@ const Services: React.FC = () => {
 
                          {serviceRoutes[index] ? (
                              <div className="flex flex-col sm:flex-row gap-4">
-                                 <a href={`https://www.memoinfotech.com${serviceRoutes[index]}/`} className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
-                                    ${service.textColor === 'text-white' 
-                                        ? 'bg-white text-black hover:bg-[#007BFF] hover:text-white' 
-                                        : 'bg-black text-white hover:bg-[#007BFF]'}
-                                 `}>
-                                     Learn More <ArrowRight size={20} />
-                                 </a>
-                                 <a href="https://www.memoinfotech.com/contact/" className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
-                                    ${service.textColor === 'text-white' 
-                                        ? 'border-2 border-white text-white hover:bg-white hover:text-black' 
-                                        : 'border-2 border-black text-black hover:bg-black hover:text-white'}
-                                 `}>
-                                     Start a Project <ArrowRight size={20} />
-                                 </a>
+                                <Link to={serviceRoutes[index]} className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
+                                   ${service.textColor === 'text-white' 
+                                       ? 'bg-white text-black hover:bg-[#007BFF] hover:text-white' 
+                                       : 'bg-black text-white hover:bg-[#007BFF]'}
+                                `}>
+                                    Learn More <ArrowRight size={20} />
+                                </Link>
+                                <Link to="/contact" className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
+                                   ${service.textColor === 'text-white' 
+                                       ? 'border-2 border-white text-white hover:bg-white hover:text-black' 
+                                       : 'border-2 border-black text-black hover:bg-black hover:text-white'}
+                                `}>
+                                    Start a Project <ArrowRight size={20} />
+                                </Link>
                              </div>
                          ) : (
-                             <a href="https://www.memoinfotech.com/contact/" className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
+                            <Link to="/contact" className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-all w-fit
                                 ${service.textColor === 'text-white' 
                                     ? 'bg-white text-black hover:bg-[#007BFF] hover:text-white' 
                                     : 'bg-black text-white hover:bg-[#007BFF]'}
                              `}>
                                  Start a Project <ArrowRight size={20} />
-                             </a>
+                             </Link>
                          )}
                      </div>
 

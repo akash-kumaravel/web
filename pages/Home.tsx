@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Box, Code, PenTool, Video, ArrowLeft, ArrowUpRight, MousePointer2, Globe, Award, Plus, Minus, Linkedin, Twitter, Loader2, CheckCircle, AlertCircle, Send, Mail, Phone, MapPin } from 'lucide-react';
 import { Testimonial } from '../types';
+import { updateSEO } from '../utils/seo';
 // Images are served from the public `assets` folder. Use direct public paths instead of importing from assets module.
 import { blogPosts } from './Blog';
 
@@ -12,7 +14,7 @@ const testimonials: Testimonial[] = [
     role: "Founder",
     company: "TechNova",
     text: "MEMO InfoTech completely modernized our software infrastructure. The Build bullling software for us.",
-    image: "/assets/t1.png"
+    image: ""
   },
   {
     id: 2,
@@ -20,7 +22,7 @@ const testimonials: Testimonial[] = [
     role: "CEO",
     company: "STEP IN",
     text: "Their team delivers at a professional level. The app they built for us is billing software.",
-    image: "/assets/t2.png"
+    image: ""
   },
   {
     id: 3,
@@ -28,23 +30,44 @@ const testimonials: Testimonial[] = [
     role: "Founder",
     company: " Muhibah restaurant",
     text: "Professional, technical, and incredibly talented. MEMO InfoTech is the IT partner you want if you're ready to scale your business.",
-    image: "/assets/t3.png"
+    image: ""
   }
 ];
 
+const testimonialImages = [
+  't1.png',
+  't2.png',
+  't3.png'
+];
+
 const teamMembers = [
-  { name: "Alex Void", role: "Technical Director", img: "/assets/image.svg" },
-  { name: "Nika Sol", role: "Lead Developer", img: "/assets/image.svg" },
-  { name: "Jaxon Steele", role: "Solutions Architect", img: "/assets/image.svg" },
-  { name: "Maya Green", role: "Project Manager", img: "/assets/image.svg" },
-  { name: "Davide R.", role: "UI/UX Specialist", img: "/assets/image.svg" },
+  { name: "Alex Void", role: "Technical Director" },
+  { name: "Nika Sol", role: "Lead Developer" },
+  { name: "Jaxon Steele", role: "Solutions Architect" },
+  { name: "Maya Green", role: "Project Manager" },
+  { name: "Davide R.", role: "UI/UX Specialist" },
+];
+
+const teamMemberImages = [
+  'image.svg',
+  'image.svg',
+  'image.svg',
+  'image.svg',
+  'image.svg',
 ];
 
 const serviceList = [
-  { icon: <Code />, title: "Website Development", desc: "Custom websites and software solutions tailored to your business needs and goals.", img: "/assets/p1.png" },
-  { icon: <Globe />, title: "Graphic & Logo Design", desc: "High-impact poster design, logos, and brand identity services.", img: "/assets/p2.png" },
-  { icon: <Box />, title: "Mobile Applications", desc: "Native and cross-platform apps for iOS and Android.", img: "/assets/p3.png" },
-  { icon: <Video />, title: "Motion & Explainers", desc: "Engaging motion posters and explainer videos that drive conversions.", img: "/assets/p4.png" }
+  { icon: <Code />, title: "Website Development", desc: "Custom websites and software solutions tailored to your business needs and goals." },
+  { icon: <Globe />, title: "Graphic & Logo Design", desc: "High-impact poster design, logos, and brand identity services." },
+  { icon: <Box />, title: "Mobile Applications", desc: "Native and cross-platform apps for iOS and Android." },
+  { icon: <Video />, title: "Motion & Explainers", desc: "Engaging motion posters and explainer videos that drive conversions." }
+];
+
+const homeServiceImages = [
+  'Website Development.png',
+  'Graphic Design & Creative Services.png',
+  'Mobile APP Development.png',
+  'Graphic Design & Creative Services.png'
 ];
 
 const faqs = [
@@ -57,10 +80,17 @@ const faqs = [
 // blogPosts imported from ./Blog to keep a single source of truth
 
 const horizontalWorks = [
-  { title: "Background Remover", cat: "website", img: "/assets/h1.png" },
-  { title: "Hivili", cat: "website", img: "/assets/h2.png" },
-  { title: "Cloud Bestie", cat: "Cloud Storage", img: "/assets/h3.png" },
-  { title: "Nexus", cat: "website", img: "/assets/h4.png" }
+  { title: "Background Remover", cat: "website" },
+  { title: "Hivili", cat: "website" },
+  { title: "Cloud Bestie", cat: "Cloud Storage" },
+  { title: "Nexus", cat: "website" }
+];
+
+const horizontalWorksImages = [
+  'h1.png',
+  'h2.png',
+  'h3.png',
+  'h4.png'
 ];
 
 const Home: React.FC = () => {
@@ -73,18 +103,18 @@ const Home: React.FC = () => {
   const horizontalContainerRef = useRef<HTMLDivElement>(null);
 
   const [activeTestimonial, setActiveTestimonial] = useState(0);
-  // SEO: set page title & description
+  
+  // SEO: set page title, description, and canonical URL
   useEffect(() => {
-    document.title = 'Best IT Company & Web Development in Nagercoil — MEMO InfoTech';
-    const desc = 'MEMO InfoTech — Best IT company in Nagercoil. We provide website development, graphic & logo design, mobile apps, motion posters, and custom software. Contact +91 6374433734 or hello@memoinfotech.com.';
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (meta) meta.content = desc;
-    else {
-      meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = desc;
-      document.head.appendChild(meta);
-    }
+    updateSEO({
+      title: 'Best IT Company & Web Development in Nagercoil — MEMO InfoTech',
+      description: 'MEMO InfoTech — Best IT company in Nagercoil. We provide website development, graphic & logo design, mobile apps, motion posters, and custom software. Contact +91 6374433734 or hello@memoinfotech.com.',
+      keywords: 'IT company Nagercoil, web development, graphic design, logo design, motion posters, explainer videos, software development',
+      ogTitle: 'Best IT Company & Web Development Services in Nagercoil',
+      ogDescription: 'Expert web development, design, and software solutions. Transform your business with MEMO InfoTech.',
+      ogImage: 'https://www.memoinfotech.com/og-image.jpg',
+      canonicalUrl: 'https://www.memoinfotech.com/'
+    });
   }, []);
 
   // Inject FAQPage JSON-LD for Home FAQs to improve rich results
@@ -121,7 +151,7 @@ const Home: React.FC = () => {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(0);
 
   // Contact Form State
-  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
+  const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [contactStatus, setContactStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxTk-Npq9H8Ah0YW6GcU4c8Xic0hOPTOW9KvZadLwKNPnr50u39qTyYZ3g79NnVyMx0/exec";
 
@@ -282,8 +312,11 @@ const Home: React.FC = () => {
     setContactStatus('submitting');
 
     const form = new FormData();
-    form.append('name', contactForm.name);
+    form.append('type', 'course-enrollment');
+    form.append('fullName', contactForm.name);
     form.append('email', contactForm.email);
+    form.append('phone', contactForm.phone);
+    form.append('course', 'Contact Form');
     form.append('message', contactForm.message);
 
     try {
@@ -293,7 +326,7 @@ const Home: React.FC = () => {
             mode: 'no-cors'
         });
         setContactStatus('success');
-        setContactForm({ name: '', email: '', message: '' });
+        setContactForm({ name: '', email: '', phone: '', message: '' });
         setTimeout(() => setContactStatus('idle'), 5000);
     } catch (error) {
         console.error(error);
@@ -331,12 +364,12 @@ const Home: React.FC = () => {
             We are a premier Software Company specializing in Website Development, Brand Design, Explainer Videos, and Motion Graphics. We turn ideas into digital experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="/contact" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+            <Link to="/contact" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2" aria-label="Contact MEMO InfoTech to Start Your Project">
               Start Your Project <ArrowRight size={20} />
-            </a>
-            <a href="/services" className="px-8 py-4 bg-black text-white rounded-full font-bold text-lg hover:bg-gray-800 transition-all transform hover:-translate-y-1">
+            </Link>
+            <Link to="/services" className="px-8 py-4 bg-black text-white rounded-full font-bold text-lg hover:bg-gray-800 transition-all transform hover:-translate-y-1" aria-label="View All Our Services">
               Our Services
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -445,7 +478,7 @@ const Home: React.FC = () => {
              {horizontalWorks.map((work, i) => (
              <div key={i} className="horizontal-item w-[20%] h-full p-4 md:p-20 flex items-center justify-center bg-white border-r border-gray-100">
                      <div className="w-full h-full relative rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-2xl">
-                         <img src={work.img} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" alt={`${work.title} — Design Portfolio`} />
+                         <img src={`/assets/${horizontalWorksImages[i]}`} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" alt={`${work.title} - ${work.cat} Project by MEMO InfoTech`} />
                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent p-6 md:p-10 flex flex-col justify-end">
                              <span className="text-[#007BFF] font-bold uppercase tracking-widest mb-2">{work.cat}</span>
                              <h3 className="text-4xl md:text-6xl font-bold text-white font-['Syne']">{work.title}</h3>
@@ -488,9 +521,11 @@ const Home: React.FC = () => {
             <div className="lg:w-1/2 relative flex flex-col justify-between">
               <div className="relative h-full min-h-[500px] rounded-3xl overflow-hidden group shadow-[0_0_50px_rgba(0,123,255,0.15)]">
                 <img 
-                    src={serviceList[activeServiceIndex].img} 
+                    src={`/assets/${homeServiceImages[activeServiceIndex]}`} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                    alt={`MEMO InfoTech Service - ${serviceList[activeServiceIndex].title}`} 
+                    alt={`${serviceList[activeServiceIndex].title} - MEMO InfoTech Digital Solutions`} 
+                    loading="lazy"
+                    decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#007BFF]/80 via-transparent to-transparent opacity-90"></div>
                 <div className="absolute bottom-10 left-10 transform translate-y-0 transition-transform duration-500">
@@ -499,12 +534,12 @@ const Home: React.FC = () => {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row gap-6 mt-8">
-                <a href="/services" className="flex-1 py-4 bg-[#007BFF] text-white rounded-full font-bold text-center hover:bg-white hover:text-[#007BFF] transition-all shadow-lg hover:shadow-[#007BFF]/50">
+                <Link to="/services" className="flex-1 py-4 bg-[#007BFF] text-white rounded-full font-bold text-center hover:bg-white hover:text-[#007BFF] transition-all shadow-lg hover:shadow-[#007BFF]/50" aria-label="View Our Services">
                 	See how we work
-                </a>
-                <a href="/careers" className="flex-1 py-4 border border-white/20 rounded-full font-bold text-center hover:bg-white hover:text-black transition-colors">
+                </Link>
+                <Link to="/careers" className="flex-1 py-4 border border-white/20 rounded-full font-bold text-center hover:bg-white hover:text-black transition-colors" aria-label="View Career Opportunities">
                 	Meet our experts
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -570,15 +605,15 @@ const Home: React.FC = () => {
                     <h2 className="text-5xl md:text-[4rem] font-bold font-['Syne'] mb-4 text-black leading-none">Recently <span className="text-[#007BFF]">Added</span></h2>
                     <p className="text-gray-500">Latest insights on Web Design, Branding, and Digital Strategy.</p>
                  </div>
-                 <a href="/blog" className="hidden md:flex items-center gap-2 font-bold text-black hover:text-[#007BFF] transition-colors">
+                 <Link to="/blog" className="hidden md:flex items-center gap-2 font-bold text-black hover:text-[#007BFF] transition-colors" aria-label="View All Blog Articles">
                    View all articles <ArrowRight size={20} />
-                 </a>
+                 </Link>
              </div>
              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                  {blogPosts.slice(0,3).map((post, idx) => (
-                   <a href={`/blog/${post.id}`} key={idx} className="group cursor-pointer">
+                   <Link to={`/blog/${post.id}`} key={idx} className="group cursor-pointer">
                          <div className="rounded-[2rem] overflow-hidden mb-6 relative">
-                       <img src={post.image} alt={post.title} className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
+                       <img src={post.image} alt={`${post.title} - MEMO InfoTech Blog`} className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
                              <div className="absolute top-4 left-4 bg-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-black">
                                  {post.category}
                              </div>
@@ -587,7 +622,7 @@ const Home: React.FC = () => {
                          <div className="flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-black transition-colors">
                            Read Article <ArrowRight size={16} />
                          </div>
-                       </a>
+                       </Link>
                  ))}
              </div>
           </div>
@@ -631,7 +666,7 @@ const Home: React.FC = () => {
                                  </p>
                                  <div className="flex items-center gap-4">
                                      <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#007BFF]">
-                                         <img src={t.image} className="w-full h-full object-cover" alt={t.name} />
+                                         <img src={`/assets/${testimonialImages[i]}`} className="w-full h-full object-cover" alt={`${t.name} - ${t.role} at ${t.company}`} />
                                      </div>
                                      <div className="text-left">
                                          <h4 className="text-xl font-bold text-white">{t.name}</h4>
@@ -743,6 +778,18 @@ const Home: React.FC = () => {
                     onChange={handleContactChange}
                     className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-[#007BFF] focus:border-transparent outline-none transition-all text-black placeholder-gray-400" 
                     placeholder="user@company.com" 
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold uppercase tracking-wider mb-2 text-black">Mobile Number</label>
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    value={contactForm.phone}
+                    onChange={handleContactChange}
+                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-[#007BFF] focus:border-transparent outline-none transition-all text-black placeholder-gray-400" 
+                    placeholder="+91 00000 00000" 
                     required
                   />
                 </div>

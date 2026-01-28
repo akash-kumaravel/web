@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { updateSEO, addBreadcrumbSchema } from '../utils/seo';
 import { BookOpen, Users, Award, Clock, ArrowRight, Star, Zap, Code, PenTool, Video, CheckCircle, AlertCircle, Loader2, Search, Filter } from 'lucide-react';
 
 const courses = [
@@ -13,7 +15,8 @@ const courses = [
     rating: 4.9,
     description: "Learn front-end and back-end web development (React, Node.js, databases) and deploy production-ready applications.",
     image: "/assets/full stack.png",
-    highlights: ["Real Projects", "Job Assistance", "Lifetime Access"]
+    highlights: ["Real Projects", "Job Assistance", "Lifetime Access"],
+    url: "/academy/full-stack-web-development"
   },
   {
     id: 2,
@@ -26,7 +29,8 @@ const courses = [
     rating: 4.8,
     description: "Master HTML, CSS, JavaScript, and modern frameworks to build fast, responsive user interfaces.",
     image: "/assets/frontend.png",
-    highlights: ["Component Patterns", "Performance", "Portfolio Projects"]
+    highlights: ["Component Patterns", "Performance", "Portfolio Projects"],
+    url: "/academy/frontend-web-development"
   },
   {
     id: 3,
@@ -39,7 +43,8 @@ const courses = [
     rating: 4.7,
     description: "Analyze data, build dashboards, and derive insights using Python, pandas, and visualization tools.",
     image: "/assets/data analytics.png",
-    highlights: ["Hands-on Labs", "Dashboards", "Career Guidance"]
+    highlights: ["Hands-on Labs", "Dashboards", "Career Guidance"],
+    url: "/academy/data-analytics"
   },
   {
     id: 4,
@@ -52,7 +57,8 @@ const courses = [
     rating: 4.6,
     description: "Learn BI tools, ETL concepts, reporting, and how to turn data into strategic business decisions.",
     image: "/assets/Business intelligence.png",
-    highlights: ["ETL Practice", "BI Tools", "Use-case Workshops"]
+    highlights: ["ETL Practice", "BI Tools", "Use-case Workshops"],
+    url: "/academy/business-intelligence"
   },
   {
     id: 5,
@@ -65,7 +71,8 @@ const courses = [
     rating: 4.8,
     description: "Design user-centered interfaces, wireframing, prototyping and building a strong design portfolio.",
     image: "/assets/UI UX.png",
-    highlights: ["Portfolio Project", "Design Tools", "Mentor Reviews"]
+    highlights: ["Portfolio Project", "Design Tools", "Mentor Reviews"],
+    url: "/academy/ui-ux-design-master"
   },
   {
     id: 6,
@@ -78,7 +85,8 @@ const courses = [
     rating: 4.9,
     description: "Start with Python fundamentals and move to data handling, scripting, and building small applications.",
     image: "/assets/Python.png",
-    highlights: ["Hands-on Labs", "Problem Solving", "Certificate"]
+    highlights: ["Hands-on Labs", "Problem Solving", "Certificate"],
+    url: "/academy/python-programming"
   },
   {
     id: 7,
@@ -91,7 +99,8 @@ const courses = [
     rating: 4.7,
     description: "Learn SQL querying, joins, aggregations and best practices for analytics and data engineering roles.",
     image: "/assets/sql.png",
-    highlights: ["Query Practice", "Interview Prep", "Real Datasets"]
+    highlights: ["Query Practice", "Interview Prep", "Real Datasets"],
+    url: "/academy/sql-for-data-careers"
   },
   {
     id: 8,
@@ -104,7 +113,8 @@ const courses = [
     rating: 4.6,
     description: "Learn visual design for the web, responsive layouts, and modern CSS techniques for beautiful sites.",
     image: "/assets/Website Development.png",
-    highlights: ["Responsive Design", "CSS Techniques", "Design Systems"]
+    highlights: ["Responsive Design", "CSS Techniques", "Design Systems"],
+    url: "/academy/web-designing"
   },
   {
     id: 9,
@@ -117,7 +127,8 @@ const courses = [
     rating: 4.5,
     description: "Training on MERN Stack software for inventory management, stock control and reporting for businesses.",
     image: "/assets/MERN.png",
-    highlights: ["Software Hands-on", "Inventory Workflows", "Business Use-cases"]
+    highlights: ["Software Hands-on", "Inventory Workflows", "Business Use-cases"],
+    url: "/academy/mern-stack"
   },
   {
     id: 10,
@@ -130,7 +141,8 @@ const courses = [
     rating: 4.7,
     description: "Learn fundamentals of graphic design, typography, color theory and industry tools to create impactful visuals.",
     image: "/assets/Graphic.png",
-    highlights: ["Tool Training", "Branding", "Portfolio"]
+    highlights: ["Tool Training", "Branding", "Portfolio"],
+    url: "/academy/graphic-design"
   },
   {
     id: 11,
@@ -143,7 +155,8 @@ const courses = [
     rating: 4.7,
     description: "Create motion graphics and animations for video, web and interactive media using industry-standard tools.",
     image: "/assets/Motion design.png",
-    highlights: ["Animation Techniques", "Project Reel", "Software Included"]
+    highlights: ["Animation Techniques", "Project Reel", "Software Included"],
+    url: "/academy/motion-design-animation"
   }
 ];
 
@@ -190,6 +203,20 @@ const Academy: React.FC = () => {
   const [reviewForm, setReviewForm] = useState({ name: '', course: '', rating: '5', text: '', imageData: '', imageName: '' });
   const [reviewImageError, setReviewImageError] = useState('');
   const [reviewStatus, setReviewStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    updateSEO({
+      title: 'Online Courses & Training | Web Development, Data Analytics & Design | MEMO InfoTech Academy',
+      description: 'Learn web development, data analytics, design, and more with our comprehensive online courses. Expert instructors, hands-on projects, and job assistance. Start your tech career today!',
+      keywords: 'online courses, web development training, data analytics course, design course, IT training, coding bootcamp',
+      canonicalUrl: 'https://www.memoinfotech.com/academy/'
+    });
+    
+    addBreadcrumbSchema([
+      { name: 'Home', url: 'https://www.memoinfotech.com/' },
+      { name: 'Academy', url: 'https://www.memoinfotech.com/academy/' }
+    ]);
+  }, []);
   
 
   const handleEnrollClick = (courseName: string) => {
@@ -484,9 +511,10 @@ const Academy: React.FC = () => {
           {filteredCourses.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredCourses.map((course, idx) => (
-                <div
+                <Link
+                  to={course.url}
                   key={idx}
-                  className="group rounded-[2rem] overflow-hidden border border-gray-200 hover:border-[#007BFF] bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                  className="group rounded-[2rem] overflow-hidden border border-gray-200 hover:border-[#007BFF] bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 block"
                 >
                   {/* Course Image */}
                   <div className="h-56 overflow-hidden bg-gray-200 relative">
@@ -531,16 +559,16 @@ const Academy: React.FC = () => {
                     </div>
 
                     {/* Footer */}
-                    <div className="flex items-center justify-between">
-                      <button
-                        onClick={() => handleEnrollClick(course.title)}
-                        className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold hover:bg-blue-700 transition-all"
-                      >
+                    <div className="flex items-center justify-between gap-3">
+                      <Link to={course.route} className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold hover:bg-blue-700 transition-all inline-block cursor-pointer">
+                        View Course
+                      </Link>
+                      <Link to="/enroll" className="px-6 py-3 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] transition-all inline-block cursor-pointer">
                         Enroll
-                      </button>
+                      </Link>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           ) : (

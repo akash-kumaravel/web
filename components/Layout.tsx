@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -137,12 +137,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <div className="bg-white/5">
         <div className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <span className="font-semibold mr-3">Quick Links:</span>
-          <a href="https://www.memoinfotech.com/about/" className="mr-3 hover:underline">About</a>
-          <a href="https://www.memoinfotech.com/services/" className="mr-3 hover:underline">Services</a>
-          <a href="https://www.memoinfotech.com/projects/" className="mr-3 hover:underline">Projects</a>
-          <a href="https://www.memoinfotech.com/academy/" className="mr-3 hover:underline">Academy</a>
-          <a href="https://www.memoinfotech.com/blog/" className="mr-3 hover:underline">Blog</a>
-          <a href="https://www.memoinfotech.com/contact/" className="mr-3 hover:underline">Contact</a>
+          <Link to="/about" className="mr-3 hover:underline">About</Link>
+          <Link to="/services" className="mr-3 hover:underline">Services</Link>
+          <Link to="/projects" className="mr-3 hover:underline">Projects</Link>
+          <Link to="/academy" className="mr-3 hover:underline">Academy</Link>
+          <Link to="/blog" className="mr-3 hover:underline">Blog</Link>
+          <Link to="/contact" className="mr-3 hover:underline">Contact</Link>
         </div>
       </div>
       <main className="flex-grow">{children}</main>

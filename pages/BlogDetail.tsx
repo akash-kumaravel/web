@@ -1,20 +1,48 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { updateSEO, addArticleSchema, addBreadcrumbSchema } from '../utils/seo';
 import { ArrowLeft, Share2, Twitter, Facebook, Linkedin, Clock, User } from 'lucide-react';
 import { blogPosts } from './Blog';
 
 const BlogDetail: React.FC = () => {
   const { id } = useParams();
   const containerRef = useRef<HTMLDivElement>(null);
-    const [shareMsg, setShareMsg] = useState<string | null>(null);
+  const [shareMsg, setShareMsg] = useState<string | null>(null);
 
-    // Look up the blog post by id (numeric) or slug
-    const postId = Number(id);
-    const post = blogPosts.find(p => 
-      p.id === postId || (p as any).slug === id
-    );
+  // Look up the blog post by id (numeric) or slug
+  const postId = Number(id);
+  const post = blogPosts.find(p => 
+    p.id === postId || (p as any).slug === id
+  );
 
-    const article = {
+  useEffect(() => {
+    if (post) {
+      updateSEO({
+        title: `${post.title} | MEMO InfoTech Blog`,
+        description: post.excerpt,
+        keywords: `${post.category}, web design, development, digital solutions`,
+        ogImage: post.image,
+        canonicalUrl: `https://www.memoinfotech.com/blog/${id}/`
+      });
+
+      addArticleSchema({
+        headline: post.title,
+        description: post.excerpt,
+        image: post.image,
+        datePublished: post.date,
+        author: post.author,
+        url: `https://www.memoinfotech.com/blog/${id}/`
+      });
+
+      addBreadcrumbSchema([
+        { name: 'Home', url: 'https://www.memoinfotech.com/' },
+        { name: 'Blog', url: 'https://www.memoinfotech.com/blog/' },
+        { name: post.title, url: `https://www.memoinfotech.com/blog/${id}/` }
+      ]);
+    }
+  }, [post, id]);
+
+  const article = {
         title: post ? post.title : "Article",
         subtitle: post ? post.excerpt : "",
         author: post ? post.author : "",
@@ -161,9 +189,9 @@ const BlogDetail: React.FC = () => {
             <div className="absolute inset-0 bg-black/40"></div>
             <div className="absolute bottom-0 left-0 w-full p-6 md:p-20 text-white z-10 bg-gradient-to-t from-black/80 to-transparent">
                 <div className="container mx-auto">
-                    <a href="/blog" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest mb-6 hover:text-[#007BFF] transition-colors">
+                    <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest mb-6 hover:text-[#007BFF] transition-colors" aria-label="Back to Blog">
                         <ArrowLeft size={16} /> Back to Insights
-                    </a>
+                    </Link>
                     <div className="flex items-center gap-4 mb-4 text-sm font-bold uppercase tracking-wider text-[#007BFF]">
                         <span>{article.category}</span>
                     </div>
@@ -248,9 +276,9 @@ const BlogDetail: React.FC = () => {
                  <h2 className="text-4xl md:text-[4rem] font-bold font-['Syne'] mb-10 hover:text-[#007BFF] cursor-pointer transition-colors leading-none">
                      Three.js and The Future of Immersive Web
                  </h2>
-                 <a href="/blog" className="inline-block px-10 py-4 border border-white rounded-full font-bold hover:bg-white hover:text-black transition-all">
+                 <Link to="/blog" className="inline-block px-10 py-4 border border-white rounded-full font-bold hover:bg-white hover:text-black transition-all" aria-label="View All Blog Articles">
                      View All Articles
-                 </a>
+                 </Link>
              </div>
         </div>
     </div>

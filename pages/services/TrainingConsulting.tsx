@@ -4,18 +4,36 @@ import { Link } from 'react-router-dom';
 
 const TrainingConsulting: React.FC = () => {
   useEffect(() => {
-    document.title = 'Training, Internship & Consulting Services — Skills & Knowledge Transfer';
-    const desc = 'Professional training programs, internship opportunities, consulting services for technology upskilling and business transformation.';
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (meta) meta.content = desc;
+    // ==================== SEO: Meta Tags ====================
+    document.title = 'Training, Internship & Consulting Services | Tech Skills & Business Transformation';
+    const desc = 'Professional training programs, internship opportunities, and consulting services. Technology upskilling, web development training, business transformation consulting.';
+    
+    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (metaDesc) metaDesc.content = desc;
     else { 
-      meta = document.createElement('meta'); 
-      meta.name = 'description'; 
-      meta.content = desc; 
-      document.head.appendChild(meta); 
+      metaDesc = document.createElement('meta'); 
+      metaDesc.name = 'description'; 
+      metaDesc.content = desc; 
+      document.head.appendChild(metaDesc); 
     }
 
-    // Add Breadcrumb Schema
+    // OpenGraph Meta Tags (improves CTR in social & search previews)
+    const setOGMeta = (prop: string, content: string) => {
+      let og = document.querySelector(`meta[property="${prop}"]`) as HTMLMetaElement | null;
+      if (!og) {
+        og = document.createElement('meta');
+        og.setAttribute('property', prop);
+        document.head.appendChild(og);
+      }
+      og.content = content;
+    };
+
+    setOGMeta('og:title', 'Training, Internship & Consulting Services | MEMO InfoTech');
+    setOGMeta('og:description', desc);
+    setOGMeta('og:type', 'website');
+    setOGMeta('og:url', 'https://www.memoinfotech.com/services/training-consulting/');
+
+    // ==================== SEO: Breadcrumb Schema ====================
     const breadcrumbSchema = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -36,41 +54,75 @@ const TrainingConsulting: React.FC = () => {
           "@type": "ListItem",
           "position": 3,
           "name": "Training & Consulting",
-          "item": "https://www.memoinfotech.com/training-consulting/"
+          "item": "https://www.memoinfotech.com/services/training-consulting/"
         }
       ]
     };
 
-    // Add Service Schema
+    // ==================== SEO: Service Schema ====================
     const serviceSchema = {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Training & Consulting",
-      "description": "Professional training programs, internship opportunities, consulting services for technology upskilling and business transformation.",
+      "description": "Professional training programs, internship opportunities, consulting services for technology upskilling and business transformation. Expert mentorship and real-world project experience.",
       "provider": {
         "@type": "Organization",
         "name": "MEMO InfoTech",
         "url": "https://www.memoinfotech.com",
         "logo": "https://www.memoinfotech.com/logo.png",
-        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"]
+        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-XXX-XXX-XXXX",
+          "contactType": "Customer Service"
+        }
       },
       "areaServed": "Worldwide",
-      "serviceType": "Training & Consulting"
+      "serviceType": "Training & Consulting",
+      "hasOfferingDetails": [
+        { "@type": "OfferingDetails", "name": "Technical Training Programs", "priceRange": "Custom Quote" },
+        { "@type": "OfferingDetails", "name": "Internship Programs", "priceRange": "Custom Quote" },
+        { "@type": "OfferingDetails", "name": "Consulting Services", "priceRange": "Custom Quote" }
+      ]
+    };
+
+    // ==================== SEO: Organization Schema ====================
+    const organizationSchema = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MEMO InfoTech",
+      "url": "https://www.memoinfotech.com",
+      "logo": "https://www.memoinfotech.com/logo.png",
+      "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-XXX-XXX-XXXX",
+        "contactType": "Customer Service"
+      }
     };
 
     const breadcrumbScript = document.createElement('script');
     breadcrumbScript.type = 'application/ld+json';
+    breadcrumbScript.async = true;
     breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
     document.head.appendChild(breadcrumbScript);
 
     const serviceScript = document.createElement('script');
     serviceScript.type = 'application/ld+json';
+    serviceScript.async = true;
     serviceScript.textContent = JSON.stringify(serviceSchema);
     document.head.appendChild(serviceScript);
+
+    const orgScript = document.createElement('script');
+    orgScript.type = 'application/ld+json';
+    orgScript.async = true;
+    orgScript.textContent = JSON.stringify(organizationSchema);
+    document.head.appendChild(orgScript);
 
     return () => {
       document.head.removeChild(breadcrumbScript);
       document.head.removeChild(serviceScript);
+      document.head.removeChild(orgScript);
     };
   }, []);
 
@@ -196,39 +248,39 @@ const TrainingConsulting: React.FC = () => {
 
   return (
     <div className="w-full bg-gray-100">
-      {/* Header */}
-      <div className="pt-40 pb-20 container mx-auto px-6">
-        
+      {/* ==================== SEMANTIC HTML: Header with H1 ====================*/}
+      <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
-            Training, Internship & Consulting
+            Training, Internship &amp; Consulting Services
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Build skills, accelerate careers, and transform organizations with comprehensive training, internship programs, and strategic consulting services.
           </p>
         </div>
-      </div>
+      </header>
 
-      {/* Main Services Grid */}
-      <div className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16">Training & Consulting Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, i) => (
-              <div key={i} className="p-8 bg-gray-50 rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all duration-300 group">
-                <div className="text-[#007BFF] mb-4 group-hover:scale-110 transition-transform">
-                  {service.icon}
-                </div>
-                <h3 className="text-2xl font-bold font-['Syne'] text-black mb-4">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
-              </div>
-            ))}
+      <main className="w-full" role="main" aria-label="Main Content">
+        {/* ==================== Section 1: Training & Consulting Services ====================*/}
+        <section className="py-32 bg-white" aria-label="Our Training and Consulting Services" role="region">
+          <div className="container mx-auto px-6">
+            <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16">Training &amp; Consulting Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, i) => (
+                <article key={i} className="p-8 bg-gray-50 rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all duration-300 group">
+                  <div className="text-[#007BFF] mb-4 group-hover:scale-110 transition-transform" aria-hidden="true">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold font-['Syne'] text-black mb-4">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* Advanced Features Section */}
-      <div className="py-32 bg-black text-white">
+        {/* Advanced Features Section */}
+        <section className="py-32 bg-black text-white" aria-label="Learning Excellence" role="region">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold font-['Syne'] mb-4">Learning Excellence</h2>
@@ -247,10 +299,10 @@ const TrainingConsulting: React.FC = () => {
             ))}
           </div>
         </div>
-      </div>
+        </section>
 
-      {/* Business Benefits */}
-      <div className="py-32 bg-[#007BFF] text-white">
+        {/* Business Benefits */}
+        <section className="py-32 bg-[#007BFF] text-white" aria-label="Business Benefits" role="region">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold font-['Syne'] mb-4">Why Choose Our Programs</h2>
@@ -267,76 +319,74 @@ const TrainingConsulting: React.FC = () => {
             ))}
           </div>
         </div>
-      </div>
+        </section>
 
-      {/* CTA */}
-      <div className="py-32 bg-white">
+        {/* ==================== Section 4: CTA ====================*/}
+      <section className="py-32 bg-white" aria-label="Call to Action" role="region">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold font-['Syne'] text-black mb-6">Ready to Invest in Skills?</h2>
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">Join our programs or let's discuss how we can help your organization transform.</p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link to="/contact" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all shadow-lg">
-              Start Your Project <ArrowRight size={20} />
+            <Link to="/contact" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all shadow-lg" aria-label="Start Your Training and Consulting Project">
+              Start Your Project <ArrowRight size={20} aria-hidden="true" />
             </Link>
             <Link to="/services" className="inline-flex items-center gap-3 px-8 py-4 border-2 border-[#007BFF] text-[#007BFF] rounded-full font-bold hover:bg-[#007BFF] hover:text-white transition-all">
               View All Services
             </Link>
           </div>
 
-
-
         </div>
-      </div>
+      </section>
 
-      {/* Related Services */}
-      <div className="py-32 bg-gray-50">
+      {/* ==================== Section 5: Related Services ====================*/}
+      <section className="py-32 bg-gray-50" aria-label="Related Services" role="region">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Related Services</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link to="/services/software-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+            <Link to="/services/software-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Software Development">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Software Dev</h3>
               <p className="text-gray-600 mb-4">Implement best practices with our training.</p>
               <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
             </Link>
 
-            <Link to="/services/web-design-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+            <Link to="/services/web-design-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Web Design">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Web Design</h3>
               <p className="text-gray-600 mb-4">Learn modern web development practices.</p>
               <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
             </Link>
 
-            <Link to="/services/mobile-app-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+            <Link to="/services/mobile-app-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Mobile App Development">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Mobile Apps</h3>
               <p className="text-gray-600 mb-4">Master mobile app development techniques.</p>
               <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
             </Link>
 
-            <Link to="/services/digital-marketing-services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+            <Link to="/services/digital-marketing-services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Digital Marketing">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Digital Marketing</h3>
               <p className="text-gray-600 mb-4">Learn effective digital marketing strategies.</p>
               <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
             </Link>
 
-            <Link to="/services/ai-automation" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+            <Link to="/services/ai-automation" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about AI & Automation">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">AI & Automation</h3>
               <p className="text-gray-600 mb-4">Explore AI and automation opportunities.</p>
               <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
             </Link>
 
-            <Link to="/services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+            <Link to="/services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="View all services">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">All Services</h3>
               <p className="text-gray-600 mb-4">Explore our complete range of digital services.</p>
               <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">View All →</span>
             </Link>
           </div>
         </div>
-      </div>
+      </section>
+      </main>
     </div>
   );
 };
 
 export default TrainingConsulting;
-
 

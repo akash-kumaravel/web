@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { updateSEO, addBreadcrumbSchema } from '../utils/seo';
 import { Briefcase, ArrowRight, Coffee, Globe, Heart, Zap, Monitor, Users } from 'lucide-react';
 
 const jobs = [
@@ -21,6 +22,20 @@ const perks = [
 const Careers: React.FC = () => {
   const [openJob, setOpenJob] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    updateSEO({
+      title: 'Careers — Join MEMO InfoTech Team | Job Openings',
+      description: 'Join our talented team at MEMO InfoTech. We are hiring designers, developers, and creative professionals. Apply now for exciting career opportunities!',
+      keywords: 'careers, job openings, hiring, designer jobs, developer jobs, remote work',
+      canonicalUrl: 'https://www.memoinfotech.com/careers/'
+    });
+    
+    addBreadcrumbSchema([
+      { name: 'Home', url: 'https://www.memoinfotech.com/' },
+      { name: 'Careers', url: 'https://www.memoinfotech.com/careers/' }
+    ]);
+  }, []);
 
   useEffect(() => {
     const gsap = (window as any).gsap;

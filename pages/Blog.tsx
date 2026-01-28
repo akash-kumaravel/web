@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { updateSEO, addBreadcrumbSchema } from '../utils/seo';
 import { ArrowRight, Calendar, User, Tag, Search, Loader2, Check } from 'lucide-react';
 
 export const blogPosts = [
@@ -249,6 +251,20 @@ const Blog: React.FC = () => {
     const featuredPost = blogPosts[0];
 
     useEffect(() => {
+      updateSEO({
+        title: 'Blog | Web Design & Development Insights | MEMO InfoTech',
+        description: 'Read our latest articles on web design, development, digital marketing, and technology trends. Expert insights and tips for your business.',
+        keywords: 'blog, web design tips, development insights, digital marketing, technology trends',
+        canonicalUrl: 'https://www.memoinfotech.com/blog/'
+      });
+      
+      addBreadcrumbSchema([
+        { name: 'Home', url: 'https://www.memoinfotech.com/' },
+        { name: 'Blog', url: 'https://www.memoinfotech.com/blog/' }
+      ]);
+    }, []);
+
+    useEffect(() => {
         const gsap = (window as any).gsap;
         const ScrollTrigger = (window as any).ScrollTrigger;
         
@@ -318,7 +334,7 @@ const Blog: React.FC = () => {
                                         Exploring the intersection of design, technology, and culture.
                                     </p>
                                     <div className="mt-6">
-                                        <a href="/contact" className="inline-block bg-[#007BFF] text-white px-6 py-3 rounded-full font-bold hover:bg-black transition-colors">Contact Us</a>
+                                        <Link to="/contact" className="inline-block bg-[#007BFF] text-white px-6 py-3 rounded-full font-bold hover:bg-black transition-colors" aria-label="Contact MEMO InfoTech">Contact Us</Link>
                                     </div>
                                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                                         "@context": "https://schema.org",

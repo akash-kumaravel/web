@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { NavItem } from '../types';
 
@@ -15,18 +15,18 @@ const navItems: NavItem[] = [
 ];
 
 const servicesDropdown = [
-  { label: 'Web Design & Development', path: '/web-design-development' },
-  { label: 'UI/UX Design', path: '/ui-ux-design' },
-  { label: 'Mobile App Development', path: '/mobile-app-development' },
-  { label: 'Software Development', path: '/software-development' },
-  { label: 'Graphic Design & Creative', path: '/graphic-design-services' },
-  { label: 'Digital Marketing', path: '/digital-marketing-services' },
-  { label: 'E-Commerce Solutions', path: '/e-commerce-solutions' },
-  { label: 'Hosting, Cloud & IT', path: '/hosting-cloud-it' },
-  { label: 'AI & Automation', path: '/ai-automation' },
-  { label: 'Testing & QA', path: '/testing-qa' },
-  { label: 'Training & Consulting', path: '/training-consulting' },
-  { label: 'Content & Documentation', path: '/content-documentation' },
+  { label: 'Web Design & Development', path: '/services/web-design-development' },
+  { label: 'UI/UX Design', path: '/services/ui-ux-design' },
+  { label: 'Mobile App Development', path: '/services/mobile-app-development' },
+  { label: 'Software Development', path: '/services/software-development' },
+  { label: 'Graphic Design & Creative', path: '/services/graphic-design-services' },
+  { label: 'Digital Marketing', path: '/services/digital-marketing-services' },
+  { label: 'E-Commerce Solutions', path: '/services/e-commerce-solutions' },
+  { label: 'Hosting, Cloud & IT', path: '/services/hosting-cloud-it' },
+  { label: 'AI & Automation', path: '/services/ai-automation' },
+  { label: 'Testing & QA', path: '/services/testing-qa' },
+  { label: 'Training & Consulting', path: '/services/training-consulting' },
+  { label: 'Content & Documentation', path: '/services/content-documentation' },
 ];
 
 const careerDropdown = [
@@ -35,16 +35,16 @@ const careerDropdown = [
 ];
 
 const academyDropdown = [
-  { label: 'Full Stack Web Development', path: '/academy' },
-  { label: 'Frontend Web Development', path: '/academy' },
-  { label: 'Data Analytics', path: '/academy' },
-  { label: 'Business Intelligence', path: '/academy' },
-  { label: 'UI/UX Design Master Course', path: '/academy' },
-  { label: 'Python Programming', path: '/academy' },
-  { label: 'SQL for Data Careers', path: '/academy' },
-  { label: 'Web Designing', path: '/academy' },
-  { label: 'Mobile App Development', path: '/academy' },
-  { label: 'Digital Marketing Basics', path: '/academy' },
+  { label: 'Full Stack Web Development', path: '/academy/full-stack-web-development' },
+  { label: 'Frontend Web Development', path: '/academy/frontend-web-development' },
+  { label: 'Data Analytics', path: '/academy/data-analytics' },
+  { label: 'Business Intelligence', path: '/academy/business-intelligence' },
+  { label: 'UI/UX Design Master Course', path: '/academy/ui-ux-design-master' },
+  { label: 'Python Programming', path: '/academy/python-programming' },
+  { label: 'SQL for Data Careers', path: '/academy/sql-for-data' },
+  { label: 'Web Designing', path: '/academy/web-designing' },
+  { label: 'Mobile App Development', path: '/academy/mobile-app-development' },
+  { label: 'Digital Marketing Basics', path: '/academy/digital-marketing-basics' },
 ];
 
 const jobDropdown = [
@@ -72,11 +72,6 @@ const Navbar: React.FC = () => {
   }, []);
 
   const normalize = (p: string) => (p ? p.replace(/\/+$/, '') : '/');
-  const PREFERRED_ORIGIN = 'https://www.memoinfotech.com';
-  const makeHref = (p: string) => {
-    const path = !p || p === '/' ? '/' : p.endsWith('/') ? p : `${p}/`;
-    return `${PREFERRED_ORIGIN}${path}`;
-  };
 
   return (
     <header
@@ -86,7 +81,7 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <a href={makeHref('/')} className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group">
           <img
             src="https://www.memoinfotech.com/assets/logo.svg"
             alt="MEMO InfoTech"
@@ -94,12 +89,11 @@ const Navbar: React.FC = () => {
             width={48}
             height={48}
           />
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navItems.map((item) => {
-            const href = makeHref(item.path);
             const isActive = normalize(location.pathname) === normalize(item.path);
             const hasDropdown = item.label === 'Services' || item.label === 'Academy' || item.label === 'Careers';
             
@@ -127,8 +121,8 @@ const Navbar: React.FC = () => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <a
-                  href={href}
+              <Link
+                  to={item.path}
                   className={`text-sm font-bold uppercase tracking-wide hover:text-[#007BFF] transition-colors relative flex items-center gap-1 cursor-pointer ${
                     isActive ? 'text-black' : 'text-black'
                   }`}
@@ -137,7 +131,7 @@ const Navbar: React.FC = () => {
                   {item.label}
                   {hasDropdown && <ChevronDown size={16} className={`transition-transform ${activeDropdown === item.label ? 'rotate-180' : ''}`} />}
                   <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#007BFF] transform origin-left transition-transform duration-300 ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
-                </a>
+                </Link>
 
                 {/* Dropdown Menu */}
                 {hasDropdown && dropdownItems.length > 0 && (
@@ -149,25 +143,25 @@ const Navbar: React.FC = () => {
                     onMouseLeave={handleMouseLeave}
                   >
                     {dropdownItems.map((dropdownItem) => (
-                      <a
+                      <Link
                         key={dropdownItem.path}
-                        href={makeHref(dropdownItem.path)}
+                        to={dropdownItem.path}
                         className="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-[#007BFF] hover:text-white transition-all duration-200 first:rounded-t-lg last:rounded-b-lg border-b border-gray-50 last:border-b-0"
                       >
                         {dropdownItem.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
               </div>
             );
           })}
-           <a
-             href={makeHref('/contact')}
+           <Link
+             to="/contact"
              className="px-6 py-2 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] hover:shadow-[0_0_15px_rgba(0,123,255,0.5)] transition-all duration-300 hover:-translate-y-0.5"
           >
             Let's Talk
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Toggle */}
@@ -186,20 +180,19 @@ const Navbar: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white border-t border-gray-100 p-6 lg:hidden shadow-xl flex flex-col gap-4 max-h-96 overflow-y-auto" id="mobile-menu">
           {navItems.map((item) => {
-            const href = makeHref(item.path);
             const hasDropdown = item.label === 'Services' || item.label === 'Academy' || item.label === 'Careers';
             const isDropdownOpen = mobileDropdowns[item.label];
             
             let dropdownItems = [];
             if (item.label === 'Services') dropdownItems = servicesDropdown;
-            if (item.label === 'Academy') dropdownItems = [{ label: 'Academy', path: '/academy' }];
+            if (item.label === 'Academy') dropdownItems = academyDropdown;
             if (item.label === 'Careers') dropdownItems = careerDropdown;
 
             return (
               <div key={item.path}>
                 <div className="flex items-center justify-between">
-                  <a
-                    href={hasDropdown ? '#' : href}
+                  <Link
+                    to={hasDropdown ? '#' : item.path}
                     className="text-xl font-bold text-black hover:text-[#007BFF] pl-2 border-l-4 border-transparent hover:border-[#007BFF] transition-all flex-1"
                     onClick={(e) => {
                       if (hasDropdown) {
@@ -214,7 +207,7 @@ const Navbar: React.FC = () => {
                     }}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                   {hasDropdown && (
                     <button
                       className="ml-2 text-gray-600 hover:text-[#007BFF]"
@@ -232,14 +225,14 @@ const Navbar: React.FC = () => {
                 {hasDropdown && isDropdownOpen && dropdownItems.length > 0 && (
                   <div className="mt-2 ml-4 flex flex-col gap-2 border-l-2 border-[#007BFF] pl-4">
                     {dropdownItems.map((dropdownItem) => (
-                      <a
+                      <Link
                         key={dropdownItem.path}
-                        href={makeHref(dropdownItem.path)}
+                        to={dropdownItem.path}
                         className="text-lg font-semibold text-gray-700 hover:text-[#007BFF] transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {dropdownItem.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}

@@ -1,11 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import { updateSEO, addBreadcrumbSchema } from '../utils/seo';
 import { ArrowLeft, UploadCloud, Loader2, CheckCircle, AlertCircle, Send, Link as LinkIcon } from 'lucide-react';
 
 const Apply: React.FC = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const positionParam = searchParams.get('position') || '';
+
+  useEffect(() => {
+    updateSEO({
+      title: 'Apply Now — Join MEMO InfoTech | Career Opportunities',
+      description: 'Submit your application to join MEMO InfoTech. We are hiring talented designers, developers, and creatives. Apply for exciting career opportunities today!',
+      keywords: 'job application, careers at MEMO InfoTech, apply now, join our team',
+      canonicalUrl: 'https://www.memoinfotech.com/apply/'
+    });
+    
+    addBreadcrumbSchema([
+      { name: 'Home', url: 'https://www.memoinfotech.com/' },
+      { name: 'Careers', url: 'https://www.memoinfotech.com/careers/' },
+      { name: 'Apply', url: 'https://www.memoinfotech.com/apply/' }
+    ]);
+  }, []);
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -82,9 +98,9 @@ const Apply: React.FC = () => {
   return (
     <div className="pt-32 pb-20 w-full bg-white min-h-screen">
       <div className="container mx-auto px-6 max-w-4xl">
-        <a href="/careers" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest mb-8 hover:text-[#007BFF] transition-colors">
-            <ArrowLeft size={16} /> Back to Careers
-        </a>
+<Link to="/careers" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest mb-8 hover:text-[#007BFF] transition-colors" aria-label="Back to Careers">
+          <ArrowLeft size={16} /> Back to Careers
+        </Link>
         
         <div className="text-center mb-16">
             <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] mb-6 text-black leading-none">
