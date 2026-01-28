@@ -112,7 +112,7 @@ const courses = [
     students: 900,
     rating: 4.6,
     description: "Learn visual design for the web, responsive layouts, and modern CSS techniques for beautiful sites.",
-    image: "/assets/Website Development.png",
+    image: "/assets/Web Designing.png",
     highlights: ["Responsive Design", "CSS Techniques", "Design Systems"],
     url: "/academy/web-designing"
   },
