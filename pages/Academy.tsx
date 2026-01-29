@@ -946,24 +946,6 @@ const Academy: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA SECTION */}
-      <section className="py-20 bg-[#007BFF] text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Start Your IT Career Journey?
-          </h2>
-          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join Memo Infotech Academy and get access to hands-on training, real internship programs, and dedicated placement support. Apply now to secure your spot!
-          </p>
-          <a
-            href="#enroll"
-            className="inline-block px-10 py-4 bg-white text-[#007BFF] rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1"
-          >
-            Enroll Now
-          </a>
-        </div>
-      </section>
     </div>
   );
 };
