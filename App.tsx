@@ -37,6 +37,7 @@ import AIAutomation from './pages/services/AIAutomation';
 import TestingQA from './pages/services/TestingQA';
 import TrainingConsulting from './pages/services/TrainingConsulting';
 import ContentDocumentation from './pages/services/ContentDocumentation';
+import ItCompanyInNagercoil from './pages/ItCompanyInNagercoil';
 
 const App: React.FC = () => {
   return (
@@ -91,6 +92,7 @@ const App: React.FC = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/it-company-in-nagercoil" element={<ItCompanyInNagercoil />} />
         </Routes>
       </Layout>
     </Router>

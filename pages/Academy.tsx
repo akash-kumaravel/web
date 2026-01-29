@@ -206,9 +206,9 @@ const Academy: React.FC = () => {
 
   useEffect(() => {
     updateSEO({
-      title: 'Online Courses & Training | Web Development, Data Analytics & Design | MEMO InfoTech Academy',
-      description: 'Learn web development, data analytics, design, and more with our comprehensive online courses. Expert instructors, hands-on projects, and job assistance. Start your tech career today!',
-      keywords: 'online courses, web development training, data analytics course, design course, IT training, coding bootcamp',
+      title: 'IT Training Institute & Internship Programs in Nagercoil | Memo Infotech Academy',
+      description: 'Memo Infotech Academy is a professional IT training institute in Nagercoil offering practical training programs, certification courses, internship opportunities and job placement assistance. Learn web development, software development, data analytics, design and more.',
+      keywords: 'IT training institute in Nagercoil, software training institute, internship training, web development training, software internship programs, IT certification courses, coding bootcamp Nagercoil',
       canonicalUrl: 'https://www.memoinfotech.com/academy/'
     });
     
@@ -216,28 +216,46 @@ const Academy: React.FC = () => {
       { name: 'Home', url: 'https://www.memoinfotech.com/' },
       { name: 'Academy', url: 'https://www.memoinfotech.com/academy/' }
     ]);
+
+    // Add Educational Organization Schema
+    const orgSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'EducationalOrganization',
+      'name': 'Memo Infotech Academy',
+      'url': 'https://www.memoinfotech.com/academy/',
+      'logo': 'https://www.memoinfotech.com/assets/logo.png',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Nagercoil',
+        'addressRegion': 'Tamil Nadu',
+        'addressCountry': 'IN'
+      },
+      'areaServed': 'India',
+      'parentOrganization': {
+        '@type': 'Organization',
+        'name': 'Memo Infotech'
+      },
+      'telephone': '+91 6374433734',
+      'email': 'hello@memoinfotech.com'
+    };
+
+    let orgScript = document.getElementById('org-schema-academy') as HTMLScriptElement | null;
+    if (!orgScript) {
+      orgScript = document.createElement('script') as HTMLScriptElement;
+      orgScript.id = 'org-schema-academy';
+      orgScript.type = 'application/ld+json';
+      document.head.appendChild(orgScript);
+    }
+    orgScript.innerHTML = JSON.stringify(orgSchema);
+
+    window.scrollTo(0, 0);
+    setIsClientSide(true);
   }, []);
-  
 
   const handleEnrollClick = (courseName: string) => {
     setFormData({ ...formData, course: courseName });
     enrollRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
-  useEffect(() => {
-    document.title = 'Academy — MEMO InfoTech';
-    const desc = 'Learn web development, design, and digital skills from industry experts. Enroll in professional courses and advance your career.';
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (meta) meta.content = desc;
-    else {
-      meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = desc;
-      document.head.appendChild(meta);
-    }
-    window.scrollTo(0, 0);
-    setIsClientSide(true);
-  }, []);
 
   // Inject Course JSON-LD for all courses on this page (improves search visibility for course rich results)
   useEffect(() => {
@@ -418,12 +436,12 @@ const Academy: React.FC = () => {
       {/* HERO SECTION */}
       <section className="pt-40 pb-24 bg-gradient-to-b from-black to-[#000000] text-white">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-6xl md:text-[4rem] font-bold font-['Syne'] mb-6 leading-tight">
-              Level Up Your <span className="text-[#007BFF]">Skills</span>
+              IT Training Institute & Internship Programs in Nagercoil
             </h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Learn from industry experts and master in-demand skills. Our comprehensive courses are designed to accelerate your career growth.
+            <p className="text-lg text-gray-200 mb-6 leading-relaxed max-w-3xl mx-auto">
+              Memo Infotech Academy is a professional IT training institute in Nagercoil offering practical training programs, certification courses, and real-time internship opportunities for students and fresh graduates. We focus on industry-relevant skills to help learners build successful careers in IT and software development.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#courses" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
@@ -499,6 +517,12 @@ const Academy: React.FC = () => {
       {/* COURSES GRID */}
       <section id="courses" className="py-32 bg-white">
         <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold font-['Syne'] text-black mb-4">IT Courses & Training Programs in Nagercoil</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Industry-focused training programs with hands-on projects and certification
+            </p>
+          </div>
           <div className="mb-16">
             <h2 className="text-5xl md:text-[4rem] font-bold font-['Syne'] text-black mb-4">
                <span className="text-[#007BFF]">Courses</span>
@@ -520,7 +544,7 @@ const Academy: React.FC = () => {
                   <div className="h-56 overflow-hidden bg-gray-200 relative">
                     <img
                       src={course.image}
-                      alt={course.title}
+                      alt={`${course.title} training course at Memo Infotech Academy`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     {/* level badge removed per request */}
@@ -560,12 +584,12 @@ const Academy: React.FC = () => {
 
                     {/* Footer */}
                     <div className="flex items-center justify-between gap-3">
-                      <Link to={course.route} className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold hover:bg-blue-700 transition-all inline-block cursor-pointer">
+                      <Link to={course.url} className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold hover:bg-blue-700 transition-all inline-block cursor-pointer">
                         View Course
                       </Link>
-                      <Link to="/enroll" className="px-6 py-3 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] transition-all inline-block cursor-pointer">
+                      <button onClick={() => handleEnrollClick(course.title)} className="px-6 py-3 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] transition-all inline-block cursor-pointer">
                         Enroll
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </Link>
@@ -583,7 +607,7 @@ const Academy: React.FC = () => {
       <section className="py-32 bg-[#f8f8f8]">
         <div className="container mx-auto px-6">
           <h2 className="text-5xl md:text-[4rem] font-bold font-['Syne'] text-black mb-16 text-center">
-            Why Choose Our <span className="text-[#007BFF]">Academy</span>
+            Why Choose Our IT <span className="text-[#007BFF]">Training Institute</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -633,6 +657,176 @@ const Academy: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* INTERNSHIP PROGRAMS & LIVE PROJECTS */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-6 text-center">
+            Internship Programs in Nagercoil with Live Projects
+          </h2>
+          <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16">
+            Gain hands-on experience through our internship training programs and real-time project work. Our software internship programs in Nagercoil are designed to bridge the gap between classroom learning and industry requirements.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Web Development Internship",
+                desc: "Build real websites and applications using React, Node.js, and modern frameworks",
+                duration: "8-12 weeks"
+              },
+              {
+                title: "Software Development Internship",
+                desc: "Work on custom software projects with mentorship from experienced developers",
+                duration: "10-14 weeks"
+              },
+              {
+                title: "Data Analytics Internship",
+                desc: "Analyze real business data and create actionable insights using Python and BI tools",
+                duration: "8-10 weeks"
+              }
+            ].map((program, idx) => (
+              <div key={idx} className="p-8 bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-100 hover:border-[#007BFF] hover:shadow-xl transition-all">
+                <h3 className="text-2xl font-bold text-black mb-3">{program.title}</h3>
+                <p className="text-gray-600 mb-4">{program.desc}</p>
+                <p className="text-sm font-semibold text-[#007BFF]">Duration: {program.duration}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PLACEMENT & CAREER SUPPORT */}
+      <section className="py-32 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-6 text-center">
+            Placement & Career Support for IT Students
+          </h2>
+          <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16">
+            We help our graduates land their dream jobs with dedicated placement assistance, interview preparation, and connections with top companies.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { icon: CheckCircle, label: "Interview Preparation", desc: "Mock interviews and technical question coaching" },
+              { icon: Award, label: "Resume Building", desc: "Professional resume creation and portfolio review" },
+              { icon: Users, label: "Company Connections", desc: "Direct access to job openings from partner companies" },
+              { icon: ArrowRight, label: "Career Guidance", desc: "One-on-one mentoring for career planning" }
+            ].map((item, idx) => (
+              <div key={idx} className="p-8 bg-white rounded-2xl flex gap-6 items-start border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
+                <div className="p-3 bg-blue-50 rounded-xl flex-shrink-0">
+                  <item.icon className="text-[#007BFF]" size={28} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-2">{item.label}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ SECTION - HIGH SEO VALUE */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">
+            Frequently Asked Questions – IT Training Institute in Nagercoil
+          </h2>
+
+          <div className="space-y-8">
+            {[
+              {
+                q: 'Is Memo Infotech Academy an IT training institute in Nagercoil?',
+                a: 'Yes, Memo Infotech Academy is a professional IT training institute in Nagercoil offering software courses, certification programs, and internship opportunities for students and fresh graduates.'
+              },
+              {
+                q: 'What internship programs does Memo Infotech Academy offer?',
+                a: 'We provide internship training programs in web development, software development, data analytics, and other IT fields. Our internship programs in Nagercoil are designed with live projects and real-world applications.'
+              },
+              {
+                q: 'Do you offer placement assistance for IT students?',
+                a: 'Yes, we offer comprehensive placement and career support including resume guidance, interview preparation, mock interviews, and direct connections with partner companies hiring IT professionals.'
+              },
+              {
+                q: 'What is the duration of your IT training courses?',
+                a: 'Our courses range from 4 to 12 weeks depending on the program level and complexity. We offer flexible schedules to accommodate working professionals and full-time students.'
+              },
+              {
+                q: 'Can I take courses if I have no programming experience?',
+                a: 'Absolutely! We offer beginner-level courses in Python, web development, and other areas. Our instructors guide you from basics to advanced concepts with hands-on projects.'
+              },
+              {
+                q: 'Do you provide certificates after course completion?',
+                a: 'Yes, all our students receive recognized certificates upon successful completion. These certificates are valued by employers and enhance your resume significantly.'
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="border-b border-gray-200 pb-6 last:border-b-0">
+                <h3 className="text-lg font-bold text-black mb-3">{item.q}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* FAQ Schema */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              'mainEntity': [
+                {
+                  '@type': 'Question',
+                  'name': 'Is Memo Infotech Academy an IT training institute in Nagercoil?',
+                  'acceptedAnswer': {
+                    '@type': 'Answer',
+                    'text': 'Yes, Memo Infotech Academy is a professional IT training institute in Nagercoil offering software courses, certification programs, and internship opportunities for students and fresh graduates.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  'name': 'What internship programs does Memo Infotech Academy offer?',
+                  'acceptedAnswer': {
+                    '@type': 'Answer',
+                    'text': 'We provide internship training programs in web development, software development, data analytics, and other IT fields. Our internship programs in Nagercoil are designed with live projects and real-world applications.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  'name': 'Do you offer placement assistance for IT students?',
+                  'acceptedAnswer': {
+                    '@type': 'Answer',
+                    'text': 'Yes, we offer comprehensive placement and career support including resume guidance, interview preparation, mock interviews, and direct connections with partner companies hiring IT professionals.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  'name': 'What is the duration of your IT training courses?',
+                  'acceptedAnswer': {
+                    '@type': 'Answer',
+                    'text': 'Our courses range from 4 to 12 weeks depending on the program level and complexity. We offer flexible schedules to accommodate working professionals and full-time students.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  'name': 'Can I take courses if I have no programming experience?',
+                  'acceptedAnswer': {
+                    '@type': 'Answer',
+                    'text': 'Absolutely! We offer beginner-level courses in Python, web development, and other areas. Our instructors guide you from basics to advanced concepts with hands-on projects.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  'name': 'Do you provide certificates after course completion?',
+                  'acceptedAnswer': {
+                    '@type': 'Answer',
+                    'text': 'Yes, all our students receive recognized certificates upon successful completion. These certificates are valued by employers and enhance your resume significantly.'
+                  }
+                }
+              ]
+            })}
+          </script>
         </div>
       </section>
 
@@ -754,19 +948,19 @@ const Academy: React.FC = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-20 bg-gradient-to-r from-[#007BFF] to-blue-600 text-white">
+      <section className="py-20 bg-[#007BFF] text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Transform Your Career?
+            Ready to Start Your IT Career Journey?
           </h2>
           <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-            Don't miss out on our limited-time offer. Enroll in any course today and get 20% off!
+            Join Memo Infotech Academy and get access to hands-on training, real internship programs, and dedicated placement support. Apply now to secure your spot!
           </p>
           <a
             href="#enroll"
             className="inline-block px-10 py-4 bg-white text-[#007BFF] rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1"
           >
-            Get Started Now
+            Enroll Now
           </a>
         </div>
       </section>
