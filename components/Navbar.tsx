@@ -29,11 +29,6 @@ const servicesDropdown = [
   { label: 'Content & Documentation', path: '/services/content-documentation' },
 ];
 
-const careerDropdown = [
-  { label: 'Career Opportunities', path: '/careers' },
-  { label: 'Apply Now', path: '/apply' },
-];
-
 const academyDropdown = [
   { label: 'Full Stack Web Development', path: '/academy/full-stack-web-development' },
   { label: 'Frontend Web Development', path: '/academy/frontend-web-development' },
@@ -45,14 +40,6 @@ const academyDropdown = [
   { label: 'Web Designing', path: '/academy/web-designing' },
   { label: 'Mobile App Development', path: '/academy/mobile-app-development' },
   { label: 'Digital Marketing Basics', path: '/academy/digital-marketing-basics' },
-];
-
-const jobDropdown = [
-  { label: 'Senior Product Designer', path: '/careers' },
-  { label: 'Frontend Engineer (React/WebGL)', path: '/careers' },
-  { label: 'Motion Graphics Artist', path: '/careers' },
-  { label: 'Project Manager', path: '/careers' },
-  { label: 'Brand Strategist', path: '/careers' },
 ];
 
 const Navbar: React.FC = () => {
@@ -95,12 +82,11 @@ const Navbar: React.FC = () => {
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navItems.map((item) => {
             const isActive = normalize(location.pathname) === normalize(item.path);
-            const hasDropdown = item.label === 'Services' || item.label === 'Academy' || item.label === 'Careers';
+            const hasDropdown = item.label === 'Services' || item.label === 'Academy';
             
             let dropdownItems = [];
             if (item.label === 'Services') dropdownItems = servicesDropdown;
             if (item.label === 'Academy') dropdownItems = academyDropdown;
-            if (item.label === 'Careers') dropdownItems = jobDropdown;
 
             const handleMouseEnter = () => {
               if (dropdownTimeout) clearTimeout(dropdownTimeout);
