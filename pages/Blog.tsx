@@ -52,7 +52,7 @@ export const blogPosts = [
 const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
 // Keep scene graph shallow, reuse geometries and materials</code></pre>
 
-            <p class="mb-6 text-lg leading-relaxed text-gray-600">When implemented thoughtfully, 3D can deliver memorable interactions without sacrificing accessibility or performance.</p>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">When implemented thoughtfully, 3D can deliver Memorable interactions without sacrificing accessibility or performance.</p>
         `,
         category: "Development",
         author: "Jaxon Steele",
@@ -252,7 +252,7 @@ const Blog: React.FC = () => {
 
     useEffect(() => {
       updateSEO({
-        title: 'Blog | Web Design & Development Insights | MEMO InfoTech',
+        title: 'Blog | Web Design & Development Insights | Memo InfoTech',
         description: 'Read our latest articles on web design, development, digital marketing, and technology trends. Expert insights and tips for your business.',
         keywords: 'blog, web design tips, development insights, digital marketing, technology trends',
         canonicalUrl: 'https://www.memoinfotech.com/blog/'
@@ -334,14 +334,14 @@ const Blog: React.FC = () => {
                                         Exploring the intersection of design, technology, and culture.
                                     </p>
                                     <div className="mt-6">
-                                        <Link to="/contact" className="inline-block bg-[#007BFF] text-white px-6 py-3 rounded-full font-bold hover:bg-black transition-colors" aria-label="Contact MEMO InfoTech">Contact Us</Link>
+                                        <Link to="/contact" className="inline-block bg-[#007BFF] text-white px-6 py-3 rounded-full font-bold hover:bg-black transition-colors" aria-label="Contact Memo InfoTech">Contact Us</Link>
                                     </div>
                                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                                         "@context": "https://schema.org",
                                         "@type": "BreadcrumbList",
                                         "itemListElement": [
-                                          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memoinfotech.com/" },
-                                          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://memoinfotech.com/blog" }
+                                          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://Memoinfotech.com/" },
+                                          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://Memoinfotech.com/blog" }
                                         ]
                                     })}} />
                                 </div>

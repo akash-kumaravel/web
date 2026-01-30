@@ -208,7 +208,7 @@ const Academy: React.FC = () => {
     updateSEO({
       title: 'IT Training Institute & Internship Programs in Nagercoil | Memo Infotech Academy',
       description: 'Memo Infotech Academy is a professional IT training institute in Nagercoil offering practical training programs, certification courses, internship opportunities and job placement assistance. Learn web development, software development, data analytics, design and more.',
-      keywords: 'IT training institute in Nagercoil, software training institute, internship training, web development training, software internship programs, IT certification courses, coding bootcamp Nagercoil',
+      keywords: 'Memo Infotech Academy, IT training institute in Nagercoil, software training institute Nagercoil, internship training Nagercoil, coding courses Tamil Nadu, software internship programs, IT certification courses, coding bootcamp Nagercoil',
       canonicalUrl: 'https://www.memoinfotech.com/academy/'
     });
     
@@ -222,6 +222,7 @@ const Academy: React.FC = () => {
       '@context': 'https://schema.org',
       '@type': 'EducationalOrganization',
       'name': 'Memo Infotech Academy',
+      'alternateName': 'Memo Academy',
       'url': 'https://www.memoinfotech.com/academy/',
       'logo': 'https://www.memoinfotech.com/assets/logo.png',
       'address': {
@@ -230,10 +231,19 @@ const Academy: React.FC = () => {
         'addressRegion': 'Tamil Nadu',
         'addressCountry': 'IN'
       },
-      'areaServed': 'India',
+      'areaServed': {
+        '@type': 'AdministrativeArea',
+        'name': 'Nagercoil, Tamil Nadu, India'
+      },
       'parentOrganization': {
         '@type': 'Organization',
-        'name': 'Memo Infotech'
+        'name': 'Memo Infotech',
+        'address': {
+          '@type': 'PostalAddress',
+          'addressLocality': 'Nagercoil',
+          'addressRegion': 'Tamil Nadu',
+          'addressCountry': 'IN'
+        }
       },
       'telephone': '+91 6374433734',
       'email': 'hello@memoinfotech.com'
@@ -268,10 +278,10 @@ const Academy: React.FC = () => {
         description: c.description,
         provider: {
           '@type': 'Organization',
-          name: 'MEMO InfoTech',
+          name: 'Memo Infotech',
       image: "/assets/Website Development.png",
         },
-        url: `${origin}/academy#course-${c.id}`
+        url: `${origin}${c.url}`
       }));
 
       let s = document.getElementById('ld-courses') as HTMLScriptElement | null;
@@ -475,6 +485,15 @@ const Academy: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* LOCAL ENTITY - ACADEMY LOCATION */}
+      <section aria-label="Academy Location" className="py-12 bg-black text-center">
+        <div className="container mx-auto px-6">
+          <p className="max-w-4xl mx-auto text-gray-300 text-lg">
+            <strong className="text-white">Memo Infotech Academy</strong> is a leading <strong className="text-white">IT training institute in Nagercoil, Tamil Nadu</strong>, offering industry-focused courses, internship programs, and career guidance for students across Kanyakumari district and surrounding regions.
+          </p>
         </div>
       </section>
 

@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const GraphicDesignServices: React.FC = () => {
   useEffect(() => {
     // ==================== SEO: Meta Tags ====================
-    document.title = 'Graphic Design & Creative Services | Professional Logo & Branding Design';
-    const desc = 'Professional graphic design services. Logo design, branding, social media creatives, video editing, motion graphics. Award-winning creative team with 10+ years experience.';
+    document.title = 'Graphic Design Services Company in Nagercoil, Tamil Nadu | Memo Infotech';
+    const desc = 'Memo Infotech is a professional graphic design services company in Nagercoil, Tamil Nadu, offering logo design, branding, social media creatives, and motion graphics.';
     
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDesc) metaDesc.content = desc;
@@ -28,7 +28,7 @@ const GraphicDesignServices: React.FC = () => {
       og.content = content;
     };
 
-    setOGMeta('og:title', 'Graphic Design & Creative Services | MEMO InfoTech');
+    setOGMeta('og:title', 'Graphic Design Services Company in Nagercoil, Tamil Nadu | Memo Infotech');
     setOGMeta('og:description', desc);
     setOGMeta('og:type', 'website');
     setOGMeta('og:url', 'https://www.memoinfotech.com/services/graphic-design-services/');
@@ -67,17 +67,20 @@ const GraphicDesignServices: React.FC = () => {
       "description": "Professional graphic design, logo design, branding, social media creatives, video editing, and motion graphics services. Award-winning creative design solutions.",
       "provider": {
         "@type": "Organization",
-        "name": "MEMO InfoTech",
+        "name": "Memo Infotech",
         "url": "https://www.memoinfotech.com",
         "logo": "https://www.memoinfotech.com/logo.png",
-        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+        "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-XXX-XXX-XXXX",
           "contactType": "Customer Service"
         }
       },
-      "areaServed": "Worldwide",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Nagercoil, Tamil Nadu, India"
+      },
       "serviceType": "Graphic Design",
       "hasOfferingDetails": [
         { "@type": "OfferingDetails", "name": "Logo Design", "priceRange": "Custom Quote" },
@@ -90,10 +93,17 @@ const GraphicDesignServices: React.FC = () => {
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "MEMO InfoTech",
+      "name": "Memo Infotech",
       "url": "https://www.memoinfotech.com",
       "logo": "https://www.memoinfotech.com/logo.png",
-      "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+      "description": "Expert graphic design agency specializing in branding and creative design solutions.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nagercoil",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-XXX-XXX-XXXX",
@@ -222,7 +232,7 @@ const GraphicDesignServices: React.FC = () => {
   const benefits = [
     {
       title: "Brand Recognition",
-      description: "Stand out from competitors with distinctive, memorable branding and visuals."
+      description: "Stand out from competitors with distinctive, Memorable branding and visuals."
     },
     {
       title: "Increased Engagement",
@@ -252,7 +262,7 @@ const GraphicDesignServices: React.FC = () => {
       <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
-            Graphic Design & Creative Services
+            Graphic Design Services Company in Nagercoil, Tamil Nadu
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             We bring your brand story to life through compelling visual content. From logos to animations, we create designs that resonate with your audience and drive results.
@@ -261,6 +271,14 @@ const GraphicDesignServices: React.FC = () => {
       </header>
 
       <main className="w-full" role="main" aria-label="Main Content">
+        {/* ==================== Section 0: Service Location ====================*/}
+        <section className="py-16 bg-blue-50 border-t-4 border-[#007BFF]" aria-label="Service Location" role="region">
+          <div className="container mx-auto px-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              <strong>Memo Infotech</strong> is a trusted <strong>graphic design services company in Nagercoil, Tamil Nadu</strong>, delivering professional branding and creative design solutions to businesses across Kanyakumari district.
+            </p>
+          </div>
+        </section>
         {/* ==================== Section 1: Creative Services ====================*/}
         <section className="py-32 bg-white" aria-label="Our Creative Services" role="region">
           <div className="container mx-auto px-6">

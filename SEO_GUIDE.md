@@ -1,4 +1,4 @@
-# SEO Optimization Guide for MEMO InfoTech SPA
+# SEO Optimization Guide for Memo InfoTech SPA
 
 ## Overview
 This guide explains the SEO optimizations implemented for your Single Page Application (SPA) to ensure Google can crawl and index all pages effectively.
@@ -41,7 +41,7 @@ import { updateSEO } from '../utils/seo';
 
 useEffect(() => {
   updateSEO({
-    title: 'Page Title | MEMO InfoTech',
+    title: 'Page Title | Memo InfoTech',
     description: 'Page description for search results and meta tags',
     keywords: 'relevant, keywords, for, page',
     ogTitle: 'Social sharing title (optional)',
@@ -59,7 +59,7 @@ import { updateSEO, addArticleSchema } from '../utils/seo';
 
 useEffect(() => {
   updateSEO({
-    title: 'Article Title | MEMO InfoTech Blog',
+    title: 'Article Title | Memo InfoTech Blog',
     description: 'Article excerpt',
     canonicalUrl: 'https://www.memoinfotech.com/blog/article-slug/'
   });
@@ -82,7 +82,7 @@ import { updateSEO, addBreadcrumbSchema } from '../utils/seo';
 
 useEffect(() => {
   updateSEO({
-    title: 'Service Name | Web Development & Design | MEMO InfoTech',
+    title: 'Service Name | Web Development & Design | Memo InfoTech',
     description: 'Service description for search results',
     canonicalUrl: 'https://www.memoinfotech.com/services/service-slug/'
   });
@@ -100,10 +100,10 @@ useEffect(() => {
 ### 1. **Title Tags**
 - Keep 50-60 characters
 - Include target keyword
-- Include brand name (MEMO InfoTech)
+- Include brand name (Memo InfoTech)
 - Format: `Primary Keyword | Secondary Keyword | Brand`
 
-Example: `Web Development Services in Nagercoil | MEMO InfoTech`
+Example: `Web Development Services in Nagercoil | Memo InfoTech`
 
 ### 2. **Meta Descriptions**
 - 150-160 characters
@@ -119,10 +119,10 @@ Example: `Web Development Services in Nagercoil | MEMO InfoTech`
 ### 4. **Alt Text for Images**
 ✅ Already implemented! All images have descriptive alt text including:
 - Service names
-- Company name (MEMO InfoTech)
+- Company name (Memo InfoTech)
 - Relevant keywords
 
-Example: `Service Name - MEMO InfoTech Digital Solutions`
+Example: `Service Name - Memo InfoTech Digital Solutions`
 
 ### 5. **Keywords Strategy**
 - Target keyword in title

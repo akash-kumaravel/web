@@ -39,28 +39,59 @@ const PythonProgramming: React.FC = () => {
     }
   }, []);
 
-  const curriculum = [
-    {
-      module: "Module 1: Python Basics",
-      topics: ["Variables & Data Types", "Control Flow", "Functions", "Loops & Conditionals"],
-      duration: "1 week"
-    },
-    {
-      module: "Module 2: Object-Oriented Programming",
-      topics: ["Classes & Objects", "Inheritance", "Polymorphism", "Design Patterns"],
-      duration: "1.5 weeks"
-    },
-    {
-      module: "Module 3: Working with Data",
-      topics: ["File Handling", "Libraries (NumPy, Pandas)", "API Integration", "Web Scraping"],
-      duration: "1.5 weeks"
-    },
-    {
-      module: "Module 4: Building Applications",
-      topics: ["Web Development (Django/Flask)", "Automation Scripts", "Real-World Projects"],
-      duration: "2 weeks"
+  useEffect(() => {
+    document.title = 'Python Programming Course in Nagercoil | Memo Infotech Academy';
+
+    const desc = 'Master Python Programming course in Nagercoil at Memo Infotech Academy. Learn core Python, automation, web development, data science, real projects and certification.';
+
+    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (metaDesc) metaDesc.content = desc;
+    else {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = 'description';
+      metaDesc.content = desc;
+      document.head.appendChild(metaDesc);
     }
-  ];
+
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://www.memoinfotech.com/academy/python-programming';
+  }, []);
+
+  useEffect(() => {
+    const courseSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Python Programming Course in Nagercoil",
+      "description": "Professional Python Programming course in Nagercoil by Memo Infotech Academy covering core Python, automation, web development, data science and certification.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Memo Infotech Academy",
+        "url": "https://www.memoinfotech.com/academy"
+      },
+      "educationalCredentialAwarded": "Certificate",
+      "timeRequired": "P8W",
+      "courseMode": "Offline",
+      "inLanguage": "en",
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Nagercoil, Tamil Nadu, India"
+      }
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(courseSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const features = [
     { icon: <Code size={32} />, title: "Beginner-Friendly", description: "Start from zero, no experience needed" },
@@ -80,16 +111,17 @@ const PythonProgramming: React.FC = () => {
           <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
         </div>
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-6 py-20">
-            <Link to="/academy" className="inline-flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest mb-6 hover:text-gray-200 transition-colors">
-              <ArrowLeft size={16} /> Back to Academy
-            </Link>
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="container mx-auto px-6 w-full">
             <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none mb-6 text-white max-w-4xl">
-              Python Programming
+              Python Programming Course in Nagercoil
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl">
               Master Python from scratch. Build powerful applications, automate tasks, and launch your programming career.
+            </p>
+            <p className="text-blue-100 max-w-3xl mb-8">
+              Memo Infotech Academy offers a professional <strong>Python Programming course in Nagercoil, Tamil Nadu</strong>,
+              designed for beginners, developers, and data enthusiasts. Our training focuses on Python programming fundamentals and advanced applications, industry tools, and internship-based learning.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex items-center gap-3 text-white">
@@ -112,23 +144,13 @@ const PythonProgramming: React.FC = () => {
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               Learn practical skills, build real projects, and understand programming fundamentals that apply to any language. Perfect for career changers and aspiring developers.
             </p>
+            <p className="text-lg text-gray-700 mb-8">
+              This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
+              IT training programs in Nagercoil</Link>. You may also explore our
+              <Link to="/academy/data-analytics" className="text-[#007BFF] font-semibold hover:underline ml-1">
+              Data Analytics course</Link>.
+            </p>
 
-            <h3 className="text-3xl font-bold font-['Syne'] text-black mb-8">Curriculum</h3>
-            <div className="space-y-6">
-              {curriculum.map((item, idx) => (
-                <div key={idx} className="border-l-4 border-[#007BFF] pl-6 py-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-xl font-bold text-black">{item.module}</h4>
-                    <span className="text-sm font-semibold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">{item.duration}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {item.topics.map((topic, i) => (
-                      <span key={i} className="text-gray-600 text-sm">{topic}{i < item.topics.length - 1 ? ',' : ''}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -184,6 +206,36 @@ const PythonProgramming: React.FC = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Frequently Asked Questions</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">Why should I learn Python?</h3>
+              <p className="text-gray-700">Python is the most versatile and in-demand programming language. It's used in web development, data science, automation, AI/ML, and more. It's also beginner-friendly with clean, readable syntax.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">Is this course for complete beginners?</h3>
+              <p className="text-gray-700">Yes! This course is designed for beginners with no programming experience. We start from the basics and gradually build your skills to advanced concepts.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What will I be able to do after this course?</h3>
+              <p className="text-gray-700">You'll be able to write Python programs, build web applications with frameworks like Django, work with data using libraries like Pandas, and automate real-world tasks.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">How long does it take to learn Python?</h3>
+              <p className="text-gray-700">Our comprehensive course is designed to be completed in 8 weeks with self-paced learning. However, you can learn at your own speed with lifetime access to all materials.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">Will I get a certificate?</h3>
+              <p className="text-gray-700">Yes! Upon completion, you'll receive a recognized certificate from Memo Infotech Academy that validates your Python programming skills to employers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="py-32 bg-[#007BFF] text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-[4rem] font-bold font-['Syne'] mb-6">Start Your Python Journey Today</h2>
@@ -201,48 +253,7 @@ const PythonProgramming: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-32 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Other Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Link to="/academy/full-stack-web-development" className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
-              <div className="h-48 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
-                <Code size={64} className="text-white opacity-20" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#007BFF]">Full Stack Web Development</h3>
-                <p className="text-gray-600 text-sm mb-4">Learn front-end and back-end web development and deploy production-ready applications.</p>
-                <span className="text-[#007BFF] font-semibold">12 weeks</span>
-              </div>
-            </Link>
-            <Link to="/academy/data-analytics" className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
-              <div className="h-48 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center">
-                <Database size={64} className="text-white opacity-20" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#007BFF]">Data Analytics</h3>
-                <p className="text-gray-600 text-sm mb-4">Analyze data, build dashboards, and derive insights using Python and visualization tools.</p>
-                <span className="text-[#007BFF] font-semibold">10 weeks</span>
-              </div>
-            </Link>
-            <Link to="/academy/frontend-web-development" className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
-              <div className="h-48 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
-                <Code size={64} className="text-white opacity-20" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#007BFF]">Frontend Web Development</h3>
-                <p className="text-gray-600 text-sm mb-4">Master React, JavaScript, and modern frontend technologies to build interactive web applications.</p>
-                <span className="text-[#007BFF] font-semibold">8 weeks</span>
-              </div>
-            </Link>
-          </div>
-          <div className="text-center mt-12">
-            <Link to="/academy" className="inline-flex items-center gap-2 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all">
-              View All Courses <ArrowRight size={20} />
-            </Link>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 };

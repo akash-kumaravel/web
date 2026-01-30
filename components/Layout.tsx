@@ -50,13 +50,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     const org = {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: 'MEMO InfoTech',
+      name: 'Memo Infotech',
       url: origin,
-      logo: `${origin}/assets/memo-infotech-logo.png`,
+      logo: `${origin}/assets/Memo-infotech-logo.png`,
       sameAs: [
-        'https://www.linkedin.com/company/memoinfotech',
-        'https://x.com/memoinfotech',
-        'https://www.instagram.com/memoinfotech'
+        'https://www.linkedin.com/company/Memoinfotech',
+        'https://x.com/Memoinfotech',
+        'https://www.instagram.com/Memoinfotech'
       ],
       contactPoint: [
         {
@@ -76,8 +76,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     const local = {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
-      name: 'MEMO InfoTech',
-      image: `${origin}/assets/memo-infotech-logo.png`,
+      name: 'Memo Infotech',
+      image: `${origin}/assets/Memo-infotech-logo.png`,
       '@id': `${origin}#company`,
       url: origin,
       telephone: '+91 6374433734',
@@ -99,7 +99,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       url: origin,
-      name: 'MEMO InfoTech',
+      name: 'Memo Infotech',
       potentialAction: {
         '@type': 'SearchAction',
         target: `${origin}/search?q={search_term_string}`,

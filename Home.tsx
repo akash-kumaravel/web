@@ -12,7 +12,7 @@ const testimonials: Testimonial[] = [
     name: "Nithin",
     role: "Founder",
     company: "TechNova",
-    text: "MEMO InfoTech completely modernized our software infrastructure. The Build bullling software for us.",
+    text: "Memo Infotech completely modernized our software infrastructure. The Build bullling software for us.",
     image: "/assets/t1.png"
   },
   {
@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     name: "Rizwan",
     role: "Founder",
     company: " Muhibah restaurant",
-    text: "Professional, technical, and incredibly talented. MEMO InfoTech is the IT partner you want if you're ready to scale your business.",
+    text: "Professional, technical, and incredibly talented. Memo Infotech is the IT partner you want if you're ready to scale your business.",
     image: "/assets/t3.png"
   }
 ];
@@ -76,8 +76,8 @@ const Home: React.FC = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   // SEO: set page title & description
   useEffect(() => {
-    document.title = 'MEMO InfoTech — Digital Product & Design Studio';
-    const desc = 'MEMO InfoTech builds high-converting websites, brand identities, and motion content. Strategic web development, UX, and creative services to grow your business.';
+    document.title = 'Memo Infotech — Digital Product & Design Studio';
+    const desc = 'Memo Infotech builds high-converting websites, brand identities, and motion content. Strategic web development, UX, and creative services to grow your business.';
     let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (meta) meta.content = desc;
     else {
@@ -464,7 +464,7 @@ const Home: React.FC = () => {
                 <img 
                     src={serviceList[activeServiceIndex].img} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                    alt={`MEMO InfoTech Service - ${serviceList[activeServiceIndex].title}`}
+                    alt={`Memo Infotech Service - ${serviceList[activeServiceIndex].title}`}
                     width={500}
                     height={500}
                 />
@@ -665,7 +665,7 @@ const Home: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-gray-400 text-sm uppercase">Email us</p>
-                      <p className="text-xl font-bold">info@memoinfotech.com</p>
+                      <p className="text-xl font-bold">info@Memoinfotech.com</p>
                     </div>
                   </div>
 

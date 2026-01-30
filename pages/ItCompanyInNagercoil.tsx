@@ -15,7 +15,7 @@ const ItCompanyInNagercoil: React.FC = () => {
       canonicalUrl: 'https://www.memoinfotech.com/it-company-in-nagercoil/',
       ogImage: 'https://www.memoinfotech.com/assets/it-company-nagercoil-og.jpg',
       twitterTitle: 'IT Company in Nagercoil - Web Development & Software Solutions',
-      twitterDescription: 'Trusted IT company providing web development, software solutions, and IT services across India. MEMO Infotech, based in Nagercoil.'
+      twitterDescription: 'Trusted IT company providing web development, software solutions, and IT services across India. Memo Infotech, based in Nagercoil.'
     });
 
     addLocalBusinessSchema();
@@ -43,10 +43,10 @@ const ItCompanyInNagercoil: React.FC = () => {
     const orgSchema = {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      'name': 'MEMO Infotech',
+      'name': 'Memo Infotech',
       'url': 'https://www.memoinfotech.com',
       'logo': 'https://www.memoinfotech.com/logo.png',
-      'description': 'MEMO Infotech is an IT company in Nagercoil providing web development, software solutions, and IT services across India.',
+      'description': 'Memo Infotech is an IT company in Nagercoil providing web development, software solutions, and IT services across India.',
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Nagercoil',
@@ -57,8 +57,8 @@ const ItCompanyInNagercoil: React.FC = () => {
       'telephone': '+91 6374433734',
       'email': 'hello@memoinfotech.com',
       'sameAs': [
-        'https://www.facebook.com/memoinfotech',
-        'https://www.linkedin.com/company/memoinfotech'
+        'https://www.facebook.com/Memoinfotech',
+        'https://www.linkedin.com/company/Memoinfotech'
       ]
     };
 
@@ -78,31 +78,31 @@ const ItCompanyInNagercoil: React.FC = () => {
       'mainEntity': [
         {
           '@type': 'Question',
-          'name': 'What services does MEMO Infotech provide as an IT company?',
+          'name': 'What services does Memo Infotech provide as an IT company?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'MEMO Infotech provides comprehensive IT services including web development, custom software development, mobile app development, database solutions, hosting and cloud services, and quality assurance testing for businesses across India.'
+            'text': 'Memo Infotech provides comprehensive IT services including web development, custom software development, mobile app development, database solutions, hosting and cloud services, and quality assurance testing for businesses across India.'
           }
         },
         {
           '@type': 'Question',
-          'name': 'Where is MEMO Infotech located?',
+          'name': 'Where is Memo Infotech located?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'MEMO Infotech is headquartered in Nagercoil, Tamil Nadu, India. We serve clients across India including Chennai, Bangalore, Coimbatore, Hyderabad, Mumbai, Delhi, Pune, and other regions.'
+            'text': 'Memo Infotech is headquartered in Nagercoil, Tamil Nadu, India. We serve clients across India including Chennai, Bangalore, Coimbatore, Hyderabad, Mumbai, Delhi, Pune, and other regions.'
           }
         },
         {
           '@type': 'Question',
-          'name': 'Does MEMO Infotech work with startups and small businesses?',
+          'name': 'Does Memo Infotech work with startups and small businesses?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'Yes, MEMO Infotech works with startups, small businesses, and large enterprises. We tailor our IT solutions to meet the specific needs and budget requirements of each client.'
+            'text': 'Yes, Memo Infotech works with startups, small businesses, and large enterprises. We tailor our IT solutions to meet the specific needs and budget requirements of each client.'
           }
         },
         {
           '@type': 'Question',
-          'name': 'What technologies does MEMO Infotech use?',
+          'name': 'What technologies does Memo Infotech use?',
           'acceptedAnswer': {
             '@type': 'Answer',
             'text': 'We use modern technologies including React, Node.js, Python, PHP, Laravel, MySQL, PostgreSQL, AWS, Docker, JavaScript, and TypeScript to deliver cutting-edge IT solutions.'
@@ -110,7 +110,7 @@ const ItCompanyInNagercoil: React.FC = () => {
         },
         {
           '@type': 'Question',
-          'name': 'How can I contact MEMO Infotech for a free consultation?',
+          'name': 'How can I contact Memo Infotech for a free consultation?',
           'acceptedAnswer': {
             '@type': 'Answer',
             'text': 'You can contact us by calling +91 6374433734, visiting our contact page, or emailing hello@memoinfotech.com. We offer free consultations for all IT service inquiries.'
@@ -133,8 +133,8 @@ const ItCompanyInNagercoil: React.FC = () => {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       '@id': 'https://www.memoinfotech.com/it-company-in-nagercoil/',
-      'name': 'MEMO Infotech - IT Company in Nagercoil',
-      'description': 'MEMO Infotech is a leading IT company in Nagercoil providing web development, software development, mobile app development, and IT consulting services.',
+      'name': 'Memo Infotech - IT Company in Nagercoil',
+      'description': 'Memo Infotech is a leading IT company in Nagercoil providing web development, software development, mobile app development, and IT consulting services.',
       'image': 'https://www.memoinfotech.com/assets/it-company-nagercoil-og.jpg',
       'url': 'https://www.memoinfotech.com/it-company-in-nagercoil/',
       'telephone': '+91 6374433734',
@@ -299,7 +299,7 @@ const ItCompanyInNagercoil: React.FC = () => {
           <div className="container mx-auto max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-4xl font-bold font-['Syne'] text-black mb-8">Why Choose MEMO Infotech</h2>
+                <h2 className="text-4xl font-bold font-['Syne'] text-black mb-8">Why Choose Memo Infotech</h2>
                 <div className="space-y-6">
                   {[
                     'Experienced team with 10+ years of combined expertise',

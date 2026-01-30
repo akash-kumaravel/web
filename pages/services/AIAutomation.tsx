@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const AIAutomation: React.FC = () => {
   useEffect(() => {
     // ==================== SEO: Meta Tags ====================
-    document.title = 'AI & Automation Solutions | Smart Business Technology & Machine Learning';
-    const desc = 'Professional AI and automation solutions. Custom AI models, chatbots, process automation, machine learning, advanced analytics. Transform your business operations with intelligent technology.';
+    document.title = 'AI & Automation Solutions Company in Nagercoil, Tamil Nadu | Memo Infotech';
+    const desc = 'Memo Infotech is a professional AI and automation solutions company in Nagercoil, Tamil Nadu, offering custom AI models, chatbots, process automation, and machine learning solutions.';
     
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDesc) metaDesc.content = desc;
@@ -28,7 +28,7 @@ const AIAutomation: React.FC = () => {
       og.content = content;
     };
 
-    setOGMeta('og:title', 'AI & Automation Solutions | MEMO InfoTech');
+    setOGMeta('og:title', 'AI & Automation Solutions Company in Nagercoil, Tamil Nadu | Memo Infotech');
     setOGMeta('og:description', desc);
     setOGMeta('og:type', 'website');
     setOGMeta('og:url', 'https://www.memoinfotech.com/services/ai-automation/');
@@ -67,17 +67,20 @@ const AIAutomation: React.FC = () => {
       "description": "Leverage AI, machine learning, chatbots, process automation, and advanced analytics to transform your business operations. Custom AI solutions for intelligent automation.",
       "provider": {
         "@type": "Organization",
-        "name": "MEMO InfoTech",
+        "name": "Memo Infotech",
         "url": "https://www.memoinfotech.com",
         "logo": "https://www.memoinfotech.com/logo.png",
-        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+        "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-XXX-XXX-XXXX",
           "contactType": "Customer Service"
         }
       },
-      "areaServed": "Worldwide",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Nagercoil, Tamil Nadu, India"
+      },
       "serviceType": "AI & Automation",
       "hasOfferingDetails": [
         { "@type": "OfferingDetails", "name": "Custom AI Solutions", "priceRange": "Custom Quote" },
@@ -90,10 +93,17 @@ const AIAutomation: React.FC = () => {
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "MEMO InfoTech",
+      "name": "Memo Infotech",
       "url": "https://www.memoinfotech.com",
       "logo": "https://www.memoinfotech.com/logo.png",
-      "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+      "description": "Expert AI and automation agency specializing in intelligent business solutions and machine learning.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nagercoil",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-XXX-XXX-XXXX",
@@ -252,7 +262,7 @@ const AIAutomation: React.FC = () => {
       <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
-            AI &amp; Automation Solutions
+            AI & Automation Solutions Company in Nagercoil, Tamil Nadu
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Transform your business with artificial intelligence, machine learning, and intelligent automation. Increase efficiency, reduce costs, and gain competitive advantage.
@@ -261,6 +271,14 @@ const AIAutomation: React.FC = () => {
       </header>
 
       <main className="w-full" role="main" aria-label="Main Content">
+        {/* ==================== Section 0: Service Location ====================*/}
+        <section className="py-16 bg-blue-50 border-t-4 border-[#007BFF]" aria-label="Service Location" role="region">
+          <div className="container mx-auto px-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              <strong>Memo Infotech</strong> is a trusted <strong>AI and automation solutions company in Nagercoil, Tamil Nadu</strong>, helping businesses across Kanyakumari district leverage intelligent automation for growth.
+            </p>
+          </div>
+        </section>
         {/* ==================== Section 1: AI & Automation Services ====================*/}
         <section className="py-32 bg-white" aria-label="Our AI and Automation Services" role="region">
           <div className="container mx-auto px-6">

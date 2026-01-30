@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
         <Link to="/" className="flex items-center gap-2 group">
           <img
             src="https://www.memoinfotech.com/assets/logo.svg"
-            alt="MEMO InfoTech"
+            alt="Memo Infotech"
             className="h-10 md:h-12 w-auto object-contain"
             width={48}
             height={48}

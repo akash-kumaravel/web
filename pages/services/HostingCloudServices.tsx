@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const HostingCloudServices: React.FC = () => {
   useEffect(() => {
     // ==================== SEO: Meta Tags ====================
-    document.title = 'Hosting, Cloud & IT Services | Cloud Infrastructure & Server Management';
-    const desc = 'Professional hosting, cloud services, and IT solutions. AWS, Azure, Google Cloud. Domain registration, SSL certificates, 24/7 server management, disaster recovery.';
+    document.title = 'Hosting & Cloud Services Company in Nagercoil, Tamil Nadu | Memo Infotech';
+    const desc = 'Memo Infotech is a professional hosting and cloud services company in Nagercoil, Tamil Nadu, offering AWS, Azure, Google Cloud, domain registration, and SSL certificates.';
     
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDesc) metaDesc.content = desc;
@@ -28,7 +28,7 @@ const HostingCloudServices: React.FC = () => {
       og.content = content;
     };
 
-    setOGMeta('og:title', 'Hosting, Cloud & IT Services | MEMO InfoTech');
+    setOGMeta('og:title', 'Hosting & Cloud Services Company in Nagercoil, Tamil Nadu | Memo Infotech');
     setOGMeta('og:description', desc);
     setOGMeta('og:type', 'website');
     setOGMeta('og:url', 'https://www.memoinfotech.com/services/hosting-cloud-services/');
@@ -67,17 +67,20 @@ const HostingCloudServices: React.FC = () => {
       "description": "Professional hosting, cloud services, server management, domain registration, SSL, backup, and disaster recovery solutions. AWS, Azure, Google Cloud expertise.",
       "provider": {
         "@type": "Organization",
-        "name": "MEMO InfoTech",
+        "name": "Memo Infotech",
         "url": "https://www.memoinfotech.com",
         "logo": "https://www.memoinfotech.com/logo.png",
-        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+        "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-XXX-XXX-XXXX",
           "contactType": "Customer Service"
         }
       },
-      "areaServed": "Worldwide",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Nagercoil, Tamil Nadu, India"
+      },
       "serviceType": "Hosting & Cloud Services",
       "hasOfferingDetails": [
         { "@type": "OfferingDetails", "name": "Domain Registration", "priceRange": "Custom Quote" },
@@ -90,10 +93,17 @@ const HostingCloudServices: React.FC = () => {
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "MEMO InfoTech",
+      "name": "Memo Infotech",
       "url": "https://www.memoinfotech.com",
       "logo": "https://www.memoinfotech.com/logo.png",
-      "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+      "description": "Expert hosting and cloud services agency specializing in AWS and cloud infrastructure.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nagercoil",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-XXX-XXX-XXXX",
@@ -252,7 +262,7 @@ const HostingCloudServices: React.FC = () => {
       <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
-            Hosting, Cloud &amp; IT Services
+            Hosting & Cloud Services Company in Nagercoil, Tamil Nadu
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Secure, reliable infrastructure for your digital presence. We handle domain registration, hosting, server management, and ensure your systems are always online.
@@ -261,6 +271,14 @@ const HostingCloudServices: React.FC = () => {
       </header>
 
       <main className="w-full" role="main" aria-label="Main Content">
+        {/* ==================== Section 0: Service Location ====================*/}
+        <section className="py-16 bg-blue-50 border-t-4 border-[#007BFF]" aria-label="Service Location" role="region">
+          <div className="container mx-auto px-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              <strong>Memo Infotech</strong> is a trusted <strong>hosting and cloud services company in Nagercoil, Tamil Nadu</strong>, providing reliable infrastructure solutions to businesses across Kanyakumari district.
+            </p>
+          </div>
+        </section>
         {/* ==================== Section 1: Cloud & Hosting Services ====================*/}
         <section className="py-32 bg-white" aria-label="Our Cloud and Hosting Services" role="region">
           <div className="container mx-auto px-6">

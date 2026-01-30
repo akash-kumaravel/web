@@ -39,28 +39,59 @@ const MotionDesignAnimation: React.FC = () => {
     }
   }, []);
 
-  const curriculum = [
-    {
-      module: "Module 1: Animation Fundamentals",
-      topics: ["12 Principles of Animation", "Timing & Spacing", "Keyframing", "Composition"],
-      duration: "2 weeks"
-    },
-    {
-      module: "Module 2: Adobe After Effects",
-      topics: ["Effects & Layers", "Motion Graphics", "VFX Compositing", "Advanced Techniques"],
-      duration: "2.5 weeks"
-    },
-    {
-      module: "Module 3: 3D Motion & Cinema 4D",
-      topics: ["3D Modeling Basics", "Cinema 4D", "3D Animation", "Rendering"],
-      duration: "2.5 weeks"
-    },
-    {
-      module: "Module 4: Professional Projects",
-      topics: ["Broadcast Design", "Video Production", "Portfolio Projects"],
-      duration: "2.5 weeks"
+  useEffect(() => {
+    document.title = 'Motion Design & Animation Course in Nagercoil | Memo Infotech Academy';
+
+    const desc = 'Master Motion Design & Animation course in Nagercoil at Memo Infotech Academy. Learn After Effects, animation principles, visual effects, real projects and certification.';
+
+    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (metaDesc) metaDesc.content = desc;
+    else {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = 'description';
+      metaDesc.content = desc;
+      document.head.appendChild(metaDesc);
     }
-  ];
+
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://www.memoinfotech.com/academy/motion-design-animation';
+  }, []);
+
+  useEffect(() => {
+    const courseSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Motion Design & Animation Course in Nagercoil",
+      "description": "Professional Motion Design & Animation course in Nagercoil by Memo Infotech Academy covering After Effects, animation principles, visual effects and certification.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Memo Infotech Academy",
+        "url": "https://www.memoinfotech.com/academy"
+      },
+      "educationalCredentialAwarded": "Certificate",
+      "timeRequired": "P10W",
+      "courseMode": "Offline",
+      "inLanguage": "en",
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Nagercoil, Tamil Nadu, India"
+      }
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(courseSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const features = [
     { icon: <Code size={32} />, title: "Industry Software", description: "After Effects, Cinema 4D, Premiere" },
@@ -80,16 +111,17 @@ const MotionDesignAnimation: React.FC = () => {
           <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
         </div>
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-6 py-20">
-            <Link to="/academy" className="inline-flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest mb-6 hover:text-gray-200 transition-colors">
-              <ArrowLeft size={16} /> Back to Academy
-            </Link>
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="container mx-auto px-6 w-full">
             <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none mb-6 text-white max-w-4xl">
-              Motion Design & Animation
+              Motion Design & Animation Course in Nagercoil
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl">
               Master motion graphics and animation. Create stunning visual effects and animations for film, TV, and digital media.
+            </p>
+            <p className="text-blue-100 max-w-3xl mb-8">
+              Memo Infotech Academy offers a professional <strong>Motion Design & Animation course in Nagercoil, Tamil Nadu</strong>,
+              designed for animators, designers, and creative professionals. Our training focuses on motion graphics, animation principles, and professional VFX, industry tools, and internship-based learning.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex items-center gap-3 text-white">
@@ -112,23 +144,13 @@ const MotionDesignAnimation: React.FC = () => {
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               From animation principles to advanced 3D compositing, learn the full spectrum of motion design. Create broadcast-quality content for film, television, web, and advertising.
             </p>
+            <p className="text-lg text-gray-700 mb-8">
+              This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
+              IT training programs in Nagercoil</Link>. You may also explore our
+              <Link to="/academy/graphic-design" className="text-[#007BFF] font-semibold hover:underline ml-1">
+              Graphic Design course</Link>.
+            </p>
 
-            <h3 className="text-3xl font-bold font-['Syne'] text-black mb-8">Curriculum</h3>
-            <div className="space-y-6">
-              {curriculum.map((item, idx) => (
-                <div key={idx} className="border-l-4 border-[#007BFF] pl-6 py-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-xl font-bold text-black">{item.module}</h4>
-                    <span className="text-sm font-semibold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">{item.duration}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {item.topics.map((topic, i) => (
-                      <span key={i} className="text-gray-600 text-sm">{topic}{i < item.topics.length - 1 ? ',' : ''}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -184,6 +206,36 @@ const MotionDesignAnimation: React.FC = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Frequently Asked Questions</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What is motion design?</h3>
+              <p className="text-gray-700">Motion design is the art of creating moving graphics and animations. It's used in film, television, advertising, web design, and more to communicate messages visually and engage audiences.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">Do I need animation experience?</h3>
+              <p className="text-gray-700">No experience necessary! Our course welcomes animators, designers, and creative professionals of all levels. We cover animation fundamentals to advanced techniques.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What software will I learn?</h3>
+              <p className="text-gray-700">You'll master After Effects (industry standard), Cinema 4D, Premiere Pro, and other professional animation and compositing tools used by studios worldwide.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">How long is the Motion Design course?</h3>
+              <p className="text-gray-700">The course is a comprehensive 10-week program. You'll have lifetime access to course materials, updates, and can complete it at your own pace.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What career options exist?</h3>
+              <p className="text-gray-700">Motion designers work with film studios, advertising agencies, tech companies, or as freelancers. Opportunities span film, TV, advertising, web, and emerging media platforms.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="py-32 bg-[#007BFF] text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-[4rem] font-bold font-['Syne'] mb-6">Bring Your Motion Ideas to Life</h2>
@@ -201,172 +253,9 @@ const MotionDesignAnimation: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-32 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Other Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link
-              to="/academy/graphic-design"
-              className="group rounded-[2rem] overflow-hidden border border-gray-200 hover:border-[#007BFF] bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 block"
-            >
-              <div className="h-56 overflow-hidden bg-gray-200 relative">
-                <img
-                  src="/assets/Graphic.png"
-                  alt="Graphic Design"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-bold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">
-                    Design
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#007BFF] transition-colors line-clamp-2">
-                  Graphic Design
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  Learn fundamentals of graphic design, typography, color theory and industry tools to create impactful visuals.
-                </p>
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Tool Training
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Branding
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Portfolio
-                  </div>
-                </div>
-                <div className="flex items-center text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
-                  <div className="flex items-center gap-1">
-                    <Clock size={16} />
-                    6 weeks
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold group-hover:bg-blue-700 transition-all inline-block cursor-pointer">
-                    View Course
-                  </span>
-                </div>
-              </div>
-            </Link>
-
-            <Link
-              to="/academy/ui-ux-design-master"
-              className="group rounded-[2rem] overflow-hidden border border-gray-200 hover:border-[#007BFF] bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 block"
-            >
-              <div className="h-56 overflow-hidden bg-gray-200 relative">
-                <img
-                  src="/assets/UI UX.png"
-                  alt="UI/UX Design Master Course"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-bold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">
-                    Design
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#007BFF] transition-colors line-clamp-2">
-                  UI/UX Design Master Course
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  Design user-centered interfaces, wireframing, prototyping and building a strong design portfolio.
-                </p>
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Portfolio Project
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Design Tools
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Mentor Reviews
-                  </div>
-                </div>
-                <div className="flex items-center text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
-                  <div className="flex items-center gap-1">
-                    <Clock size={16} />
-                    8 weeks
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold group-hover:bg-blue-700 transition-all inline-block cursor-pointer">
-                    View Course
-                  </span>
-                </div>
-              </div>
-            </Link>
-
-            <Link
-              to="/academy/web-designing"
-              className="group rounded-[2rem] overflow-hidden border border-gray-200 hover:border-[#007BFF] bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 block"
-            >
-              <div className="h-56 overflow-hidden bg-gray-200 relative">
-                <img
-                  src="/assets/Website Development.png"
-                  alt="Web Designing"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-bold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">
-                    Design
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#007BFF] transition-colors line-clamp-2">
-                  Web Designing
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  Learn visual design for the web, responsive layouts, and modern CSS techniques for beautiful sites.
-                </p>
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Responsive Design
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    CSS Techniques
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Design Systems
-                  </div>
-                </div>
-                <div className="flex items-center text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
-                  <div className="flex items-center gap-1">
-                    <Clock size={16} />
-                    6 weeks
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold group-hover:bg-blue-700 transition-all inline-block cursor-pointer">
-                    View Course
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div className="text-center mt-12">
-            <Link to="/academy" className="inline-flex items-center gap-2 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all">
-              View All Courses <ArrowRight size={20} />
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
 
 export default MotionDesignAnimation;
+

@@ -39,33 +39,59 @@ const DataAnalytics: React.FC = () => {
     }
   }, []);
 
-  const curriculum = [
-    {
-      module: "Module 1: Python Fundamentals for Data",
-      topics: ["Python Syntax", "Data Structures", "Libraries (NumPy, Pandas)", "Data Cleaning & Preprocessing"],
-      duration: "2.5 weeks"
-    },
-    {
-      module: "Module 2: SQL & Database Queries",
-      topics: ["SQL Basics", "Advanced Queries", "Joins & Subqueries", "Window Functions"],
-      duration: "2 weeks"
-    },
-    {
-      module: "Module 3: Data Visualization",
-      topics: ["Matplotlib & Seaborn", "Tableau", "Dashboard Design", "Storytelling with Data"],
-      duration: "2.5 weeks"
-    },
-    {
-      module: "Module 4: Statistical Analysis",
-      topics: ["Descriptive Statistics", "Hypothesis Testing", "Regression Analysis", "Business Intelligence"],
-      duration: "2.5 weeks"
-    },
-    {
-      module: "Module 5: Real-World Projects",
-      topics: ["End-to-End Data Analysis", "Portfolio Projects", "Industry Case Studies"],
-      duration: "0.5 weeks"
+  useEffect(() => {
+    document.title = 'Data Analytics Course in Nagercoil | Memo Infotech Academy';
+
+    const desc = 'Join Data Analytics course in Nagercoil at Memo Infotech Academy. Learn Python, SQL, Power BI, Tableau, real datasets, certification and career support.';
+
+    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (metaDesc) metaDesc.content = desc;
+    else {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = 'description';
+      metaDesc.content = desc;
+      document.head.appendChild(metaDesc);
     }
-  ];
+
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://www.memoinfotech.com/academy/data-analytics';
+  }, []);
+
+  useEffect(() => {
+    const courseSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Data Analytics Course in Nagercoil",
+      "description": "Professional Data Analytics course in Nagercoil by Memo Infotech Academy covering Python, SQL, Power BI, Tableau, real datasets and certification.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Memo Infotech Academy",
+        "url": "https://www.memoinfotech.com/academy"
+      },
+      "educationalCredentialAwarded": "Certificate",
+      "timeRequired": "P10W",
+      "courseMode": "Offline",
+      "inLanguage": "en",
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Nagercoil, Tamil Nadu, India"
+      }
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(courseSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const features = [
     { icon: <Database size={32} />, title: "Data Manipulation", description: "Master Python and SQL for data handling" },
@@ -85,16 +111,17 @@ const DataAnalytics: React.FC = () => {
           <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
         </div>
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-6 py-20">
-            <Link to="/academy" className="inline-flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest mb-6 hover:text-gray-200 transition-colors">
-              <ArrowLeft size={16} /> Back to Academy
-            </Link>
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="container mx-auto px-6 w-full">
             <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none mb-6 text-white max-w-4xl">
-              Data Analytics
+              Data Analytics Course in Nagercoil
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl">
               Transform raw data into actionable insights. Learn Python, SQL, and visualization tools used by Fortune 500 companies.
+            </p>
+            <p className="text-blue-100 max-w-3xl mb-8">
+              Memo Infotech Academy offers a professional <strong>Data Analytics course in Nagercoil, Tamil Nadu</strong>,
+              designed for beginners, career-switchers, and aspiring analysts. Our training focuses on data analysis, visualization, and business intelligence, industry tools, and internship-based learning.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex items-center gap-3 text-white">
@@ -117,23 +144,13 @@ const DataAnalytics: React.FC = () => {
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               Work with real datasets, master industry-standard tools, and build a portfolio of analytics projects that showcase your skills to employers.
             </p>
+            <p className="text-lg text-gray-700 mb-8">
+              This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
+              IT training programs in Nagercoil</Link>. You may also explore our
+              <Link to="/academy/python-programming" className="text-[#007BFF] font-semibold hover:underline ml-1">
+              Python Programming course</Link>.
+            </p>
 
-            <h3 className="text-3xl font-bold font-['Syne'] text-black mb-8">Curriculum</h3>
-            <div className="space-y-6">
-              {curriculum.map((item, idx) => (
-                <div key={idx} className="border-l-4 border-[#007BFF] pl-6 py-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-xl font-bold text-black">{item.module}</h4>
-                    <span className="text-sm font-semibold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">{item.duration}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {item.topics.map((topic, i) => (
-                      <span key={i} className="text-gray-600 text-sm">{topic}{i < item.topics.length - 1 ? ',' : ''}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -189,6 +206,36 @@ const DataAnalytics: React.FC = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Frequently Asked Questions</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What is Data Analytics?</h3>
+              <p className="text-gray-700">Data Analytics is the process of examining raw data to discover insights and patterns. It helps businesses make data-driven decisions and is one of the most in-demand skills in the job market.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">Do I need programming experience?</h3>
+              <p className="text-gray-700">No! Our course is designed for beginners, career-switchers, and aspiring analysts. We teach Python and SQL from scratch, making it accessible to everyone.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What tools will I learn?</h3>
+              <p className="text-gray-700">You'll master Python, SQL, Power BI, Tableau, and other visualization tools used by Fortune 500 companies for real business analytics.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">How long is the Data Analytics course?</h3>
+              <p className="text-gray-700">The course is designed to be completed in 10 weeks with self-paced learning. You can learn at your own speed with lifetime access to course materials.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What's the average salary for Data Analysts?</h3>
+              <p className="text-gray-700">Data Analysts earn competitive salaries, with entry-level positions starting around 4-6 LPA and experienced analysts earning 8+ LPA. We provide career support to help you maximize your earning potential.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="py-32 bg-[#007BFF] text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-[4rem] font-bold font-['Syne'] mb-6">Ready to Start Your Analytics Journey?</h2>
@@ -206,48 +253,7 @@ const DataAnalytics: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-32 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Other Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Link to="/academy/full-stack-web-development" className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
-              <div className="h-48 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
-                <Code size={64} className="text-white opacity-20" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#007BFF]">Full Stack Web Development</h3>
-                <p className="text-gray-600 text-sm mb-4">Learn front-end and back-end web development and deploy production-ready applications.</p>
-                <span className="text-[#007BFF] font-semibold">12 weeks</span>
-              </div>
-            </Link>
-            <Link to="/academy/frontend-web-development" className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
-              <div className="h-48 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
-                <Code size={64} className="text-white opacity-20" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#007BFF]">Frontend Web Development</h3>
-                <p className="text-gray-600 text-sm mb-4">Master React, JavaScript, and modern frontend technologies to build interactive web applications.</p>
-                <span className="text-[#007BFF] font-semibold">8 weeks</span>
-              </div>
-            </Link>
-            <Link to="/academy/python-programming" className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
-              <div className="h-48 bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center">
-                <Code size={64} className="text-white opacity-20" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#007BFF]">Python Programming</h3>
-                <p className="text-gray-600 text-sm mb-4">Start with Python fundamentals and move to data handling, scripting, and applications.</p>
-                <span className="text-[#007BFF] font-semibold">6 weeks</span>
-              </div>
-            </Link>
-          </div>
-          <div className="text-center mt-12">
-            <Link to="/academy" className="inline-flex items-center gap-2 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all">
-              View All Courses <ArrowRight size={20} />
-            </Link>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 };

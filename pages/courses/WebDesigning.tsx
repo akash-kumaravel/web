@@ -39,28 +39,61 @@ const WebDesigning: React.FC = () => {
     }
   }, []);
 
-  const curriculum = [
-    {
-      module: "Module 1: Web Design Fundamentals",
-      topics: ["Design Principles", "Color & Typography", "Layout Systems", "Responsive Design"],
-      duration: "1.5 weeks"
-    },
-    {
-      module: "Module 2: Design Tools & Software",
-      topics: ["Figma Mastery", "Adobe XD", "Prototyping", "Design Systems"],
-      duration: "1.5 weeks"
-    },
-    {
-      module: "Module 3: Web Technologies",
-      topics: ["HTML & CSS Basics", "JavaScript Interactions", "Web Standards", "Accessibility"],
-      duration: "1.5 weeks"
-    },
-    {
-      module: "Module 4: Portfolio & Projects",
-      topics: ["Case Studies", "Real Client Work", "Portfolio Building"],
-      duration: "1.5 weeks"
+  useEffect(() => {
+    document.title = 'Web Designing Course in Nagercoil | Memo Infotech Academy';
+
+    const desc =
+      'Join the best Web Designing course in Nagercoil at Memo Infotech Academy. Learn UI design, responsive layouts, Figma, real projects, certification and internship support.';
+
+    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (metaDesc) metaDesc.content = desc;
+    else {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = 'description';
+      metaDesc.content = desc;
+      document.head.appendChild(metaDesc);
     }
-  ];
+
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://www.memoinfotech.com/academy/web-designing';
+  }, []);
+
+  useEffect(() => {
+    const courseSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Web Designing Course in Nagercoil",
+      "description":
+        "Professional Web Designing course in Nagercoil by Memo Infotech Academy covering UI design, responsive layouts, Figma, real projects and certification.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Memo Infotech Academy",
+        "url": "https://www.memoinfotech.com/academy"
+      },
+      "educationalCredentialAwarded": "Certificate",
+      "timeRequired": "P6W",
+      "courseMode": "Offline",
+      "inLanguage": "en",
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Nagercoil, Tamil Nadu, India"
+      }
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(courseSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const features = [
     { icon: <Code size={32} />, title: "Design Tools", description: "Master Figma and design software" },
@@ -80,16 +113,18 @@ const WebDesigning: React.FC = () => {
           <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
         </div>
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-6 py-20">
-            <Link to="/academy" className="inline-flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest mb-6 hover:text-gray-200 transition-colors">
-              <ArrowLeft size={16} /> Back to Academy
-            </Link>
-            <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none mb-6 text-white max-w-4xl">
-              Web Designing
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="container mx-auto px-6 w-full">
+            <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight mb-6 text-white max-w-4xl">
+              Web Designing Course in Nagercoil
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl">
               Create stunning, responsive web designs that engage users and drive conversions.
+            </p>
+            <p className="text-blue-100 max-w-3xl mb-8">
+              Memo Infotech Academy offers a professional <strong>Web Designing course in Nagercoil, Tamil Nadu</strong>,
+              designed for students, freshers, and professionals. Our training focuses on real-world projects,
+              industry tools, and internship-based learning.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex items-center gap-3 text-white">
@@ -113,22 +148,14 @@ const WebDesigning: React.FC = () => {
               From concept to implementation, build a portfolio of professional web designs and launch your career in web design.
             </p>
 
-            <h3 className="text-3xl font-bold font-['Syne'] text-black mb-8">Curriculum</h3>
-            <div className="space-y-6">
-              {curriculum.map((item, idx) => (
-                <div key={idx} className="border-l-4 border-[#007BFF] pl-6 py-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-xl font-bold text-black">{item.module}</h4>
-                    <span className="text-sm font-semibold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">{item.duration}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {item.topics.map((topic, i) => (
-                      <span key={i} className="text-gray-600 text-sm">{topic}{i < item.topics.length - 1 ? ',' : ''}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <p className="text-lg text-gray-700 mb-8">
+              This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
+              IT training programs in Nagercoil</Link>. You may also explore our
+              <Link to="/academy/ui-ux-design-master" className="text-[#007BFF] font-semibold hover:underline ml-1">
+              UI/UX Design course</Link>.
+            </p>
+
+            <div className="mt-12"></div>
           </div>
 
           <div>
@@ -201,172 +228,38 @@ const WebDesigning: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-32 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Other Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link
-              to="/academy/ui-ux-design-master"
-              className="group rounded-[2rem] overflow-hidden border border-gray-200 hover:border-[#007BFF] bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 block"
-            >
-              <div className="h-56 overflow-hidden bg-gray-200 relative">
-                <img
-                  src="/assets/UI UX.png"
-                  alt="UI/UX Design Master Course"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-bold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">
-                    Design
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#007BFF] transition-colors line-clamp-2">
-                  UI/UX Design Master Course
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  Design user-centered interfaces, wireframing, prototyping and building a strong design portfolio.
-                </p>
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Portfolio Project
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Design Tools
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Mentor Reviews
-                  </div>
-                </div>
-                <div className="flex items-center text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
-                  <div className="flex items-center gap-1">
-                    <Clock size={16} />
-                    8 weeks
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold group-hover:bg-blue-700 transition-all inline-block cursor-pointer">
-                    View Course
-                  </span>
-                </div>
-              </div>
-            </Link>
-
-            <Link
-              to="/academy/graphic-design"
-              className="group rounded-[2rem] overflow-hidden border border-gray-200 hover:border-[#007BFF] bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 block"
-            >
-              <div className="h-56 overflow-hidden bg-gray-200 relative">
-                <img
-                  src="/assets/Graphic.png"
-                  alt="Graphic Design"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-bold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">
-                    Design
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#007BFF] transition-colors line-clamp-2">
-                  Graphic Design
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  Learn fundamentals of graphic design, typography, color theory and industry tools to create impactful visuals.
-                </p>
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Tool Training
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Branding
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Portfolio
-                  </div>
-                </div>
-                <div className="flex items-center text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
-                  <div className="flex items-center gap-1">
-                    <Clock size={16} />
-                    6 weeks
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold group-hover:bg-blue-700 transition-all inline-block cursor-pointer">
-                    View Course
-                  </span>
-                </div>
-              </div>
-            </Link>
-
-            <Link
-              to="/academy/frontend-web-development"
-              className="group rounded-[2rem] overflow-hidden border border-gray-200 hover:border-[#007BFF] bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 block"
-            >
-              <div className="h-56 overflow-hidden bg-gray-200 relative">
-                <img
-                  src="/assets/frontend.png"
-                  alt="Frontend Web Development"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-bold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">
-                    Web Development
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#007BFF] transition-colors line-clamp-2">
-                  Frontend Web Development
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  Master HTML, CSS, JavaScript, and modern frameworks to build fast, responsive user interfaces.
-                </p>
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Component Patterns
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Performance
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Portfolio Projects
-                  </div>
-                </div>
-                <div className="flex items-center text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
-                  <div className="flex items-center gap-1">
-                    <Clock size={16} />
-                    8 weeks
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold group-hover:bg-blue-700 transition-all inline-block cursor-pointer">
-                    View Course
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div className="text-center mt-12">
-            <Link to="/academy" className="inline-flex items-center gap-2 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all">
-              View All Courses <ArrowRight size={20} />
-            </Link>
+          <h2 className="text-3xl font-bold font-['Syne'] text-black mb-12">Web Designing Course – FAQs</h2>
+          
+          <div className="max-w-3xl space-y-8">
+            <div>
+              <h3 className="text-xl font-semibold text-black mb-3">Is this Web Designing course available in Nagercoil?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Yes, Memo Infotech Academy offers classroom and internship-based Web Designing training in Nagercoil. Our course is designed for students, freshers, and professionals looking to build careers in web design.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold text-black mb-3">Do I get a certificate?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Yes, students receive a recognized certificate after successful course completion. Additionally, we provide internship opportunities to gain practical experience with real client projects.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold text-black mb-3">What tools will I learn in this Web Designing course?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                This course covers industry-standard tools including Figma, responsive design principles, modern CSS frameworks, and best practices for creating user-friendly, mobile-first web designs.
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 };
 
 export default WebDesigning;
+

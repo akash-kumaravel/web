@@ -3,7 +3,7 @@ Redirects & canonical host — how to enforce https://www.memoinfotech.com
 1) Cloudflare (recommended if you're using Cloudflare):
 
 - In the Cloudflare Dashboard → Rules → Redirects, add a rule:
-  Source: https://memoinfotech.com/*
+  Source: https://Memoinfotech.com/*
   Destination: https://www.memoinfotech.com/$1
   Status: 301 (Permanent Redirect)
 
@@ -13,13 +13,13 @@ Redirects & canonical host — how to enforce https://www.memoinfotech.com
 
 server {
   listen 80;
-  server_name memoinfotech.com;
+  server_name Memoinfotech.com;
   return 301 https://www.memoinfotech.com$request_uri;
 }
 
 server {
   listen 443 ssl;
-  server_name memoinfotech.com;
+  server_name Memoinfotech.com;
   # ssl_certificate ... ssl_certificate_key ...
   return 301 https://www.memoinfotech.com$request_uri;
 }
@@ -45,8 +45,8 @@ RewriteRule ^(.*)$ https://www.memoinfotech.com/$1 [L,R=301]
 
 Verification commands (run from terminal):
 
-curl -I -L http://memoinfotech.com/
-curl -I -L https://memoinfotech.com/
+curl -I -L http://Memoinfotech.com/
+curl -I -L https://Memoinfotech.com/
 curl -I -L http://www.memoinfotech.com/
 curl -I -L https://www.memoinfotech.com/
 

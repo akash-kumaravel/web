@@ -15,9 +15,9 @@ const Contact: React.FC = () => {
 
   useEffect(() => {
     updateSEO({
-      title: 'Contact Us — Get in Touch with MEMO InfoTech',
-      description: 'Contact MEMO InfoTech for web development, graphic design, and digital solutions. Call +91 6374433734 or email hello@memoinfotech.com. Based in Nagercoil, India.',
-      keywords: 'contact MEMO InfoTech, web development inquiry, design service request, digital solutions contact',
+      title: 'Contact Us — Get in Touch with Memo InfoTech',
+      description: 'Contact Memo InfoTech for web development, graphic design, and digital solutions. Call +91 6374433734 or email hello@memoinfotech.com. Based in Nagercoil, India.',
+      keywords: 'contact Memo InfoTech, web development inquiry, design service request, digital solutions contact',
       canonicalUrl: 'https://www.memoinfotech.com/contact/'
     });
     

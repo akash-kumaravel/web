@@ -28,7 +28,7 @@ const ContentDocumentation: React.FC = () => {
       og.content = content;
     };
 
-    setOGMeta('og:title', 'Content & Documentation Services | MEMO InfoTech');
+    setOGMeta('og:title', 'Content & Documentation Services Company in Nagercoil, Tamil Nadu | Memo Infotech');
     setOGMeta('og:description', desc);
     setOGMeta('og:type', 'website');
     setOGMeta('og:url', 'https://www.memoinfotech.com/services/content-documentation/');
@@ -67,17 +67,20 @@ const ContentDocumentation: React.FC = () => {
       "description": "Professional content writing, technical documentation, API documentation, user guides, knowledge bases, and content strategy services. SEO-optimized, clear, and accurate.",
       "provider": {
         "@type": "Organization",
-        "name": "MEMO InfoTech",
+        "name": "Memo Infotech",
         "url": "https://www.memoinfotech.com",
         "logo": "https://www.memoinfotech.com/logo.png",
-        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+        "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-XXX-XXX-XXXX",
           "contactType": "Customer Service"
         }
       },
-      "areaServed": "Worldwide",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Nagercoil, Tamil Nadu, India"
+      },
       "serviceType": "Content & Documentation",
       "hasOfferingDetails": [
         { "@type": "OfferingDetails", "name": "Technical Documentation", "priceRange": "Custom Quote" },
@@ -90,10 +93,17 @@ const ContentDocumentation: React.FC = () => {
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "MEMO InfoTech",
+      "name": "Memo Infotech",
       "url": "https://www.memoinfotech.com",
       "logo": "https://www.memoinfotech.com/logo.png",
-      "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+      "description": "Expert content and documentation agency specializing in technical writing and API documentation.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nagercoil",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-XXX-XXX-XXXX",
@@ -252,7 +262,7 @@ const ContentDocumentation: React.FC = () => {
       <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
-            Content &amp; Documentation Services
+            Content & Documentation Services Company in Nagercoil, Tamil Nadu
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Professional content and documentation services that help users understand and adopt your products. From technical docs to user guides.
@@ -261,6 +271,14 @@ const ContentDocumentation: React.FC = () => {
       </header>
 
       <main className="w-full" role="main" aria-label="Main Content">
+        {/* ==================== Section 0: Service Location ====================*/}
+        <section className="py-16 bg-blue-50 border-t-4 border-[#007BFF]" aria-label="Service Location" role="region">
+          <div className="container mx-auto px-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              <strong>Memo Infotech</strong> is a trusted <strong>content and documentation services company in Nagercoil, Tamil Nadu</strong>, helping businesses across Kanyakumari district create clear, effective technical content.
+            </p>
+          </div>
+        </section>
         {/* ==================== Section 1: Content Services ====================*/}
         <section className="py-32 bg-white" aria-label="Our Content and Documentation Services" role="region">
           <div className="container mx-auto px-6">

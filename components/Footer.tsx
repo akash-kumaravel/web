@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
               <div className="bg-white p-3 rounded-xl inline-block">
                 <img
                   src="https://www.memoinfotech.com/assets/logo.svg"
-                  alt="MEMO InfoTech"
+                  alt="Memo Infotech"
                   className="h-10 w-auto object-contain"
                   width={40}
                   height={40}
@@ -24,16 +24,16 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="font-medium mb-6 text-blue-50">
-              MEMO InfoTech is a leading Software Company. We build robust software, stunning websites, and digital strategies that drive growth.
+              Memo Infotech is a leading Software Company. We build robust software, stunning websites, and digital strategies that drive growth.
             </p>
             <div className="flex gap-4">
-              <a href="https://www.instagram.com/memoinfotech?igsh=NjJ4bGoyMXA0bGI1" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white text-[#007BFF] rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all hover:scale-110" aria-label="MEMO InfoTech Instagram">
+              <a href="https://www.instagram.com/Memoinfotech?igsh=NjJ4bGoyMXA0bGI1" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white text-[#007BFF] rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all hover:scale-110" aria-label="Memo Infotech Instagram">
                 <Instagram size={18} />
               </a>
-              <a href="https://x.com/memoinfotech" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white text-[#007BFF] rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all hover:scale-110" aria-label="MEMO InfoTech Twitter">
+              <a href="https://x.com/Memoinfotech" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white text-[#007BFF] rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all hover:scale-110" aria-label="Memo Infotech Twitter">
                 <Twitter size={18} />
               </a>
-              <a href="https://www.linkedin.com/company/memoinfotech/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white text-[#007BFF] rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all hover:scale-110" aria-label="MEMO InfoTech LinkedIn">
+              <a href="https://www.linkedin.com/company/Memoinfotech/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white text-[#007BFF] rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all hover:scale-110" aria-label="Memo Infotech LinkedIn">
                 <Linkedin size={18} />
               </a>
             </div>
@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center font-semibold text-sm text-blue-100">
-            <p>© 2024 MEMO InfoTech. All rights reserved.</p>
+            <p>© 2024 Memo Infotech. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-white">Terms of Service</Link>

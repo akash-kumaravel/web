@@ -18,7 +18,7 @@ const BlogDetail: React.FC = () => {
   useEffect(() => {
     if (post) {
       updateSEO({
-        title: `${post.title} | MEMO InfoTech Blog`,
+        title: `${post.title} | Memo InfoTech Blog`,
         description: post.excerpt,
         keywords: `${post.category}, web design, development, digital solutions`,
         ogImage: post.image,
@@ -96,8 +96,8 @@ const BlogDetail: React.FC = () => {
 
     // SEO: dynamic title & meta based on article
     useEffect(() => {
-        let title = article.title ? `${article.title} — MEMO InfoTech` : 'Article — MEMO InfoTech';
-        let desc = article.subtitle || 'Read this article from MEMO InfoTech on design and technology.';
+        let title = article.title ? `${article.title} — Memo InfoTech` : 'Article — Memo InfoTech';
+        let desc = article.subtitle || 'Read this article from Memo InfoTech on design and technology.';
         
         // Custom meta for IT company blog post
         if (post && (post as any).slug === 'it-company-in-nagercoil') {
@@ -262,7 +262,7 @@ const BlogDetail: React.FC = () => {
                          <div>
                              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Written by</p>
                              <h3 className="text-xl font-bold text-black mb-2">{article.author}</h3>
-                             <p className="text-gray-500 text-sm">Creative Director at MEMO InfoTech. Obsessed with grid systems, brutalism, and good coffee.</p>
+                             <p className="text-gray-500 text-sm">Creative Director at Memo InfoTech. Obsessed with grid systems, brutalism, and good coffee.</p>
                          </div>
                     </div>
                 </div>

@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const WebDesignDevelopment: React.FC = () => {
   useEffect(() => {
     // ==================== SEO: Meta Tags ====================
-    document.title = 'Web Design & Development Services | Custom React & Next.js Solutions';
-    const desc = 'Professional web design & development services. Custom React, Next.js, e-commerce, and responsive websites built for conversions. Expert design + development since 2015.';
+    document.title = 'Web Design & Web Development Company in Nagercoil, Tamil Nadu | Memo Infotech';
+    const desc = 'Memo Infotech is a professional web design and web development company in Nagercoil, Tamil Nadu, delivering high-performance websites and custom digital solutions.';
     
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDesc) metaDesc.content = desc;
@@ -28,7 +28,7 @@ const WebDesignDevelopment: React.FC = () => {
       og.content = content;
     };
 
-    setOGMeta('og:title', 'Web Design & Development Services | MEMO InfoTech');
+    setOGMeta('og:title', 'Web Design & Web Development Company in Nagercoil, Tamil Nadu | Memo Infotech');
     setOGMeta('og:description', desc);
     setOGMeta('og:type', 'website');
     setOGMeta('og:url', 'https://www.memoinfotech.com/services/web-design-development/');
@@ -67,17 +67,20 @@ const WebDesignDevelopment: React.FC = () => {
       "description": "Custom web design and development services including React apps, Next.js, e-commerce platforms, landing pages, and responsive websites.",
       "provider": {
         "@type": "Organization",
-        "name": "MEMO InfoTech",
+        "name": "Memo Infotech",
         "url": "https://www.memoinfotech.com",
         "logo": "https://www.memoinfotech.com/logo.png",
-        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+        "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-XXX-XXX-XXXX",
           "contactType": "Customer Service"
         }
       },
-      "areaServed": "Worldwide",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Nagercoil, Tamil Nadu, India"
+      },
       "serviceType": "Web Design & Development",
       "hasOfferingDetails": [
         { "@type": "OfferingDetails", "name": "React Applications", "priceRange": "Custom Quote" },
@@ -90,11 +93,17 @@ const WebDesignDevelopment: React.FC = () => {
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "MEMO InfoTech",
+      "name": "Memo Infotech",
       "url": "https://www.memoinfotech.com",
       "logo": "https://www.memoinfotech.com/logo.png",
       "description": "Expert web design and development agency specializing in React, Next.js, and modern digital solutions.",
-      "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nagercoil",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-XXX-XXX-XXXX",
@@ -277,7 +286,7 @@ const WebDesignDevelopment: React.FC = () => {
       <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
-            Web Design &amp; Web Development Services
+            Web Design &amp; Web Development Company in Nagercoil, Tamil Nadu
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             We create stunning, high-performance websites that captivate and convert. From static landing pages to dynamic web applications using React, Next.js, and WebGL, we build digital experiences that drive results.
@@ -286,6 +295,14 @@ const WebDesignDevelopment: React.FC = () => {
       </header>
 
       <main className="w-full" role="main" aria-label="Main Content">
+        {/* ==================== Section 0: Service Location ====================*/}
+        <section className="py-16 bg-blue-50 border-t-4 border-[#007BFF]" aria-label="Service Location" role="region">
+          <div className="container mx-auto px-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              <strong>Memo Infotech</strong> is a trusted <strong>web design and web development company in Nagercoil, Tamil Nadu</strong>, serving businesses across Kanyakumari district and surrounding regions. We specialize in creating custom web solutions that drive growth and deliver measurable results for local and national clients.
+            </p>
+          </div>
+        </section>
         {/* ==================== Section 1: Web Services ====================*/}
         <section className="py-32 bg-white" aria-label="Our Web Services" role="region">
           <div className="container mx-auto px-6">
@@ -349,7 +366,7 @@ const WebDesignDevelopment: React.FC = () => {
         {/* ==================== Section 4: Why Choose Us ====================*/}
         <section className="py-32 bg-[#007BFF] text-white" aria-label="Why Choose Us" role="region">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold font-['Syne'] mb-16">Why Choose MEMO InfoTech for Web Development?</h2>
+            <h2 className="text-4xl font-bold font-['Syne'] mb-16">Why Choose Memo Infotech for Web Development?</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-6">
@@ -460,7 +477,7 @@ const WebDesignDevelopment: React.FC = () => {
                 <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
               </Link>
 
-              <Link to="/services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="View all services offered by MEMO InfoTech">
+              <Link to="/services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="View all services offered by Memo Infotech">
                 <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">All Services</h3>
                 <p className="text-gray-600 mb-4">Explore our complete range of digital services and solutions.</p>
                 <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">View All →</span>

@@ -10,9 +10,9 @@ const Apply: React.FC = () => {
 
   useEffect(() => {
     updateSEO({
-      title: 'Apply Now — Join MEMO InfoTech | Career Opportunities',
-      description: 'Submit your application to join MEMO InfoTech. We are hiring talented designers, developers, and creatives. Apply for exciting career opportunities today!',
-      keywords: 'job application, careers at MEMO InfoTech, apply now, join our team',
+      title: 'Apply Now — Join Memo InfoTech | Career Opportunities',
+      description: 'Submit your application to join Memo InfoTech. We are hiring talented designers, developers, and creatives. Apply for exciting career opportunities today!',
+      keywords: 'job application, careers at Memo InfoTech, apply now, join our team',
       canonicalUrl: 'https://www.memoinfotech.com/apply/'
     });
     
@@ -42,8 +42,8 @@ const Apply: React.FC = () => {
 
     // SEO: set page title & description
     useEffect(() => {
-        document.title = 'Apply — Careers at MEMO InfoTech';
-        const desc = 'Submit your resume and portfolio to apply for open positions at MEMO InfoTech. Showcase your skills and experience.';
+        document.title = 'Apply — Careers at Memo InfoTech';
+        const desc = 'Submit your resume and portfolio to apply for open positions at Memo InfoTech. Showcase your skills and experience.';
         let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
         if (meta) meta.content = desc;
         else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
@@ -119,7 +119,7 @@ const Apply: React.FC = () => {
                     </div>
                     <h2 className="text-3xl font-bold mb-4">Application Received!</h2>
                     <p className="text-gray-500 mb-8 max-w-md">
-                        Thank you for applying to MEMO InfoTech. Our team will review your application and get back to you shortly.
+                        Thank you for applying to Memo InfoTech. Our team will review your application and get back to you shortly.
                     </p>
                     <a href="/" className="px-8 py-4 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] transition-all">
                         Return Home

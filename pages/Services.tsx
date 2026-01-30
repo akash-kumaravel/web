@@ -186,7 +186,7 @@ const Services: React.FC = () => {
     // SEO: set page title & description
     useEffect(() => {
         updateSEO({
-            title: 'Services — Web Development, Design, Mobile Apps & More | MEMO InfoTech',
+            title: 'Services — Web Development, Design, Mobile Apps & More | Memo InfoTech',
             description: 'Custom web development, mobile apps, UI/UX design, branding, graphic design, digital marketing, and motion graphics. Full-stack engineering and creative services focused on performance and conversion.',
             keywords: 'web development services, mobile app development, UI UX design, graphic design, digital marketing, custom software',
             ogTitle: 'Professional Digital Services - Web, Design & Development',
@@ -210,8 +210,8 @@ const Services: React.FC = () => {
                             "@context": "https://schema.org",
                             "@type": "BreadcrumbList",
                             "itemListElement": [
-                                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memoinfotech.com/" },
-                                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://memoinfotech.com/services" }
+                                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://Memoinfotech.com/" },
+                                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://Memoinfotech.com/services" }
                             ]
                     })}} />
                 </div>

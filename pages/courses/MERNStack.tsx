@@ -39,28 +39,59 @@ const MERNStack: React.FC = () => {
     }
   }, []);
 
-  const curriculum = [
-    {
-      module: "Module 1: MongoDB Mastery",
-      topics: ["Document Database Basics", "Collections & Documents", "Aggregation Pipeline", "Indexes & Performance"],
-      duration: "0.5 weeks"
-    },
-    {
-      module: "Module 2: Express & Node.js Backend",
-      topics: ["Express Server Setup", "Routing & Middleware", "Authentication", "RESTful APIs"],
-      duration: "1 week"
-    },
-    {
-      module: "Module 3: React Frontend Development",
-      topics: ["React Components", "State Management", "Hooks & Effects", "API Integration"],
-      duration: "0.75 weeks"
-    },
-    {
-      module: "Module 4: Full-Stack Project Development",
-      topics: ["Complete Application Build", "Deployment", "Production Ready Code"],
-      duration: "0.75 weeks"
+  useEffect(() => {
+    document.title = 'MERN Stack Course in Nagercoil | Memo Infotech Academy';
+
+    const desc = 'Learn MERN Stack course in Nagercoil at Memo Infotech Academy. Master MongoDB, Express, React, Node.js, real projects, certification and internship support.';
+
+    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (metaDesc) metaDesc.content = desc;
+    else {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = 'description';
+      metaDesc.content = desc;
+      document.head.appendChild(metaDesc);
     }
-  ];
+
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://www.memoinfotech.com/academy/mern-stack';
+  }, []);
+
+  useEffect(() => {
+    const courseSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "MERN Stack Course in Nagercoil",
+      "description": "Professional MERN Stack course in Nagercoil by Memo Infotech Academy covering MongoDB, Express, React, Node.js, real projects and certification.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Memo Infotech Academy",
+        "url": "https://www.memoinfotech.com/academy"
+      },
+      "educationalCredentialAwarded": "Certificate",
+      "timeRequired": "P10W",
+      "courseMode": "Offline",
+      "inLanguage": "en",
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Nagercoil, Tamil Nadu, India"
+      }
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(courseSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const features = [
     { icon: <Code size={32} />, title: "Modern Stack", description: "MongoDB, Express, React, Node.js" },
@@ -80,16 +111,17 @@ const MERNStack: React.FC = () => {
           <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
         </div>
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-6 py-20">
-            <Link to="/academy" className="inline-flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest mb-6 hover:text-gray-200 transition-colors">
-              <ArrowLeft size={16} /> Back to Academy
-            </Link>
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="container mx-auto px-6 w-full">
             <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none mb-6 text-white max-w-4xl">
-              MERN Stack Development
+              MERN Stack Course in Nagercoil
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl">
               Master the complete MERN stack and build production-ready full-stack applications in just 3 weeks.
+            </p>
+            <p className="text-blue-100 max-w-3xl mb-8">
+              Memo Infotech Academy offers a professional <strong>MERN Stack course in Nagercoil, Tamil Nadu</strong>,
+              designed for developers and tech enthusiasts. Our training focuses on MERN stack development with real-world projects, industry tools, and internship-based learning.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex items-center gap-3 text-white">
@@ -112,23 +144,13 @@ const MERNStack: React.FC = () => {
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               From database design to deployment, learn everything needed to become a professional MERN stack developer and land high-paying jobs.
             </p>
+            <p className="text-lg text-gray-700 mb-8">
+              This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
+              IT training programs in Nagercoil</Link>. You may also explore our
+              <Link to="/academy/full-stack-web-development" className="text-[#007BFF] font-semibold hover:underline ml-1">
+              Full Stack Web Development course</Link>.
+            </p>
 
-            <h3 className="text-3xl font-bold font-['Syne'] text-black mb-8">Curriculum</h3>
-            <div className="space-y-6">
-              {curriculum.map((item, idx) => (
-                <div key={idx} className="border-l-4 border-[#007BFF] pl-6 py-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-xl font-bold text-black">{item.module}</h4>
-                    <span className="text-sm font-semibold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">{item.duration}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {item.topics.map((topic, i) => (
-                      <span key={i} className="text-gray-600 text-sm">{topic}{i < item.topics.length - 1 ? ',' : ''}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -184,6 +206,36 @@ const MERNStack: React.FC = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Frequently Asked Questions</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What is MERN Stack?</h3>
+              <p className="text-gray-700">MERN is a JavaScript technology stack that includes MongoDB (database), Express.js (backend framework), React (frontend library), and Node.js (runtime). It's one of the most in-demand tech stacks in 2024.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">Is this course suitable for beginners?</h3>
+              <p className="text-gray-700">Yes, we welcome developers of all levels. While basic JavaScript knowledge is helpful, our course covers everything you need to master the MERN stack from scratch.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What projects will I build?</h3>
+              <p className="text-gray-700">You'll build multiple full-stack applications including real-time chat applications, social media platforms, e-commerce systems, and more production-ready projects.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">How long is the MERN Stack course?</h3>
+              <p className="text-gray-700">The course is an intensive 10-week program designed for fast-track learning. However, you can complete it at your own pace with flexible scheduling.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">Do you provide placement assistance?</h3>
+              <p className="text-gray-700">Yes! We offer complete placement assistance including resume optimization, technical interview preparation, and connections with hiring partners.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="py-32 bg-[#007BFF] text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-[4rem] font-bold font-['Syne'] mb-6">Launch Your MERN Career</h2>

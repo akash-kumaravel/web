@@ -25,8 +25,8 @@ const Careers: React.FC = () => {
 
   useEffect(() => {
     updateSEO({
-      title: 'Careers — Join MEMO InfoTech Team | Job Openings',
-      description: 'Join our talented team at MEMO InfoTech. We are hiring designers, developers, and creative professionals. Apply now for exciting career opportunities!',
+      title: 'Careers — Join Memo Infotech Team | Job Openings',
+      description: 'Join our talented team at Memo Infotech. We are hiring designers, developers, and creative professionals. Apply now for exciting career opportunities!',
       keywords: 'careers, job openings, hiring, designer jobs, developer jobs, remote work',
       canonicalUrl: 'https://www.memoinfotech.com/careers/'
     });
@@ -59,7 +59,7 @@ const Careers: React.FC = () => {
 
     // SEO: set page title & description
     useEffect(() => {
-        document.title = 'Careers — Join MEMO InfoTech';
+        document.title = 'Careers — Join Memo Infotech';
         const desc = 'Explore open roles for designers, developers, and product specialists. Learn about benefits, culture, and how we work.';
         let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
         if (meta) meta.content = desc;
@@ -90,7 +90,7 @@ const Careers: React.FC = () => {
         {/* Values / Perks Section */}
         <div className="py-32 container mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-                <h2 className="text-5xl font-bold font-['Syne'] text-black">Why <span className="text-[#007BFF]">MEMO InfoTech?</span></h2>
+                <h2 className="text-5xl font-bold font-['Syne'] text-black">Why <span className="text-[#007BFF]">Memo Infotech?</span></h2>
                 <p className="text-gray-500 max-w-md mt-4 md:mt-0">We take care of our people so they can take care of the work.</p>
             </div>
             <div className="perks-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">

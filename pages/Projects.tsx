@@ -10,7 +10,7 @@ const Projects: React.FC = () => {
 
   useEffect(() => {
     updateSEO({
-      title: 'Our Projects & Portfolio | Web Design, UI/UX & More | MEMO InfoTech',
+      title: 'Our Projects & Portfolio | Web Design, UI/UX & More | Memo InfoTech',
       description: 'Explore our portfolio of web design, UI/UX, logo design, and branding projects. See how we deliver digital excellence for businesses across India.',
       keywords: 'web design portfolio, UI UX projects, design showcase, branding work, web development portfolio',
       canonicalUrl: 'https://www.memoinfotech.com/projects/'
@@ -115,8 +115,8 @@ const Projects: React.FC = () => {
                                 "@context": "https://schema.org",
                                 "@type": "BreadcrumbList",
                                 "itemListElement": [
-                                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memoinfotech.com/" },
-                                    { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://memoinfotech.com/projects" }
+                                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://Memoinfotech.com/" },
+                                    { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://Memoinfotech.com/projects" }
                                 ]
                         })}} />
                 </div>
@@ -138,7 +138,7 @@ const Projects: React.FC = () => {
                      <div key={project.i} className="web-item w-screen h-screen flex items-center justify-center p-10 md:p-32 border-r border-white/10 relative">
                          <div className="w-full h-full relative group perspective-1000">
                              <div className="absolute inset-0 bg-[#007BFF] rounded-[3rem] transform rotate-3 opacity-20 group-hover:rotate-6 transition-transform duration-500"></div>
-                             <img src={`/assets/image ${project.i}.png`} className="w-full h-full object-cover rounded-[3rem] shadow-2xl relative z-10 transform group-hover:scale-[1.02] transition-transform duration-700" alt={`Selected web project ${project.i} - MEMO InfoTech`} />
+                             <img src={`/assets/image ${project.i}.png`} className="w-full h-full object-cover rounded-[3rem] shadow-2xl relative z-10 transform group-hover:scale-[1.02] transition-transform duration-700" alt={`Selected web project ${project.i} - Memo InfoTech`} />
                              
                              <div className="absolute bottom-10 left-10 z-20">
                                  <h2 className="text-6xl font-bold font-['Syne'] mb-2">{project.name}</h2>
@@ -252,7 +252,7 @@ const Projects: React.FC = () => {
 
         <div className="py-20 bg-[#007BFF] text-center">
              <h2 className="text-4xl font-bold text-white font-['Syne'] mb-8">Ready to start your project?</h2>
-             <Link to="/contact" className="inline-block bg-black text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-black transition-all shadow-2xl" aria-label="Contact MEMO InfoTech">
+             <Link to="/contact" className="inline-block bg-black text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-black transition-all shadow-2xl" aria-label="Contact Memo InfoTech">
                  Get a Quote
              </Link>
         </div>

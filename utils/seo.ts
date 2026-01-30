@@ -112,10 +112,10 @@ function updatePageStructuredData(config: SEOConfig) {
     image: config.ogImage || 'https://www.memoinfotech.com/og-image.jpg',
     publisher: {
       '@type': 'Organization',
-      name: 'MEMO InfoTech',
+      name: 'Memo InfoTech',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.memoinfotech.com/assets/memo-infotech-logo.png'
+        url: 'https://www.memoinfotech.com/assets/Memo-infotech-logo.png'
       }
     }
   });
@@ -171,10 +171,10 @@ export const addArticleSchema = (config: {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'MEMO InfoTech',
+      name: 'Memo InfoTech',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.memoinfotech.com/assets/memo-infotech-logo.png'
+        url: 'https://www.memoinfotech.com/assets/Memo-infotech-logo.png'
       }
     },
     url: config.url
@@ -192,8 +192,8 @@ export const addLocalBusinessSchema = () => {
   script.innerHTML = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'MEMO InfoTech',
-    image: 'https://www.memoinfotech.com/assets/memo-infotech-logo.png',
+    name: 'Memo InfoTech',
+    image: 'https://www.memoinfotech.com/assets/Memo-infotech-logo.png',
     description: 'Leading IT company providing web development, graphic design, and digital solutions in Nagercoil',
     address: {
       '@type': 'PostalAddress',
@@ -206,9 +206,9 @@ export const addLocalBusinessSchema = () => {
     email: 'hello@memoinfotech.com',
     url: 'https://www.memoinfotech.com',
     sameAs: [
-      'https://www.linkedin.com/company/memoinfotech',
-      'https://x.com/memoinfotech',
-      'https://www.instagram.com/memoinfotech'
+      'https://www.linkedin.com/company/Memoinfotech',
+      'https://x.com/Memoinfotech',
+      'https://www.instagram.com/Memoinfotech'
     ],
     geo: {
       '@type': 'GeoCoordinates',

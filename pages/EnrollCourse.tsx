@@ -23,8 +23,8 @@ const EnrollCourse: React.FC = () => {
   }, []);
 
   useEffect(() => {
-      document.title = 'Enroll in Course — Academy at MEMO InfoTech';
-      const desc = 'Enroll in professional courses at MEMO InfoTech Academy. Learn from industry experts and advance your career in tech.';
+      document.title = 'Enroll in Course — Academy at Memo InfoTech';
+      const desc = 'Enroll in professional courses at Memo InfoTech Academy. Learn from industry experts and advance your career in tech.';
       let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
       if (meta) meta.content = desc;
       else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }

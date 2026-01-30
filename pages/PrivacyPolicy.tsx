@@ -4,8 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 
 const PrivacyPolicy: React.FC = () => {
   useEffect(() => {
-    document.title = 'Privacy Policy — MEMO InfoTech';
-    const desc = 'Privacy Policy for MEMO InfoTech. Learn how we collect, use, and protect your personal data.';
+    document.title = 'Privacy Policy — Memo InfoTech';
+    const desc = 'Privacy Policy for Memo InfoTech. Learn how we collect, use, and protect your personal data.';
     let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (meta) meta.content = desc;
     else {
@@ -35,7 +35,7 @@ const PrivacyPolicy: React.FC = () => {
           <section>
             <h2 className="text-3xl font-bold text-black mb-4">Introduction</h2>
             <p>
-              MEMO InfoTech ("Company," "we," "us," or "our") operates the website and services. This Privacy Policy explains our practices regarding the collection, use, and protection of personal information.
+              Memo InfoTech ("Company," "we," "us," or "our") operates the website and services. This Privacy Policy explains our practices regarding the collection, use, and protection of personal information.
             </p>
             <p>
               By accessing and using our website and services, you acknowledge that you have read, understood, and agree to be bound by all the provisions of this Privacy Policy.
@@ -141,7 +141,7 @@ const PrivacyPolicy: React.FC = () => {
               <li><strong>Data Portability:</strong> Right to receive data in a portable format</li>
             </ul>
             <p>
-              To exercise these rights, please contact us at privacy@memoinfotech.com.
+              To exercise these rights, please contact us at privacy@Memoinfotech.com.
             </p>
           </section>
 
@@ -189,8 +189,8 @@ const PrivacyPolicy: React.FC = () => {
               If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:
             </p>
             <div className="bg-gray-100 p-6 rounded-lg mt-4">
-              <p className="mb-2"><strong>MEMO InfoTech</strong></p>
-              <p className="mb-2">Email: privacy@memoinfotech.com</p>
+              <p className="mb-2"><strong>Memo InfoTech</strong></p>
+              <p className="mb-2">Email: privacy@Memoinfotech.com</p>
               <p className="mb-2">Phone: +91 63699 57006</p>
               <p>Location: India</p>
             </div>

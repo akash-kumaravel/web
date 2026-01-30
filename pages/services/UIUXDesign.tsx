@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const UIUXDesign: React.FC = () => {
   useEffect(() => {
     // ==================== SEO: Meta Tags ====================
-    document.title = 'UI/UX Design Services | Expert Digital Experience Design Solutions';
-    const desc = 'Professional UI/UX design services including user experience design, interface design, prototyping, and design systems. Custom designs that boost conversions. Award-winning UX team since 2015.';
+    document.title = 'UI/UX Design Company in Nagercoil, Tamil Nadu | Memo Infotech';
+    const desc = 'Memo Infotech is a professional UI/UX design company in Nagercoil, Tamil Nadu, delivering user-centered design, interface design, and conversion-focused digital experiences.';
     
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDesc) metaDesc.content = desc;
@@ -28,7 +28,7 @@ const UIUXDesign: React.FC = () => {
       og.content = content;
     };
 
-    setOGMeta('og:title', 'UI/UX Design Services | MEMO InfoTech');
+    setOGMeta('og:title', 'UI/UX Design Company in Nagercoil, Tamil Nadu | Memo Infotech');
     setOGMeta('og:description', desc);
     setOGMeta('og:type', 'website');
     setOGMeta('og:url', 'https://www.memoinfotech.com/services/ui-ux-design/');
@@ -67,17 +67,20 @@ const UIUXDesign: React.FC = () => {
       "description": "Professional UI/UX design services including user experience research, interface design, prototyping, design systems, and accessibility design.",
       "provider": {
         "@type": "Organization",
-        "name": "MEMO InfoTech",
+        "name": "Memo Infotech",
         "url": "https://www.memoinfotech.com",
         "logo": "https://www.memoinfotech.com/logo.png",
-        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+        "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-XXX-XXX-XXXX",
           "contactType": "Customer Service"
         }
       },
-      "areaServed": "Worldwide",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Nagercoil, Tamil Nadu, India"
+      },
       "serviceType": "UI/UX Design",
       "hasOfferingDetails": [
         { "@type": "OfferingDetails", "name": "UX Research & Strategy", "priceRange": "Custom Quote" },
@@ -90,10 +93,17 @@ const UIUXDesign: React.FC = () => {
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "MEMO InfoTech",
+      "name": "Memo Infotech",
       "url": "https://www.memoinfotech.com",
       "logo": "https://www.memoinfotech.com/logo.png",
-      "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+      "description": "Expert UI/UX design agency specializing in user experience design, interface design, and conversion-focused digital solutions.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nagercoil",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-XXX-XXX-XXXX",
@@ -252,7 +262,7 @@ const UIUXDesign: React.FC = () => {
       <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
-            UI/UX Design &amp; User Experience Services
+            UI/UX Design Company in Nagercoil, Tamil Nadu
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             We craft beautiful, intuitive digital experiences that users love. Our design-driven approach combines research, strategy, and creativity to create interfaces that drive results.
@@ -261,6 +271,14 @@ const UIUXDesign: React.FC = () => {
       </header>
 
       <main className="w-full" role="main" aria-label="Main Content">
+        {/* ==================== Section 0: UI/UX Design Location ====================*/}
+        <section className="py-16 bg-blue-50 border-t-4 border-[#007BFF]" aria-label="UI UX Design Location" role="region">
+          <div className="container mx-auto px-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              <strong>Memo Infotech</strong> is a trusted <strong>UI/UX design company in Nagercoil, Tamil Nadu</strong>, helping startups and businesses across Kanyakumari district create intuitive, high-conversion digital experiences that users love.
+            </p>
+          </div>
+        </section>
         {/* ==================== Section 1: Our Design Services ====================*/}
         <section className="py-32 bg-white" aria-label="Our Design Services" role="region">
           <div className="container mx-auto px-6">
@@ -324,7 +342,7 @@ const UIUXDesign: React.FC = () => {
         {/* ==================== Section 4: Why Choose Us ====================*/}
         <section className="py-32 bg-[#007BFF] text-white" aria-label="Why Choose Us" role="region">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold font-['Syne'] mb-16">Why Choose MEMO InfoTech for UI/UX Design?</h2>
+            <h2 className="text-4xl font-bold font-['Syne'] mb-16">Why Choose Memo Infotech for UI/UX Design?</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-6">
@@ -435,7 +453,7 @@ const UIUXDesign: React.FC = () => {
                 <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
               </Link>
 
-              <Link to="/services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="View all services offered by MEMO InfoTech">
+              <Link to="/services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="View all services offered by Memo Infotech">
                 <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">All Services</h3>
                 <p className="text-gray-600 mb-4">Explore our complete range of digital design and development services.</p>
                 <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">View All →</span>
@@ -443,51 +461,6 @@ const UIUXDesign: React.FC = () => {
             </div>
           </div>
         </section>
-
-        {/* Related Services */}
-        <section className="py-32 bg-gray-50" aria-label="Related Services" role="region">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Related Services</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link to="/services/web-design-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Web Design and Development">
-              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Web Design & Development</h3>
-              <p className="text-gray-600 mb-4">Bring your UI/UX designs to life with responsive web development.</p>
-              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
-            </Link>
-
-            <Link to="/services/graphic-design-services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Graphic Design Services">
-              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Graphic Design</h3>
-              <p className="text-gray-600 mb-4">Create cohesive visual brands with professional graphic design services.</p>
-              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
-            </Link>
-
-            <Link to="/services/mobile-app-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Mobile App Development">
-              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Mobile App Design</h3>
-              <p className="text-gray-600 mb-4">Design intuitive interfaces for iOS and Android applications.</p>
-              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
-            </Link>
-
-            <Link to="/services/software-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Software Development">
-              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Software Development</h3>
-              <p className="text-gray-600 mb-4">Build user-centric software with expert design and development.</p>
-              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
-            </Link>
-
-            <Link to="/services/digital-marketing-services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Digital Marketing Services">
-              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Digital Marketing</h3>
-              <p className="text-gray-600 mb-4">Promote your beautifully designed products with digital marketing.</p>
-              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
-            </Link>
-
-            <Link to="/services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="View all services">
-              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">All Services</h3>
-              <p className="text-gray-600 mb-4">Explore our complete range of digital services.</p>
-              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">View All →</span>
-            </Link>
-          </div>
-        </div>
-      </section>
       </main>
     </div>
   );

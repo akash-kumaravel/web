@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const TestingQA: React.FC = () => {
   useEffect(() => {
     // ==================== SEO: Meta Tags ====================
-    document.title = 'Testing & Quality Assurance Services | Software QA & Test Automation';
-    const desc = 'Comprehensive testing services. Manual testing, automated testing, performance testing, security testing, QA consulting. Enterprise-grade software quality assurance.';
+    document.title = 'Testing & Quality Assurance Company in Nagercoil, Tamil Nadu | Memo Infotech';
+    const desc = 'Memo Infotech is a professional testing and quality assurance company in Nagercoil, Tamil Nadu, offering manual testing, automated testing, performance testing, and security testing.';
     
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDesc) metaDesc.content = desc;
@@ -28,7 +28,7 @@ const TestingQA: React.FC = () => {
       og.content = content;
     };
 
-    setOGMeta('og:title', 'Testing & Quality Assurance Services | MEMO InfoTech');
+    setOGMeta('og:title', 'Testing & Quality Assurance Company in Nagercoil, Tamil Nadu | Memo Infotech');
     setOGMeta('og:description', desc);
     setOGMeta('og:type', 'website');
     setOGMeta('og:url', 'https://www.memoinfotech.com/services/testing-qa/');
@@ -67,17 +67,20 @@ const TestingQA: React.FC = () => {
       "description": "Comprehensive testing services: manual testing, automated testing, performance testing, security testing, and QA consulting. Enterprise-grade quality assurance.",
       "provider": {
         "@type": "Organization",
-        "name": "MEMO InfoTech",
+        "name": "Memo Infotech",
         "url": "https://www.memoinfotech.com",
         "logo": "https://www.memoinfotech.com/logo.png",
-        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+        "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-XXX-XXX-XXXX",
           "contactType": "Customer Service"
         }
       },
-      "areaServed": "Worldwide",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Nagercoil, Tamil Nadu, India"
+      },
       "serviceType": "Testing & QA",
       "hasOfferingDetails": [
         { "@type": "OfferingDetails", "name": "Manual Testing", "priceRange": "Custom Quote" },
@@ -90,10 +93,17 @@ const TestingQA: React.FC = () => {
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "MEMO InfoTech",
+      "name": "Memo Infotech",
       "url": "https://www.memoinfotech.com",
       "logo": "https://www.memoinfotech.com/logo.png",
-      "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+      "description": "Expert testing and quality assurance agency specializing in software quality.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nagercoil",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-XXX-XXX-XXXX",
@@ -252,7 +262,7 @@ const TestingQA: React.FC = () => {
       <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
-            Testing &amp; Quality Assurance Services
+            Testing & Quality Assurance Company in Nagercoil, Tamil Nadu
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Ensure software excellence with comprehensive testing, quality assurance, and performance validation. Catch bugs before production and deliver reliable applications.
@@ -261,6 +271,14 @@ const TestingQA: React.FC = () => {
       </header>
 
       <main className="w-full" role="main" aria-label="Main Content">
+        {/* ==================== Section 0: Service Location ====================*/}
+        <section className="py-16 bg-blue-50 border-t-4 border-[#007BFF]" aria-label="Service Location" role="region">
+          <div className="container mx-auto px-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              <strong>Memo Infotech</strong> is a trusted <strong>testing and quality assurance company in Nagercoil, Tamil Nadu</strong>, ensuring software quality for businesses across Kanyakumari district.
+            </p>
+          </div>
+        </section>
         {/* ==================== Section 1: QA & Testing Services ====================*/}
         <section className="py-32 bg-white" aria-label="Our Quality Assurance and Testing Services" role="region">
           <div className="container mx-auto px-6">

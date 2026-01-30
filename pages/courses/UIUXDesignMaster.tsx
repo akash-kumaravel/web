@@ -39,28 +39,59 @@ const UIUXDesignMaster: React.FC = () => {
     }
   }, []);
 
-  const curriculum = [
-    {
-      module: "Module 1: Design Fundamentals",
-      topics: ["Design Principles", "Color Theory", "Typography", "Visual Hierarchy"],
-      duration: "2 weeks"
-    },
-    {
-      module: "Module 2: UX Research & Strategy",
-      topics: ["User Research", "Persona Development", "User Journey Mapping", "Information Architecture"],
-      duration: "2 weeks"
-    },
-    {
-      module: "Module 3: Interaction Design",
-      topics: ["Wireframing", "Prototyping", "Interaction Patterns", "Animations"],
-      duration: "2 weeks"
-    },
-    {
-      module: "Module 4: Portfolio & Real Projects",
-      topics: ["Case Study Development", "Portfolio Building", "Industry Standards"],
-      duration: "2 weeks"
+  useEffect(() => {
+    document.title = 'UI/UX Design Master Course in Nagercoil | Memo Infotech Academy';
+
+    const desc = 'Learn UI/UX Design Master course in Nagercoil at Memo Infotech Academy. Master Figma, user research, wireframing, prototyping, real projects and certification.';
+
+    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (metaDesc) metaDesc.content = desc;
+    else {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = 'description';
+      metaDesc.content = desc;
+      document.head.appendChild(metaDesc);
     }
-  ];
+
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://www.memoinfotech.com/academy/ui-ux-design-master';
+  }, []);
+
+  useEffect(() => {
+    const courseSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "UI/UX Design Master Course in Nagercoil",
+      "description": "Professional UI/UX Design Master course in Nagercoil by Memo Infotech Academy covering Figma, user research, wireframing, prototyping and certification.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Memo Infotech Academy",
+        "url": "https://www.memoinfotech.com/academy"
+      },
+      "educationalCredentialAwarded": "Certificate",
+      "timeRequired": "P10W",
+      "courseMode": "Offline",
+      "inLanguage": "en",
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Nagercoil, Tamil Nadu, India"
+      }
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(courseSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const features = [
     { icon: <Code size={32} />, title: "Design Tools", description: "Master Figma, Adobe XD, Sketch" },
@@ -80,16 +111,17 @@ const UIUXDesignMaster: React.FC = () => {
           <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
         </div>
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-6 py-20">
-            <Link to="/academy" className="inline-flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest mb-6 hover:text-gray-200 transition-colors">
-              <ArrowLeft size={16} /> Back to Academy
-            </Link>
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="container mx-auto px-6 w-full">
             <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none mb-6 text-white max-w-4xl">
-              UI/UX Design Master Course
+              UI/UX Design Master Course in Nagercoil
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl">
               Create beautiful, functional user experiences that users love. Master modern design tools and methodologies.
+            </p>
+            <p className="text-blue-100 max-w-3xl mb-8">
+              Memo Infotech Academy offers a professional <strong>UI/UX Design Master course in Nagercoil, Tamil Nadu</strong>,
+              designed for designers, beginners, and creative professionals. Our training focuses on UI/UX design principles, tools, and user-centered design, industry tools, and internship-based learning.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex items-center gap-3 text-white">
@@ -112,23 +144,13 @@ const UIUXDesignMaster: React.FC = () => {
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               From research and strategy to visual design and prototyping, master every aspect of modern product design. High demand, lucrative career path.
             </p>
+            <p className="text-lg text-gray-700 mb-8">
+              This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
+              IT training programs in Nagercoil</Link>. You may also explore our
+              <Link to="/academy/web-designing" className="text-[#007BFF] font-semibold hover:underline ml-1">
+              Web Designing course</Link>.
+            </p>
 
-            <h3 className="text-3xl font-bold font-['Syne'] text-black mb-8">Curriculum</h3>
-            <div className="space-y-6">
-              {curriculum.map((item, idx) => (
-                <div key={idx} className="border-l-4 border-[#007BFF] pl-6 py-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-xl font-bold text-black">{item.module}</h4>
-                    <span className="text-sm font-semibold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">{item.duration}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {item.topics.map((topic, i) => (
-                      <span key={i} className="text-gray-600 text-sm">{topic}{i < item.topics.length - 1 ? ',' : ''}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -184,6 +206,36 @@ const UIUXDesignMaster: React.FC = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Frequently Asked Questions</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What's the difference between UI and UX?</h3>
+              <p className="text-gray-700">UI (User Interface) is about how the product looks, while UX (User Experience) is about how it works and feels. Both are essential for creating great digital products.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">Do I need design experience?</h3>
+              <p className="text-gray-700">No! This course is designed for beginners as well as experienced designers. We cover design fundamentals, tools, and professional practices from the ground up.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What design tools will I learn?</h3>
+              <p className="text-gray-700">You'll master Figma (industry standard), Adobe XD, and Sketch. You'll also learn wireframing, prototyping, user research, and design thinking methodologies.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">How long is the UI/UX Design Master course?</h3>
+              <p className="text-gray-700">The course is a comprehensive 10-week program with self-paced learning. You'll build a professional portfolio throughout the course and have lifetime access to all materials.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What's the job outlook for UI/UX designers?</h3>
+              <p className="text-gray-700">UI/UX design is a high-demand field with excellent career prospects. Designers can work for startups, tech companies, agencies, or freelance with competitive salaries and remote opportunities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="py-32 bg-[#007BFF] text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-[4rem] font-bold font-['Syne'] mb-6">Start Designing Exceptional Experiences</h2>
@@ -201,172 +253,9 @@ const UIUXDesignMaster: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-32 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Other Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link
-              to="/academy/frontend-web-development"
-              className="group rounded-[2rem] overflow-hidden border border-gray-200 hover:border-[#007BFF] bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 block"
-            >
-              <div className="h-56 overflow-hidden bg-gray-200 relative">
-                <img
-                  src="/assets/frontend.png"
-                  alt="Frontend Web Development"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-bold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">
-                    Web Development
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#007BFF] transition-colors line-clamp-2">
-                  Frontend Web Development
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  Master HTML, CSS, JavaScript, and modern frameworks to build fast, responsive user interfaces.
-                </p>
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Component Patterns
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Performance
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Portfolio Projects
-                  </div>
-                </div>
-                <div className="flex items-center text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
-                  <div className="flex items-center gap-1">
-                    <Clock size={16} />
-                    8 weeks
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold group-hover:bg-blue-700 transition-all inline-block cursor-pointer">
-                    View Course
-                  </span>
-                </div>
-              </div>
-            </Link>
-
-            <Link
-              to="/academy/web-designing"
-              className="group rounded-[2rem] overflow-hidden border border-gray-200 hover:border-[#007BFF] bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 block"
-            >
-              <div className="h-56 overflow-hidden bg-gray-200 relative">
-                <img
-                  src="/assets/Website Development.png"
-                  alt="Web Designing"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-bold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">
-                    Design
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#007BFF] transition-colors line-clamp-2">
-                  Web Designing
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  Learn visual design for the web, responsive layouts, and modern CSS techniques for beautiful sites.
-                </p>
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Responsive Design
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    CSS Techniques
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Design Systems
-                  </div>
-                </div>
-                <div className="flex items-center text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
-                  <div className="flex items-center gap-1">
-                    <Clock size={16} />
-                    6 weeks
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold group-hover:bg-blue-700 transition-all inline-block cursor-pointer">
-                    View Course
-                  </span>
-                </div>
-              </div>
-            </Link>
-
-            <Link
-              to="/academy/graphic-design"
-              className="group rounded-[2rem] overflow-hidden border border-gray-200 hover:border-[#007BFF] bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 block"
-            >
-              <div className="h-56 overflow-hidden bg-gray-200 relative">
-                <img
-                  src="/assets/Graphic.png"
-                  alt="Graphic Design"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-bold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">
-                    Design
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#007BFF] transition-colors line-clamp-2">
-                  Graphic Design
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  Learn fundamentals of graphic design, typography, color theory and industry tools to create impactful visuals.
-                </p>
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Tool Training
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Branding
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-[#007BFF]" />
-                    Portfolio
-                  </div>
-                </div>
-                <div className="flex items-center text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
-                  <div className="flex items-center gap-1">
-                    <Clock size={16} />
-                    6 weeks
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold group-hover:bg-blue-700 transition-all inline-block cursor-pointer">
-                    View Course
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div className="text-center mt-12">
-            <Link to="/academy" className="inline-flex items-center gap-2 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all">
-              View All Courses <ArrowRight size={20} />
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
 
 export default UIUXDesignMaster;
+

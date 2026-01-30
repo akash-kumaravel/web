@@ -13,7 +13,7 @@ const testimonials: Testimonial[] = [
     name: "Nithin",
     role: "Founder",
     company: "TechNova",
-    text: "MEMO InfoTech completely modernized our software infrastructure. The Build bullling software for us.",
+    text: "Memo InfoTech completely modernized our software infrastructure. The Build bullling software for us.",
     image: ""
   },
   {
@@ -29,7 +29,7 @@ const testimonials: Testimonial[] = [
     name: "Rizwan",
     role: "Founder",
     company: " Muhibah restaurant",
-    text: "Professional, technical, and incredibly talented. MEMO InfoTech is the IT partner you want if you're ready to scale your business.",
+    text: "Professional, technical, and incredibly talented. Memo InfoTech is the IT partner you want if you're ready to scale your business.",
     image: ""
   }
 ];
@@ -107,11 +107,11 @@ const Home: React.FC = () => {
   // SEO: set page title, description, and canonical URL
   useEffect(() => {
     updateSEO({
-      title: 'Best IT Company & Web Development in Nagercoil — MEMO InfoTech',
-      description: 'MEMO InfoTech — Best IT company in Nagercoil. We provide website development, graphic & logo design, mobile apps, motion posters, and custom software. Contact +91 6374433734 or hello@memoinfotech.com.',
+      title: 'Best IT Company & Web Development in Nagercoil — Memo InfoTech',
+      description: 'Memo InfoTech — Best IT company in Nagercoil. We provide website development, graphic & logo design, mobile apps, motion posters, and custom software. Contact +91 6374433734 or hello@memoinfotech.com.',
       keywords: 'IT company Nagercoil, web development, graphic design, logo design, motion posters, explainer videos, software development',
       ogTitle: 'Best IT Company & Web Development Services in Nagercoil',
-      ogDescription: 'Expert web development, design, and software solutions. Transform your business with MEMO InfoTech.',
+      ogDescription: 'Expert web development, design, and software solutions. Transform your business with Memo InfoTech.',
       ogImage: 'https://www.memoinfotech.com/og-image.jpg',
       canonicalUrl: 'https://www.memoinfotech.com/'
     });
@@ -364,7 +364,7 @@ const Home: React.FC = () => {
             We are a premier Software Company specializing in Website Development, Brand Design, Explainer Videos, and Motion Graphics. We turn ideas into digital experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Link to="/contact" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2" aria-label="Contact MEMO InfoTech to Start Your Project">
+            <Link to="/contact" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2" aria-label="Contact Memo InfoTech to Start Your Project">
               Start Your Project <ArrowRight size={20} />
             </Link>
             <Link to="/services" className="px-8 py-4 bg-black text-white rounded-full font-bold text-lg hover:bg-gray-800 transition-all transform hover:-translate-y-1" aria-label="View All Our Services">
@@ -478,7 +478,7 @@ const Home: React.FC = () => {
              {horizontalWorks.map((work, i) => (
              <div key={i} className="horizontal-item w-[20%] h-full p-4 md:p-20 flex items-center justify-center bg-white border-r border-gray-100">
                      <div className="w-full h-full relative rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-2xl">
-                         <img src={`/assets/${horizontalWorksImages[i]}`} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" alt={`${work.title} - ${work.cat} Project by MEMO InfoTech`} />
+                         <img src={`/assets/${horizontalWorksImages[i]}`} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" alt={`${work.title} - ${work.cat} Project by Memo InfoTech`} />
                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent p-6 md:p-10 flex flex-col justify-end">
                              <span className="text-[#007BFF] font-bold uppercase tracking-widest mb-2">{work.cat}</span>
                              <h3 className="text-4xl md:text-6xl font-bold text-white font-['Syne']">{work.title}</h3>
@@ -523,7 +523,7 @@ const Home: React.FC = () => {
                 <img 
                     src={`/assets/${homeServiceImages[activeServiceIndex]}`} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                    alt={`${serviceList[activeServiceIndex].title} - MEMO InfoTech Digital Solutions`} 
+                    alt={`${serviceList[activeServiceIndex].title} - Memo InfoTech Digital Solutions`} 
                     loading="lazy"
                     decoding="async"
                 />
@@ -613,7 +613,7 @@ const Home: React.FC = () => {
                  {blogPosts.slice(0,3).map((post, idx) => (
                    <Link to={`/blog/${post.id}`} key={idx} className="group cursor-pointer">
                          <div className="rounded-[2rem] overflow-hidden mb-6 relative">
-                       <img src={post.image} alt={`${post.title} - MEMO InfoTech Blog`} className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
+                       <img src={post.image} alt={`${post.title} - Memo InfoTech Blog`} className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
                              <div className="absolute top-4 left-4 bg-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-black">
                                  {post.category}
                              </div>

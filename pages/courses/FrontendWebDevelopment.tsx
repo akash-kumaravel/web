@@ -39,28 +39,61 @@ const FrontendWebDevelopment: React.FC = () => {
     }
   }, []);
 
-  const curriculum = [
-    {
-      module: "Module 1: Web Fundamentals",
-      topics: ["HTML5 Semantic Structure", "CSS3 & Styling", "Responsive Design", "CSS Flexbox & Grid"],
-      duration: "2 weeks"
-    },
-    {
-      module: "Module 2: JavaScript Essentials",
-      topics: ["JavaScript Syntax", "DOM Manipulation", "Async & Promises", "ES6+ Features"],
-      duration: "2 weeks"
-    },
-    {
-      module: "Module 3: React Framework",
-      topics: ["Components & JSX", "Hooks & State", "React Router", "State Management"],
-      duration: "2 weeks"
-    },
-    {
-      module: "Module 4: Modern Tools & Workflows",
-      topics: ["Build Tools (Webpack/Vite)", "Package Managers", "Git & GitHub", "Performance Optimization"],
-      duration: "2 weeks"
+  useEffect(() => {
+    document.title = 'Frontend Web Development Course in Nagercoil | Memo Infotech Academy';
+
+    const desc =
+      'Learn Frontend Web Development course in Nagercoil at Memo Infotech Academy. Master React, JavaScript, HTML, CSS, responsive design, real projects and certification.';
+
+    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (metaDesc) metaDesc.content = desc;
+    else {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = 'description';
+      metaDesc.content = desc;
+      document.head.appendChild(metaDesc);
     }
-  ];
+
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://www.memoinfotech.com/academy/frontend-web-development';
+  }, []);
+
+  useEffect(() => {
+    const courseSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Frontend Web Development Course in Nagercoil",
+      "description":
+        "Professional Frontend Web Development course in Nagercoil by Memo Infotech Academy covering React, JavaScript, HTML, CSS, responsive design, real projects and certification.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Memo Infotech Academy",
+        "url": "https://www.memoinfotech.com/academy"
+      },
+      "educationalCredentialAwarded": "Certificate",
+      "timeRequired": "P8W",
+      "courseMode": "Offline",
+      "inLanguage": "en",
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Nagercoil, Tamil Nadu, India"
+      }
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(courseSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const features = [
     { icon: <Code size={32} />, title: "Component-Based Learning", description: "Build reusable UI components" },
@@ -80,16 +113,18 @@ const FrontendWebDevelopment: React.FC = () => {
           <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
         </div>
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-6 py-20">
-            <Link to="/academy" className="inline-flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest mb-6 hover:text-gray-200 transition-colors">
-              <ArrowLeft size={16} /> Back to Academy
-            </Link>
-            <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none mb-6 text-white max-w-4xl">
-              Frontend Web Development
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="container mx-auto px-6 w-full">
+            <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight mb-6 text-white max-w-4xl">
+              Frontend Web Development Course in Nagercoil
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl">
               Master modern frontend development with React, JavaScript, and CSS. Build beautiful, responsive web applications that users love.
+            </p>
+            <p className="text-blue-100 max-w-3xl mb-8">
+              Memo Infotech Academy offers a professional <strong>Frontend Web Development course in Nagercoil, Tamil Nadu</strong>,
+              designed for beginners and experienced developers. Our training covers modern frameworks, real-world projects,
+              and industry best practices with internship-based learning.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex items-center gap-3 text-white">
@@ -113,22 +148,13 @@ const FrontendWebDevelopment: React.FC = () => {
               Through hands-on projects and real-world scenarios, you'll develop skills in HTML, CSS, JavaScript, and React that are in high demand. Perfect for beginners and intermediate developers looking to advance their careers.
             </p>
 
-            <h3 className="text-3xl font-bold font-['Syne'] text-black mb-8">Curriculum</h3>
-            <div className="space-y-6">
-              {curriculum.map((item, idx) => (
-                <div key={idx} className="border-l-4 border-[#007BFF] pl-6 py-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-xl font-bold text-black">{item.module}</h4>
-                    <span className="text-sm font-semibold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">{item.duration}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {item.topics.map((topic, i) => (
-                      <span key={i} className="text-gray-600 text-sm">{topic}{i < item.topics.length - 1 ? ',' : ''}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <p className="text-lg text-gray-700 mb-8">
+              This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
+              IT training programs in Nagercoil</Link>. You may also explore our
+              <Link to="/academy/full-stack-web-development" className="text-[#007BFF] font-semibold hover:underline ml-1">
+              Full Stack Development course</Link>.
+            </p>
+
           </div>
 
           <div>
@@ -201,48 +227,35 @@ const FrontendWebDevelopment: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-32 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Other Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Link to="/academy/full-stack-web-development" className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
-              <div className="h-48 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
-                <Code size={64} className="text-white opacity-20" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#007BFF]">Full Stack Web Development</h3>
-                <p className="text-gray-600 text-sm mb-4">Learn front-end and back-end web development and deploy production-ready applications.</p>
-                <span className="text-[#007BFF] font-semibold">12 weeks</span>
-              </div>
-            </Link>
-            <Link to="/academy/data-analytics" className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
-              <div className="h-48 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center">
-                <Database size={64} className="text-white opacity-20" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#007BFF]">Data Analytics</h3>
-                <p className="text-gray-600 text-sm mb-4">Analyze data, build dashboards, and derive insights using Python and visualization tools.</p>
-                <span className="text-[#007BFF] font-semibold">10 weeks</span>
-              </div>
-            </Link>
-            <Link to="/academy/python-programming" className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
-              <div className="h-48 bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center">
-                <Code size={64} className="text-white opacity-20" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#007BFF]">Python Programming</h3>
-                <p className="text-gray-600 text-sm mb-4">Start with Python fundamentals and move to data handling, scripting, and applications.</p>
-                <span className="text-[#007BFF] font-semibold">6 weeks</span>
-              </div>
-            </Link>
-          </div>
-          <div className="text-center mt-12">
-            <Link to="/academy" className="inline-flex items-center gap-2 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all">
-              View All Courses <ArrowRight size={20} />
-            </Link>
+          <h2 className="text-3xl font-bold font-['Syne'] text-black mb-12">Frontend Web Development Course – FAQs</h2>
+          
+          <div className="max-w-3xl space-y-8">
+            <div>
+              <h3 className="text-xl font-semibold text-black mb-3">Is this Frontend Development course available in Nagercoil?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Yes, Memo Infotech Academy offers classroom and internship-based Frontend Web Development training in Nagercoil. Our course is perfect for beginners and experienced developers.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold text-black mb-3">Do I get a certificate after completion?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Yes, students receive a recognized certificate after successful course completion. We also provide internship opportunities with real client projects.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold text-black mb-3">Will I learn React and modern JavaScript?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Yes, this course covers React, JavaScript ES6+, HTML5, CSS3, responsive design, and industry best practices. You'll build multiple production-ready projects.
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 };

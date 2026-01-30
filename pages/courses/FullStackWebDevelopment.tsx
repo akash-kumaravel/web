@@ -41,33 +41,59 @@ const FullStackWebDevelopment: React.FC = () => {
     }
   }, []);
 
-  const curriculum = [
-    {
-      module: "Module 1: Foundations",
-      topics: ["HTML5 & CSS3", "JavaScript Basics", "DOM & Events", "Git & GitHub"],
-      duration: "2 weeks"
-    },
-    {
-      module: "Module 2: Frontend Mastery",
-      topics: ["React.js", "State & Props", "Hooks & Context", "Component Design"],
-      duration: "3 weeks"
-    },
-    {
-      module: "Module 3: Backend Development",
-      topics: ["Node.js & Express", "REST APIs", "Authentication", "Database Design"],
-      duration: "3 weeks"
-    },
-    {
-      module: "Module 4: Databases",
-      topics: ["SQL & PostgreSQL", "MongoDB", "Data Modeling", "Optimization"],
-      duration: "2 weeks"
-    },
-    {
-      module: "Module 5: Deployment & DevOps",
-      topics: ["Docker", "AWS/Heroku", "CI/CD", "Performance Tuning"],
-      duration: "2 weeks"
+  useEffect(() => {
+    document.title = 'Full Stack Web Development Course in Nagercoil | Memo Infotech Academy';
+
+    const desc = 'Master full-stack web development course in Nagercoil at Memo Infotech Academy. Learn frontend, backend, databases, real projects, certification and internship support.';
+
+    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (metaDesc) metaDesc.content = desc;
+    else {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = 'description';
+      metaDesc.content = desc;
+      document.head.appendChild(metaDesc);
     }
-  ];
+
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://www.memoinfotech.com/academy/full-stack-web-development';
+  }, []);
+
+  useEffect(() => {
+    const courseSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Full Stack Web Development Course in Nagercoil",
+      "description": "Professional Full Stack Web Development course in Nagercoil by Memo Infotech Academy covering frontend, backend, databases, real projects and certification.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Memo Infotech Academy",
+        "url": "https://www.memoinfotech.com/academy"
+      },
+      "educationalCredentialAwarded": "Certificate",
+      "timeRequired": "P12W",
+      "courseMode": "Offline",
+      "inLanguage": "en",
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Nagercoil, Tamil Nadu, India"
+      }
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(courseSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const features = [
     { icon: <Code size={32} />, title: "Live Projects", description: "Build 5+ real-world applications during the course" },
@@ -89,16 +115,17 @@ const FullStackWebDevelopment: React.FC = () => {
           <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
         </div>
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-6 py-20">
-            <Link to="/academy" className="inline-flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest mb-6 hover:text-gray-200 transition-colors">
-              <ArrowLeft size={16} /> Back to Academy
-            </Link>
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="container mx-auto px-6 w-full">
             <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none mb-6 text-white max-w-4xl">
-              Full Stack Web Development
+              Full Stack Web Development Course in Nagercoil
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl">
               Master both frontend and backend development. Build complete web applications from database to deployment in just 12 weeks.
+            </p>
+            <p className="text-blue-100 max-w-3xl mb-8">
+              Memo Infotech Academy offers a professional <strong>Full Stack Web Development course in Nagercoil, Tamil Nadu</strong>,
+              designed for beginners, intermediates, and developers. Our training focuses on full-stack development with modern frameworks, industry tools, and internship-based learning.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex items-center gap-3 text-white">
@@ -121,24 +148,13 @@ const FullStackWebDevelopment: React.FC = () => {
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               Through hands-on projects and real-world scenarios, you'll gain practical experience that employers value. By the end, you'll have a portfolio of production-ready applications ready to showcase to potential employers.
             </p>
+            <p className="text-lg text-gray-700 mb-8">
+              This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
+              IT training programs in Nagercoil</Link>. You may also explore our
+              <Link to="/academy/frontend-web-development" className="text-[#007BFF] font-semibold hover:underline ml-1">
+              Frontend Web Development course</Link>.
+            </p>
 
-            {/* Curriculum */}
-            <h3 className="text-3xl font-bold font-['Syne'] text-black mb-8">Curriculum</h3>
-            <div className="space-y-6">
-              {curriculum.map((item, idx) => (
-                <div key={idx} className="border-l-4 border-[#007BFF] pl-6 py-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-xl font-bold text-black">{item.module}</h4>
-                    <span className="text-sm font-semibold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">{item.duration}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {item.topics.map((topic, i) => (
-                      <span key={i} className="text-gray-600 text-sm">{topic}{i < item.topics.length - 1 ? ',' : ''}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Sidebar */}
@@ -196,6 +212,35 @@ const FullStackWebDevelopment: React.FC = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Frequently Asked Questions</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What is the duration of the Full Stack Web Development course?</h3>
+              <p className="text-gray-700">The course is designed to be completed in 12 weeks with self-paced learning and flexible schedules. You can access course materials anytime and learn at your own speed.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">Do I need prior programming experience?</h3>
+              <p className="text-gray-700">No, the course is designed for beginners, intermediates, and developers of all levels. We start from the fundamentals and progressively advance to complex concepts.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What will I learn in this course?</h3>
+              <p className="text-gray-700">You'll master frontend development with React, backend development with Node.js and Express, databases, real-world project development, and deployment strategies.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">Will I get job assistance?</h3>
+              <p className="text-gray-700">Yes! We provide comprehensive job assistance including resume review, interview preparation, and placement support to help you land your first development job.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-black mb-3">What projects will I build?</h3>
+              <p className="text-gray-700">You'll build 5+ real-world applications including e-commerce platforms, social media apps, project management tools, and more to showcase in your portfolio.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-32 bg-[#007BFF] text-white">
         <div className="container mx-auto px-6 text-center">
@@ -214,51 +259,9 @@ const FullStackWebDevelopment: React.FC = () => {
         </div>
       </section>
 
-      {/* Related Courses */}
-      <section className="py-32 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Other Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Link to="/academy/frontend-web-development" className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
-              <div className="h-48 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
-                <Code size={64} className="text-white opacity-20" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#007BFF]">Frontend Web Development</h3>
-                <p className="text-gray-600 text-sm mb-4">Master HTML, CSS, JavaScript, and modern frameworks to build fast, responsive user interfaces.</p>
-                <span className="text-[#007BFF] font-semibold">8 weeks</span>
-              </div>
-            </Link>
-            <Link to="/academy/data-analytics" className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
-              <div className="h-48 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center">
-                <Database size={64} className="text-white opacity-20" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#007BFF]">Data Analytics</h3>
-                <p className="text-gray-600 text-sm mb-4">Analyze data, build dashboards, and derive insights using Python, pandas, and visualization tools.</p>
-                <span className="text-[#007BFF] font-semibold">10 weeks</span>
-              </div>
-            </Link>
-            <Link to="/academy/python-programming" className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all">
-              <div className="h-48 bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center">
-                <Code size={64} className="text-white opacity-20" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#007BFF]">Python Programming</h3>
-                <p className="text-gray-600 text-sm mb-4">Start with Python fundamentals and move to data handling, scripting, and building small applications.</p>
-                <span className="text-[#007BFF] font-semibold">6 weeks</span>
-              </div>
-            </Link>
-          </div>
-          <div className="text-center mt-12">
-            <Link to="/academy" className="inline-flex items-center gap-2 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all">
-              View All Courses <ArrowRight size={20} />
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
 
 export default FullStackWebDevelopment;
+

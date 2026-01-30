@@ -4,8 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 
 const TermsOfService: React.FC = () => {
   useEffect(() => {
-    document.title = 'Terms of Service — MEMO InfoTech';
-    const desc = 'Terms of Service for MEMO InfoTech. Read our terms and conditions for using our website and services.';
+    document.title = 'Terms of Service — Memo InfoTech';
+    const desc = 'Terms of Service for Memo InfoTech. Read our terms and conditions for using our website and services.';
     let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (meta) meta.content = desc;
     else {
@@ -35,7 +35,7 @@ const TermsOfService: React.FC = () => {
           <section>
             <h2 className="text-3xl font-bold text-black mb-4">Introduction</h2>
             <p>
-              These Terms of Service ("Terms") constitute a legally binding agreement between you ("User," "Client," or "you") and MEMO InfoTech ("Company," "we," "us," or "our"). By accessing and using our website and services, you agree to be bound by these Terms.
+              These Terms of Service ("Terms") constitute a legally binding agreement between you ("User," "Client," or "you") and Memo InfoTech ("Company," "we," "us," or "our"). By accessing and using our website and services, you agree to be bound by these Terms.
             </p>
             <p>
               If you do not agree with any part of these Terms, please do not use our services.
@@ -61,17 +61,17 @@ const TermsOfService: React.FC = () => {
             <h2 className="text-3xl font-bold text-black mb-4">2. Intellectual Property Rights</h2>
             <h3 className="text-2xl font-bold text-black mb-2">2.1 Our Content</h3>
             <p>
-              All content on our website, including text, graphics, images, logos, videos, and software, is the exclusive property of MEMO InfoTech or its content suppliers and is protected by copyright and intellectual property laws.
+              All content on our website, including text, graphics, images, logos, videos, and software, is the exclusive property of Memo InfoTech or its content suppliers and is protected by copyright and intellectual property laws.
             </p>
 
             <h3 className="text-2xl font-bold text-black mb-2 mt-6">2.2 Your Content</h3>
             <p>
-              When you submit content (such as project briefs, feedback, or materials) to us, you grant MEMO InfoTech a non-exclusive, worldwide, royalty-free license to use, modify, and incorporate such content in our work and services.
+              When you submit content (such as project briefs, feedback, or materials) to us, you grant Memo InfoTech a non-exclusive, worldwide, royalty-free license to use, modify, and incorporate such content in our work and services.
             </p>
 
             <h3 className="text-2xl font-bold text-black mb-2 mt-6">2.3 Deliverables</h3>
             <p>
-              All work deliverables, designs, code, and other materials created by MEMO InfoTech for you remain the intellectual property of MEMO InfoTech until full payment is received. Upon payment, ownership is transferred to you.
+              All work deliverables, designs, code, and other materials created by Memo InfoTech for you remain the intellectual property of Memo InfoTech until full payment is received. Upon payment, ownership is transferred to you.
             </p>
           </section>
 
@@ -96,7 +96,7 @@ const TermsOfService: React.FC = () => {
           <section>
             <h2 className="text-3xl font-bold text-black mb-4">4. Limitation of Liability</h2>
             <p>
-              To the fullest extent permitted by law, MEMO InfoTech shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including lost profits, data loss, or business interruption, even if advised of the possibility of such damages.
+              To the fullest extent permitted by law, Memo InfoTech shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including lost profits, data loss, or business interruption, even if advised of the possibility of such damages.
             </p>
             <p>
               Our total liability under these Terms shall not exceed the total amount paid by you for services in the past 12 months.
@@ -184,7 +184,7 @@ const TermsOfService: React.FC = () => {
           <section>
             <h2 className="text-3xl font-bold text-black mb-4">13. Entire Agreement</h2>
             <p>
-              These Terms, along with any project-specific agreements, constitute the entire agreement between you and MEMO InfoTech and supersede all prior negotiations, understandings, and agreements.
+              These Terms, along with any project-specific agreements, constitute the entire agreement between you and Memo InfoTech and supersede all prior negotiations, understandings, and agreements.
             </p>
           </section>
 
@@ -194,8 +194,8 @@ const TermsOfService: React.FC = () => {
               For questions or concerns regarding these Terms of Service, please contact us:
             </p>
             <div className="bg-gray-100 p-6 rounded-lg mt-4">
-              <p className="mb-2"><strong>MEMO InfoTech</strong></p>
-              <p className="mb-2">Email: legal@memoinfotech.com</p>
+              <p className="mb-2"><strong>Memo InfoTech</strong></p>
+              <p className="mb-2">Email: legal@Memoinfotech.com</p>
               <p className="mb-2">Phone: +91 63699 57006</p>
               <p>Location: India</p>
             </div>

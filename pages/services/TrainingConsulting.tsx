@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const TrainingConsulting: React.FC = () => {
   useEffect(() => {
     // ==================== SEO: Meta Tags ====================
-    document.title = 'Training, Internship & Consulting Services | Tech Skills & Business Transformation';
-    const desc = 'Professional training programs, internship opportunities, and consulting services. Technology upskilling, web development training, business transformation consulting.';
+    document.title = 'Training & Consulting Company in Nagercoil, Tamil Nadu | Memo Infotech';
+    const desc = 'Memo Infotech is a professional training and consulting company in Nagercoil, Tamil Nadu, offering technology training programs, internship opportunities, and business transformation consulting.';
     
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDesc) metaDesc.content = desc;
@@ -28,7 +28,7 @@ const TrainingConsulting: React.FC = () => {
       og.content = content;
     };
 
-    setOGMeta('og:title', 'Training, Internship & Consulting Services | MEMO InfoTech');
+    setOGMeta('og:title', 'Training & Consulting Company in Nagercoil, Tamil Nadu | Memo Infotech');
     setOGMeta('og:description', desc);
     setOGMeta('og:type', 'website');
     setOGMeta('og:url', 'https://www.memoinfotech.com/services/training-consulting/');
@@ -67,17 +67,20 @@ const TrainingConsulting: React.FC = () => {
       "description": "Professional training programs, internship opportunities, consulting services for technology upskilling and business transformation. Expert mentorship and real-world project experience.",
       "provider": {
         "@type": "Organization",
-        "name": "MEMO InfoTech",
+        "name": "Memo Infotech",
         "url": "https://www.memoinfotech.com",
         "logo": "https://www.memoinfotech.com/logo.png",
-        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+        "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-XXX-XXX-XXXX",
           "contactType": "Customer Service"
         }
       },
-      "areaServed": "Worldwide",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Nagercoil, Tamil Nadu, India"
+      },
       "serviceType": "Training & Consulting",
       "hasOfferingDetails": [
         { "@type": "OfferingDetails", "name": "Technical Training Programs", "priceRange": "Custom Quote" },
@@ -90,10 +93,17 @@ const TrainingConsulting: React.FC = () => {
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "MEMO InfoTech",
+      "name": "Memo Infotech",
       "url": "https://www.memoinfotech.com",
       "logo": "https://www.memoinfotech.com/logo.png",
-      "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+      "description": "Expert training and consulting agency specializing in technology upskilling, internship programs, and business transformation.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nagercoil",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-XXX-XXX-XXXX",
@@ -252,7 +262,7 @@ const TrainingConsulting: React.FC = () => {
       <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
-            Training, Internship &amp; Consulting Services
+            Training & Consulting Company in Nagercoil, Tamil Nadu
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Build skills, accelerate careers, and transform organizations with comprehensive training, internship programs, and strategic consulting services.
@@ -261,6 +271,14 @@ const TrainingConsulting: React.FC = () => {
       </header>
 
       <main className="w-full" role="main" aria-label="Main Content">
+        {/* ==================== Section 0: Service Location ====================*/}
+        <section className="py-16 bg-blue-50 border-t-4 border-[#007BFF]" aria-label="Service Location" role="region">
+          <div className="container mx-auto px-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              <strong>Memo Infotech</strong> is a trusted <strong>training and consulting company in Nagercoil, Tamil Nadu</strong>, serving professionals and businesses across Kanyakumari district with comprehensive skill development and transformation programs.
+            </p>
+          </div>
+        </section>
         {/* ==================== Section 1: Training & Consulting Services ====================*/}
         <section className="py-32 bg-white" aria-label="Our Training and Consulting Services" role="region">
           <div className="container mx-auto px-6">

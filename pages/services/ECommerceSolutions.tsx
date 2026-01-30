@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const ECommerceSolutions: React.FC = () => {
   useEffect(() => {
     // ==================== SEO: Meta Tags ====================
-    document.title = 'E-Commerce Solutions | Online Store Development & Shopify Development';
-    const desc = 'Professional e-commerce solutions. Shopify stores, WooCommerce, custom online stores. Payment gateway integration, inventory management, mobile-optimized storefronts.';
+    document.title = 'E-Commerce Solutions Company in Nagercoil, Tamil Nadu | Memo Infotech';
+    const desc = 'Memo Infotech is a professional e-commerce solutions company in Nagercoil, Tamil Nadu, offering Shopify stores, WooCommerce, online store development, and payment gateway integration.';
     
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDesc) metaDesc.content = desc;
@@ -28,7 +28,7 @@ const ECommerceSolutions: React.FC = () => {
       og.content = content;
     };
 
-    setOGMeta('og:title', 'E-Commerce Solutions | MEMO InfoTech');
+    setOGMeta('og:title', 'E-Commerce Solutions Company in Nagercoil, Tamil Nadu | Memo Infotech');
     setOGMeta('og:description', desc);
     setOGMeta('og:type', 'website');
     setOGMeta('og:url', 'https://www.memoinfotech.com/services/e-commerce-solutions/');
@@ -67,17 +67,20 @@ const ECommerceSolutions: React.FC = () => {
       "description": "Professional e-commerce development including Shopify, WooCommerce, payment gateways, inventory management, and complete online store solutions. Mobile-optimized, conversion-focused.",
       "provider": {
         "@type": "Organization",
-        "name": "MEMO InfoTech",
+        "name": "Memo Infotech",
         "url": "https://www.memoinfotech.com",
         "logo": "https://www.memoinfotech.com/logo.png",
-        "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+        "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-XXX-XXX-XXXX",
           "contactType": "Customer Service"
         }
       },
-      "areaServed": "Worldwide",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Nagercoil, Tamil Nadu, India"
+      },
       "serviceType": "E-Commerce Development",
       "hasOfferingDetails": [
         { "@type": "OfferingDetails", "name": "Online Store Development", "priceRange": "Custom Quote" },
@@ -90,10 +93,17 @@ const ECommerceSolutions: React.FC = () => {
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "MEMO InfoTech",
+      "name": "Memo Infotech",
       "url": "https://www.memoinfotech.com",
       "logo": "https://www.memoinfotech.com/logo.png",
-      "sameAs": ["https://www.facebook.com/memoinfotech", "https://www.linkedin.com/company/memoinfotech"],
+      "description": "Expert e-commerce solutions agency specializing in Shopify and online store development.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nagercoil",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-XXX-XXX-XXXX",
@@ -252,7 +262,7 @@ const ECommerceSolutions: React.FC = () => {
       <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
-            E-Commerce Solutions &amp; Online Store Development
+            E-Commerce Solutions Company in Nagercoil, Tamil Nadu
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Transform your business with comprehensive e-commerce platforms. We handle everything from store development to payment integration and inventory management.
@@ -261,6 +271,14 @@ const ECommerceSolutions: React.FC = () => {
       </header>
 
       <main className="w-full" role="main" aria-label="Main Content">
+        {/* ==================== Section 0: Service Location ====================*/}
+        <section className="py-16 bg-blue-50 border-t-4 border-[#007BFF]" aria-label="Service Location" role="region">
+          <div className="container mx-auto px-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              <strong>Memo Infotech</strong> is a trusted <strong>e-commerce solutions company in Nagercoil, Tamil Nadu</strong>, helping businesses across Kanyakumari district build online stores that convert.
+            </p>
+          </div>
+        </section>
         {/* ==================== Section 1: E-Commerce Services ====================*/}
         <section className="py-32 bg-white" aria-label="Our E-Commerce Services" role="region">
           <div className="container mx-auto px-6">
