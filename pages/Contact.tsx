@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Mail, MapPin, Phone, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
-import { updateSEO, addBreadcrumbSchema } from '../utils/seo';
+import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -13,19 +13,14 @@ const Contact: React.FC = () => {
 
   const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxTk-Npq9H8Ah0YW6GcU4c8Xic0hOPTOW9KvZadLwKNPnr50u39qTyYZ3g79NnVyMx0/exec";
 
-  useEffect(() => {
-    updateSEO({
-      title: 'Contact Us — Get in Touch with Memo InfoTech',
-      description: 'Contact Memo InfoTech for web development, graphic design, and digital solutions. Call +91 6374433734 or email hello@memoinfotech.com. Based in Nagercoil, India.',
-      keywords: 'contact Memo InfoTech, web development inquiry, design service request, digital solutions contact',
-      canonicalUrl: 'https://www.memoinfotech.com/contact/'
-    });
-    
-    addBreadcrumbSchema([
-      { name: 'Home', url: 'https://www.memoinfotech.com/' },
-      { name: 'Contact', url: 'https://www.memoinfotech.com/contact/' }
-    ]);
-  }, []);
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.memoinfotech.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.memoinfotech.com/contact/' }
+    ]
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -49,7 +44,7 @@ const Contact: React.FC = () => {
         body: form,
         mode: 'no-cors'
       });
-      
+
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
@@ -62,9 +57,16 @@ const Contact: React.FC = () => {
 
   return (
     <div className="pt-32 pb-20 bg-white w-full min-h-screen">
+      <SEO
+        title="Contact Us — Get in Touch"
+        description="Contact Memo InfoTech for web development, graphic design, and digital solutions. Call +91 6374433734 or email hello@memoinfotech.com. Based in Nagercoil, India."
+        keywords="contact Memo InfoTech, web development inquiry, design service request, digital solutions contact"
+        canonical="https://www.memoinfotech.com/contact/"
+        schemas={[breadcrumbSchema]}
+      />
       <div className="container mx-auto px-6">
         <h1 className="text-5xl md:text-[4rem] font-bold mb-16 font-['Syne'] text-center text-black leading-none">Get in <span className="text-white bg-[#007BFF] px-4 inline-block transform rotate-2 shadow-[5px_5px_0px_#000]">Touch</span></h1>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Info Panel */}
           <div className="bg-black text-white p-12 rounded-[3rem] relative overflow-hidden">
@@ -109,7 +111,7 @@ const Contact: React.FC = () => {
           {/* Form Section */}
           <div>
             <h3 className="text-3xl font-bold mb-8 text-black">Send a Message</h3>
-            
+
             {status === 'success' ? (
               <div className="flex flex-col items-center text-center py-10">
                 <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
@@ -127,50 +129,50 @@ const Contact: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="flex flex-col gap-2">
                   <label className="font-bold uppercase text-xs tracking-wider text-black">Full Name</label>
-                  <input 
+                  <input
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:outline-none focus:border-[#007BFF] focus:ring-1 focus:ring-[#007BFF] transition-all text-black" 
-                    placeholder="Your Name" 
+                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:outline-none focus:border-[#007BFF] focus:ring-1 focus:ring-[#007BFF] transition-all text-black"
+                    placeholder="Your Name"
                     required
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <label className="font-bold uppercase text-xs tracking-wider text-black">Email Address</label>
-                  <input 
+                  <input
                     name="email"
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:outline-none focus:border-[#007BFF] focus:ring-1 focus:ring-[#007BFF] transition-all text-black" 
-                    placeholder="your@email.com" 
+                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:outline-none focus:border-[#007BFF] focus:ring-1 focus:ring-[#007BFF] transition-all text-black"
+                    placeholder="your@email.com"
                     required
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <label className="font-bold uppercase text-xs tracking-wider text-black">Mobile Number</label>
-                  <input 
+                  <input
                     name="phone"
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:outline-none focus:border-[#007BFF] focus:ring-1 focus:ring-[#007BFF] transition-all text-black" 
-                    placeholder="+91 00000 00000" 
+                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:outline-none focus:border-[#007BFF] focus:ring-1 focus:ring-[#007BFF] transition-all text-black"
+                    placeholder="+91 00000 00000"
                     required
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <label className="font-bold uppercase text-xs tracking-wider text-black">Message</label>
-                  <textarea 
+                  <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:outline-none focus:border-[#007BFF] focus:ring-1 focus:ring-[#007BFF] transition-all text-black" 
+                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:outline-none focus:border-[#007BFF] focus:ring-1 focus:ring-[#007BFF] transition-all text-black"
                     placeholder="Tell us about your project..."
                     required
                   ></textarea>
@@ -183,7 +185,7 @@ const Contact: React.FC = () => {
                   </div>
                 )}
 
-                <button 
+                <button
                   disabled={status === 'submitting'}
                   className="w-full bg-[#007BFF] text-white font-bold py-5 rounded-xl text-lg hover:bg-black hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >

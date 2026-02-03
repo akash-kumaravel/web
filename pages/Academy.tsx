@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { updateSEO, addBreadcrumbSchema } from '../utils/seo';
+import SEO from '../components/SEO';
+import FAQ from '../components/FAQ';
 import { BookOpen, Users, Award, Clock, ArrowRight, Star, Zap, Code, PenTool, Video, CheckCircle, AlertCircle, Loader2, Search, Filter } from 'lucide-react';
 
 const courses = [
@@ -204,60 +205,128 @@ const Academy: React.FC = () => {
   const [reviewImageError, setReviewImageError] = useState('');
   const [reviewStatus, setReviewStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  useEffect(() => {
-    updateSEO({
-      title: 'IT Training Institute & Internship Programs in Nagercoil | Memo Infotech Academy',
-      description: 'Memo Infotech Academy is a professional IT training institute in Nagercoil offering practical training programs, certification courses, internship opportunities and job placement assistance. Learn web development, software development, data analytics, design and more.',
-      keywords: 'Memo Infotech Academy, IT training institute in Nagercoil, software training institute Nagercoil, internship training Nagercoil, coding courses Tamil Nadu, software internship programs, IT certification courses, coding bootcamp Nagercoil',
-      canonicalUrl: 'https://www.memoinfotech.com/academy/'
-    });
-    
-    addBreadcrumbSchema([
-      { name: 'Home', url: 'https://www.memoinfotech.com/' },
-      { name: 'Academy', url: 'https://www.memoinfotech.com/academy/' }
-    ]);
+  // SEO Configuration
+  const seoConfig = {
+    title: 'IT Training Institute & Internship Programs in Nagercoil | Memo Infotech Academy',
+    description: 'Memo Infotech Academy is a professional IT training institute in Nagercoil offering practical training programs, certification courses, internship opportunities and job placement assistance. Learn web development, software development, data analytics, design and more.',
+    keywords: 'Memo Infotech Academy, IT training institute in Nagercoil, software training institute Nagercoil, internship training Nagercoil, coding courses Tamil Nadu, software internship programs, IT certification courses, coding bootcamp Nagercoil',
+    canonical: 'https://www.memoinfotech.com/academy/'
+  };
 
-    // Add Educational Organization Schema
-    const orgSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'EducationalOrganization',
-      'name': 'Memo Infotech Academy',
-      'alternateName': 'Memo Academy',
-      'url': 'https://www.memoinfotech.com/academy/',
-      'logo': 'https://www.memoinfotech.com/assets/logo.png',
-      'address': {
+  // Schemas
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.memoinfotech.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Academy', item: 'https://www.memoinfotech.com/academy/' }
+    ]
+  };
+
+  const orgSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'Memo Infotech Academy',
+    alternateName: 'Memo Academy',
+    url: 'https://www.memoinfotech.com/academy/',
+    logo: 'https://www.memoinfotech.com/assets/logo.png',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Nagercoil',
+      addressRegion: 'Tamil Nadu',
+      addressCountry: 'IN'
+    },
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: 'Nagercoil, Tamil Nadu, India'
+    },
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Memo Infotech',
+      address: {
         '@type': 'PostalAddress',
-        'addressLocality': 'Nagercoil',
-        'addressRegion': 'Tamil Nadu',
-        'addressCountry': 'IN'
-      },
-      'areaServed': {
-        '@type': 'AdministrativeArea',
-        'name': 'Nagercoil, Tamil Nadu, India'
-      },
-      'parentOrganization': {
+        addressLocality: 'Nagercoil',
+        addressRegion: 'Tamil Nadu',
+        addressCountry: 'IN'
+      }
+    },
+    telephone: '+91 6374433734',
+    email: 'hello@memoinfotech.com'
+  };
+
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: courses.map((c, index) => ({
+      '@type': 'Course',
+      position: index + 1,
+      name: c.title,
+      description: c.description,
+      provider: {
         '@type': 'Organization',
-        'name': 'Memo Infotech',
-        'address': {
-          '@type': 'PostalAddress',
-          'addressLocality': 'Nagercoil',
-          'addressRegion': 'Tamil Nadu',
-          'addressCountry': 'IN'
+        name: 'Memo Infotech',
+        image: "/assets/Website Development.png"
+      },
+      url: `https://www.memoinfotech.com${c.url}`
+    }))
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': [
+      {
+        '@type': 'Question',
+        'name': 'Is Memo Infotech Academy an IT training institute in Nagercoil?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Yes, Memo Infotech Academy is a professional IT training institute in Nagercoil offering software courses, certification programs, and internship opportunities for students and fresh graduates.'
         }
       },
-      'telephone': '+91 6374433734',
-      'email': 'hello@memoinfotech.com'
-    };
+      {
+        '@type': 'Question',
+        'name': 'What internship programs does Memo Infotech Academy offer?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'We provide internship training programs in web development, software development, data analytics, and other IT fields. Our internship programs in Nagercoil are designed with live projects and real-world applications.'
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': 'Do you offer placement assistance for IT students?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Yes, we offer comprehensive placement and career support including resume guidance, interview preparation, mock interviews, and direct connections with partner companies hiring IT professionals.'
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': 'What is the duration of your IT training courses?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Our courses range from 4 to 12 weeks depending on the program level and complexity. We offer flexible schedules to accommodate working professionals and full-time students.'
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': 'Can I take courses if I have no programming experience?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Absolutely! We offer beginner-level courses in Python, web development, and other areas. Our instructors guide you from basics to advanced concepts with hands-on projects.'
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': 'Do you provide certificates after course completion?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Yes, all our students receive recognized certificates upon successful completion. These certificates are valued by employers and enhance your resume significantly.'
+        }
+      }
+    ]
+  };
 
-    let orgScript = document.getElementById('org-schema-academy') as HTMLScriptElement | null;
-    if (!orgScript) {
-      orgScript = document.createElement('script') as HTMLScriptElement;
-      orgScript.id = 'org-schema-academy';
-      orgScript.type = 'application/ld+json';
-      document.head.appendChild(orgScript);
-    }
-    orgScript.innerHTML = JSON.stringify(orgSchema);
-
+  useEffect(() => {
     window.scrollTo(0, 0);
     setIsClientSide(true);
   }, []);
@@ -266,37 +335,6 @@ const Academy: React.FC = () => {
     setFormData({ ...formData, course: courseName });
     enrollRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
-  // Inject Course JSON-LD for all courses on this page (improves search visibility for course rich results)
-  useEffect(() => {
-    try {
-      const origin = window.location.origin || 'https://www.memoinfotech.com';
-      const courseLd = courses.map(c => ({
-        '@context': 'https://schema.org',
-        '@type': 'Course',
-        name: c.title,
-        description: c.description,
-        provider: {
-          '@type': 'Organization',
-          name: 'Memo Infotech',
-      image: "/assets/Website Development.png",
-        },
-        url: `${origin}${c.url}`
-      }));
-
-      let s = document.getElementById('ld-courses') as HTMLScriptElement | null;
-      if (!s) {
-        s = document.createElement('script');
-        s.type = 'application/ld+json';
-        s.id = 'ld-courses';
-        document.head.appendChild(s);
-      }
-      s.text = JSON.stringify(courseLd);
-    } catch (err) {
-      // fail silently in non-browser environments
-      console.warn('Could not inject course JSON-LD', err);
-    }
-  }, []);
 
   // Load testimonials from localStorage on client side only
   useEffect(() => {
@@ -363,11 +401,11 @@ const Academy: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
-    
+
     const form = new FormData(e.currentTarget as HTMLFormElement);
     form.append('type', 'contact');
     form.append('name', formData.fullName);
-    
+
     try {
       await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
@@ -427,22 +465,29 @@ const Academy: React.FC = () => {
     }
   };
 
-    // Persist testimonials to localStorage so reviews survive refresh
-    useEffect(() => {
-      if (isClientSide) {
-        try {
-          localStorage.setItem('academy_testimonials', JSON.stringify(testimonialsState));
-        } catch (err) {
-          console.error('Failed to save testimonials to localStorage:', err);
-          // ignore storage errors
-        }
+  // Persist testimonials to localStorage so reviews survive refresh
+  useEffect(() => {
+    if (isClientSide) {
+      try {
+        localStorage.setItem('academy_testimonials', JSON.stringify(testimonialsState));
+      } catch (err) {
+        console.error('Failed to save testimonials to localStorage:', err);
+        // ignore storage errors
       }
-    }, [testimonialsState, isClientSide]);
+    }
+  }, [testimonialsState, isClientSide]);
 
-    // Testimonials use a CSS marquee animation now (no JS scrolling)
+  // Testimonials use a CSS marquee animation now (no JS scrolling)
 
   return (
     <div className="w-full bg-white">
+      <SEO
+        title={seoConfig.title}
+        description={seoConfig.description}
+        keywords={seoConfig.keywords}
+        canonical={seoConfig.canonical}
+        schemas={[breadcrumbSchema, orgSchema, courseSchema, faqSchema]}
+      />
       {/* HERO SECTION */}
       <section className="pt-40 pb-24 bg-gradient-to-b from-black to-[#000000] text-white">
         <div className="container mx-auto px-6">
@@ -519,11 +564,10 @@ const Academy: React.FC = () => {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-6 py-3 rounded-full font-semibold transition-all ${
-                    selectedCategory === cat
-                      ? 'bg-[#007BFF] text-white shadow-lg'
-                      : 'bg-white text-black border-2 border-gray-200 hover:border-[#007BFF]'
-                  }`}
+                  className={`px-6 py-3 rounded-full font-semibold transition-all ${selectedCategory === cat
+                    ? 'bg-[#007BFF] text-white shadow-lg'
+                    : 'bg-white text-black border-2 border-gray-200 hover:border-[#007BFF]'
+                    }`}
                 >
                   {cat}
                 </button>
@@ -544,7 +588,7 @@ const Academy: React.FC = () => {
           </div>
           <div className="mb-16">
             <h2 className="text-5xl md:text-[4rem] font-bold font-['Syne'] text-black mb-4">
-               <span className="text-[#007BFF]">Courses</span>
+              <span className="text-[#007BFF]">Courses</span>
             </h2>
             <p className="text-xl text-gray-600">
               {filteredCourses.length} courses available
@@ -749,105 +793,36 @@ const Academy: React.FC = () => {
       </section>
 
       {/* FAQ SECTION - HIGH SEO VALUE */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">
-            Frequently Asked Questions – IT Training Institute in Nagercoil
-          </h2>
-
-          <div className="space-y-8">
-            {[
-              {
-                q: 'Is Memo Infotech Academy an IT training institute in Nagercoil?',
-                a: 'Yes, Memo Infotech Academy is a professional IT training institute in Nagercoil offering software courses, certification programs, and internship opportunities for students and fresh graduates.'
-              },
-              {
-                q: 'What internship programs does Memo Infotech Academy offer?',
-                a: 'We provide internship training programs in web development, software development, data analytics, and other IT fields. Our internship programs in Nagercoil are designed with live projects and real-world applications.'
-              },
-              {
-                q: 'Do you offer placement assistance for IT students?',
-                a: 'Yes, we offer comprehensive placement and career support including resume guidance, interview preparation, mock interviews, and direct connections with partner companies hiring IT professionals.'
-              },
-              {
-                q: 'What is the duration of your IT training courses?',
-                a: 'Our courses range from 4 to 12 weeks depending on the program level and complexity. We offer flexible schedules to accommodate working professionals and full-time students.'
-              },
-              {
-                q: 'Can I take courses if I have no programming experience?',
-                a: 'Absolutely! We offer beginner-level courses in Python, web development, and other areas. Our instructors guide you from basics to advanced concepts with hands-on projects.'
-              },
-              {
-                q: 'Do you provide certificates after course completion?',
-                a: 'Yes, all our students receive recognized certificates upon successful completion. These certificates are valued by employers and enhance your resume significantly.'
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="border-b border-gray-200 pb-6 last:border-b-0">
-                <h3 className="text-lg font-bold text-black mb-3">{item.q}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* FAQ Schema */}
-          <script type="application/ld+json">
-            {JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'FAQPage',
-              'mainEntity': [
-                {
-                  '@type': 'Question',
-                  'name': 'Is Memo Infotech Academy an IT training institute in Nagercoil?',
-                  'acceptedAnswer': {
-                    '@type': 'Answer',
-                    'text': 'Yes, Memo Infotech Academy is a professional IT training institute in Nagercoil offering software courses, certification programs, and internship opportunities for students and fresh graduates.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  'name': 'What internship programs does Memo Infotech Academy offer?',
-                  'acceptedAnswer': {
-                    '@type': 'Answer',
-                    'text': 'We provide internship training programs in web development, software development, data analytics, and other IT fields. Our internship programs in Nagercoil are designed with live projects and real-world applications.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  'name': 'Do you offer placement assistance for IT students?',
-                  'acceptedAnswer': {
-                    '@type': 'Answer',
-                    'text': 'Yes, we offer comprehensive placement and career support including resume guidance, interview preparation, mock interviews, and direct connections with partner companies hiring IT professionals.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  'name': 'What is the duration of your IT training courses?',
-                  'acceptedAnswer': {
-                    '@type': 'Answer',
-                    'text': 'Our courses range from 4 to 12 weeks depending on the program level and complexity. We offer flexible schedules to accommodate working professionals and full-time students.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  'name': 'Can I take courses if I have no programming experience?',
-                  'acceptedAnswer': {
-                    '@type': 'Answer',
-                    'text': 'Absolutely! We offer beginner-level courses in Python, web development, and other areas. Our instructors guide you from basics to advanced concepts with hands-on projects.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  'name': 'Do you provide certificates after course completion?',
-                  'acceptedAnswer': {
-                    '@type': 'Answer',
-                    'text': 'Yes, all our students receive recognized certificates upon successful completion. These certificates are valued by employers and enhance your resume significantly.'
-                  }
-                }
-              ]
-            })}
-          </script>
-        </div>
-      </section>
+      <FAQ
+        title="Frequently Asked"
+        highlight="Questions"
+        faqs={[
+          {
+            q: 'Is Memo Infotech Academy an IT training institute in Nagercoil?',
+            a: 'Yes, Memo Infotech Academy is a professional IT training institute in Nagercoil offering software courses, certification programs, and internship opportunities for students and fresh graduates.'
+          },
+          {
+            q: 'What internship programs does Memo Infotech Academy offer?',
+            a: 'We provide internship training programs in web development, software development, data analytics, and other IT fields. Our internship programs in Nagercoil are designed with live projects and real-world applications.'
+          },
+          {
+            q: 'Do you offer placement assistance for IT students?',
+            a: 'Yes, we offer comprehensive placement and career support including resume guidance, interview preparation, mock interviews, and direct connections with partner companies hiring IT professionals.'
+          },
+          {
+            q: 'What is the duration of your IT training courses?',
+            a: 'Our courses range from 4 to 12 weeks depending on the program level and complexity. We offer flexible schedules to accommodate working professionals and full-time students.'
+          },
+          {
+            q: 'Can I take courses if I have no programming experience?',
+            a: 'Absolutely! We offer beginner-level courses in Python, web development, and other areas. Our instructors guide you from basics to advanced concepts with hands-on projects.'
+          },
+          {
+            q: 'Do you provide certificates after course completion?',
+            a: 'Yes, all our students receive recognized certificates upon successful completion. These certificates are valued by employers and enhance your resume significantly.'
+          }
+        ]}
+      />
 
       {/* ENROLLMENT SECTION */}
       <section id="enroll" ref={enrollRef} className="py-32 bg-white">

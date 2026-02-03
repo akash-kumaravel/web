@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { HelmetProvider } from 'react-helmet-async';
 
 // Ensure favicon is set programmatically (matches how other logos are used in JS)
 function ensureFavicon(href: string) {
@@ -15,12 +16,12 @@ function ensureFavicon(href: string) {
     // set correct MIME type and sizes for PNG favicon
     if (href.endsWith('.png')) {
       link.type = 'image/png';
-      try { (link as any).sizes = '32x32'; } catch {}
+      try { (link as any).sizes = '32x32'; } catch { }
     } else if (href.endsWith('.svg')) {
       link.type = 'image/svg+xml';
     } else {
       link.type = 'image/png';
-      try { (link as any).sizes = '32x32'; } catch {}
+      try { (link as any).sizes = '32x32'; } catch { }
     }
     link.href = href;
   } catch (e) {
@@ -40,6 +41,8 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </React.StrictMode>
 );

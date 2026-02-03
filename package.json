@@ -11,9 +11,10 @@
     "start": "npm run build && npm run preview"
   },
   "dependencies": {
+    "lucide-react": "^0.554.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "lucide-react": "^0.554.0",
+    "react-helmet-async": "^2.0.5",
     "react-router-dom": "^6.26.0"
   },
   "devDependencies": {

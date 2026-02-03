@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle2, Users, Clock, Star, Code, Database, Globe, Zap } from 'lucide-react';
+import SEO from '../../components/SEO';
+import FAQ from '../../components/FAQ';
 
 const BusinessIntelligence: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,59 +41,46 @@ const BusinessIntelligence: React.FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    document.title = 'Business Intelligence Course in Nagercoil | Memo Infotech Academy';
-
-    const desc = 'Learn Business Intelligence course in Nagercoil at Memo Infotech Academy. Master Power BI, Tableau, data modeling, SQL, real projects and certification.';
-
-    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (metaDesc) metaDesc.content = desc;
-    else {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      metaDesc.content = desc;
-      document.head.appendChild(metaDesc);
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Business Intelligence Course in Nagercoil",
+    "description": "Professional Business Intelligence course in Nagercoil by Memo Infotech Academy covering Power BI, Tableau, data modeling, SQL and certification.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Memo Infotech Academy",
+      "url": "https://www.memoinfotech.com/academy"
+    },
+    "educationalCredentialAwarded": "Certificate",
+    "timeRequired": "P8W",
+    "courseMode": "Offline",
+    "inLanguage": "en",
+    "locationCreated": {
+      "@type": "Place",
+      "name": "Nagercoil, Tamil Nadu, India"
     }
+  };
 
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = 'https://www.memoinfotech.com/academy/business-intelligence';
-  }, []);
+  const faqs = [
+    { q: "What is Business Intelligence?", a: "Business Intelligence is the process of collecting, analyzing, and presenting data to support business decisions. BI professionals are highly sought-after and command premium salaries." },
+    { q: "Do I need SQL knowledge to start?", a: "While SQL knowledge is helpful, it's not required. Our course covers SQL fundamentals along with Power BI and Tableau, making it perfect for beginners." },
+    { q: "What BI tools will I learn?", a: "You'll master Power BI, Tableau, and Looker - the top business intelligence tools used by major corporations. You'll also learn data modeling and dashboard design." },
+    { q: "What is the course duration?", a: "The Business Intelligence course is an 8-week program with self-paced learning. You have lifetime access to course materials and can learn at your own speed." },
+    { q: "What's the career outlook for BI professionals?", a: "BI is one of the fastest-growing fields. Career prospects are excellent with high-paying positions, leadership opportunities, and strong job security across industries." }
+  ];
 
-  useEffect(() => {
-    const courseSchema = {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Business Intelligence Course in Nagercoil",
-      "description": "Professional Business Intelligence course in Nagercoil by Memo Infotech Academy covering Power BI, Tableau, data modeling, SQL and certification.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Memo Infotech Academy",
-        "url": "https://www.memoinfotech.com/academy"
-      },
-      "educationalCredentialAwarded": "Certificate",
-      "timeRequired": "P8W",
-      "courseMode": "Offline",
-      "inLanguage": "en",
-      "locationCreated": {
-        "@type": "Place",
-        "name": "Nagercoil, Tamil Nadu, India"
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a
       }
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(courseSchema);
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+    }))
+  };
 
   const features = [
     { icon: <Database size={32} />, title: "BI Tools Mastery", description: "Power BI, Tableau, and Looker expertise" },
@@ -104,6 +93,12 @@ const BusinessIntelligence: React.FC = () => {
 
   return (
     <div ref={containerRef} className="bg-white w-full min-h-screen">
+      <SEO
+        title="Business Intelligence Course in Nagercoil | Memo Infotech Academy"
+        description="Learn Business Intelligence course in Nagercoil at Memo Infotech Academy. Master Power BI, Tableau, data modeling, SQL, real projects and certification."
+        canonical="https://www.memoinfotech.com/academy/business-intelligence"
+        schemas={[courseSchema, faqSchema]}
+      />
       <div className="fixed top-0 left-0 h-1 bg-[#007BFF] z-50 w-full transform origin-left scale-x-0 course-progress"></div>
 
       <div className="course-hero relative h-[60vh] overflow-hidden bg-gradient-to-r from-[#007BFF] to-[#0056cc]">
@@ -146,9 +141,9 @@ const BusinessIntelligence: React.FC = () => {
             </p>
             <p className="text-lg text-gray-700 mb-8">
               This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
-              IT training programs in Nagercoil</Link>. You may also explore our
+                IT training programs in Nagercoil</Link>. You may also explore our
               <Link to="/academy/data-analytics" className="text-[#007BFF] font-semibold hover:underline ml-1">
-              Data Analytics course</Link>.
+                Data Analytics course</Link>.
             </p>
 
           </div>
@@ -207,33 +202,7 @@ const BusinessIntelligence: React.FC = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What is Business Intelligence?</h3>
-              <p className="text-gray-700">Business Intelligence is the process of collecting, analyzing, and presenting data to support business decisions. BI professionals are highly sought-after and command premium salaries.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">Do I need SQL knowledge to start?</h3>
-              <p className="text-gray-700">While SQL knowledge is helpful, it's not required. Our course covers SQL fundamentals along with Power BI and Tableau, making it perfect for beginners.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What BI tools will I learn?</h3>
-              <p className="text-gray-700">You'll master Power BI, Tableau, and Looker - the top business intelligence tools used by major corporations. You'll also learn data modeling and dashboard design.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What is the course duration?</h3>
-              <p className="text-gray-700">The Business Intelligence course is an 8-week program with self-paced learning. You have lifetime access to course materials and can learn at your own speed.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What's the career outlook for BI professionals?</h3>
-              <p className="text-gray-700">BI is one of the fastest-growing fields. Career prospects are excellent with high-paying positions, leadership opportunities, and strong job security across industries.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQ title="Frequently Asked Questions" highlight="" faqs={faqs} />
 
       {/* CTA */}
       <section className="py-32 bg-[#007BFF] text-white">

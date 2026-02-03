@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle2, Users, Clock, Star, Code, Database, Globe, Zap } from 'lucide-react';
+import SEO from '../../components/SEO';
+import FAQ from '../../components/FAQ';
 
 const FrontendWebDevelopment: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,61 +41,45 @@ const FrontendWebDevelopment: React.FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    document.title = 'Frontend Web Development Course in Nagercoil | Memo Infotech Academy';
-
-    const desc =
-      'Learn Frontend Web Development course in Nagercoil at Memo Infotech Academy. Master React, JavaScript, HTML, CSS, responsive design, real projects and certification.';
-
-    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (metaDesc) metaDesc.content = desc;
-    else {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      metaDesc.content = desc;
-      document.head.appendChild(metaDesc);
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Frontend Web Development Course in Nagercoil",
+    "description":
+      "Professional Frontend Web Development course in Nagercoil by Memo Infotech Academy covering React, JavaScript, HTML, CSS, responsive design, real projects and certification.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Memo Infotech Academy",
+      "url": "https://www.memoinfotech.com/academy"
+    },
+    "educationalCredentialAwarded": "Certificate",
+    "timeRequired": "P8W",
+    "courseMode": "Offline",
+    "inLanguage": "en",
+    "locationCreated": {
+      "@type": "Place",
+      "name": "Nagercoil, Tamil Nadu, India"
     }
+  };
 
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = 'https://www.memoinfotech.com/academy/frontend-web-development';
-  }, []);
+  const faqs = [
+    { q: "Is this Frontend Development course available in Nagercoil?", a: "Yes, Memo Infotech Academy offers classroom and internship-based Frontend Web Development training in Nagercoil. Our course is perfect for beginners and experienced developers." },
+    { q: "Do I get a certificate after completion?", a: "Yes, students receive a recognized certificate after successful course completion. We also provide internship opportunities with real client projects." },
+    { q: "Will I learn React and modern JavaScript?", a: "Yes, this course covers React, JavaScript ES6+, HTML5, CSS3, responsive design, and industry best practices. You'll build multiple production-ready projects." }
+  ];
 
-  useEffect(() => {
-    const courseSchema = {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Frontend Web Development Course in Nagercoil",
-      "description":
-        "Professional Frontend Web Development course in Nagercoil by Memo Infotech Academy covering React, JavaScript, HTML, CSS, responsive design, real projects and certification.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Memo Infotech Academy",
-        "url": "https://www.memoinfotech.com/academy"
-      },
-      "educationalCredentialAwarded": "Certificate",
-      "timeRequired": "P8W",
-      "courseMode": "Offline",
-      "inLanguage": "en",
-      "locationCreated": {
-        "@type": "Place",
-        "name": "Nagercoil, Tamil Nadu, India"
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a
       }
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(courseSchema);
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+    }))
+  };
 
   const features = [
     { icon: <Code size={32} />, title: "Component-Based Learning", description: "Build reusable UI components" },
@@ -106,6 +92,12 @@ const FrontendWebDevelopment: React.FC = () => {
 
   return (
     <div ref={containerRef} className="bg-white w-full min-h-screen">
+      <SEO
+        title="Frontend Web Development Course in Nagercoil | Memo Infotech Academy"
+        description="Learn Frontend Web Development course in Nagercoil at Memo Infotech Academy. Master React, JavaScript, HTML, CSS, responsive design, real projects and certification."
+        canonical="https://www.memoinfotech.com/academy/frontend-web-development"
+        schemas={[courseSchema, faqSchema]}
+      />
       <div className="fixed top-0 left-0 h-1 bg-[#007BFF] z-50 w-full transform origin-left scale-x-0 course-progress"></div>
 
       <div className="course-hero relative h-[60vh] overflow-hidden bg-gradient-to-r from-[#007BFF] to-[#0056cc]">
@@ -150,9 +142,9 @@ const FrontendWebDevelopment: React.FC = () => {
 
             <p className="text-lg text-gray-700 mb-8">
               This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
-              IT training programs in Nagercoil</Link>. You may also explore our
+                IT training programs in Nagercoil</Link>. You may also explore our
               <Link to="/academy/full-stack-web-development" className="text-[#007BFF] font-semibold hover:underline ml-1">
-              Full Stack Development course</Link>.
+                Full Stack Development course</Link>.
             </p>
 
           </div>
@@ -227,34 +219,8 @@ const FrontendWebDevelopment: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold font-['Syne'] text-black mb-12">Frontend Web Development Course – FAQs</h2>
-          
-          <div className="max-w-3xl space-y-8">
-            <div>
-              <h3 className="text-xl font-semibold text-black mb-3">Is this Frontend Development course available in Nagercoil?</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Yes, Memo Infotech Academy offers classroom and internship-based Frontend Web Development training in Nagercoil. Our course is perfect for beginners and experienced developers.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold text-black mb-3">Do I get a certificate after completion?</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Yes, students receive a recognized certificate after successful course completion. We also provide internship opportunities with real client projects.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold text-black mb-3">Will I learn React and modern JavaScript?</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Yes, this course covers React, JavaScript ES6+, HTML5, CSS3, responsive design, and industry best practices. You'll build multiple production-ready projects.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* FAQ */}
+      <FAQ title="Frontend Web Development Course – FAQs" highlight="" faqs={faqs} />
 
     </div>
   );

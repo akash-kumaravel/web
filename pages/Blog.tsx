@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { updateSEO, addBreadcrumbSchema } from '../utils/seo';
+import SEO from '../components/SEO';
 import { ArrowRight, Calendar, User, Tag, Search, Loader2, Check } from 'lucide-react';
 
 export const blogPosts = [
+    // ... items ...
     {
         id: 1,
         slug: "minimalist-web-design-2025",
@@ -30,6 +31,7 @@ export const blogPosts = [
         image: "/assets/news 1.png",
         featured: true
     },
+    // ... keep other posts as is ...
     {
         id: 2,
         slug: "threejs-immersive-web",
@@ -238,36 +240,32 @@ const categories = ["All", "Design", "Development", "Strategy", "Insights"];
 const Blog: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [activeCategory, setActiveCategory] = useState("All");
-    
+
     // Subscription State
     const [email, setEmail] = useState("");
     const [subStatus, setSubStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxTk-Npq9H8Ah0YW6GcU4c8Xic0hOPTOW9KvZadLwKNPnr50u39qTyYZ3g79NnVyMx0/exec";
 
-    const filteredPosts = activeCategory === "All" 
-        ? blogPosts 
+    const filteredPosts = activeCategory === "All"
+        ? blogPosts
         : blogPosts.filter(post => post.category === activeCategory);
 
     const featuredPost = blogPosts[0];
 
-    useEffect(() => {
-      updateSEO({
-        title: 'Blog | Web Design & Development Insights | Memo InfoTech',
-        description: 'Read our latest articles on web design, development, digital marketing, and technology trends. Expert insights and tips for your business.',
-        keywords: 'blog, web design tips, development insights, digital marketing, technology trends',
-        canonicalUrl: 'https://www.memoinfotech.com/blog/'
-      });
-      
-      addBreadcrumbSchema([
-        { name: 'Home', url: 'https://www.memoinfotech.com/' },
-        { name: 'Blog', url: 'https://www.memoinfotech.com/blog/' }
-      ]);
-    }, []);
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.memoinfotech.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.memoinfotech.com/blog" }
+        ]
+    };
+
 
     useEffect(() => {
         const gsap = (window as any).gsap;
         const ScrollTrigger = (window as any).ScrollTrigger;
-        
+
         if (gsap && ScrollTrigger && containerRef.current) {
             gsap.registerPlugin(ScrollTrigger);
             let ctx = gsap.context(() => {
@@ -283,26 +281,17 @@ const Blog: React.FC = () => {
         }
     }, []);
 
-    // SEO: set page title & description
-    useEffect(() => {
-        document.title = 'Blog — Insights on Design & Technology';
-        const desc = 'Actionable articles on web design, performance, branding, and product strategy. Practical guides for designers and developers.';
-        let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-        if (meta) meta.content = desc;
-        else { meta = document.createElement('meta'); meta.name = 'description'; meta.content = desc; document.head.appendChild(meta); }
-    }, []);
-
     const handleSubscribe = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!email) return;
-        
+
         setSubStatus('submitting');
 
         const form = new FormData();
         form.append('type', 'subscribe');
         form.append('email', email);
         // Add required fields for script to avoid errors if it expects them
-        form.append('name', 'Subscriber'); 
+        form.append('name', 'Subscriber');
         form.append('message', 'Newsletter Subscription');
 
         try {
@@ -322,29 +311,28 @@ const Blog: React.FC = () => {
     };
 
     return (
-                <div ref={containerRef} className="pt-40 pb-20 w-full bg-white">
-                        <div className="container mx-auto px-6 text-center">
-                                {/* Header - Projects style */}
-                                <div className="overflow-hidden mb-2">
-                                    <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter">
-                                        BLOG <br/>
-                                        <span className="text-white bg-[#007BFF] px-6 transform -skew-x-12 inline-block">INSIGHTS</span>
-                                    </h1>
-                                    <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
-                                        Exploring the intersection of design, technology, and culture.
-                                    </p>
-                                    <div className="mt-6">
-                                        <Link to="/contact" className="inline-block bg-[#007BFF] text-white px-6 py-3 rounded-full font-bold hover:bg-black transition-colors" aria-label="Contact Memo InfoTech">Contact Us</Link>
-                                    </div>
-                                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-                                        "@context": "https://schema.org",
-                                        "@type": "BreadcrumbList",
-                                        "itemListElement": [
-                                          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://Memoinfotech.com/" },
-                                          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://Memoinfotech.com/blog" }
-                                        ]
-                                    })}} />
-                                </div>
+        <div ref={containerRef} className="pt-40 pb-20 w-full bg-white">
+            <SEO
+                title="Blog | Web Design & Development Insights | Memo InfoTech"
+                description="Read our latest articles on web design, development, digital marketing, and technology trends. Expert insights and tips for your business."
+                keywords="blog, web design tips, development insights, digital marketing, technology trends"
+                canonical="https://www.memoinfotech.com/blog/"
+                schemas={[breadcrumbSchema]}
+            />
+            <div className="container mx-auto px-6 text-center">
+                {/* Header - Projects style */}
+                <div className="overflow-hidden mb-2">
+                    <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter">
+                        BLOG <br />
+                        <span className="text-white bg-[#007BFF] px-6 transform -skew-x-12 inline-block">INSIGHTS</span>
+                    </h1>
+                    <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
+                        Exploring the intersection of design, technology, and culture.
+                    </p>
+                    <div className="mt-6">
+                        <Link to="/contact" className="inline-block bg-[#007BFF] text-white px-6 py-3 rounded-full font-bold hover:bg-black transition-colors" aria-label="Contact Memo InfoTech">Contact Us</Link>
+                    </div>
+                </div>
 
                 {/* Category Filter */}
                 <div className="flex flex-wrap gap-4 mb-16 blog-hero-text">
@@ -353,9 +341,9 @@ const Blog: React.FC = () => {
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
                             className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider border transition-all
-                            ${activeCategory === cat 
-                                ? 'bg-black text-white border-black' 
-                                : 'bg-white text-gray-500 border-gray-200 hover:border-black hover:text-black'}`}
+                            ${activeCategory === cat
+                                    ? 'bg-black text-white border-black'
+                                    : 'bg-white text-gray-500 border-gray-200 hover:border-black hover:text-black'}`}
                         >
                             {cat}
                         </button>
@@ -373,12 +361,12 @@ const Blog: React.FC = () => {
                                     {featuredPost.title}
                                 </h2>
                                 <div className="flex items-center gap-6 text-gray-300 text-sm font-bold uppercase tracking-widest">
-                                    <span className="flex items-center gap-2"><User size={14}/> {featuredPost.author}</span>
-                                    <span className="flex items-center gap-2"><Calendar size={14}/> {featuredPost.date}</span>
+                                    <span className="flex items-center gap-2"><User size={14} /> {featuredPost.author}</span>
+                                    <span className="flex items-center gap-2"><Calendar size={14} /> {featuredPost.date}</span>
                                 </div>
                             </div>
                         </div>
-                        </a>
+                    </a>
                 )}
 
                 {/* Post Grid */}
@@ -413,31 +401,31 @@ const Blog: React.FC = () => {
 
                 {/* Newsletter */}
                 <div className="mt-32 bg-[#007BFF] rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden">
-                     {/* Abstract BG */}
-                    <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" 
-                        style={{backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '30px 30px'}}></div>
-                    
+                    {/* Abstract BG */}
+                    <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
+                        style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+
                     <div className="relative z-10 max-w-3xl mx-auto">
                         <h2 className="text-4xl md:text-[4rem] font-bold text-white font-['Syne'] mb-6 leading-none">Stay in the Loop</h2>
                         <p className="text-blue-100 text-lg mb-10">Get the latest insights, trends, and news delivered directly to your inbox. No spam, just pure creativity.</p>
-                        
+
                         <form onSubmit={handleSubscribe} className="flex flex-col md:flex-row gap-4">
-                            <input 
-                                type="email" 
-                                placeholder="Your email address" 
+                            <input
+                                type="email"
+                                placeholder="Your email address"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 disabled={subStatus === 'success' || subStatus === 'submitting'}
                                 className="flex-1 px-6 py-4 rounded-full outline-none text-black focus:ring-4 ring-white/30 transition-all disabled:opacity-70"
                                 required
                             />
-                            <button 
+                            <button
                                 type="submit"
                                 disabled={subStatus === 'success' || subStatus === 'submitting'}
                                 className={`px-10 py-4 font-bold rounded-full transition-all shadow-xl flex items-center justify-center min-w-[160px]
-                                ${subStatus === 'success' 
-                                    ? 'bg-green-500 text-white cursor-default' 
-                                    : 'bg-black text-white hover:bg-white hover:text-black'}`}
+                                ${subStatus === 'success'
+                                        ? 'bg-green-500 text-white cursor-default'
+                                        : 'bg-black text-white hover:bg-white hover:text-black'}`}
                             >
                                 {subStatus === 'submitting' ? (
                                     <Loader2 className="animate-spin" />

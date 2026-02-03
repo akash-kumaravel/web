@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle2, Users, Clock, Star, Code, Database, Globe, Zap, CheckCircle } from 'lucide-react';
+import SEO from '../../components/SEO';
+import FAQ from '../../components/FAQ';
 
 const UIUXDesignMaster: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,59 +41,46 @@ const UIUXDesignMaster: React.FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    document.title = 'UI/UX Design Master Course in Nagercoil | Memo Infotech Academy';
-
-    const desc = 'Learn UI/UX Design Master course in Nagercoil at Memo Infotech Academy. Master Figma, user research, wireframing, prototyping, real projects and certification.';
-
-    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (metaDesc) metaDesc.content = desc;
-    else {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      metaDesc.content = desc;
-      document.head.appendChild(metaDesc);
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "UI/UX Design Master Course in Nagercoil",
+    "description": "Professional UI/UX Design Master course in Nagercoil by Memo Infotech Academy covering Figma, user research, wireframing, prototyping and certification.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Memo Infotech Academy",
+      "url": "https://www.memoinfotech.com/academy"
+    },
+    "educationalCredentialAwarded": "Certificate",
+    "timeRequired": "P10W",
+    "courseMode": "Offline",
+    "inLanguage": "en",
+    "locationCreated": {
+      "@type": "Place",
+      "name": "Nagercoil, Tamil Nadu, India"
     }
+  };
 
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = 'https://www.memoinfotech.com/academy/ui-ux-design-master';
-  }, []);
+  const faqs = [
+    { q: "What's the difference between UI and UX?", a: "UI (User Interface) is about how the product looks, while UX (User Experience) is about how it works and feels. Both are essential for creating great digital products." },
+    { q: "Do I need design experience?", a: "No! This course is designed for beginners as well as experienced designers. We cover design fundamentals, tools, and professional practices from the ground up." },
+    { q: "What design tools will I learn?", a: "You'll master Figma (industry standard), Adobe XD, and Sketch. You'll also learn wireframing, prototyping, user research, and design thinking methodologies." },
+    { q: "How long is the UI/UX Design Master course?", a: "The course is a comprehensive 10-week program with self-paced learning. You'll build a professional portfolio throughout the course and have lifetime access to all materials." },
+    { q: "What's the job outlook for UI/UX designers?", a: "UI/UX design is a high-demand field with excellent career prospects. Designers can work for startups, tech companies, agencies, or freelance with competitive salaries and remote opportunities." }
+  ];
 
-  useEffect(() => {
-    const courseSchema = {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "UI/UX Design Master Course in Nagercoil",
-      "description": "Professional UI/UX Design Master course in Nagercoil by Memo Infotech Academy covering Figma, user research, wireframing, prototyping and certification.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Memo Infotech Academy",
-        "url": "https://www.memoinfotech.com/academy"
-      },
-      "educationalCredentialAwarded": "Certificate",
-      "timeRequired": "P10W",
-      "courseMode": "Offline",
-      "inLanguage": "en",
-      "locationCreated": {
-        "@type": "Place",
-        "name": "Nagercoil, Tamil Nadu, India"
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a
       }
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(courseSchema);
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+    }))
+  };
 
   const features = [
     { icon: <Code size={32} />, title: "Design Tools", description: "Master Figma, Adobe XD, Sketch" },
@@ -104,6 +93,12 @@ const UIUXDesignMaster: React.FC = () => {
 
   return (
     <div ref={containerRef} className="bg-white w-full min-h-screen">
+      <SEO
+        title="UI/UX Design Master Course in Nagercoil | Memo Infotech Academy"
+        description="Learn UI/UX Design Master course in Nagercoil at Memo Infotech Academy. Master Figma, user research, wireframing, prototyping, real projects and certification."
+        canonical="https://www.memoinfotech.com/academy/ui-ux-design-master"
+        schemas={[courseSchema, faqSchema]}
+      />
       <div className="fixed top-0 left-0 h-1 bg-[#007BFF] z-50 w-full transform origin-left scale-x-0 course-progress"></div>
 
       <div className="course-hero relative h-[60vh] overflow-hidden bg-gradient-to-r from-[#007BFF] to-[#0056cc]">
@@ -146,9 +141,9 @@ const UIUXDesignMaster: React.FC = () => {
             </p>
             <p className="text-lg text-gray-700 mb-8">
               This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
-              IT training programs in Nagercoil</Link>. You may also explore our
+                IT training programs in Nagercoil</Link>. You may also explore our
               <Link to="/academy/web-designing" className="text-[#007BFF] font-semibold hover:underline ml-1">
-              Web Designing course</Link>.
+                Web Designing course</Link>.
             </p>
 
           </div>
@@ -207,33 +202,7 @@ const UIUXDesignMaster: React.FC = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What's the difference between UI and UX?</h3>
-              <p className="text-gray-700">UI (User Interface) is about how the product looks, while UX (User Experience) is about how it works and feels. Both are essential for creating great digital products.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">Do I need design experience?</h3>
-              <p className="text-gray-700">No! This course is designed for beginners as well as experienced designers. We cover design fundamentals, tools, and professional practices from the ground up.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What design tools will I learn?</h3>
-              <p className="text-gray-700">You'll master Figma (industry standard), Adobe XD, and Sketch. You'll also learn wireframing, prototyping, user research, and design thinking methodologies.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">How long is the UI/UX Design Master course?</h3>
-              <p className="text-gray-700">The course is a comprehensive 10-week program with self-paced learning. You'll build a professional portfolio throughout the course and have lifetime access to all materials.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What's the job outlook for UI/UX designers?</h3>
-              <p className="text-gray-700">UI/UX design is a high-demand field with excellent career prospects. Designers can work for startups, tech companies, agencies, or freelance with competitive salaries and remote opportunities.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQ title="Frequently Asked Questions" highlight="" faqs={faqs} />
 
       {/* CTA */}
       <section className="py-32 bg-[#007BFF] text-white">

@@ -1,23 +1,17 @@
 import React, { useEffect } from 'react';
-import { updateSEO, addBreadcrumbSchema } from '../utils/seo';
+import SEO from '../components/SEO';
 import { ArrowLeft } from 'lucide-react';
 
 const PrivacyPolicy: React.FC = () => {
-  useEffect(() => {
-    document.title = 'Privacy Policy — Memo InfoTech';
-    const desc = 'Privacy Policy for Memo InfoTech. Learn how we collect, use, and protect your personal data.';
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (meta) meta.content = desc;
-    else {
-      meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = desc;
-      document.head.appendChild(meta);
-    }
-  }, []);
+
 
   return (
     <div className="pt-40 pb-20 w-full bg-white">
+      <SEO
+        title="Privacy Policy"
+        description="Privacy Policy for Memo InfoTech. Learn how we collect, use, and protect your personal data."
+        canonical="https://www.memoinfotech.com/privacy-policy/"
+      />
       <div className="container mx-auto px-6 max-w-4xl">
         {/* Header */}
         <div className="mb-12">

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle2, Users, Clock, Star, Code, Database, Globe, Zap, CheckCircle } from 'lucide-react';
+import SEO from '../../components/SEO';
+import FAQ from '../../components/FAQ';
 
 const GraphicDesign: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,59 +41,46 @@ const GraphicDesign: React.FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    document.title = 'Graphic Design Course in Nagercoil | Memo Infotech Academy';
-
-    const desc = 'Join Graphic Design course in Nagercoil at Memo Infotech Academy. Master Adobe Creative Suite, design principles, branding, real projects and certification.';
-
-    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (metaDesc) metaDesc.content = desc;
-    else {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      metaDesc.content = desc;
-      document.head.appendChild(metaDesc);
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Graphic Design Course in Nagercoil",
+    "description": "Professional Graphic Design course in Nagercoil by Memo Infotech Academy covering Adobe Creative Suite, design principles, branding and certification.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Memo Infotech Academy",
+      "url": "https://www.memoinfotech.com/academy"
+    },
+    "educationalCredentialAwarded": "Certificate",
+    "timeRequired": "P8W",
+    "courseMode": "Offline",
+    "inLanguage": "en",
+    "locationCreated": {
+      "@type": "Place",
+      "name": "Nagercoil, Tamil Nadu, India"
     }
+  };
 
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = 'https://www.memoinfotech.com/academy/graphic-design';
-  }, []);
+  const faqs = [
+    { q: "Do I need prior design experience?", a: "No! Our Graphic Design course is designed for beginners and aspiring designers. We start with design fundamentals and progress to professional-level work." },
+    { q: "What Adobe tools will I learn?", a: "You'll master the Adobe Creative Suite including Photoshop, Illustrator, InDesign, and more. These are industry-standard tools used by professional designers worldwide." },
+    { q: "Will I build a portfolio?", a: "Yes! Throughout the course, you'll create professional design projects including logos, branding materials, print designs, and digital assets for your portfolio." },
+    { q: "How long is the Graphic Design course?", a: "The course is an 8-week comprehensive program with self-paced learning. You have lifetime access to course materials and can learn at your own rhythm." },
+    { q: "What career opportunities are available?", a: "Graphic designers can work as freelancers, join design agencies, work in-house for companies, or specialize in niches like web design, branding, or packaging design." }
+  ];
 
-  useEffect(() => {
-    const courseSchema = {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Graphic Design Course in Nagercoil",
-      "description": "Professional Graphic Design course in Nagercoil by Memo Infotech Academy covering Adobe Creative Suite, design principles, branding and certification.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Memo Infotech Academy",
-        "url": "https://www.memoinfotech.com/academy"
-      },
-      "educationalCredentialAwarded": "Certificate",
-      "timeRequired": "P8W",
-      "courseMode": "Offline",
-      "inLanguage": "en",
-      "locationCreated": {
-        "@type": "Place",
-        "name": "Nagercoil, Tamil Nadu, India"
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a
       }
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(courseSchema);
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+    }))
+  };
 
   const features = [
     { icon: <Code size={32} />, title: "Adobe Suite", description: "Master Photoshop, Illustrator, InDesign" },
@@ -104,6 +93,12 @@ const GraphicDesign: React.FC = () => {
 
   return (
     <div ref={containerRef} className="bg-white w-full min-h-screen">
+      <SEO
+        title="Graphic Design Course in Nagercoil | Memo Infotech Academy"
+        description="Join Graphic Design course in Nagercoil at Memo Infotech Academy. Master Adobe Creative Suite, design principles, branding, real projects and certification."
+        canonical="https://www.memoinfotech.com/academy/graphic-design"
+        schemas={[courseSchema, faqSchema]}
+      />
       <div className="fixed top-0 left-0 h-1 bg-[#007BFF] z-50 w-full transform origin-left scale-x-0 course-progress"></div>
 
       <div className="course-hero relative h-[60vh] overflow-hidden bg-gradient-to-r from-[#007BFF] to-[#0056cc]">
@@ -146,9 +141,9 @@ const GraphicDesign: React.FC = () => {
             </p>
             <p className="text-lg text-gray-700 mb-8">
               This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
-              IT training programs in Nagercoil</Link>. You may also explore our
+                IT training programs in Nagercoil</Link>. You may also explore our
               <Link to="/academy/web-designing" className="text-[#007BFF] font-semibold hover:underline ml-1">
-              Web Designing course</Link>.
+                Web Designing course</Link>.
             </p>
 
           </div>
@@ -207,33 +202,7 @@ const GraphicDesign: React.FC = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">Do I need prior design experience?</h3>
-              <p className="text-gray-700">No! Our Graphic Design course is designed for beginners and aspiring designers. We start with design fundamentals and progress to professional-level work.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What Adobe tools will I learn?</h3>
-              <p className="text-gray-700">You'll master the Adobe Creative Suite including Photoshop, Illustrator, InDesign, and more. These are industry-standard tools used by professional designers worldwide.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">Will I build a portfolio?</h3>
-              <p className="text-gray-700">Yes! Throughout the course, you'll create professional design projects including logos, branding materials, print designs, and digital assets for your portfolio.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">How long is the Graphic Design course?</h3>
-              <p className="text-gray-700">The course is an 8-week comprehensive program with self-paced learning. You have lifetime access to course materials and can learn at your own rhythm.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What career opportunities are available?</h3>
-              <p className="text-gray-700">Graphic designers can work as freelancers, join design agencies, work in-house for companies, or specialize in niches like web design, branding, or packaging design.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQ title="Frequently Asked Questions" highlight="" faqs={faqs} />
 
       {/* CTA */}
       <section className="py-32 bg-[#007BFF] text-white">

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle2, Users, Clock, Star, Code, Database, Globe, Zap } from 'lucide-react';
+import SEO from '../../components/SEO';
+import FAQ from '../../components/FAQ';
 
 const PythonProgramming: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,59 +41,46 @@ const PythonProgramming: React.FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    document.title = 'Python Programming Course in Nagercoil | Memo Infotech Academy';
-
-    const desc = 'Master Python Programming course in Nagercoil at Memo Infotech Academy. Learn core Python, automation, web development, data science, real projects and certification.';
-
-    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (metaDesc) metaDesc.content = desc;
-    else {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      metaDesc.content = desc;
-      document.head.appendChild(metaDesc);
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Python Programming Course in Nagercoil",
+    "description": "Professional Python Programming course in Nagercoil by Memo Infotech Academy covering core Python, automation, web development, data science and certification.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Memo Infotech Academy",
+      "url": "https://www.memoinfotech.com/academy"
+    },
+    "educationalCredentialAwarded": "Certificate",
+    "timeRequired": "P8W",
+    "courseMode": "Offline",
+    "inLanguage": "en",
+    "locationCreated": {
+      "@type": "Place",
+      "name": "Nagercoil, Tamil Nadu, India"
     }
+  };
 
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = 'https://www.memoinfotech.com/academy/python-programming';
-  }, []);
+  const faqs = [
+    { q: "Why should I learn Python?", a: "Python is the most versatile and in-demand programming language. It's used in web development, data science, automation, AI/ML, and more. It's also beginner-friendly with clean, readable syntax." },
+    { q: "Is this course for complete beginners?", a: "Yes! This course is designed for beginners with no programming experience. We start from the basics and gradually build your skills to advanced concepts." },
+    { q: "What will I be able to do after this course?", a: "You'll be able to write Python programs, build web applications with frameworks like Django, work with data using libraries like Pandas, and automate real-world tasks." },
+    { q: "How long does it take to learn Python?", a: "Our comprehensive course is designed to be completed in 8 weeks with self-paced learning. However, you can learn at your own speed with lifetime access to all materials." },
+    { q: "Will I get a certificate?", a: "Yes! Upon completion, you'll receive a recognized certificate from Memo Infotech Academy that validates your Python programming skills to employers." }
+  ];
 
-  useEffect(() => {
-    const courseSchema = {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Python Programming Course in Nagercoil",
-      "description": "Professional Python Programming course in Nagercoil by Memo Infotech Academy covering core Python, automation, web development, data science and certification.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Memo Infotech Academy",
-        "url": "https://www.memoinfotech.com/academy"
-      },
-      "educationalCredentialAwarded": "Certificate",
-      "timeRequired": "P8W",
-      "courseMode": "Offline",
-      "inLanguage": "en",
-      "locationCreated": {
-        "@type": "Place",
-        "name": "Nagercoil, Tamil Nadu, India"
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a
       }
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(courseSchema);
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+    }))
+  };
 
   const features = [
     { icon: <Code size={32} />, title: "Beginner-Friendly", description: "Start from zero, no experience needed" },
@@ -104,6 +93,12 @@ const PythonProgramming: React.FC = () => {
 
   return (
     <div ref={containerRef} className="bg-white w-full min-h-screen">
+      <SEO
+        title="Python Programming Course in Nagercoil | Memo Infotech Academy"
+        description="Master Python Programming course in Nagercoil at Memo Infotech Academy. Learn core Python, automation, web development, data science, real projects and certification."
+        canonical="https://www.memoinfotech.com/academy/python-programming"
+        schemas={[courseSchema, faqSchema]}
+      />
       <div className="fixed top-0 left-0 h-1 bg-[#007BFF] z-50 w-full transform origin-left scale-x-0 course-progress"></div>
 
       <div className="course-hero relative h-[60vh] overflow-hidden bg-gradient-to-r from-[#007BFF] to-[#0056cc]">
@@ -146,9 +141,9 @@ const PythonProgramming: React.FC = () => {
             </p>
             <p className="text-lg text-gray-700 mb-8">
               This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
-              IT training programs in Nagercoil</Link>. You may also explore our
+                IT training programs in Nagercoil</Link>. You may also explore our
               <Link to="/academy/data-analytics" className="text-[#007BFF] font-semibold hover:underline ml-1">
-              Data Analytics course</Link>.
+                Data Analytics course</Link>.
             </p>
 
           </div>
@@ -207,33 +202,7 @@ const PythonProgramming: React.FC = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">Why should I learn Python?</h3>
-              <p className="text-gray-700">Python is the most versatile and in-demand programming language. It's used in web development, data science, automation, AI/ML, and more. It's also beginner-friendly with clean, readable syntax.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">Is this course for complete beginners?</h3>
-              <p className="text-gray-700">Yes! This course is designed for beginners with no programming experience. We start from the basics and gradually build your skills to advanced concepts.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What will I be able to do after this course?</h3>
-              <p className="text-gray-700">You'll be able to write Python programs, build web applications with frameworks like Django, work with data using libraries like Pandas, and automate real-world tasks.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">How long does it take to learn Python?</h3>
-              <p className="text-gray-700">Our comprehensive course is designed to be completed in 8 weeks with self-paced learning. However, you can learn at your own speed with lifetime access to all materials.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">Will I get a certificate?</h3>
-              <p className="text-gray-700">Yes! Upon completion, you'll receive a recognized certificate from Memo Infotech Academy that validates your Python programming skills to employers.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQ title="Frequently Asked Questions" highlight="" faqs={faqs} />
 
       {/* CTA */}
       <section className="py-32 bg-[#007BFF] text-white">

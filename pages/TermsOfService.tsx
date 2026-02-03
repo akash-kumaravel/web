@@ -1,23 +1,17 @@
-import React, { useEffect } from 'react';
-import { updateSEO, addBreadcrumbSchema } from '../utils/seo';
+import React from 'react';
 import { ArrowLeft } from 'lucide-react';
-
+import SEO from '../components/SEO';
 const TermsOfService: React.FC = () => {
-  useEffect(() => {
-    document.title = 'Terms of Service — Memo InfoTech';
-    const desc = 'Terms of Service for Memo InfoTech. Read our terms and conditions for using our website and services.';
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (meta) meta.content = desc;
-    else {
-      meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = desc;
-      document.head.appendChild(meta);
-    }
-  }, []);
+  // useEffect removed, handled by SEO component
+
 
   return (
     <div className="pt-40 pb-20 w-full bg-white">
+      <SEO
+        title="Terms of Service — Memo InfoTech"
+        description="Terms of Service for Memo InfoTech. Read our terms and conditions for using our website and services."
+        canonical="https://www.memoinfotech.com/terms-of-service/"
+      />
       <div className="container mx-auto px-6 max-w-4xl">
         {/* Header */}
         <div className="mb-12">

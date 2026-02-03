@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle2, Users, Clock, Star, Code, Database, Globe, Zap } from 'lucide-react';
+import SEO from '../../components/SEO';
+import FAQ from '../../components/FAQ';
 
 const DataAnalytics: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,59 +41,46 @@ const DataAnalytics: React.FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    document.title = 'Data Analytics Course in Nagercoil | Memo Infotech Academy';
-
-    const desc = 'Join Data Analytics course in Nagercoil at Memo Infotech Academy. Learn Python, SQL, Power BI, Tableau, real datasets, certification and career support.';
-
-    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (metaDesc) metaDesc.content = desc;
-    else {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      metaDesc.content = desc;
-      document.head.appendChild(metaDesc);
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Data Analytics Course in Nagercoil",
+    "description": "Professional Data Analytics course in Nagercoil by Memo Infotech Academy covering Python, SQL, Power BI, Tableau, real datasets and certification.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Memo Infotech Academy",
+      "url": "https://www.memoinfotech.com/academy"
+    },
+    "educationalCredentialAwarded": "Certificate",
+    "timeRequired": "P10W",
+    "courseMode": "Offline",
+    "inLanguage": "en",
+    "locationCreated": {
+      "@type": "Place",
+      "name": "Nagercoil, Tamil Nadu, India"
     }
+  };
 
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = 'https://www.memoinfotech.com/academy/data-analytics';
-  }, []);
+  const faqs = [
+    { q: "What is Data Analytics?", a: "Data Analytics is the process of examining raw data to discover insights and patterns. It helps businesses make data-driven decisions and is one of the most in-demand skills in the job market." },
+    { q: "Do I need programming experience?", a: "No! Our course is designed for beginners, career-switchers, and aspiring analysts. We teach Python and SQL from scratch, making it accessible to everyone." },
+    { q: "What tools will I learn?", a: "You'll master Python, SQL, Power BI, Tableau, and other visualization tools used by Fortune 500 companies for real business analytics." },
+    { q: "How long is the Data Analytics course?", a: "The course is designed to be completed in 10 weeks with self-paced learning. You can learn at your own speed with lifetime access to course materials." },
+    { q: "What's the average salary for Data Analysts?", a: "Data Analysts earn competitive salaries, with entry-level positions starting around 4-6 LPA and experienced analysts earning 8+ LPA. We provide career support to help you maximize your earning potential." }
+  ];
 
-  useEffect(() => {
-    const courseSchema = {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Data Analytics Course in Nagercoil",
-      "description": "Professional Data Analytics course in Nagercoil by Memo Infotech Academy covering Python, SQL, Power BI, Tableau, real datasets and certification.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Memo Infotech Academy",
-        "url": "https://www.memoinfotech.com/academy"
-      },
-      "educationalCredentialAwarded": "Certificate",
-      "timeRequired": "P10W",
-      "courseMode": "Offline",
-      "inLanguage": "en",
-      "locationCreated": {
-        "@type": "Place",
-        "name": "Nagercoil, Tamil Nadu, India"
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a
       }
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(courseSchema);
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+    }))
+  };
 
   const features = [
     { icon: <Database size={32} />, title: "Data Manipulation", description: "Master Python and SQL for data handling" },
@@ -104,6 +93,12 @@ const DataAnalytics: React.FC = () => {
 
   return (
     <div ref={containerRef} className="bg-white w-full min-h-screen">
+      <SEO
+        title="Data Analytics Course in Nagercoil | Memo Infotech Academy"
+        description="Join Data Analytics course in Nagercoil at Memo Infotech Academy. Learn Python, SQL, Power BI, Tableau, real datasets, certification and career support."
+        canonical="https://www.memoinfotech.com/academy/data-analytics"
+        schemas={[courseSchema, faqSchema]}
+      />
       <div className="fixed top-0 left-0 h-1 bg-[#007BFF] z-50 w-full transform origin-left scale-x-0 course-progress"></div>
 
       <div className="course-hero relative h-[60vh] overflow-hidden bg-gradient-to-r from-[#007BFF] to-[#0056cc]">
@@ -146,9 +141,9 @@ const DataAnalytics: React.FC = () => {
             </p>
             <p className="text-lg text-gray-700 mb-8">
               This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
-              IT training programs in Nagercoil</Link>. You may also explore our
+                IT training programs in Nagercoil</Link>. You may also explore our
               <Link to="/academy/python-programming" className="text-[#007BFF] font-semibold hover:underline ml-1">
-              Python Programming course</Link>.
+                Python Programming course</Link>.
             </p>
 
           </div>
@@ -207,33 +202,7 @@ const DataAnalytics: React.FC = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What is Data Analytics?</h3>
-              <p className="text-gray-700">Data Analytics is the process of examining raw data to discover insights and patterns. It helps businesses make data-driven decisions and is one of the most in-demand skills in the job market.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">Do I need programming experience?</h3>
-              <p className="text-gray-700">No! Our course is designed for beginners, career-switchers, and aspiring analysts. We teach Python and SQL from scratch, making it accessible to everyone.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What tools will I learn?</h3>
-              <p className="text-gray-700">You'll master Python, SQL, Power BI, Tableau, and other visualization tools used by Fortune 500 companies for real business analytics.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">How long is the Data Analytics course?</h3>
-              <p className="text-gray-700">The course is designed to be completed in 10 weeks with self-paced learning. You can learn at your own speed with lifetime access to course materials.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-black mb-3">What's the average salary for Data Analysts?</h3>
-              <p className="text-gray-700">Data Analysts earn competitive salaries, with entry-level positions starting around 4-6 LPA and experienced analysts earning 8+ LPA. We provide career support to help you maximize your earning potential.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQ title="Frequently Asked Questions" highlight="" faqs={faqs} />
 
       {/* CTA */}
       <section className="py-32 bg-[#007BFF] text-white">

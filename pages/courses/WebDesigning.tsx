@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle2, Users, Clock, Star, Code, Database, Globe, Zap, CheckCircle } from 'lucide-react';
+import SEO from '../../components/SEO';
+import FAQ from '../../components/FAQ';
 
 const WebDesigning: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,61 +41,45 @@ const WebDesigning: React.FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    document.title = 'Web Designing Course in Nagercoil | Memo Infotech Academy';
-
-    const desc =
-      'Join the best Web Designing course in Nagercoil at Memo Infotech Academy. Learn UI design, responsive layouts, Figma, real projects, certification and internship support.';
-
-    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (metaDesc) metaDesc.content = desc;
-    else {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      metaDesc.content = desc;
-      document.head.appendChild(metaDesc);
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Web Designing Course in Nagercoil",
+    "description":
+      "Professional Web Designing course in Nagercoil by Memo Infotech Academy covering UI design, responsive layouts, Figma, real projects and certification.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Memo Infotech Academy",
+      "url": "https://www.memoinfotech.com/academy"
+    },
+    "educationalCredentialAwarded": "Certificate",
+    "timeRequired": "P6W",
+    "courseMode": "Offline",
+    "inLanguage": "en",
+    "locationCreated": {
+      "@type": "Place",
+      "name": "Nagercoil, Tamil Nadu, India"
     }
+  };
 
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = 'https://www.memoinfotech.com/academy/web-designing';
-  }, []);
+  const faqs = [
+    { q: "Is this Web Designing course available in Nagercoil?", a: "Yes, Memo Infotech Academy offers classroom and internship-based Web Designing training in Nagercoil. Our course is designed for students, freshers, and professionals looking to build careers in web design." },
+    { q: "Do I get a certificate?", a: "Yes, students receive a recognized certificate after successful course completion. Additionally, we provide internship opportunities to gain practical experience with real client projects." },
+    { q: "What tools will I learn in this Web Designing course?", a: "This course covers industry-standard tools including Figma, responsive design principles, modern CSS frameworks, and best practices for creating user-friendly, mobile-first web designs." }
+  ];
 
-  useEffect(() => {
-    const courseSchema = {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Web Designing Course in Nagercoil",
-      "description":
-        "Professional Web Designing course in Nagercoil by Memo Infotech Academy covering UI design, responsive layouts, Figma, real projects and certification.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Memo Infotech Academy",
-        "url": "https://www.memoinfotech.com/academy"
-      },
-      "educationalCredentialAwarded": "Certificate",
-      "timeRequired": "P6W",
-      "courseMode": "Offline",
-      "inLanguage": "en",
-      "locationCreated": {
-        "@type": "Place",
-        "name": "Nagercoil, Tamil Nadu, India"
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a
       }
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(courseSchema);
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+    }))
+  };
 
   const features = [
     { icon: <Code size={32} />, title: "Design Tools", description: "Master Figma and design software" },
@@ -106,6 +92,12 @@ const WebDesigning: React.FC = () => {
 
   return (
     <div ref={containerRef} className="bg-white w-full min-h-screen">
+      <SEO
+        title="Web Designing Course in Nagercoil | Memo Infotech Academy"
+        description="Join the best Web Designing course in Nagercoil at Memo Infotech Academy. Learn UI design, responsive layouts, Figma, real projects, certification and internship support."
+        canonical="https://www.memoinfotech.com/academy/web-designing"
+        schemas={[courseSchema, faqSchema]}
+      />
       <div className="fixed top-0 left-0 h-1 bg-[#007BFF] z-50 w-full transform origin-left scale-x-0 course-progress"></div>
 
       <div className="course-hero relative h-[60vh] overflow-hidden bg-gradient-to-r from-[#007BFF] to-[#0056cc]">
@@ -150,9 +142,9 @@ const WebDesigning: React.FC = () => {
 
             <p className="text-lg text-gray-700 mb-8">
               This course is part of our <Link to="/academy" className="text-[#007BFF] font-semibold hover:underline">
-              IT training programs in Nagercoil</Link>. You may also explore our
+                IT training programs in Nagercoil</Link>. You may also explore our
               <Link to="/academy/ui-ux-design-master" className="text-[#007BFF] font-semibold hover:underline ml-1">
-              UI/UX Design course</Link>.
+                UI/UX Design course</Link>.
             </p>
 
             <div className="mt-12"></div>
@@ -228,34 +220,7 @@ const WebDesigning: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold font-['Syne'] text-black mb-12">Web Designing Course – FAQs</h2>
-          
-          <div className="max-w-3xl space-y-8">
-            <div>
-              <h3 className="text-xl font-semibold text-black mb-3">Is this Web Designing course available in Nagercoil?</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Yes, Memo Infotech Academy offers classroom and internship-based Web Designing training in Nagercoil. Our course is designed for students, freshers, and professionals looking to build careers in web design.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold text-black mb-3">Do I get a certificate?</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Yes, students receive a recognized certificate after successful course completion. Additionally, we provide internship opportunities to gain practical experience with real client projects.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold text-black mb-3">What tools will I learn in this Web Designing course?</h3>
-              <p className="text-gray-700 leading-relaxed">
-                This course covers industry-standard tools including Figma, responsive design principles, modern CSS frameworks, and best practices for creating user-friendly, mobile-first web designs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQ title="Web Designing Course – FAQs" highlight="" faqs={faqs} />
 
     </div>
   );
