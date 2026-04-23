@@ -2,32 +2,177 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="icon" href="https://www.memoinfotech.com/assets/favicon.png" type="image/png">
     
     <!-- Primary SEO Meta Tags -->
     <!-- Primary SEO Meta Tags are managed by React Helmet Async -->
-    <!-- Default title if Helmet fails (optional) -->
-    <title>Memo InfoTech</title>
+    <title>Memo InfoTech — Digital Product & Design Studio</title>
+    <meta name="description" content="Memo Infotech builds high-converting websites, brand identities, and motion content. Strategic web development, UX, and creative services to grow your business." />
+    <meta name="keywords" content="IT Company Nagercoil, Web Development, Software Development, Graphic Design, Digital Marketing, UI/UX Design, Mobile App Development" />
+    <meta name="author" content="Akash Kumaravel" />
+    <meta name="theme-color" content="#007BFF" />
 
-    <!-- Geo Tags for Local SEO (Nagercoil) -->
+    <!-- Geo Tags for Local SEO (Nagercoil, Tamil Nadu, India) -->
     <meta name="geo.region" content="IN-TN" />
     <meta name="geo.placename" content="Nagercoil" />
     <meta name="geo.position" content="8.1833;77.4119" />
     <meta name="ICBM" content="8.1833, 77.4119" />
-    <meta name="theme-color" content="#007BFF" />
+
+    <!-- Robots Meta for Search Engines -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
     <!-- Canonical URL managed by React Helmet Async -->
+    <link rel="canonical" href="https://www.memoinfotech.com/" />
+
+    <!-- Mobile App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Memo InfoTech" />
+
+    <!-- Language Meta Tags -->
+    <meta name="language" content="English" />
+    <meta http-equiv="content-language" content="en-US" />
 
     <!-- Preconnect and DNS Prefetch for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Tailwind CSS -->
     <script defer src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.memoinfotech.com/" />
+    <meta property="og:title" content="Memo InfoTech — Digital Product & Design Studio" />
+    <meta property="og:description" content="Memo Infotech builds high-converting websites, brand identities, and motion content. Strategic web development, UX, and creative services to grow your business." />
+    <meta property="og:image" content="https://www.memoinfotech.com/assets/Memo-infotech-logo.png" />
+    <meta property="og:site_name" content="Memo InfoTech" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:site" content="@Memoinfotech" />
+    <meta property="twitter:title" content="Memo InfoTech — Digital Product & Design Studio" />
+    <meta property="twitter:description" content="Memo Infotech builds high-converting websites, brand identities, and motion content. Strategic web development, UX, and creative services to grow your business." />
+    <meta property="twitter:image" content="https://www.memoinfotech.com/assets/Memo-infotech-logo.png" />
+
+    <!-- Verification Tags -->
+    <meta name="google-site-verification" content="your-google-verification-code" />
+    <meta name="msvalidate.01" content="your-bing-verification-code" />
+
+    <!-- Format Detection -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- JSON-LD Structured Data for SEO/AEO/GEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Memo Infotech",
+      "url": "https://www.memoinfotech.com",
+      "logo": "https://www.memoinfotech.com/assets/logo.svg",
+      "description": "A premier software company specializing in web development, graphic design, and digital solutions",
+      "telephone": "+91 6374433734",
+      "email": "hello@memoinfotech.com",
+      "foundingDate": "2022",
+      "founder": {
+        "@type": "Person",
+        "name": "Akash Kumaravel"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Nagercoil",
+        "addressLocality": "Nagercoil",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "629001",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/Memoinfotech",
+        "https://x.com/Memoinfotech",
+        "https://www.instagram.com/Memoinfotech"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+91 6374433734",
+        "email": "hello@memoinfotech.com",
+        "areaServed": "IN"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Memo Infotech",
+      "image": "https://www.memoinfotech.com/assets/logo.svg",
+      "url": "https://www.memoinfotech.com",
+      "telephone": "+91 6374433734",
+      "email": "hello@memoinfotech.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Nagercoil",
+        "addressLocality": "Nagercoil",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "629001",
+        "addressCountry": "IN"
+      },
+      "areaServed": [
+        "Nagercoil",
+        "Kanyakumari",
+        "Tamil Nadu",
+        "India"
+      ],
+      "openingHours": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 8.1833,
+        "longitude": 77.4119
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://www.memoinfotech.com",
+      "name": "Memo Infotech",
+      "description": "A premier software company specializing in web development, graphic design, and digital solutions",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.memoinfotech.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <!-- Organization structured data with LOGO Schema -->
