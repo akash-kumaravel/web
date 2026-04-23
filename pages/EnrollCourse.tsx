@@ -69,7 +69,7 @@ const EnrollCourse: React.FC = () => {
     ];
 
     return (
-        <div className="pt-32 pb-20 w-full bg-white min-h-screen">
+        <div className="pt-16 md:pt-32 pb-12 md:pb-20 w-full bg-white min-h-screen">
             <SEO
                 title="Enroll in Course — Academy at Memo InfoTech"
                 description="Enroll in professional courses at Memo InfoTech Academy. Learn from industry experts and advance your career in tech."
@@ -99,7 +99,7 @@ const EnrollCourse: React.FC = () => {
                             <p className="text-gray-500 mb-8 max-w-md">
                                 Thank you for enrolling in our course. Our team will contact you shortly with details about getting started.
                             </p>
-                            <Link to="/academy" className="px-8 py-4 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] transition-all">
+                            <Link to="/academy" className="px-6 md:px-8 py-3 md:py-4 bg-black text-white rounded-full font-bold text-base md:text-lg hover:bg-[#007BFF] transition-all">
                                 Back to Academy
                             </Link>
                         </div>

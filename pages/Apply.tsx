@@ -86,7 +86,7 @@ const Apply: React.FC = () => {
     };
 
     return (
-        <div className="pt-32 pb-20 w-full bg-white min-h-screen">
+        <div className="pt-16 md:pt-32 pb-12 md:pb-20 w-full bg-white min-h-screen">
             <SEO
                 title="Apply Now — Join Memo InfoTech | Career Opportunities"
                 description="Submit your application to join Memo InfoTech. We are hiring talented designers, developers, and creatives. Apply for exciting career opportunities today!"
@@ -118,7 +118,7 @@ const Apply: React.FC = () => {
                             <p className="text-gray-500 mb-8 max-w-md">
                                 Thank you for applying to Memo InfoTech. Our team will review your application and get back to you shortly.
                             </p>
-                            <a href="/" className="px-8 py-4 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] transition-all">
+                            <a href="/" className="px-6 md:px-8 py-3 md:py-4 bg-black text-white rounded-full font-bold text-base md:text-lg hover:bg-[#007BFF] transition-all">
                                 Return Home
                             </a>
                         </div>

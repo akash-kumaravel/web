@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="pt-32 pb-20 bg-white w-full min-h-screen">
+    <div className="pt-16 md:pt-32 pb-12 md:pb-20 bg-white w-full min-h-screen">
       <SEO
         title="Contact Us — Get in Touch"
         description="Contact Memo InfoTech for web development, graphic design, and digital solutions. Call +91 6374433734 or email hello@memoinfotech.com. Based in Nagercoil, India."
@@ -64,15 +64,15 @@ const Contact: React.FC = () => {
         canonical="https://www.memoinfotech.com/contact/"
         schemas={[breadcrumbSchema]}
       />
-      <div className="container mx-auto px-6">
-        <h1 className="text-5xl md:text-[4rem] font-bold mb-16 font-['Syne'] text-center text-black leading-none">Get in <span className="text-white bg-[#007BFF] px-4 inline-block transform rotate-2 shadow-[5px_5px_0px_#000]">Touch</span></h1>
+      <div className="container mx-auto px-4 md:px-6">
+        <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-bold mb-8 md:mb-16 font-['Syne'] text-center text-black leading-none">Get in <span className="text-white bg-[#007BFF] px-3 md:px-4 inline-block transform rotate-2 shadow-[5px_5px_0px_#000]">Touch</span></h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {/* Contact Info Panel */}
-          <div className="bg-black text-white p-12 rounded-[3rem] relative overflow-hidden">
+          <div className="bg-black text-white p-6 md:p-8 lg:p-12 rounded-2xl md:rounded-[3rem] relative overflow-hidden">
             <div className="absolute top-0 right-0 w-40 h-40 bg-[#007BFF] blur-[80px] opacity-50"></div>
-            <h3 className="text-3xl font-bold mb-8">Contact Info</h3>
-            <div className="space-y-8">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">Contact Info</h3>
+            <div className="space-y-6 md:space-y-8">
               <div className="flex items-center gap-6 group">
                 <div className="w-12 h-12 rounded-full bg-[#222] flex items-center justify-center text-[#007BFF] group-hover:bg-[#007BFF] group-hover:text-white transition-all">
                   <Mail />
@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
                 <p className="text-gray-500 mb-8 max-w-md">
                   Thank you for reaching out. We'll get back to you as soon as possible.
                 </p>
-                <a href="/" className="px-8 py-4 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] transition-all">
+                <a href="/" className="px-6 md:px-8 py-3 md:py-4 bg-black text-white rounded-full font-bold text-base md:text-lg hover:bg-[#007BFF] transition-all">
                   Return Home
                 </a>
               </div>

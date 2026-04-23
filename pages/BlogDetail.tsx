@@ -220,8 +220,8 @@ const BlogDetail: React.FC = () => {
                 </div>
             </div>
 
-            <div className="container mx-auto px-6 py-20 relative">
-                <div className="flex flex-col lg:flex-row gap-20">
+<div className="container mx-auto px-4 md:px-6 py-12 md:py-20 relative">
+          <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-20">
 
                     {/* Sticky Sidebar (Share) */}
                     <div className="hidden lg:block w-24 relative">

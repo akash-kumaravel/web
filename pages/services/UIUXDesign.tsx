@@ -259,9 +259,9 @@ const UIUXDesign: React.FC = () => {
   return (
     <div className="w-full bg-gray-100">
       {/* ==================== SEMANTIC HTML: Header with H1 ====================*/}
-      <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
+      <header className="pt-20 md:pt-40 pb-12 md:pb-20 container mx-auto px-4 md:px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
-          <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-4 md:mb-6">
             UI/UX Design Company in Nagercoil, Tamil Nadu
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">

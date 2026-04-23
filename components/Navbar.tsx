@@ -42,6 +42,11 @@ const academyDropdown = [
   { label: 'Digital Marketing Basics', path: '/academy/digital-marketing-basics' },
 ];
 
+const careersDropdown = [
+  { label: 'Open Positions', path: '/careers' },
+  { label: 'Apply Now', path: '/apply' },
+];
+
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -66,20 +71,20 @@ const Navbar: React.FC = () => {
         isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-white py-5'
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
           <img
             src="https://www.memoinfotech.com/assets/logo.svg"
             alt="Memo Infotech"
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-8 md:h-10 lg:h-12 w-auto object-contain"
             width={48}
             height={48}
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
           {navItems.map((item) => {
             const isActive = normalize(location.pathname) === normalize(item.path);
             const hasDropdown = item.label === 'Services' || item.label === 'Academy';
@@ -109,7 +114,7 @@ const Navbar: React.FC = () => {
               >
               <Link
                   to={item.path}
-                  className={`text-sm font-bold uppercase tracking-wide hover:text-[#007BFF] transition-colors relative flex items-center gap-1 cursor-pointer ${
+                  className={`text-xs lg:text-sm font-bold uppercase tracking-wide hover:text-[#007BFF] transition-colors relative flex items-center gap-1 cursor-pointer ${
                     isActive ? 'text-black' : 'text-black'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
@@ -144,7 +149,7 @@ const Navbar: React.FC = () => {
           })}
            <Link
              to="/contact"
-             className="px-6 py-2 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] hover:shadow-[0_0_15px_rgba(0,123,255,0.5)] transition-all duration-300 hover:-translate-y-0.5"
+             className="px-4 md:px-6 py-2 bg-black text-white rounded-full font-bold text-sm hover:bg-[#007BFF] hover:shadow-[0_0_15px_rgba(0,123,255,0.5)] transition-all duration-300 hover:-translate-y-0.5"
           >
             Let's Talk
           </Link>
@@ -152,19 +157,19 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-black hover:text-[#007BFF] transition-colors"
+          className="lg:hidden text-black hover:text-[#007BFF] transition-colors p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-menu"
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white border-t border-gray-100 p-6 lg:hidden shadow-xl flex flex-col gap-4 max-h-96 overflow-y-auto" id="mobile-menu">
+        <div className="absolute top-full left-0 w-full bg-white border-t border-gray-100 p-4 md:p-6 lg:hidden shadow-xl flex flex-col gap-3 max-h-96 overflow-y-auto" id="mobile-menu">
           {navItems.map((item) => {
             const hasDropdown = item.label === 'Services' || item.label === 'Academy' || item.label === 'Careers';
             const isDropdownOpen = mobileDropdowns[item.label];
@@ -172,14 +177,14 @@ const Navbar: React.FC = () => {
             let dropdownItems = [];
             if (item.label === 'Services') dropdownItems = servicesDropdown;
             if (item.label === 'Academy') dropdownItems = academyDropdown;
-            if (item.label === 'Careers') dropdownItems = careerDropdown;
+            if (item.label === 'Careers') dropdownItems = careersDropdown;
 
             return (
               <div key={item.path}>
                 <div className="flex items-center justify-between">
                   <Link
                     to={hasDropdown ? '#' : item.path}
-                    className="text-xl font-bold text-black hover:text-[#007BFF] pl-2 border-l-4 border-transparent hover:border-[#007BFF] transition-all flex-1"
+                    className="text-lg md:text-xl font-bold text-black hover:text-[#007BFF] pl-2 border-l-4 border-transparent hover:border-[#007BFF] transition-all flex-1"
                     onClick={(e) => {
                       if (hasDropdown) {
                         e.preventDefault();
@@ -214,7 +219,7 @@ const Navbar: React.FC = () => {
                       <Link
                         key={dropdownItem.path}
                         to={dropdownItem.path}
-                        className="text-lg font-semibold text-gray-700 hover:text-[#007BFF] transition-colors"
+                        className="text-base md:text-lg font-semibold text-gray-700 hover:text-[#007BFF] transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {dropdownItem.label}

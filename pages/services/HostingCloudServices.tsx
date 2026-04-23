@@ -259,7 +259,7 @@ const HostingCloudServices: React.FC = () => {
   return (
     <div className="w-full bg-gray-100">
       {/* ==================== SEMANTIC HTML: Header with H1 ====================*/}
-      <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
+      <header className="pt-20 md:pt-40 pb-12 md:pb-20 container mx-auto px-4 md:px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
             Hosting & Cloud Services Company in Nagercoil, Tamil Nadu
@@ -280,10 +280,10 @@ const HostingCloudServices: React.FC = () => {
           </div>
         </section>
         {/* ==================== Section 1: Cloud & Hosting Services ====================*/}
-        <section className="py-32 bg-white" aria-label="Our Cloud and Hosting Services" role="region">
-          <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16">Our Cloud &amp; Hosting Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className="py-12 md:py-20 bg-white" aria-label="Our Cloud and Hosting Services" role="region">
+          <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold font-['Syne'] text-black mb-8 md:mb-16">Our Cloud &amp; Hosting Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
               {services.map((service, i) => (
                 <article key={i} className="p-8 bg-gray-50 rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all duration-300 group">
                   <div className="text-[#007BFF] mb-4 group-hover:scale-110 transition-transform" aria-hidden="true">
@@ -298,9 +298,9 @@ const HostingCloudServices: React.FC = () => {
         </section>
 
       {/* Advanced Features Section */}
-      <div className="py-32 bg-black text-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+      <div className="py-12 md:py-20 lg:py-32 bg-black text-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-8 md:mb-12 lg:mb-16">
             <h2 className="text-4xl font-bold font-['Syne'] mb-4">Infrastructure Excellence</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">Enterprise-grade cloud and hosting infrastructure features.</p>
           </div>
@@ -320,9 +320,9 @@ const HostingCloudServices: React.FC = () => {
       </div>
 
       {/* Business Benefits */}
-      <div className="py-32 bg-[#007BFF] text-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+      <div className="py-12 md:py-20 lg:py-32 bg-[#007BFF] text-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-8 md:mb-12 lg:mb-16">
             <h2 className="text-4xl font-bold font-['Syne'] mb-4">Business Benefits</h2>
             <p className="text-blue-100 max-w-2xl mx-auto">Discover why enterprise infrastructure matters for your business</p>
           </div>
@@ -340,8 +340,8 @@ const HostingCloudServices: React.FC = () => {
       </div>
 
       {/* CTA */}
-      <div className="py-32 bg-white">
-        <div className="container mx-auto px-6 text-center">
+      <div className="py-12 md:py-20 lg:py-32 bg-white">
+        <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-4xl font-bold font-['Syne'] text-black mb-6">Ready for Enterprise Infrastructure?</h2>
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">Let's build a secure, scalable infrastructure for your applications.</p>
           
@@ -359,11 +359,11 @@ const HostingCloudServices: React.FC = () => {
       </div>
 
       {/* Related Services */}
-      <section className="py-32 bg-gray-50" aria-label="Related Services" role="region">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Related Services</h2>
+      <section className="py-12 md:py-20 lg:py-32 bg-gray-50" aria-label="Related Services" role="region">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold font-['Syne'] text-black mb-8 md:mb-16 text-center">Related Services</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             <Link to="/services/web-design-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Web Design and Development">
               <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Web Design</h3>
               <p className="text-gray-600 mb-4">Beautiful websites hosted on our reliable infrastructure.</p>

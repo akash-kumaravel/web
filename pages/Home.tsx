@@ -340,7 +340,7 @@ const Home: React.FC = () => {
         ogImage="https://www.memoinfotech.com/og-image.jpg"
       />
       {/* HERO SECTION */}
-      <section ref={heroRef} className="min-h-screen pt-32 pb-20 px-6 container mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
+      <section ref={heroRef} className="min-h-screen pt-16 md:pt-32 pb-10 md:pb-20 px-4 md:px-6 container mx-auto flex flex-col lg:flex-row items-center gap-8 md:gap-16 relative z-10">
         {/* Decorative elements */}
         <div className="absolute top-20 left-10 w-6 h-6 bg-[#007BFF] rounded-full animate-pulse blur-sm" />
         <div className="absolute bottom-1/4 right-10 w-12 h-12 border-4 border-[#007BFF] rounded-full opacity-50"
@@ -352,7 +352,7 @@ const Home: React.FC = () => {
               <Star size={14} fill="currentColor" /> Software Company
             </span>
           </div>
-          <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter mb-8">
+          <h1 className="text-3xl md:text-5xl lg:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter mb-6 md:mb-8">
             Empowering Brands <br />
             <span className="relative inline-block">
               Through Creative
@@ -362,14 +362,14 @@ const Home: React.FC = () => {
             </span> <br />
             Technology
           </h1>
-          <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          <p className="text-gray-500 text-base md:text-lg mb-6 md:mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
             We are a premier Software Company specializing in Website Development, Brand Design, Explainer Videos, and Motion Graphics. We turn ideas into digital experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Link to="/contact" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2" aria-label="Contact Memo InfoTech to Start Your Project">
+            <Link to="/contact" className="px-6 md:px-8 py-3 md:py-4 bg-[#007BFF] text-white rounded-full font-bold text-base md:text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2" aria-label="Contact Memo InfoTech to Start Your Project">
               Start Your Project <ArrowRight size={20} />
             </Link>
-            <Link to="/services" className="px-8 py-4 bg-black text-white rounded-full font-bold text-lg hover:bg-gray-800 transition-all transform hover:-translate-y-1" aria-label="View All Our Services">
+            <Link to="/services" className="px-6 md:px-8 py-3 md:py-4 bg-black text-white rounded-full font-bold text-base md:text-lg hover:bg-gray-800 transition-all transform hover:-translate-y-1" aria-label="View All Our Services">
               Our Services
             </Link>
           </div>
@@ -408,7 +408,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* VIDEO REVEAL SECTION */}
-      <section ref={videoWrapperRef} className="w-full flex items-center justify-center py-20 bg-black relative overflow-hidden">
+      <section ref={videoWrapperRef} className="w-full flex items-center justify-center py-10 md:py-20 bg-black relative overflow-hidden">
         <div className="text-center mb-10 absolute top-20 left-0 w-full z-0">
           <h2 className="text-white text-xl tracking-[0.5em] uppercase opacity-50">Technology</h2>
         </div>
@@ -436,18 +436,18 @@ const Home: React.FC = () => {
       </section>
 
       {/* STATS SECTION */}
-      <section ref={statsRef} className="py-32 bg-black text-white border-t border-white/10">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <section ref={statsRef} className="py-16 md:py-32 bg-black text-white border-t border-white/10">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {[
               { num: counts.companies, suffix: '+', label: 'Happy Clients ' },
               { num: counts.years, suffix: '+', label: 'Years Experience' },
               { num: counts.hours, suffix: '+', label: 'Websites Delivered' },
               { num: counts.revenue, suffix: '%', label: 'Client Growth' }
             ].map((stat, idx) => (
-              <div key={idx} className="stat-box p-8 border border-white/10 rounded-3xl hover:bg-white/5 hover:border-[#007BFF]/50 transition-all duration-300 group relative overflow-hidden">
+              <div key={idx} className="stat-box p-4 md:p-8 border border-white/10 rounded-3xl hover:bg-white/5 hover:border-[#007BFF]/50 transition-all duration-300 group relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-20 h-20 bg-[#007BFF]/10 rounded-bl-full -mr-10 -mt-10 transition-all group-hover:scale-150" />
-                <h3 className="text-4xl font-bold mb-2 font-['Syne'] group-hover:text-[#007BFF] transition-colors">
+                <h3 className="text-2xl md:text-4xl font-bold mb-2 font-['Syne'] group-hover:text-[#007BFF] transition-colors">
                   {stat.num}{stat.suffix}
                 </h3>
                 <p className="text-gray-400 font-medium">{stat.label}</p>
@@ -468,8 +468,8 @@ const Home: React.FC = () => {
           <div className="horizontal-item w-[20%] h-full flex items-center justify-center bg-black text-white px-6 md:px-20 relative border-r border-white/10">
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#007BFF 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
             <div className="relative z-10 text-center md:text-left">
-              <h2 className="text-6xl md:text-[4rem] font-bold font-['Syne'] leading-none">Recent <br /> <span className="text-[#007BFF]">Masterpieces</span></h2>
-              <div className="mt-10 flex items-center justify-center md:justify-start gap-4 text-xl">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-[4rem] font-bold font-['Syne'] leading-none">Recent <br /> <span className="text-[#007BFF]">Masterpieces</span></h2>
+              <div className="mt-6 md:mt-10 flex items-center justify-center md:justify-start gap-4 text-lg md:text-xl">
                 <ArrowRight className="animate-bounce-horizontal" />
                 <span>Scroll to explore</span>
               </div>
@@ -478,12 +478,12 @@ const Home: React.FC = () => {
 
           {/* Project Panels */}
           {horizontalWorks.map((work, i) => (
-            <div key={i} className="horizontal-item w-[20%] h-full p-4 md:p-20 flex items-center justify-center bg-white border-r border-gray-100">
-              <div className="w-full h-full relative rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-2xl">
+            <div key={i} className="horizontal-item w-[20%] h-full p-3 md:p-10 lg:p-20 flex items-center justify-center bg-white border-r border-gray-100">
+              <div className="w-full h-full relative rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[3rem] overflow-hidden group shadow-2xl">
                 <img src={`/assets/${horizontalWorksImages[i]}`} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" alt={`${work.title} - ${work.cat} Project by Memo InfoTech`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent p-6 md:p-10 flex flex-col justify-end">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent p-4 md:p-6 lg:p-10 flex flex-col justify-end">
                   <span className="text-[#007BFF] font-bold uppercase tracking-widest mb-2">{work.cat}</span>
-                  <h3 className="text-4xl md:text-6xl font-bold text-white font-['Syne']">{work.title}</h3>
+                  <h3 className="text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold text-white font-['Syne']">{work.title}</h3>
                 </div>
               </div>
             </div>
@@ -492,11 +492,11 @@ const Home: React.FC = () => {
       </section>
 
       {/* SERVICES SECTION */}
-      <section className="py-32 bg-black text-white relative overflow-hidden rounded-t-[4rem] mt-[-4rem] z-20">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-16">
+      <section className="py-16 md:py-32 bg-black text-white relative overflow-hidden rounded-t-[4rem] mt-[-4rem] z-20">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-8 md:gap-16">
             <div className="lg:w-1/2">
-              <h2 className="text-5xl md:text-[4rem] font-bold mb-16 font-['Syne'] leading-none">Our <span className="text-[#007BFF]">Services</span></h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-[4rem] font-bold mb-8 md:mb-16 font-['Syne'] leading-none">Our <span className="text-[#007BFF]">Services</span></h2>
               <div className="space-y-4">
                 {serviceList.map((item, idx) => (
                   <div
@@ -550,7 +550,7 @@ const Home: React.FC = () => {
 
       {/* SLOGAN STRIP */}
       <section className="py-12 bg-black border-t border-white/10 overflow-hidden">
-        <div className="whitespace-nowrap flex gap-20 items-center animate-marquee">
+        <div className="whitespace-nowrap flex gap-8 md:gap-12 lg:gap-20 items-center animate-marquee">
           {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
             <h2 key={i} className="text-6xl md:text-[4rem] font-bold font-['Syne'] text-transparent stroke-text uppercase opacity-100 hover:text-[#007BFF] transition-colors cursor-default">
               Innovate <span className="text-[#007BFF]">+</span> Create <span className="text-[#007BFF]">+</span> Inspire
@@ -576,18 +576,18 @@ const Home: React.FC = () => {
       <FAQ faqs={faqs} />
 
       {/* LATEST INSIGHTS - Recently Added (Top 3) */}
-      <section className="py-32 bg-[#f8f8f8]">
-        <div className="container mx-auto px-6">
-          <div className="flex justify-between items-end mb-16">
+      <section className="py-16 md:py-32 bg-[#f8f8f8]">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex justify-between items-end mb-8 md:mb-16">
             <div>
-              <h2 className="text-5xl md:text-[4rem] font-bold font-['Syne'] mb-4 text-black leading-none">Recently <span className="text-[#007BFF]">Added</span></h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-[4rem] font-bold font-['Syne'] mb-4 text-black leading-none">Recently <span className="text-[#007BFF]">Added</span></h2>
               <p className="text-gray-500">Latest insights on Web Design, Branding, and Digital Strategy.</p>
             </div>
             <Link to="/blog" className="hidden md:flex items-center gap-2 font-bold text-black hover:text-[#007BFF] transition-colors" aria-label="View All Blog Articles">
               View all articles <ArrowRight size={20} />
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
             {blogPosts.slice(0, 3).map((post, idx) => (
               <Link to={`/blog/${post.id}`} key={idx} className="group cursor-pointer">
                 <div className="rounded-[2rem] overflow-hidden mb-6 relative">
@@ -607,11 +607,11 @@ const Home: React.FC = () => {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-32 bg-black text-white relative overflow-hidden">
+      <section className="py-16 md:py-32 bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-6xl mx-auto bg-[#0a0a0a] rounded-[3rem] border border-white/5 p-8 md:p-20 relative overflow-hidden shadow-2xl">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="max-w-6xl mx-auto bg-[#0a0a0a] rounded-[3rem] border border-white/5 p-6 md:p-20 relative overflow-hidden shadow-2xl">
             {/* Decorative Glow */}
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#007BFF] opacity-10 blur-[80px] rounded-full"></div>
             <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-[#007BFF] opacity-10 blur-[80px] rounded-full"></div>
@@ -679,17 +679,17 @@ const Home: React.FC = () => {
       </section>
 
       {/* CONTACT SECTION (Blue BG) */}
-      <section className="py-32 bg-[#007BFF] text-black relative overflow-hidden">
+      <section className="py-16 md:py-32 bg-[#007BFF] text-black relative overflow-hidden">
         {/* Decorative floating shapes */}
         <div className="absolute top-20 left-20 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-64 h-64 bg-blue-900 opacity-20 rounded-full blur-3xl"></div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="bg-white rounded-[4rem] p-10 md:p-20 shadow-2xl flex flex-col lg:flex-row gap-20 transform hover:scale-[1.01] transition-transform duration-500">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="bg-white rounded-[4rem] p-6 md:p-20 shadow-2xl flex flex-col lg:flex-row gap-10 md:gap-20 transform hover:scale-[1.01] transition-transform duration-500">
             <div className="lg:w-1/2">
-              <div className="bg-black text-white p-12 rounded-[3rem] relative overflow-hidden">
+              <div className="bg-black text-white p-8 md:p-12 rounded-[3rem] relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-[#007BFF] blur-[80px] opacity-50"></div>
-                <h3 className="text-3xl font-bold mb-8">Contact Info</h3>
+                <h3 className="text-2xl md:text-3xl font-bold mb-8">Contact Info</h3>
                 <div className="space-y-8">
                   <div className="flex items-center gap-6 group">
                     <div className="w-12 h-12 rounded-full bg-[#222] flex items-center justify-center text-[#007BFF] group-hover:bg-[#007BFF] group-hover:text-white transition-all">
@@ -722,15 +722,15 @@ const Home: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-20 p-6 bg-[#222] rounded-2xl border border-white/10 hover:border-[#007BFF] transition-colors">
+                <div className="mt-12 md:mt-20 p-6 md:p-6 bg-[#222] rounded-2xl border border-white/10 hover:border-[#007BFF] transition-colors">
                   <p className="text-gray-300 italic">"We don’t just deliver projects. We build relationships"</p>
                   <p className="mt-4 font-bold text-[#007BFF]">- Founder, Akash Kumaravel</p>
                 </div>
               </div>
             </div>
             <div className="lg:w-1/2">
-              <h2 className="text-5xl font-bold mb-4 font-['Syne'] text-black">Let's Build <br />The Future</h2>
-              <p className="text-gray-500 mb-10 text-lg">Ready to transform your business? Fill out the form below.</p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-['Syne'] text-black">Let's Build <br />The Future</h2>
+              <p className="text-gray-500 mb-8 md:mb-10 text-base md:text-lg">Ready to transform your business? Fill out the form below.</p>
 
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div>

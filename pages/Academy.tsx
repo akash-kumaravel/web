@@ -489,17 +489,17 @@ const Academy: React.FC = () => {
         schemas={[breadcrumbSchema, orgSchema, courseSchema, faqSchema]}
       />
       {/* HERO SECTION */}
-      <section className="pt-40 pb-24 bg-gradient-to-b from-black to-[#000000] text-white">
+      <section className="pt-20 md:pt-40 pb-12 md:pb-24 bg-gradient-to-b from-black to-[#000000] text-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-6xl md:text-[4rem] font-bold font-['Syne'] mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[4rem] font-bold font-['Syne'] mb-6 leading-tight">
               IT Training Institute & Internship Programs in Nagercoil
             </h1>
-            <p className="text-lg text-gray-200 mb-6 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-gray-200 mb-6 leading-relaxed max-w-3xl mx-auto">
               Memo Infotech Academy is a professional IT training institute in Nagercoil offering practical training programs, certification courses, and real-time internship opportunities for students and fresh graduates. We focus on industry-relevant skills to help learners build successful careers in IT and software development.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#courses" className="px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+              <a href="#courses" className="px-6 md:px-8 py-3 md:py-4 bg-[#007BFF] text-white rounded-full font-bold text-base md:text-lg hover:shadow-[0_0_25px_rgba(0,123,255,0.6)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
                 Explore Courses <ArrowRight size={20} />
               </a>
               <a
@@ -508,7 +508,7 @@ const Academy: React.FC = () => {
                   e.preventDefault();
                   enrollRef.current?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-200 transition-all transform hover:-translate-y-1"
+                className="px-6 md:px-8 py-3 md:py-4 bg-white text-black rounded-full font-bold text-base md:text-lg hover:bg-gray-200 transition-all transform hover:-translate-y-1"
               >
                 Start Learning
               </a>
@@ -516,17 +516,17 @@ const Academy: React.FC = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 mt-10 md:mt-20">
             {[
               { icon: Users, label: "Active Students", value: "80+" },
               { icon: BookOpen, label: "Expert Courses", value: "10+" },
               { icon: Award, label: "Success Rate", value: "94%" },
               { icon: Star, label: "Avg Rating", value: "4.9/5" }
             ].map((stat, idx) => (
-              <div key={idx} className="text-center p-6 bg-white/10 rounded-2xl border border-white/20 hover:border-[#007BFF]/50 transition-all">
-                <stat.icon size={40} className="mx-auto mb-4 text-[#007BFF]" />
-                <h3 className="text-2xl font-bold mb-2">{stat.value}</h3>
-                <p className="text-gray-400">{stat.label}</p>
+              <div key={idx} className="text-center p-4 md:p-6 bg-white/10 rounded-2xl border border-white/20 hover:border-[#007BFF]/50 transition-all">
+                <stat.icon size={32} className="mx-auto mb-3 md:mb-4 text-[#007BFF]" />
+                <h3 className="text-xl md:text-2xl font-bold mb-2">{stat.value}</h3>
+                <p className="text-sm md:text-base text-gray-400">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -534,17 +534,17 @@ const Academy: React.FC = () => {
       </section>
 
       {/* LOCAL ENTITY - ACADEMY LOCATION */}
-      <section aria-label="Academy Location" className="py-12 bg-black text-center">
-        <div className="container mx-auto px-6">
-          <p className="max-w-4xl mx-auto text-gray-300 text-lg">
+      <section aria-label="Academy Location" className="py-8 md:py-12 bg-black text-center">
+        <div className="container mx-auto px-4 md:px-6">
+          <p className="max-w-4xl mx-auto text-gray-300 text-base md:text-lg">
             <strong className="text-white">Memo Infotech Academy</strong> is a leading <strong className="text-white">IT training institute in Nagercoil, Tamil Nadu</strong>, offering industry-focused courses, internship programs, and career guidance for students across Kanyakumari district and surrounding regions.
           </p>
         </div>
       </section>
 
       {/* SEARCH & FILTER */}
-      <section className="py-16 bg-[#f8f8f8] border-b border-gray-200">
-        <div className="container mx-auto px-6">
+      <section className="py-8 md:py-16 bg-[#f8f8f8] border-b border-gray-200">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto space-y-6">
             {/* Search Bar */}
             <div className="relative">
@@ -564,7 +564,7 @@ const Academy: React.FC = () => {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-6 py-3 rounded-full font-semibold transition-all ${selectedCategory === cat
+                  className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold transition-all text-sm md:text-base ${selectedCategory === cat
                     ? 'bg-[#007BFF] text-white shadow-lg'
                     : 'bg-white text-black border-2 border-gray-200 hover:border-[#007BFF]'
                     }`}
@@ -578,15 +578,15 @@ const Academy: React.FC = () => {
       </section>
 
       {/* COURSES GRID */}
-      <section id="courses" className="py-32 bg-white">
+      <section id="courses" className="py-16 md:py-32 bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-4xl font-bold font-['Syne'] text-black mb-4">IT Courses & Training Programs in Nagercoil</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Industry-focused training programs with hands-on projects and certification
             </p>
           </div>
-          <div className="mb-16">
+          <div className="mb-8 md:mb-16">
             <h2 className="text-5xl md:text-[4rem] font-bold font-['Syne'] text-black mb-4">
               <span className="text-[#007BFF]">Courses</span>
             </h2>
@@ -596,7 +596,7 @@ const Academy: React.FC = () => {
           </div>
 
           {filteredCourses.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {filteredCourses.map((course, idx) => (
                 <Link
                   to={course.url}
@@ -614,43 +614,43 @@ const Academy: React.FC = () => {
                   </div>
 
                   {/* Course Content */}
-                  <div className="p-6">
+                  <div className="p-4 md:p-6">
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-xs font-bold text-[#007BFF] bg-blue-50 px-3 py-1 rounded-full">
                         {course.category}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#007BFF] transition-colors line-clamp-2">
+                    <h3 className="text-lg md:text-xl font-bold text-black mb-3 group-hover:text-[#007BFF] transition-colors line-clamp-2">
                       {course.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                    <p className="text-gray-600 text-xs md:text-sm mb-4 line-clamp-2">
                       {course.description}
                     </p>
 
                     {/* Highlights */}
                     <div className="space-y-2 mb-6">
                       {course.highlights.map((highlight, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                          <CheckCircle size={16} className="text-[#007BFF]" />
+                        <div key={i} className="flex items-center gap-2 text-xs md:text-sm text-gray-600">
+                          <CheckCircle size={14} className="text-[#007BFF]" />
                           {highlight}
                         </div>
                       ))}
                     </div>
 
                     {/* Stats */}
-                    <div className="flex items-center text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
+                    <div className="flex items-center text-xs md:text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
                       <div className="flex items-center gap-1">
-                        <Clock size={16} />
+                        <Clock size={14} />
                         {course.duration}
                       </div>
                     </div>
 
                     {/* Footer */}
                     <div className="flex items-center justify-between gap-3">
-                      <Link to={course.url} className="px-6 py-3 bg-[#007BFF] text-white rounded-full font-bold hover:bg-blue-700 transition-all inline-block cursor-pointer">
+                      <Link to={course.url} className="px-4 md:px-6 py-2 md:py-3 bg-[#007BFF] text-white rounded-full font-bold text-sm md:text-base hover:bg-blue-700 transition-all inline-block cursor-pointer">
                         View Course
                       </Link>
-                      <button onClick={() => handleEnrollClick(course.title)} className="px-6 py-3 bg-black text-white rounded-full font-bold hover:bg-[#007BFF] transition-all inline-block cursor-pointer">
+                      <button onClick={() => handleEnrollClick(course.title)} className="px-4 md:px-6 py-2 md:py-3 bg-black text-white rounded-full font-bold text-sm md:text-base hover:bg-[#007BFF] transition-all inline-block cursor-pointer">
                         Enroll
                       </button>
                     </div>
@@ -667,9 +667,9 @@ const Academy: React.FC = () => {
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="py-32 bg-[#f8f8f8]">
+      <section className="py-16 md:py-32 bg-[#f8f8f8]">
         <div className="container mx-auto px-6">
-          <h2 className="text-5xl md:text-[4rem] font-bold font-['Syne'] text-black mb-16 text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-bold font-['Syne'] text-black mb-8 md:mb-16 text-center">
             Why Choose Our IT <span className="text-[#007BFF]">Training Institute</span>
           </h2>
 
@@ -724,7 +724,7 @@ const Academy: React.FC = () => {
       </section>
 
       {/* INTERNSHIP PROGRAMS & LIVE PROJECTS */}
-      <section className="py-32 bg-white">
+      <section className="py-16 md:py-32 bg-white">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold font-['Syne'] text-black mb-6 text-center">
             Internship Programs in Nagercoil with Live Projects
@@ -762,7 +762,7 @@ const Academy: React.FC = () => {
       </section>
 
       {/* PLACEMENT & CAREER SUPPORT */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-16 md:py-32 bg-gray-50">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold font-['Syne'] text-black mb-6 text-center">
             Placement & Career Support for IT Students
@@ -825,7 +825,7 @@ const Academy: React.FC = () => {
       />
 
       {/* ENROLLMENT SECTION */}
-      <section id="enroll" ref={enrollRef} className="py-32 bg-white">
+      <section id="enroll" ref={enrollRef} className="py-16 md:py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-[4rem] font-bold font-['Syne'] text-black mb-6 text-center">
@@ -835,7 +835,7 @@ const Academy: React.FC = () => {
               Fill out the form below and our team will reach out to help you choose the perfect course.
             </p>
 
-            <form onSubmit={handleSubmit} className="bg-[#f8f8f8] p-10 rounded-[2rem] border border-gray-200">
+            <form onSubmit={handleSubmit} className="bg-[#f8f8f8] p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-[2rem] border border-gray-200">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label className="block text-black font-bold mb-2">Full Name *</label>

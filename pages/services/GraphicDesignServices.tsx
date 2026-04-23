@@ -259,7 +259,7 @@ const GraphicDesignServices: React.FC = () => {
   return (
     <div className="w-full bg-gray-100">
       {/* ==================== SEMANTIC HTML: Header with H1 ====================*/}
-      <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
+      <header className="pt-20 md:pt-40 pb-12 md:pb-20 container mx-auto px-4 md:px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
             Graphic Design Services Company in Nagercoil, Tamil Nadu
@@ -280,10 +280,10 @@ const GraphicDesignServices: React.FC = () => {
           </div>
         </section>
         {/* ==================== Section 1: Creative Services ====================*/}
-        <section className="py-32 bg-white" aria-label="Our Creative Services" role="region">
-          <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16">Our Graphic Design Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className="py-12 md:py-20 bg-white" aria-label="Our Creative Services" role="region">
+          <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold font-['Syne'] text-black mb-8 md:mb-16">Our Graphic Design Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
               {services.map((service, i) => (
                 <article key={i} className="p-8 bg-gray-50 rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all duration-300 group">
                   <div className="text-[#007BFF] mb-4 group-hover:scale-110 transition-transform" aria-hidden="true">
@@ -298,8 +298,8 @@ const GraphicDesignServices: React.FC = () => {
         </section>
 
         {/* ==================== Section 2: Creative Excellence ====================*/}
-        <section className="py-32 bg-black text-white" aria-label="Creative Excellence Features" role="region">
-          <div className="container mx-auto px-6">
+        <section className="py-12 md:py-20 lg:py-32 bg-black text-white" aria-label="Creative Excellence Features" role="region">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold font-['Syne'] mb-4">Design Excellence &amp; Creative Capabilities</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">Comprehensive creative services that bring your brand vision to life.</p>

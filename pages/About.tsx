@@ -86,7 +86,7 @@ const About: React.FC = () => {
 
 
     return (
-        <div ref={containerRef} className="pt-40 pb-20 w-full bg-white overflow-hidden">
+        <div ref={containerRef} className="pt-20 md:pt-40 pb-10 md:pb-20 w-full bg-white overflow-hidden">
             <SEO
                 title="About Us — Web Development & Design Agency"
                 description="Learn about Memo InfoTech, a leading web development and design agency in Nagercoil. Discover our mission, team, and commitment to digital excellence."
@@ -101,40 +101,40 @@ const About: React.FC = () => {
                     ]
                 }]}
             />
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-4 md:px-6">
                 <div className="max-w-4xl mx-auto">
                     {/* Header - Projects style (keep header centered only) */}
                     <div className="overflow-hidden mb-2 text-center">
-                        <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[4rem] font-bold font-['Syne'] leading-none text-black tracking-tighter">
                             ABOUT <br />
                             <span className="text-white bg-[#007BFF] px-6 transform -skew-x-12 inline-block">US</span>
                         </h1>
-                        <p className="mt-10 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
+                        <p className="mt-6 md:mt-10 text-lg md:text-xl text-gray-500 max-w-2xl mx-auto font-medium">
                             Discover our story, how we work, and why we're building the future of digital solutions.
                         </p>
-                        <div className="mt-6 flex items-center justify-center gap-4">
-                            <Link to="/services" className="inline-block bg-[#007BFF] text-white px-5 py-2 rounded-full font-bold hover:bg-black transition-colors" aria-label="View All Services">Our Services</Link>
-                            <Link to="/contact" className="inline-block bg-black text-white px-5 py-2 rounded-full font-bold hover:bg-[#007BFF] transition-colors" aria-label="Contact Memo InfoTech">Contact Us</Link>
+                        <div className="mt-4 md:mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Link to="/services" className="inline-block bg-[#007BFF] text-white px-4 md:px-5 py-2 rounded-full font-bold text-sm md:text-base hover:bg-black transition-colors" aria-label="View All Services">Our Services</Link>
+                            <Link to="/contact" className="inline-block bg-black text-white px-4 md:px-5 py-2 rounded-full font-bold text-sm md:text-base hover:bg-[#007BFF] transition-colors" aria-label="Contact Memo InfoTech">Contact Us</Link>
                         </div>
                     </div>
                 </div>
 
                 {/* Content Section 1 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24 items-start">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-12 md:mb-24 items-start">
                     <div>
-                        <h3 className="text-3xl font-bold mb-6 text-black reveal-text">Our Story</h3>
-                        <p className="text-gray-500 leading-loose mb-6">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-black reveal-text">Our Story</h3>
+                        <p className="text-gray-500 leading-loose mb-4 md:mb-6 text-sm md:text-base">
                             Memo InfoTech was founded in 2022 by Akash Kumaravel, a passionate technologist and product-focused creator who believed that quality IT solutions should be accessible, scalable, and engineered with real purpose.
                         </p>
                         <p className="text-gray-500 leading-loose mb-6">
                             What started as a small independent initiative has now grown into a trusted IT partner for businesses across India and beyond. From day one, our goal has been simple:
                         </p>
-                        <ul className="text-gray-500 leading-loose mb-6 space-y-2">
+                        <ul className="text-gray-500 leading-loose mb-4 md:mb-6 space-y-2 text-sm md:text-base">
                             <li className="font-semibold">Build technology that solves problems.</li>
                             <li className="font-semibold">Build technology that works.</li>
                             <li className="font-semibold">Build technology that grows with your business.</li>
                         </ul>
-                        <p className="text-gray-500 leading-loose">
+                        <p className="text-gray-500 leading-loose text-sm md:text-base">
                             At Memo InfoTech, we don't just develop software—we design digital ecosystems that help companies operate smarter, faster, and more efficiently.
                         </p>
                     </div>
@@ -142,16 +142,16 @@ const About: React.FC = () => {
                         <div className="reveal-image rounded-[3rem] overflow-hidden shadow-2xl">
                             <img src="/assets/about.png" alt="Memo InfoTech office and team collaboration" className="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" />
                         </div>
-                        <div className="absolute -bottom-10 -left-10 bg-[#007BFF] text-white p-8 rounded-3xl shadow-xl max-w-xs transform rotate-3 group-hover:rotate-0 transition-transform z-10">
-                            <p className="font-bold text-xl">"We don't just write code. We build futures."</p>
+                        <div className="absolute -bottom-10 -left-10 bg-[#007BFF] text-white p-6 md:p-8 rounded-3xl shadow-xl max-w-xs transform rotate-3 group-hover:rotate-0 transition-transform z-10">
+                            <p className="font-bold text-base md:text-xl">"We don't just write code. We build futures."</p>
                         </div>
                     </div>
                 </div>
 
                 {/* HISTORY TIMELINE */}
-                <div className="timeline-container mb-32 relative">
-                    <h3 className="text-3xl font-bold mb-16 text-black text-center">Our Evolution</h3>
-                    <div className="relative ml-6 md:ml-10 space-y-16">
+                <div className="timeline-container mb-16 md:mb-32 relative">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-8 md:mb-16 text-black text-center">Our Evolution</h3>
+                    <div className="relative ml-4 md:ml-6 lg:ml-10 space-y-8 md:space-y-16">
                         {/* Animated Vertical Line */}
                         <div className="timeline-line absolute left-0 top-0 bottom-0 w-1 bg-gray-200 origin-top h-full"></div>
 
@@ -161,42 +161,42 @@ const About: React.FC = () => {
                             { year: "2024", title: "Scaling Up", desc: "Our team expanded with skilled developers, designers, and tech specialists, allowing us to take on larger and more complex projects." },
                             { year: "2025", title: "Global Presence", desc: "Memo InfoTech began serving international clients, building strong credibility in regions like Dubai and strengthening our global footprint." },
                         ].map((item, idx) => (
-                            <div key={idx} className="timeline-item relative pl-10 group">
-                                <div className="absolute -left-[7px] top-1 w-4 h-4 bg-white border-4 border-[#007BFF] rounded-full group-hover:scale-150 transition-transform z-10"></div>
-                                <span className="text-[#007BFF] font-bold text-xl block mb-1">{item.year}</span>
-                                <h4 className="text-2xl font-bold text-black mb-2">{item.title}</h4>
-                                <p className="text-gray-500">{item.desc}</p>
+                            <div key={idx} className="timeline-item relative pl-8 md:pl-10 group">
+                                <div className="absolute -left-2 md:-left-2.5 top-1 w-3 md:w-4 h-3 md:h-4 bg-white border-4 border-[#007BFF] rounded-full group-hover:scale-150 transition-transform z-10"></div>
+                                <span className="text-[#007BFF] font-bold text-lg md:text-xl block mb-1">{item.year}</span>
+                                <h4 className="text-lg md:text-2xl font-bold text-black mb-2">{item.title}</h4>
+                                <p className="text-gray-500 text-sm md:text-base">{item.desc}</p>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 {/* Content Section 2: How We Work */}
-                <div className="mb-24">
-                    <h3 className="text-3xl font-bold mb-12 text-black">How We Work</h3>
-                    <p className="text-lg text-gray-600 leading-loose mb-12">
+                <div className="mb-12 md:mb-24">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-6 md:mb-12 text-black">How We Work</h3>
+                    <p className="text-base md:text-lg text-gray-600 leading-loose mb-8 md:mb-12">
                         Every project at Memo InfoTech follows a process built on clarity, engineering discipline, and strong technical understanding.
                     </p>
-                    <div className="space-y-12">
+                    <div className="space-y-8 md:space-y-12">
                         <div>
                             <h4 className="text-2xl font-bold mb-4 text-black">1. Discovery & Strategy</h4>
                             <p className="text-lg text-gray-600 leading-loose mb-4">
                                 We begin by understanding your business logic and asking the right technical questions:
                             </p>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-600 mb-4">
+                            <ul className="list-disc pl-6 space-y-1 md:space-y-2 text-gray-600 mb-3 md:mb-4 text-sm md:text-base">
                                 <li>How will it scale?</li>
                                 <li>How secure must it be?</li>
                                 <li>What is the expected user load?</li>
                                 <li>What systems need integration?</li>
                             </ul>
-                            <p className="text-lg text-gray-600 leading-loose font-semibold">
+                            <p className="text-base md:text-lg text-gray-600 leading-loose font-semibold">
                                 We design the system architecture before writing a single line of code.
                             </p>
                         </div>
 
                         <div>
-                            <h4 className="text-2xl font-bold mb-4 text-black">2. Engineering & Development</h4>
-                            <p className="text-lg text-gray-600 leading-loose mb-4">
+                            <h4 className="text-lg md:text-2xl font-bold mb-3 md:mb-4 text-black">2. Engineering & Development</h4>
+                            <p className="text-base md:text-lg text-gray-600 leading-loose mb-3 md:mb-4">
                                 Using modern technologies like React, Node.js, Python, Next.js, and cloud infrastructure, we build scalable software with a strong foundation.
                             </p>
                             <p className="text-lg text-gray-600 leading-loose">
@@ -205,11 +205,11 @@ const About: React.FC = () => {
                         </div>
 
                         <div>
-                            <h4 className="text-2xl font-bold mb-4 text-black">3. Quality & Optimization</h4>
-                            <p className="text-lg text-gray-600 leading-loose mb-4">
+                            <h4 className="text-lg md:text-2xl font-bold mb-3 md:mb-4 text-black">3. Quality & Optimization</h4>
+                            <p className="text-base md:text-lg text-gray-600 leading-loose mb-3 md:mb-4">
                                 We ensure that every product is:
                             </p>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                            <ul className="list-disc pl-6 space-y-1 md:space-y-2 text-gray-600 text-sm md:text-base">
                                 <li>Tested thoroughly</li>
                                 <li>Optimized for performance</li>
                                 <li>Built to handle real-world usage</li>
@@ -217,8 +217,8 @@ const About: React.FC = () => {
                         </div>
 
                         <div>
-                            <h4 className="text-2xl font-bold mb-4 text-black">4. Long-Term Partnership</h4>
-                            <p className="text-lg text-gray-600 leading-loose">
+                            <h4 className="text-lg md:text-2xl font-bold mb-3 md:mb-4 text-black">4. Long-Term Partnership</h4>
+                            <p className="text-base md:text-lg text-gray-600 leading-loose">
                                 Our relationship doesn't end at deployment. We maintain, update, and scale your application as your business grows.
                             </p>
                         </div>
@@ -226,9 +226,9 @@ const About: React.FC = () => {
                 </div>
 
                 {/* The Founder Section */}
-                <div className="mb-24 bg-gray-50 p-12 rounded-3xl">
-                    <h3 className="text-3xl font-bold mb-8 text-black">The Founder – Akash Kumaravel</h3>
-                    <p className="text-lg text-gray-600 leading-loose mb-6">
+                <div className="mb-12 md:mb-24 bg-gray-50 p-8 md:p-12 rounded-3xl">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-black">The Founder – Akash Kumaravel</h3>
+                    <p className="text-base md:text-lg text-gray-600 leading-loose mb-4 md:mb-6">
                         Memo InfoTech is Founded by Akash Kumaravel. His vision is to build an IT company that goes beyond code—focusing on user experience, innovation, and long-term business impact.
                     </p>
                     <p className="text-lg text-gray-600 leading-loose">
@@ -237,17 +237,17 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Why Choose Memo InfoTech */}
-                <div className="mb-32">
-                    <h3 className="text-3xl font-bold mb-12 text-black">Why Choose Memo InfoTech?</h3>
-                    <div className="values-grid grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="mb-16 md:mb-32">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-black">Why Choose Memo InfoTech?</h3>
+                    <div className="values-grid grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                         {[
                             { icon: "✓", title: "Real-World Problems", desc: "Strong focus on real-world business problems" },
                             { icon: "✓", title: "Clean Architecture", desc: "Clean architecture and future-ready engineering" },
                             { icon: "✓", title: "Transparent Communication", desc: "Transparent communication & on-time delivery" },
                             { icon: "✓", title: "Founder-Led", desc: "Designed and led by a passionate founder committed to high standards" }
                         ].map((val, idx) => (
-                            <div key={idx} className="value-card bg-black text-white p-10 rounded-3xl hover:bg-[#007BFF] hover:shadow-[0_10px_40px_rgba(0,123,255,0.4)] transition-all duration-300 group cursor-default">
-                                <div className="text-4xl font-bold mb-4 text-[#007BFF] group-hover:text-white transition-colors">{val.icon}</div>
+                            <div key={idx} className="value-card bg-black text-white p-6 md:p-10 rounded-3xl hover:bg-[#007BFF] hover:shadow-[0_10px_40px_rgba(0,123,255,0.4)] transition-all duration-300 group cursor-default">
+                                <div className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-[#007BFF] group-hover:text-white transition-colors">{val.icon}</div>
                                 <h4 className="text-2xl font-bold mb-4 group-hover:translate-x-2 transition-transform">{val.title}</h4>
                                 <p className="text-gray-400 group-hover:text-blue-100">{val.desc}</p>
                             </div>

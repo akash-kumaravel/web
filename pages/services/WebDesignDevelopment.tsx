@@ -283,12 +283,12 @@ const WebDesignDevelopment: React.FC = () => {
   return (
     <div className="w-full bg-gray-100">
       {/* ==================== SEMANTIC HTML: Header with H1 ====================*/}
-      <header className="pt-40 pb-20 container mx-auto px-6" role="region" aria-label="Page Header">
+      <header className="pt-20 md:pt-40 pb-12 md:pb-20 container mx-auto px-4 md:px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
-          <h1 className="text-5xl md:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-4 md:mb-6">
             Web Design &amp; Web Development Company in Nagercoil, Tamil Nadu
           </h1>
-          <p className="text-xl text-gray-600 leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
             We create stunning, high-performance websites that captivate and convert. From static landing pages to dynamic web applications using React, Next.js, and WebGL, we build digital experiences that drive results.
           </p>
         </div>
@@ -296,8 +296,8 @@ const WebDesignDevelopment: React.FC = () => {
 
       <main className="w-full" role="main" aria-label="Main Content">
         {/* ==================== Section 0: Service Location ====================*/}
-        <section className="py-16 bg-blue-50 border-t-4 border-[#007BFF]" aria-label="Service Location" role="region">
-          <div className="container mx-auto px-6">
+        <section className="py-12 md:py-16 bg-blue-50 border-t-4 border-[#007BFF]" aria-label="Service Location" role="region">
+          <div className="container mx-auto px-4 md:px-6">
             <p className="text-lg text-gray-700 leading-relaxed">
               <strong>Memo Infotech</strong> is a trusted <strong>web design and web development company in Nagercoil, Tamil Nadu</strong>, serving businesses across Kanyakumari district and surrounding regions. We specialize in creating custom web solutions that drive growth and deliver measurable results for local and national clients.
             </p>

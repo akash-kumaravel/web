@@ -246,7 +246,7 @@ const ItCompanyInNagercoil: React.FC = () => {
       {/* Why Choose Us */}
       <section className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             <div>
               <h2 className="text-4xl font-bold font-['Syne'] text-black mb-8">Why Choose Memo Infotech</h2>
               <div className="space-y-6">
@@ -267,7 +267,7 @@ const ItCompanyInNagercoil: React.FC = () => {
                 ))}
               </div>
             </div>
-            <div className="bg-[#007BFF] rounded-2xl p-10 text-white">
+            <div className="bg-[#007BFF] rounded-lg md:rounded-2xl p-6 md:p-8 lg:p-10 text-white">
               <h3 className="text-3xl font-bold mb-6">Nationwide Coverage</h3>
               <p className="mb-6 leading-relaxed">
                 Headquartered in Nagercoil, we proudly serve clients across India with consistent quality and seamless remote collaboration.

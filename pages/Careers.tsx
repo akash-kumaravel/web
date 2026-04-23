@@ -98,12 +98,12 @@ const Careers: React.FC = () => {
             />
 
             {/* Hero Section */}
-            <div className="bg-black text-white pt-40 pb-32 rounded-b-[4rem] relative overflow-hidden">
+            <div className="bg-black text-white pt-20 md:pt-40 pb-16 md:pb-32 rounded-b-[4rem] relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full opacity-20"
                     style={{ background: `url("/assets/image.svg") center/cover no-repeat` }}></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black"></div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
                     <p className="career-hero-text text-[#007BFF] font-bold uppercase tracking-[0.3em] mb-6">We are hiring</p>
                     <h1 className="career-hero-text text-5xl md:text-[4rem] font-extrabold font-['Syne'] mb-10 leading-none">
                         JOIN THE <br /><span className="text-transparent stroke-text">COLLECTIVE</span>
@@ -116,12 +116,12 @@ const Careers: React.FC = () => {
             </div>
 
             {/* Values / Perks Section */}
-            <div className="py-32 container mx-auto px-6">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+            <div className="py-16 md:py-32 container mx-auto px-4 md:px-6">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-16">
                     <h2 className="text-5xl font-bold font-['Syne'] text-black">Why <span className="text-[#007BFF]">Memo Infotech?</span></h2>
                     <p className="text-gray-500 max-w-md mt-4 md:mt-0">We take care of our people so they can take care of the work.</p>
                 </div>
-                <div className="perks-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div className="perks-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
                     {perks.map((perk, idx) => (
                         <div key={idx} className="perk-card bg-gray-50 p-6 rounded-3xl hover:bg-black hover:text-white transition-colors group cursor-default text-center flex flex-col items-center justify-center gap-4 border border-gray-100">
                             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#007BFF] shadow-sm group-hover:bg-[#007BFF] group-hover:text-white transition-all">
@@ -135,7 +135,7 @@ const Careers: React.FC = () => {
             </div>
 
             {/* Open Positions - Accordion Style */}
-            <div className="pb-32 container mx-auto px-6 max-w-5xl">
+            <div className="pb-16 md:pb-32 container mx-auto px-4 md:px-6 max-w-5xl">
                 <h2 className="text-4xl font-bold mb-12 font-['Syne']">Open Positions</h2>
                 <div className="space-y-4">
                     {jobs.map((job, idx) => (
