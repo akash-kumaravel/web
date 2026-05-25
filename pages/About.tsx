@@ -124,7 +124,7 @@ const About: React.FC = () => {
                     <div>
                         <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-black reveal-text">Our Story</h3>
                         <p className="text-gray-500 leading-loose mb-4 md:mb-6 text-sm md:text-base">
-                            Memo InfoTech was founded in 2022 by Akash Kumaravel, a passionate technologist and product-focused creator who believed that quality IT solutions should be accessible, scalable, and engineered with real purpose.
+                            Memo InfoTech was founded in 2024 by Akash Kumaravel, a passionate technologist and product-focused creator who believed that quality IT solutions should be accessible, scalable, and engineered with real purpose.
                         </p>
                         <p className="text-gray-500 leading-loose mb-6">
                             What started as a small independent initiative has now grown into a trusted IT partner for businesses across India and beyond. From day one, our goal has been simple:
@@ -156,10 +156,10 @@ const About: React.FC = () => {
                         <div className="timeline-line absolute left-0 top-0 bottom-0 w-1 bg-gray-200 origin-top h-full"></div>
 
                         {[
-                            { year: "2022", title: "The Beginning", desc: "Memo InfoTech was launched by Akash Kumaravel to deliver modern, reliable, and high-performance digital solutions." },
-                            { year: "2023", title: "Our Breakthrough", desc: "We secured our first major project by delivering a full-stack business application that opened doors to enterprise-level opportunities." },
-                            { year: "2024", title: "Scaling Up", desc: "Our team expanded with skilled developers, designers, and tech specialists, allowing us to take on larger and more complex projects." },
-                            { year: "2025", title: "Global Presence", desc: "Memo InfoTech began serving international clients, building strong credibility in regions like Dubai and strengthening our global footprint." },
+                            { year: "2024", title: "The Beginning", desc: "Memo InfoTech was launched by Akash Kumaravel to deliver modern, reliable, and high-performance digital solutions." },
+                            { year: "2025", title: "Our Breakthrough", desc: "We secured our first major project by delivering a full-stack business application that opened doors to enterprise-level opportunities." },
+                            { year: "2026", title: "Scaling Up", desc: "Our team expanded with skilled developers, designers, and tech specialists, allowing us to take on larger and more complex projects." },
+                            { year: "2027", title: "Global Presence", desc: "Memo InfoTech is preparing to serve international clients, build credibility in regions like Dubai, and strengthen our global footprint." },
                         ].map((item, idx) => (
                             <div key={idx} className="timeline-item relative pl-8 md:pl-10 group">
                                 <div className="absolute -left-2 md:-left-2.5 top-1 w-3 md:w-4 h-3 md:h-4 bg-white border-4 border-[#007BFF] rounded-full group-hover:scale-150 transition-transform z-10"></div>

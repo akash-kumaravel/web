@@ -50,7 +50,7 @@ const SEO: React.FC<SEOProps> = ({
     "description": "A premier software company specializing in web development, graphic design, and digital solutions",
     "telephone": "+91 6374433734",
     "email": "hello@memoinfotech.com",
-    "foundingDate": "2022",
+    "foundingDate": "2024",
     "founder": {
       "@type": "Person",
       "name": "Akash Kumaravel"

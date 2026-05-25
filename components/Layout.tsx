@@ -67,7 +67,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         }
       ],
       founder: { '@type': 'Person', name: 'Akash Kumaravel' },
-      foundingDate: '2022',
+      foundingDate: '2024',
       email: 'hello@memoinfotech.com'
     };
     upsertJsonLd('ld-org', org);
