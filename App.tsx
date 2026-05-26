@@ -25,6 +25,7 @@ import GraphicDesign from './pages/courses/GraphicDesign';
 import MotionDesignAnimation from './pages/courses/MotionDesignAnimation';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import BgwrapPrivacyPolicy from './pages/bgwrap-privacy-policy';
 import WebDesignDevelopment from './pages/services/WebDesignDevelopment';
 import UIUXDesign from './pages/services/UIUXDesign';
 import MobileAppDevelopment from './pages/services/MobileAppDevelopment';
@@ -38,6 +39,7 @@ import TestingQA from './pages/services/TestingQA';
 import TrainingConsulting from './pages/services/TrainingConsulting';
 import ContentDocumentation from './pages/services/ContentDocumentation';
 import ItCompanyInNagercoil from './pages/ItCompanyInNagercoil';
+import BGwrap from './pages/BGwrap';
 
 const App: React.FC = () => {
   return (
@@ -72,6 +74,7 @@ const App: React.FC = () => {
           <Route path="/content-documentation" element={<ContentDocumentation />} />
           <Route path="/services/content-documentation" element={<ContentDocumentation />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/bgwrap" element={<BGwrap />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="/enroll" element={<EnrollCourse />} />
@@ -91,6 +94,7 @@ const App: React.FC = () => {
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/bgwrap-privacy-policy" element={<BgwrapPrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/it-company-in-nagercoil" element={<ItCompanyInNagercoil />} />
         </Routes>
