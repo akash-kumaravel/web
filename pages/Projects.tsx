@@ -164,6 +164,26 @@ const Projects: React.FC = () => {
                 </div>
             </div>
 
+            {/* DUPLICATED: Mobile Apps section (copy) */}
+            <div className="uiux-section py-32 bg-gray-50 overflow-hidden relative">
+                <div className="container mx-auto px-6 mb-20 text-center">
+                    <div className="inline-flex items-center gap-3 bg-black text-white px-6 py-2 rounded-full mb-6">
+                        <Smartphone size={20} className="text-[#007BFF]" />
+                        <span className="font-bold uppercase tracking-widest text-sm">Mobile Apps</span>
+                    </div>
+                    <h2 className="text-5xl md:text-[4rem] font-bold font-['Syne'] text-black leading-none">Mobile <br /> <span className="text-[#007BFF]">Showcase</span></h2>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-4 md:px-20 place-items-center">
+                    <Link to="/bgwrap" className="mobile-screen col-span-2 md:col-span-1 md:col-start-2 relative aspect-[9/19] rounded-[3rem] border-8 border-black overflow-hidden shadow-2xl">
+                        <img src={`/assets/BGwrap.png`} className="w-full h-full object-cover" alt={`BGwrap mobile app`} />
+                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer backdrop-blur-sm">
+                            <span className="text-white font-bold text-xl">View App</span>
+                        </div>
+                    </Link>
+                </div>
+            </div>
+
             {/* SECTION 3: BRANDING / LOGOS (Grid) */}
 
             <section className="py-32 bg-gray-50 overflow-hidden">

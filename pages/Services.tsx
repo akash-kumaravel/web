@@ -117,10 +117,6 @@ const services = [
     }
 ];
 
-const technologies = [
-    "React", "Node.js", "Python", "TypeScript", "AWS", "Flutter", "Next.js", "Docker", "MongoDB", "PostgreSQL", "GraphQL", "Figma", "Tailwind CSS", "Three.js"
-];
-
 // Map each service (by index) to the corresponding image filename in public/assets
 const serviceImages = [
     'Website Development.png',
@@ -172,7 +168,6 @@ const Services: React.FC = () => {
             // Stagger for capabilities
             gsap.from(".cap-item", {
                 y: 50,
-                // opacity: 0, // Removed to ensure visibility
                 duration: 0.8,
                 stagger: 0.1,
                 scrollTrigger: {
@@ -182,8 +177,6 @@ const Services: React.FC = () => {
             });
         }
     }, []);
-
-    // SEO handled by component
 
     return (
         <div ref={containerRef} className="w-full bg-gray-100">
@@ -305,7 +298,9 @@ const Services: React.FC = () => {
                 </div>
             </div>
 
-            {/* Process Strip */}
+                    
+
+                    {/* Process Strip */}
             <div className="py-32 bg-black text-white text-center">
                 <div className="container mx-auto px-6">
                     <h2 className="text-4xl font-bold font-['Syne'] mb-16">How We Work</h2>
