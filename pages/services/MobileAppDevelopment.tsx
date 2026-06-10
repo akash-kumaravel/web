@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const MobileAppDevelopment: React.FC = () => {
   useEffect(() => {
     // ==================== SEO: Meta Tags ====================
-    document.title = 'Mobile App Development Company in Nagercoil, Tamil Nadu | Memo Infotech';
-    const desc = 'Memo Infotech is a professional mobile app development company in Nagercoil, Tamil Nadu, offering iOS, Android, and cross-platform app development with native and hybrid technologies.';
+    document.title = 'Affordable Android App Development in India | Memo InfoTech';
+    const desc = 'Memo InfoTech builds affordable Android, Flutter, and cross-platform mobile apps for startups, small businesses, local shops, and entrepreneurs. App projects start from ₹18,000 based on features.';
     
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDesc) metaDesc.content = desc;
@@ -28,7 +28,7 @@ const MobileAppDevelopment: React.FC = () => {
       og.content = content;
     };
 
-    setOGMeta('og:title', 'Mobile App Development Company in Nagercoil, Tamil Nadu | Memo Infotech');
+    setOGMeta('og:title', 'Affordable Android App Development in India | Memo InfoTech');
     setOGMeta('og:description', desc);
     setOGMeta('og:type', 'website');
     setOGMeta('og:url', 'https://www.memoinfotech.com/services/mobile-app-development/');
@@ -64,7 +64,7 @@ const MobileAppDevelopment: React.FC = () => {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Mobile App Development",
-      "description": "Professional mobile app development for iOS and Android. Native apps with Swift/Kotlin, cross-platform apps with React Native/Flutter. Modern UI/UX, backend integration, app store deployment.",
+      "description": "Affordable Android, Flutter, and cross-platform mobile app development for startups, small businesses, local shops, and entrepreneurs. MVP apps, Firebase/Supabase backends, UI/UX design, app testing, and post-launch support.",
       "provider": {
         "@type": "Organization",
         "name": "Memo Infotech",
@@ -73,7 +73,7 @@ const MobileAppDevelopment: React.FC = () => {
         "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+1-XXX-XXX-XXXX",
+          "telephone": "+91 6374433734",
           "contactType": "Customer Service"
         }
       },
@@ -83,9 +83,9 @@ const MobileAppDevelopment: React.FC = () => {
       },
       "serviceType": "Mobile App Development",
       "hasOfferingDetails": [
-        { "@type": "OfferingDetails", "name": "iOS App Development", "priceRange": "Custom Quote" },
-        { "@type": "OfferingDetails", "name": "Android App Development", "priceRange": "Custom Quote" },
-        { "@type": "OfferingDetails", "name": "Cross-Platform Apps", "priceRange": "Custom Quote" }
+        { "@type": "OfferingDetails", "name": "Android App Development", "priceRange": "From ₹18,000" },
+        { "@type": "OfferingDetails", "name": "Flutter App Development", "priceRange": "Custom Quote" },
+        { "@type": "OfferingDetails", "name": "MVP App Development for Startups", "priceRange": "Custom Quote" }
       ]
     };
 
@@ -96,7 +96,7 @@ const MobileAppDevelopment: React.FC = () => {
       "name": "Memo Infotech",
       "url": "https://www.memoinfotech.com",
       "logo": "https://www.memoinfotech.com/logo.png",
-      "description": "Expert mobile app development agency specializing in iOS and Android applications.",
+      "description": "Affordable mobile app development agency for Android apps, Flutter apps, MVPs, AI chatbots, and business automation.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Nagercoil",
@@ -106,7 +106,7 @@ const MobileAppDevelopment: React.FC = () => {
       "sameAs": ["https://www.facebook.com/Memoinfotech", "https://www.linkedin.com/company/Memoinfotech"],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+1-XXX-XXX-XXXX",
+        "telephone": "+91 6374433734",
         "contactType": "Customer Service"
       }
     };
@@ -139,18 +139,18 @@ const MobileAppDevelopment: React.FC = () => {
   const services = [
     {
       icon: <Apple size={32} />,
-      title: "iOS App Development",
-      description: "Native iOS applications built with Swift, optimized for iPhone, iPad, and Apple ecosystem integration."
+      title: "Startup MVP App Development",
+      description: "Budget-friendly app planning, UI screens, APIs, and launch support for startup MVPs and small business app ideas."
     },
     {
       icon: <Smartphone size={32} />,
       title: "Android App Development",
-      description: "High-performance Android apps using Kotlin and Java, fully optimized for diverse Android devices."
+      description: "Android apps for shops, service businesses, booking, billing, delivery, learning, and customer engagement."
     },
     {
       icon: <Code size={32} />,
-      title: "Cross-Platform Apps",
-      description: "Efficient cross-platform development using Flutter and React Native for maximum reach and code reuse."
+      title: "Flutter & Cross-Platform Apps",
+      description: "Efficient Flutter development for Android-first launches with a clean path to iOS and web expansion."
     },
     {
       icon: <Zap size={32} />,
@@ -169,32 +169,6 @@ const MobileAppDevelopment: React.FC = () => {
     }
   ];
 
-  const caseStudies = [
-    {
-      title: "Fintech Mobile App",
-      client: "Digital Banking Startup",
-      challenge: "Need secure, user-friendly mobile banking experience",
-      solution: "Built iOS and Android apps with biometric security, real-time transactions, and intuitive UI",
-      result: "500K+ downloads, 4.7★ rating, $10M+ transactions processed",
-      metrics: ["500K+ Downloads", "4.7★ Rating", "Secure & Fast"]
-    },
-    {
-      title: "Fitness Tracking App",
-      client: "Health & Wellness Company",
-      challenge: "Complex features requiring optimal performance",
-      solution: "Developed cross-platform app with real-time tracking, social features, and wearable integration",
-      result: "250K active users, 45% user retention, featured on app stores",
-      metrics: ["250K Users", "45% Retention", "App Store Featured"]
-    },
-    {
-      title: "E-Commerce Mobile App",
-      client: "Retail Business",
-      challenge: "Need mobile sales channel with seamless checkout",
-      solution: "Built iOS and Android apps with AR product preview and one-click checkout",
-      result: "60% of sales from mobile, 3.8★ rating, $5M annual revenue",
-      metrics: ["60% Mobile Sales", "3.8★ Rating", "$5M Revenue"]
-    }
-  ];
 
   const features = [
     {
@@ -252,7 +226,7 @@ const MobileAppDevelopment: React.FC = () => {
     },
     {
       title: "Scalability",
-      description: "Apps grow with your business handling millions of users and complex functionality."
+      description: "Apps can grow with your business through modular features, reliable backend architecture, and maintainable code."
     }
   ];
 
@@ -262,10 +236,10 @@ const MobileAppDevelopment: React.FC = () => {
       <header className="pt-20 md:pt-40 pb-12 md:pb-20 container mx-auto px-4 md:px-6" role="region" aria-label="Page Header">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-bold font-['Syne'] leading-tight text-black tracking-tighter mb-4 md:mb-6">
-            Mobile App Development Company in Nagercoil, Tamil Nadu
+            Affordable Android & Mobile App Development in India
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
-            We build powerful mobile applications for iOS, Android, and cross-platform platforms. Native apps with Swift/Kotlin and hybrid apps with React Native/Flutter. Apps users love and businesses profit from.
+            We build practical Android, Flutter, and cross-platform apps for startups, small businesses, local shops, entrepreneurs, and personal brands. App projects start from ₹18,000 and scale based on features, integrations, design, and maintenance needs.
           </p>
         </div>
       </header>
@@ -275,8 +249,34 @@ const MobileAppDevelopment: React.FC = () => {
         <section className="py-16 bg-blue-50 border-t-4 border-[#007BFF]" aria-label="Service Location" role="region">
           <div className="container mx-auto px-6">
             <p className="text-lg text-gray-700 leading-relaxed">
-              <strong>Memo Infotech</strong> is a trusted <strong>mobile app development company in Nagercoil, Tamil Nadu</strong>, delivering native iOS and Android apps to businesses across Kanyakumari district.
+              <strong>Memo InfoTech</strong> is a trusted <strong>mobile app development company in Tamil Nadu</strong>, helping small businesses across India and worldwide launch affordable Android apps, Flutter apps, MVPs, and business automation solutions.
             </p>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white" aria-label="Affordable App Development Pricing" role="region">
+          <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            <article className="lg:col-span-2 p-8 rounded-3xl border border-gray-200 shadow-sm">
+              <h2 className="text-3xl font-bold font-['Syne'] text-black mb-4">Android App Projects Start From ₹18,000</h2>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                We keep mobile app development simple for small businesses: first we understand your requirements, then we suggest the minimum useful feature set, and only then we estimate the final cost. Pricing depends on screens, backend, login, payment, admin panel, AI features, and maintenance.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm font-semibold text-gray-700">
+                <span className="p-4 bg-blue-50 rounded-2xl">Android apps for local businesses</span>
+                <span className="p-4 bg-blue-50 rounded-2xl">Flutter MVPs for startups</span>
+                <span className="p-4 bg-blue-50 rounded-2xl">Firebase, Supabase & AI integrations</span>
+              </div>
+            </article>
+            <article className="p-8 rounded-3xl bg-black text-white">
+              <h3 className="text-2xl font-bold font-['Syne'] mb-4">Best fit for</h3>
+              <ul className="space-y-3 text-gray-300">
+                <li>• Shops and local services</li>
+                <li>• Startup MVPs</li>
+                <li>• Booking and billing apps</li>
+                <li>• Customer support chatbots</li>
+                <li>• Internal workflow apps</li>
+              </ul>
+            </article>
           </div>
         </section>
         {/* ==================== Section 1: App Development Services ====================*/}
@@ -350,15 +350,15 @@ const MobileAppDevelopment: React.FC = () => {
                   <CheckCircle2 size={24} className="flex-shrink-0 mt-1" aria-hidden="true" />
                   <div>
                     <h3 className="text-xl font-bold mb-2">Multi-Platform Expertise</h3>
-                    <p className="text-blue-100">Native iOS, Android, and cross-platform development with mastery of Swift, Kotlin, React Native, and Flutter.</p>
+                    <p className="text-blue-100">Android, Flutter, Firebase, Supabase, PostgreSQL, OpenAI APIs, Gemini APIs, and modern UI/UX workflows.</p>
                   </div>
                 </article>
                 
                 <article className="flex gap-4">
                   <CheckCircle2 size={24} className="flex-shrink-0 mt-1" aria-hidden="true" />
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Award-Winning Apps</h3>
-                    <p className="text-blue-100">Our apps have been featured on app stores, downloaded millions of times, and earned top ratings.</p>
+                    <h3 className="text-xl font-bold mb-2">Affordable, Requirement-First Delivery</h3>
+                    <p className="text-blue-100">We keep scope practical, cost transparent, and features focused on what your first users actually need.</p>
                   </div>
                 </article>
 
@@ -404,7 +404,7 @@ const MobileAppDevelopment: React.FC = () => {
         <section className="py-32 bg-white" aria-label="Call to Action" role="region">
           <div className="container mx-auto px-6 text-center">
             <h2 className="text-4xl font-bold font-['Syne'] text-black mb-6">Ready to Launch Your Mobile App?</h2>
-            <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">Let's build a mobile app that your users will love and your business will thrive with. Our team is ready to discuss your app idea.</p>
+            <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">Let's plan a practical mobile app for your business. Share your idea and we will suggest the right features, timeline, and budget before development starts.</p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/contact" className="inline-flex items-center gap-3 px-8 py-4 bg-[#007BFF] text-white rounded-full font-bold hover:bg-black transition-all shadow-lg" aria-label="Start Your Mobile App Development Project">
@@ -461,51 +461,6 @@ const MobileAppDevelopment: React.FC = () => {
             </div>
           </div>
         </section>
-
-        {/* Related Services */}
-        <section className="py-32 bg-gray-50" aria-label="Related Services" role="region">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold font-['Syne'] text-black mb-16 text-center">Related Services</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link to="/services/ui-ux-design" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about UI/UX Design">
-              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">UI/UX Design</h3>
-              <p className="text-gray-600 mb-4">Create beautiful app interfaces with professional UI/UX design.</p>
-              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
-            </Link>
-
-            <Link to="/services/software-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Software Development">
-              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Software Development</h3>
-              <p className="text-gray-600 mb-4">Build robust backend systems for your mobile applications.</p>
-              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
-            </Link>
-
-            <Link to="/services/web-design-development" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Web Development">
-              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Web Development</h3>
-              <p className="text-gray-600 mb-4">Develop web platforms to complement your mobile app ecosystem.</p>
-              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
-            </Link>
-
-            <Link to="/services/testing-qa" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Testing & QA">
-              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Testing & QA</h3>
-              <p className="text-gray-600 mb-4">Ensure your app quality with comprehensive testing services.</p>
-              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
-            </Link>
-
-            <Link to="/services/digital-marketing-services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="Learn more about Digital Marketing">
-              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">Digital Marketing</h3>
-              <p className="text-gray-600 mb-4">Launch and grow your app with targeted marketing strategies.</p>
-              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">Learn More →</span>
-            </Link>
-
-            <Link to="/services" className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-[#007BFF] hover:shadow-lg transition-all" aria-label="View all services">
-              <h3 className="text-xl font-bold font-['Syne'] text-black mb-3 group-hover:text-[#007BFF] transition-colors">All Services</h3>
-              <p className="text-gray-600 mb-4">Explore our complete range of digital services and solutions.</p>
-              <span className="text-[#007BFF] font-semibold group-hover:gap-2 inline-flex items-center gap-1 transition-all">View All →</span>
-            </Link>
-          </div>
-        </div>
-      </section>
       </main>
     </div>
   );

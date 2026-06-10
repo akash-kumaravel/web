@@ -232,7 +232,64 @@ const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         date: "Jan 22, 2025",
         image: "/assets/news 7.png",
         featured: false
+    },
+    {
+        id: 8,
+        slug: "affordable-android-app-development-india",
+        title: "Affordable Android App Development in India: What Small Businesses Should Know",
+        excerpt: "A practical guide for shops, service businesses, startups, and entrepreneurs planning an Android app on a realistic budget.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">A mobile app can help a small business accept bookings, manage orders, send updates, support customers, and build repeat sales. The important part is not adding every feature on day one. The right approach is to build a focused first version that solves one clear business problem.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">What affects Android app development cost?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">App cost depends on the number of screens, login system, database, admin panel, payment gateway, notifications, integrations, UI/UX design, testing, and post-launch support. At Memo InfoTech, basic Android app projects start from ₹18,000 and the final estimate is shared after understanding your requirements.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Best app ideas for local businesses</h2>
+            <ul class="list-disc pl-6 mb-6 text-gray-600">
+                <li>Booking apps for salons, clinics, tutors, and service providers.</li>
+                <li>Billing, stock, and customer management apps for shops.</li>
+                <li>Delivery or order management apps for restaurants and stores.</li>
+                <li>Learning, community, and content apps for personal brands.</li>
+                <li>Internal workflow apps to reduce manual Excel and WhatsApp work.</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Android first, then scale</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">For many Indian small businesses, launching Android first is practical because the audience is large and the budget can stay controlled. Flutter is also useful when you want a clean path to iOS and web expansion later.</p>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">If you are planning a mobile app, explore our <a class="text-[#007BFF] font-semibold underline" href="/services/mobile-app-development">mobile app development service</a> or <a class="text-[#007BFF] font-semibold underline" href="/contact">contact Memo InfoTech</a> to discuss your idea.</p>
+        `,
+        category: "Development",
+        author: "Memo InfoTech",
+        date: "Jun 10, 2026",
+        image: "/assets/news 2.png",
+        featured: false
+    },
+    {
+        id: 9,
+        slug: "flutter-vs-native-android-for-startups",
+        title: "Flutter vs Native Android: Which Is Better for a Startup MVP?",
+        excerpt: "Compare Flutter and native Android for budget, launch speed, performance, maintenance, and future scaling.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">When a startup is building its first mobile app, the technology choice should support speed, budget, and future flexibility. Flutter and native Android are both good options, but the best choice depends on your product goals.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Choose Flutter when speed and multi-platform growth matter</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Flutter is a strong option for MVPs because one codebase can support Android first and later expand to iOS or web. It is practical for booking apps, dashboards, e-commerce apps, learning apps, and internal business tools.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Choose native Android when deep device performance matters</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Native Android can be better for apps that need very deep device integrations, complex background services, advanced hardware access, or highly optimized performance on Android devices.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Our practical recommendation</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">For most startups and small businesses, start with the smallest useful feature set. Validate the idea, collect feedback, and then add advanced features. Memo InfoTech can help you choose the right stack based on budget, timeline, integrations, and maintenance needs.</p>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Need help choosing? Visit our <a class="text-[#007BFF] font-semibold underline" href="/services/mobile-app-development">Android and Flutter app development page</a> or send your requirements through the <a class="text-[#007BFF] font-semibold underline" href="/contact">contact page</a>.</p>
+        `,
+        category: "Development",
+        author: "Memo InfoTech",
+        date: "Jun 10, 2026",
+        image: "/assets/news 3.png",
+        featured: false
     }
+
 ];
 
 const categories = ["All", "Design", "Development", "Strategy", "Insights"];
