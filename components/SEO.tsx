@@ -38,7 +38,7 @@ const SEO: React.FC<SEOProps> = ({
   const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
 
   // Comprehensive keyword set for better SEO/AEO coverage
-  const defaultKeywords = "IT Company Nagercoil, Web Development Nagercoil, Software Development Nagercoil, Graphic Design Nagercoil, Logo Design Nagercoil, Motion Graphics Nagercoil, Explainer Videos Nagercoil, UI/UX Design Nagercoil, Digital Marketing Nagercoil, Brand Design Nagercoil, Web Design Agency Kanyakumari, Mobile App Development, E-commerce Solutions, Digital Solutions Tamil Nadu, Creative Agency India";
+  const defaultKeywords = "affordable Android app development India, mobile app development Tamil Nadu, Flutter app development company, app development for startups, app development for small businesses, Android app development Nagercoil, business app development India, AI chatbot development India, workflow automation for small business, website development Nagercoil, UI UX design Tamil Nadu, Memo InfoTech";
 
   // Organization schema for GEO optimization
   const organizationSchema = {
@@ -47,9 +47,9 @@ const SEO: React.FC<SEOProps> = ({
     "name": "Memo Infotech",
     "url": siteUrl,
     "logo": `${siteUrl}/assets/logo.svg`,
-    "description": "A premier software company specializing in web development, graphic design, and digital solutions",
+    "description": "Memo InfoTech builds affordable Android apps, Flutter mobile apps, business websites, AI chatbots, and automation solutions for startups and small businesses.",
     "telephone": "+91 6374433734",
-    "email": "hello@memoinfotech.com",
+    "email": "contact@memoinfotech.com",
     "foundingDate": "2024",
     "founder": {
       "@type": "Person",
@@ -72,8 +72,8 @@ const SEO: React.FC<SEOProps> = ({
       "@type": "ContactPoint",
       "contactType": "customer service",
       "telephone": "+91 6374433734",
-      "email": "hello@memoinfotech.com",
-      "areaServed": "IN"
+      "email": "contact@memoinfotech.com",
+      "areaServed": ["Tamil Nadu", "India", "Worldwide"]
     }
   };
 
@@ -85,8 +85,8 @@ const SEO: React.FC<SEOProps> = ({
     "image": `${siteUrl}/assets/logo.svg`,
     "url": siteUrl,
     "telephone": "+91 6374433734",
-    "email": "hello@memoinfotech.com",
-    "priceRange": "$$",
+    "email": "contact@memoinfotech.com",
+    "priceRange": "Android app projects from ₹18,000",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Nagercoil",
