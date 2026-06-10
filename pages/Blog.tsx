@@ -288,6 +288,40 @@ const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         date: "Jun 10, 2026",
         image: "/assets/news 3.png",
         featured: false
+    },
+    {
+        id: 10,
+        slug: "ai-chatbots-for-small-businesses-india",
+        title: "AI Chatbots for Small Businesses in India: Use Cases, Cost & Setup",
+        excerpt: "Learn how small businesses can use AI chatbots for customer support, lead collection, bookings, FAQs, and workflow automation without overspending.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">AI chatbots are no longer only for large companies. Small businesses in India can now use chatbots to answer common questions, capture leads, support customers, collect booking details, and reduce repetitive WhatsApp or phone follow-ups.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">What can an AI chatbot do for a small business?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">A well-planned chatbot can greet website visitors, explain services, collect names and phone numbers, share pricing ranges, answer FAQs, qualify leads, and send enquiries to your team. For service businesses, it can also help with appointment requests, order status, support tickets, and internal workflow automation.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Best chatbot use cases</h2>
+            <ul class="list-disc pl-6 mb-6 text-gray-600">
+                <li>Lead capture for websites and landing pages.</li>
+                <li>FAQ automation for pricing, timing, location, and services.</li>
+                <li>Appointment or booking enquiry collection.</li>
+                <li>Customer support triage before a human reply.</li>
+                <li>Internal automation for repetitive team workflows.</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">How much does a chatbot cost?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">The cost depends on the number of flows, AI model integration, website or app connection, database, admin dashboard, and automation rules. A simple FAQ and lead capture chatbot costs less than a custom AI assistant connected to your business data and CRM.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Should you add a chatbot to your app or website?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">If your customers repeatedly ask the same questions, a chatbot is useful on your website. If your business depends on regular customer engagement, adding chatbot support inside your mobile app can improve retention and reduce support load.</p>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Memo InfoTech builds practical AI chatbot, mobile app, and workflow automation solutions for startups and small businesses. Explore our <a class="text-[#007BFF] font-semibold underline" href="/services/ai-automation">AI automation services</a>, see our <a class="text-[#007BFF] font-semibold underline" href="/services/mobile-app-development">mobile app development service</a>, or <a class="text-[#007BFF] font-semibold underline" href="/contact">contact us</a> to discuss your requirements.</p>
+        `,
+        category: "Strategy",
+        author: "Memo InfoTech",
+        date: "Jun 10, 2026",
+        image: "/assets/ai-chatbots-small-businesses-india.svg",
+        featured: false
     }
 
 ];
