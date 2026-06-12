@@ -405,6 +405,56 @@ const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         image: "/assets/mobile-app-maintenance-small-businesses.svg",
         featured: false
     }
+    ,{
+        id: 13,
+        slug: "mobile-app-mvp-planning-for-small-businesses",
+        title: "Mobile App MVP Planning for Small Businesses: Features, Budget & Launch Roadmap",
+        excerpt: "A practical MVP planning guide for startups and small businesses that want an Android or Flutter app without wasting budget on unnecessary first-version features.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">A mobile app MVP is the smallest useful version of your app that real customers can use. For small businesses, the goal is not to copy every feature from a large startup. The goal is to launch a reliable first version, learn from users, and invest in the features that clearly support sales, bookings, operations, or customer support.</p>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Good MVP planning protects your budget. It helps you decide what should be built now, what can wait, and which backend, admin panel, integrations, and maintenance steps are needed after launch.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Start with one business problem</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Before choosing Android, Flutter, Firebase, Supabase, or a custom backend, write the main business outcome. Examples: accept service bookings, manage delivery orders, collect school enquiries, show product catalogues, support customers, track field staff, or replace repeated Excel and WhatsApp work.</p>
+
+            <ul class="list-disc pl-6 mb-6 text-gray-600">
+                <li>Who will use the app: customers, staff, vendors, students, or admins?</li>
+                <li>What action should they complete in the first version?</li>
+                <li>What data must be stored safely from day one?</li>
+                <li>Which reports or admin actions are truly required?</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Prioritise must-have MVP features</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Most small business apps can start with a short feature list: login, profile, core service or product screen, enquiry or booking form, admin dashboard, notifications, and basic analytics. Payment gateway, coupons, multi-language support, advanced reports, and AI features can be added when the first workflow is proven.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Plan the backend and admin panel early</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">The customer-facing app is only one part of the system. A business app usually needs an admin panel to update content, view orders, assign staff, change status, export data, or respond to enquiries. Planning this early avoids rework and keeps maintenance easier.</p>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Firebase is often useful for fast Android and Flutter MVPs with login, records, storage, notifications, and analytics. Supabase can be a good choice when the business needs SQL data, structured reports, role-based access, and long-term data portability.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Budget realistically for launch and support</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">At Memo InfoTech, basic Android app projects start from ₹18,000, but final pricing depends on screens, UI/UX design, backend, admin panel, payment gateway, AI chatbot, integrations, testing, and maintenance needs. A clear MVP scope helps keep the first estimate practical and transparent.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">A simple launch roadmap</h2>
+            <ol class="list-decimal pl-6 mb-6 text-gray-600">
+                <li>Discovery: define users, business problem, must-have features, and budget range.</li>
+                <li>Wireframes: map the app screens and admin workflow before design.</li>
+                <li>Build: develop the Android or Flutter MVP with the selected backend.</li>
+                <li>Test: check devices, forms, notifications, permissions, speed, and edge cases.</li>
+                <li>Launch: publish, collect feedback, monitor crashes, and plan the next version.</li>
+            </ol>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Need help planning your MVP?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Memo InfoTech helps startups, local businesses, entrepreneurs, and personal brands plan affordable Android and Flutter apps. Explore our <a class="text-[#007BFF] font-semibold underline" href="/services/mobile-app-development">mobile app development service</a>, combine your app with <a class="text-[#007BFF] font-semibold underline" href="/services/ai-automation">AI chatbot and automation solutions</a>, or <a class="text-[#007BFF] font-semibold underline" href="/contact">contact us</a> to discuss your app idea, features, budget, and launch roadmap.</p>
+        `,
+        category: "Development",
+        author: "Memo InfoTech",
+        date: "Jun 12, 2026",
+        image: "/assets/mobile-app-mvp-planning-small-businesses.svg",
+        featured: false
+    }
+
 
 ];
 

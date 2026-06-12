@@ -1,0 +1,60 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="0.52" stop-color="#07182f"/>
+      <stop offset="1" stop-color="#001f3f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(895 185) rotate(132) scale(660 520)">
+      <stop stop-color="#00D5FF" stop-opacity="0.72"/>
+      <stop offset="0.42" stop-color="#007BFF" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+    <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse">
+      <path d="M 54 0 L 0 0 0 54" stroke="#45E6FF" stroke-opacity="0.13" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" rx="58" fill="url(#bg)"/>
+  <rect width="1200" height="900" rx="58" fill="url(#glow)"/>
+  <rect x="56" y="54" width="1088" height="792" rx="42" fill="url(#grid)" opacity="0.72"/>
+  <circle cx="190" cy="160" r="94" fill="#00D5FF" opacity="0.14" filter="url(#blur)"/>
+  <circle cx="1030" cy="710" r="126" fill="#007BFF" opacity="0.2" filter="url(#blur)"/>
+
+  <g transform="translate(735 190)">
+    <rect x="0" y="0" width="280" height="510" rx="42" fill="#061124" stroke="#56E8FF" stroke-opacity="0.58" stroke-width="4"/>
+    <rect x="28" y="58" width="224" height="370" rx="24" fill="#0B1B32" stroke="#1B9BFF" stroke-opacity="0.34"/>
+    <rect x="84" y="24" width="112" height="12" rx="6" fill="#7DEFFF" opacity="0.72"/>
+    <circle cx="140" cy="466" r="22" fill="#08182E" stroke="#36DFFF" stroke-opacity="0.65"/>
+    <rect x="54" y="92" width="172" height="20" rx="10" fill="#56E8FF" opacity="0.78"/>
+    <rect x="54" y="140" width="138" height="16" rx="8" fill="#BDEFFF" opacity="0.35"/>
+    <rect x="54" y="177" width="166" height="16" rx="8" fill="#BDEFFF" opacity="0.24"/>
+    <rect x="54" y="230" width="172" height="84" rx="20" fill="#007BFF" opacity="0.78"/>
+    <path d="M92 275l28 28 70-76" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+    <rect x="54" y="348" width="84" height="18" rx="9" fill="#00D5FF" opacity="0.72"/>
+    <rect x="154" y="348" width="72" height="18" rx="9" fill="#BDEFFF" opacity="0.28"/>
+  </g>
+
+  <g transform="translate(92 128)">
+    <rect x="0" y="0" width="536" height="104" rx="24" fill="#07182F" stroke="#44DFFF" stroke-opacity="0.32"/>
+    <text x="36" y="44" fill="#7DEFFF" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="4">STARTUP APP GUIDE</text>
+    <text x="36" y="82" fill="#EAFBFF" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Plan features before coding</text>
+  </g>
+
+  <g transform="translate(96 292)">
+    <text fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="-3">
+      <tspan x="0" y="0">MVP Planning</tspan>
+      <tspan x="0" y="88">for Business</tspan>
+      <tspan x="0" y="176">Mobile Apps</tspan>
+    </text>
+    <rect x="4" y="222" width="548" height="4" rx="2" fill="#00D5FF" opacity="0.9"/>
+    <text x="0" y="280" fill="#BDEFFF" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="600">Budget • Features • Backend • Launch Roadmap</text>
+  </g>
+
+  <g transform="translate(112 680)">
+    <rect x="0" y="0" width="180" height="58" rx="29" fill="#007BFF"/>
+    <text x="28" y="38" fill="white" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">₹18K+ App</text>
+    <rect x="206" y="0" width="230" height="58" rx="29" fill="#061124" stroke="#56E8FF" stroke-opacity="0.48"/>
+    <text x="236" y="38" fill="#DFFBFF" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">Tamil Nadu + India</text>
+  </g>
+</svg>
