@@ -453,8 +453,60 @@ const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         date: "Jun 12, 2026",
         image: "/assets/mobile-app-mvp-planning-small-businesses.svg",
         featured: false
-    }
+    },
+    {
+        id: 14,
+        slug: "android-app-features-for-local-businesses",
+        title: "Android App Features for Local Businesses: What to Build First",
+        excerpt: "A practical feature-prioritisation guide for shops, clinics, salons, tutors, and service businesses planning an affordable Android or Flutter app.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">Local businesses often know they need a mobile app, but they are not always sure which features should be built first. The safest approach is to start with the features that directly improve enquiries, bookings, payments, customer updates, or internal operations. A focused first version keeps the budget practical and gives you real customer feedback before adding advanced modules.</p>
 
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">This guide is written for small businesses such as shops, clinics, salons, tutors, restaurants, repair services, field teams, and local service providers in Tamil Nadu and across India. It explains how to choose the right Android app features without overbuilding the first release.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Start with the main customer action</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Every business app should have one clear primary action. For a clinic, that may be appointment booking. For a shop, it may be product enquiries or repeat orders. For a tuition centre, it may be course enquiries and student updates. Defining this action helps decide the screens, backend, notifications, and admin features needed for launch.</p>
+
+            <ul class="list-disc pl-6 mb-6 text-gray-600">
+                <li>Booking or enquiry form for service-based businesses.</li>
+                <li>Product catalogue and order request flow for shops and distributors.</li>
+                <li>Student, patient, or customer dashboard for regular updates.</li>
+                <li>Admin panel to manage requests, content, status, and reports.</li>
+                <li>Push notifications for reminders, order updates, offers, and support messages.</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Must-have features for a first-version business app</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">A useful MVP usually includes login or customer identification, a simple home screen, service or product details, enquiry or booking submission, status updates, and an admin dashboard. If customers need to upload photos, documents, or receipts, that should be planned early because it affects storage and backend cost.</p>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Payment gateway integration is valuable when the business is ready to collect advance payments or online orders. If the process still needs manual confirmation, it may be better to launch with enquiry collection first and add payments after the workflow is proven.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Features that can wait until version two</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Not every idea needs to be in the first build. Loyalty points, coupons, referral systems, multi-language support, advanced analytics, AI recommendations, and complex staff management can be added after the basic workflow is stable. This phased approach protects your launch budget and reduces maintenance risk.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Android or Flutter: which is better for local businesses?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">For many Indian local businesses, Android-first development is a practical starting point because most customers use Android devices. Flutter is useful when the business wants a clean path to iOS, web dashboards, or future multi-platform expansion. The right choice depends on budget, audience, timeline, and how much the app needs to scale.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Budget planning for small business apps</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">At Memo InfoTech, basic Android app projects start from ₹18,000. Final pricing depends on screens, UI/UX design, backend, Firebase or Supabase setup, admin panel, payment gateway, integrations, testing, and maintenance. Clear feature prioritisation helps keep the first quote transparent and avoids spending on features customers may not use immediately.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">A simple feature planning checklist</h2>
+            <ol class="list-decimal pl-6 mb-6 text-gray-600">
+                <li>Write the main customer action the app must support.</li>
+                <li>List the minimum screens needed for that action.</li>
+                <li>Decide what the admin team must view, edit, approve, or export.</li>
+                <li>Choose whether notifications, payments, uploads, or reports are needed on day one.</li>
+                <li>Plan maintenance for bug fixes, Android updates, security, and small improvements.</li>
+            </ol>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Need help choosing features?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Memo InfoTech helps startups, entrepreneurs, and local businesses plan affordable Android and Flutter apps with practical first-version features. Explore our <a class="text-[#007BFF] font-semibold underline" href="/services/mobile-app-development">mobile app development service</a>, combine your app with <a class="text-[#007BFF] font-semibold underline" href="/services/ai-automation">AI chatbot and workflow automation</a>, or <a class="text-[#007BFF] font-semibold underline" href="/contact">contact Memo InfoTech</a> to discuss your feature list and budget.</p>
+        `,
+        category: "Development",
+        author: "Memo InfoTech",
+        date: "Jun 13, 2026",
+        image: "/assets/android-app-features-local-businesses.svg",
+        featured: false
+    }
 
 ];
 
