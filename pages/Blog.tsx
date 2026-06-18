@@ -506,6 +506,56 @@ const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         date: "Jun 13, 2026",
         image: "/assets/android-app-features-local-businesses.svg",
         featured: false
+    },
+    {
+        id: 15,
+        slug: "whatsapp-ai-lead-automation-small-businesses",
+        title: "WhatsApp + AI Lead Automation for Small Businesses: Practical Use Cases & Setup",
+        excerpt: "A practical guide for local businesses that want to capture WhatsApp enquiries, answer FAQs, qualify leads, and reduce manual follow-up with AI automation.",
+        content: `
+            <p class="mb-6 text-xl leading-relaxed text-gray-700">Many small businesses in India receive enquiries through WhatsApp, Instagram, phone calls, and website forms. The problem is not getting messages; it is replying fast, collecting the right details, and sending qualified leads to the right person without losing them in busy hours.</p>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">WhatsApp plus AI lead automation can help shops, clinics, salons, tuition centres, real estate teams, agencies, service businesses, and startups respond faster while still keeping human support for important conversations. The best setup is not a spam bot. It is a simple, useful workflow that answers common questions, captures details, and alerts your team when a real customer is ready.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">What WhatsApp lead automation can do</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">A good automation flow starts by understanding the visitor's need. It can ask for name, location, service requirement, preferred time, budget range, and contact number. It can also share basic pricing, available slots, documents required, product categories, or next steps before a team member joins the conversation.</p>
+
+            <ul class="list-disc pl-6 mb-6 text-gray-600">
+                <li>Instant replies for common questions about price, timing, location, services, and availability.</li>
+                <li>Lead qualification forms that collect clean information before sales follow-up.</li>
+                <li>Automatic routing to sales, support, admin, or field teams based on enquiry type.</li>
+                <li>CRM or Google Sheet updates so no lead is lost after the first message.</li>
+                <li>Reminders for appointments, payments, renewals, demos, and pending documents.</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Where AI helps and where humans should stay involved</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">AI is useful for repeated questions, language-friendly replies, basic recommendation flows, and summarising customer details. Human involvement is still important for final pricing, sensitive issues, negotiations, complaints, and custom project discussions. A safe workflow clearly tells customers when they are talking to automation and gives an option to speak with a person.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Best use cases for local businesses</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">For a clinic, automation can collect patient details and preferred appointment time. For a salon, it can share service menus and book slots. For a tutor or training institute, it can explain courses and capture student enquiries. For a shop or distributor, it can collect product requirements and notify the right salesperson. For service businesses, it can qualify the enquiry before a quote is prepared.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">How to set up a practical first version</h2>
+            <ol class="list-decimal pl-6 mb-6 text-gray-600">
+                <li>List the top 20 questions customers ask before buying or booking.</li>
+                <li>Define what details your team needs before calling the customer.</li>
+                <li>Create a simple conversation flow with clear choices and fallback messages.</li>
+                <li>Connect the flow to a CRM, Google Sheet, website form, or admin dashboard.</li>
+                <li>Test real scenarios before launching and review missed questions weekly.</li>
+            </ol>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Cost and maintenance planning</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">The cost depends on the number of flows, WhatsApp API setup, AI model usage, CRM connection, dashboard needs, language support, and reporting. A simple FAQ and lead capture flow is usually much smaller than a full AI assistant connected to business databases, payment systems, and mobile apps.</p>
+
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Maintenance is important because offers, timings, staff, prices, and customer questions change. Review chatbot replies regularly, improve unclear answers, and make sure qualified leads reach the right person quickly.</p>
+
+            <h2 class="text-3xl font-bold font-['Syne'] mt-12 mb-6 text-black">Need help building WhatsApp and AI automation?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">Memo InfoTech builds practical AI chatbot, website, mobile app, and workflow automation solutions for startups and small businesses in Tamil Nadu and beyond. Explore our <a class="text-[#007BFF] font-semibold underline" href="/services/ai-automation">AI automation services</a>, combine automation with a <a class="text-[#007BFF] font-semibold underline" href="/services/mobile-app-development">mobile app</a> or <a class="text-[#007BFF] font-semibold underline" href="/services/web-design-development">business website</a>, or <a class="text-[#007BFF] font-semibold underline" href="/contact">contact Memo InfoTech</a> to discuss your lead workflow.</p>
+        `,
+        category: "Strategy",
+        author: "Memo InfoTech",
+        date: "Jun 18, 2026",
+        image: "/assets/whatsapp-ai-lead-automation-small-business.svg",
+        featured: false
     }
 
     ,{
