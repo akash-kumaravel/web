@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">WhatsApp and AI Lead Automation thumbnail</title>
+  <desc id="desc">Dark cyan technology style thumbnail with chat automation workflow and no logo.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#030712"/>
+      <stop offset="0.55" stop-color="#071827"/>
+      <stop offset="1" stop-color="#001f33"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#18e4ff"/>
+      <stop offset="1" stop-color="#007BFF"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.02 0 0 0 0 0.72 0 0 0 0 1 0 0 0 0.7 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M 42 0 L 0 0 0 42" fill="none" stroke="#1ea7ff" stroke-opacity="0.12" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <circle cx="980" cy="105" r="210" fill="#007BFF" opacity="0.13"/>
+  <circle cx="220" cy="620" r="240" fill="#18e4ff" opacity="0.10"/>
+  <path d="M730 110 C850 70 1010 120 1080 230 C1140 325 1110 485 990 548 C855 619 690 560 640 435 C590 309 620 157 730 110Z" fill="#051827" stroke="#1ddcff" stroke-opacity="0.35"/>
+  <g filter="url(#glow)">
+    <rect x="710" y="155" width="260" height="430" rx="36" fill="#07111f" stroke="url(#cyan)" stroke-width="4"/>
+    <rect x="735" y="195" width="210" height="330" rx="18" fill="#0b2034" stroke="#173a57"/>
+    <circle cx="840" cy="553" r="12" fill="#18e4ff" opacity="0.9"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="765" y="230" width="145" height="54" rx="18" fill="#102b43" stroke="#1ddcff" stroke-opacity="0.55"/>
+    <text x="790" y="263" fill="#e6fbff" font-size="20" font-weight="700">New lead?</text>
+    <rect x="755" y="308" width="175" height="58" rx="18" fill="#073d36" stroke="#28f7bd" stroke-opacity="0.45"/>
+    <text x="775" y="343" fill="#ccfff5" font-size="18" font-weight="700">Auto reply sent</text>
+    <rect x="765" y="392" width="155" height="58" rx="18" fill="#102b43" stroke="#1ddcff" stroke-opacity="0.55"/>
+    <text x="790" y="428" fill="#e6fbff" font-size="18" font-weight="700">CRM updated</text>
+  </g>
+  <g stroke="url(#cyan)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <path d="M345 455 H515 C560 455 570 365 635 365 H710"/>
+    <path d="M515 455 C560 455 570 515 635 515 H710" opacity="0.65"/>
+    <path d="M345 365 H610 C650 365 662 255 735 255" opacity="0.65"/>
+  </g>
+  <g>
+    <circle cx="300" cy="365" r="58" fill="#06172a" stroke="#18e4ff" stroke-width="4" filter="url(#glow)"/>
+    <path d="M276 348 h48 a18 18 0 0 1 18 18 v11 a18 18 0 0 1-18 18 h-22 l-24 18 7-18 h-9 a18 18 0 0 1-18-18 v-11 a18 18 0 0 1 18-18z" fill="#18e4ff" opacity="0.95"/>
+    <circle cx="286" cy="372" r="4" fill="#00131e"/><circle cx="302" cy="372" r="4" fill="#00131e"/><circle cx="318" cy="372" r="4" fill="#00131e"/>
+    <circle cx="300" cy="455" r="48" fill="#06172a" stroke="#007BFF" stroke-width="4" filter="url(#glow)"/>
+    <path d="M277 455 h46 M300 432 v46 M284 439 c14 12 20 24 32 42 M316 439 c-14 12-20 24-32 42" stroke="#dffbff" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="78" y="145" fill="#9befff" font-size="28" font-weight="800" letter-spacing="3">SMALL BUSINESS GROWTH</text>
+    <text x="76" y="230" fill="#ffffff" font-size="70" font-weight="900">WhatsApp + AI</text>
+    <text x="76" y="305" fill="#ffffff" font-size="70" font-weight="900">Lead Automation</text>
+    <rect x="82" y="342" width="470" height="4" fill="url(#cyan)" opacity="0.9"/>
+    <text x="80" y="405" fill="#cdefff" font-size="27" font-weight="600">Capture enquiries, answer FAQs, and</text>
+    <text x="80" y="445" fill="#cdefff" font-size="27" font-weight="600">route real customers to your team.</text>
+    <g transform="translate(80 505)">
+      <rect width="198" height="44" rx="22" fill="#08253a" stroke="#18e4ff" stroke-opacity="0.65"/>
+      <text x="22" y="29" fill="#dffbff" font-size="18" font-weight="800">AI Chatbots</text>
+      <rect x="218" width="198" height="44" rx="22" fill="#08253a" stroke="#18e4ff" stroke-opacity="0.65"/>
+      <text x="240" y="29" fill="#dffbff" font-size="18" font-weight="800">Automation</text>
+    </g>
+  </g>
+</svg>
