@@ -120,32 +120,22 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Content Section 1 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-12 md:mb-24 items-start">
-                    <div>
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-black reveal-text">Our Story</h3>
-                        <p className="text-gray-500 leading-loose mb-4 md:mb-6 text-sm md:text-base">
-                            Memo InfoTech was founded in 2024 by Akash Kumaravel, a passionate technologist and product-focused creator who believed that quality IT solutions should be accessible, scalable, and engineered with real purpose.
-                        </p>
-                        <p className="text-gray-500 leading-loose mb-6">
-                            What started as a small independent initiative has now grown into a trusted IT partner for businesses across India and beyond. From day one, our goal has been simple:
-                        </p>
-                        <ul className="text-gray-500 leading-loose mb-4 md:mb-6 space-y-2 text-sm md:text-base">
-                            <li className="font-semibold">Build technology that solves problems.</li>
-                            <li className="font-semibold">Build technology that works.</li>
-                            <li className="font-semibold">Build technology that grows with your business.</li>
-                        </ul>
-                        <p className="text-gray-500 leading-loose text-sm md:text-base">
-                            At Memo InfoTech, we don't just develop software—we design digital ecosystems that help companies operate smarter, faster, and more efficiently.
-                        </p>
-                    </div>
-                    <div className="relative group">
-                        <div className="reveal-image rounded-[3rem] overflow-hidden shadow-2xl">
-                            <img src="/assets/about.png" alt="Memo InfoTech office and team collaboration" className="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" />
-                        </div>
-                        <div className="absolute -bottom-10 -left-10 bg-[#007BFF] text-white p-6 md:p-8 rounded-3xl shadow-xl max-w-xs transform rotate-3 group-hover:rotate-0 transition-transform z-10">
-                            <p className="font-bold text-base md:text-xl">"We don't just write code. We build futures."</p>
-                        </div>
-                    </div>
+                <div className="max-w-4xl mx-auto mb-12 md:mb-24">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-black reveal-text">Our Story</h3>
+                    <p className="text-gray-500 leading-loose mb-4 md:mb-6 text-sm md:text-base">
+                        Memo InfoTech was founded in 2024 by passionate technologists and product-focused creators who believed that quality IT solutions should be accessible, scalable, and engineered with real purpose.
+                    </p>
+                    <p className="text-gray-500 leading-loose mb-6">
+                        What started as a small independent initiative has now grown into a trusted IT partner for businesses across India and beyond. From day one, our goal has been simple:
+                    </p>
+                    <ul className="text-gray-500 leading-loose mb-4 md:mb-6 space-y-2 text-sm md:text-base">
+                        <li className="font-semibold">Build technology that solves problems.</li>
+                        <li className="font-semibold">Build technology that works.</li>
+                        <li className="font-semibold">Build technology that grows with your business.</li>
+                    </ul>
+                    <p className="text-gray-500 leading-loose text-sm md:text-base">
+                        At Memo InfoTech, we don't just develop software—we design digital ecosystems that help companies operate smarter, faster, and more efficiently.
+                    </p>
                 </div>
 
                 {/* HISTORY TIMELINE */}
@@ -156,7 +146,7 @@ const About: React.FC = () => {
                         <div className="timeline-line absolute left-0 top-0 bottom-0 w-1 bg-gray-200 origin-top h-full"></div>
 
                         {[
-                            { year: "2024", title: "The Beginning", desc: "Memo InfoTech was launched by Akash Kumaravel to deliver modern, reliable, and high-performance digital solutions." },
+                            { year: "2024", title: "The Beginning", desc: "Memo InfoTech was launched to deliver modern, reliable, and high-performance digital solutions." },
                             { year: "2025", title: "Our Breakthrough", desc: "We secured our first major project by delivering a full-stack business application that opened doors to enterprise-level opportunities." },
                             { year: "2026", title: "Scaling Up", desc: "Our team expanded with skilled developers, designers, and tech specialists, allowing us to take on larger and more complex projects." },
                             { year: "2027", title: "Global Presence", desc: "Memo InfoTech is preparing to serve international clients, build credibility in regions like Dubai, and strengthen our global footprint." },
@@ -225,17 +215,6 @@ const About: React.FC = () => {
                     </div>
                 </div>
 
-                {/* The Founder Section */}
-                <div className="mb-12 md:mb-24 bg-gray-50 p-8 md:p-12 rounded-3xl">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-black">The Founder – Akash Kumaravel</h3>
-                    <p className="text-base md:text-lg text-gray-600 leading-loose mb-4 md:mb-6">
-                        Memo InfoTech is Founded by Akash Kumaravel. His vision is to build an IT company that goes beyond code—focusing on user experience, innovation, and long-term business impact.
-                    </p>
-                    <p className="text-lg text-gray-600 leading-loose">
-                        Under his leadership, Memo InfoTech continues to push boundaries in web development, design, automation, and cloud-based digital solutions.
-                    </p>
-                </div>
-
                 {/* Why Choose Memo InfoTech */}
                 <div className="mb-16 md:mb-32">
                     <h3 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-black">Why Choose Memo InfoTech?</h3>
@@ -244,7 +223,7 @@ const About: React.FC = () => {
                             { icon: "✓", title: "Real-World Problems", desc: "Strong focus on real-world business problems" },
                             { icon: "✓", title: "Clean Architecture", desc: "Clean architecture and future-ready engineering" },
                             { icon: "✓", title: "Transparent Communication", desc: "Transparent communication & on-time delivery" },
-                            { icon: "✓", title: "Founder-Led", desc: "Designed and led by a passionate founder committed to high standards" }
+                            { icon: "✓", title: "Quality-Driven", desc: "Designed and engineered with high standards and meticulous attention to detail" }
                         ].map((val, idx) => (
                             <div key={idx} className="value-card bg-black text-white p-6 md:p-10 rounded-3xl hover:bg-[#007BFF] hover:shadow-[0_10px_40px_rgba(0,123,255,0.4)] transition-all duration-300 group cursor-default">
                                 <div className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-[#007BFF] group-hover:text-white transition-colors">{val.icon}</div>

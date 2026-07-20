@@ -48,20 +48,20 @@ const BgwrapPrivacyPolicy: React.FC = () => {
           <section>
             <h2 className="text-2xl font-bold text-black mb-2">Your Rights</h2>
             <p>
-              You may request access to, correction of, or deletion of your personal data held by the Service Provider. To exercise these rights, or to withdraw consent where processing is based on consent, contact the Service Provider at <a className="text-[#007BFF]" href="mailto:akash@memoinfotech.com">akash@memoinfotech.com</a>.
+              You may request access to, correction of, or deletion of your personal data held by the Service Provider. To exercise these rights, or to withdraw consent where processing is based on consent, contact the Service Provider at <a className="text-[#007BFF]" href="mailto:contact@memoinfotech.com">contact@memoinfotech.com</a>.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-black mb-2">Your California privacy rights (CCPA/CPRA)</h2>
             <p>
-              If you are a California resident, you have the right to know what personal information is collected, the right to delete personal information, the right to opt out of the sale or sharing of personal information, and the right to non-discrimination for exercising these rights. To exercise your CCPA/CPRA rights, contact the Service Provider at <a className="text-[#007BFF]" href="mailto:akash@memoinfotech.com">akash@memoinfotech.com</a>.
+              If you are a California resident, you have the right to know what personal information is collected, the right to delete personal information, the right to opt out of the sale or sharing of personal information, and the right to non-discrimination for exercising these rights. To exercise your CCPA/CPRA rights, contact the Service Provider at <a className="text-[#007BFF]" href="mailto:contact@memoinfotech.com">contact@memoinfotech.com</a>.
             </p>
             <p>
               The Service Provider may use the information you provide to send important information, required notices, and, where permitted by law, marketing communications.
             </p>
             <p>
-              For a better experience while using the Application, the Service Provider may require you to provide certain personally identifiable information, including but not limited to akash. The information the Service Provider requests will be retained and used as described in this privacy policy.
+              For a better experience while using the Application, the Service Provider may require you to provide certain personally identifiable information, including but not limited to contact details. The information the Service Provider requests will be retained and used as described in this privacy policy.
             </p>
           </section>
 
@@ -101,7 +101,7 @@ const BgwrapPrivacyPolicy: React.FC = () => {
               You can stop further collection of information from your mobile device by uninstalling the Application. Uninstalling will stop the Application from collecting data from your device, but it does not automatically delete information that has already been transmitted to the Service Provider or to third parties.
             </p>
             <p>
-              To request deletion of your personal data, to withdraw consent, or to exercise any of your rights, contact the Service Provider at <a className="text-[#007BFF]" href="mailto:akash@memoinfotech.com">akash@memoinfotech.com</a>.
+              To request deletion of your personal data, to withdraw consent, or to exercise any of your rights, contact the Service Provider at <a className="text-[#007BFF]" href="mailto:contact@memoinfotech.com">contact@memoinfotech.com</a>.
             </p>
           </section>
 
@@ -115,7 +115,7 @@ const BgwrapPrivacyPolicy: React.FC = () => {
               <li>Data required for legal compliance: Retained as long as required by applicable law</li>
             </ul>
             <p>
-              You may request deletion of your personal data, subject to any legal obligation to retain it. If you want the Service Provider to delete User Provided Data submitted through the Application, please contact them at <a className="text-[#007BFF]" href="mailto:akash@memoinfotech.com">akash@memoinfotech.com</a>. Please note that some User Provided Data may be required for the Application to function properly.
+              You may request deletion of your personal data, subject to any legal obligation to retain it. If you want the Service Provider to delete User Provided Data submitted through the Application, please contact them at <a className="text-[#007BFF]" href="mailto:contact@memoinfotech.com">contact@memoinfotech.com</a>. Please note that some User Provided Data may be required for the Application to function properly.
             </p>
           </section>
 
@@ -125,7 +125,7 @@ const BgwrapPrivacyPolicy: React.FC = () => {
               The Application is not intended for children under 25 years of age, or such higher age as required by applicable law. The Service Provider does not knowingly solicit data from children or market the Application to them.
             </p>
             <p>
-              The Service Provider does not knowingly collect personally identifiable information from children. The Service Provider encourages all children to never submit any personally identifiable information through the Application and/or Services. The Service Provider encourages parents and legal guardians to monitor their children's Internet usage and to help enforce this Policy by instructing their children never to provide personally identifiable information through the Application and/or Services without their permission. If you have reason to believe that a child has provided personally identifiable information to the Service Provider through the Application and/or Services, please contact the Service Provider at <a className="text-[#007BFF]" href="mailto:akash@memoinfotech.com">akash@memoinfotech.com</a> so that they will be able to take the necessary actions. If you are under 25 years of age, your parent or guardian must provide consent on your behalf where permitted by law.
+              The Service Provider does not knowingly collect personally identifiable information from children. The Service Provider encourages all children to never submit any personally identifiable information through the Application and/or Services. The Service Provider encourages parents and legal guardians to monitor their children's Internet usage and to help enforce this Policy by instructing their children never to provide personally identifiable information through the Application and/or Services without their permission. If you have reason to believe that a child has provided personally identifiable information to the Service Provider through the Application and/or Services, please contact the Service Provider at <a className="text-[#007BFF]" href="mailto:contact@memoinfotech.com">contact@memoinfotech.com</a> so that they will be able to take the necessary actions. If you are under 25 years of age, your parent or guardian must provide consent on your behalf where permitted by law.
             </p>
           </section>
 
@@ -149,7 +149,7 @@ const BgwrapPrivacyPolicy: React.FC = () => {
               The Service Provider may update this Privacy Policy from time to time. The Service Provider will notify you of material changes by posting the updated Privacy Policy with an effective date. Where required by law, the Service Provider will seek your consent to material changes before they take effect.
             </p>
             <p>
-              Previous versions of this Privacy Policy will be maintained and made available upon request by contacting the Service Provider at <a className="text-[#007BFF]" href="mailto:akash@memoinfotech.com">akash@memoinfotech.com</a>.
+              Previous versions of this Privacy Policy will be maintained and made available upon request by contacting the Service Provider at <a className="text-[#007BFF]" href="mailto:contact@memoinfotech.com">contact@memoinfotech.com</a>.
             </p>
             <p>This privacy policy is effective as of 2026-05-26</p>
           </section>
@@ -164,7 +164,7 @@ const BgwrapPrivacyPolicy: React.FC = () => {
           <section>
             <h2 className="text-2xl font-bold text-black mb-2">Contact Us</h2>
             <p>
-              If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at <a className="text-[#007BFF]" href="mailto:akash@memoinfotech.com">akash@memoinfotech.com</a>.
+              If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at <a className="text-[#007BFF]" href="mailto:contact@memoinfotech.com">contact@memoinfotech.com</a>.
             </p>
           </section>
         </div>

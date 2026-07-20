@@ -724,7 +724,7 @@ const Home: React.FC = () => {
 
                 <div className="mt-12 md:mt-20 p-6 md:p-6 bg-[#222] rounded-2xl border border-white/10 hover:border-[#007BFF] transition-colors">
                   <p className="text-gray-300 italic">"We don’t just deliver projects. We build relationships"</p>
-                  <p className="mt-4 font-bold text-[#007BFF]">- Founder, Akash Kumaravel</p>
+                  <p className="mt-4 font-bold text-[#007BFF]">- Memo InfoTech Team</p>
                 </div>
               </div>
             </div>

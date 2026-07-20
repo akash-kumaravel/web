@@ -66,7 +66,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           areaServed: 'IN'
         }
       ],
-      founder: { '@type': 'Person', name: 'Akash Kumaravel' },
       foundingDate: '2024',
       email: 'hello@memoinfotech.com'
     };

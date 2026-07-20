@@ -29,7 +29,7 @@ const SEO: React.FC<SEOProps> = ({
   ogDescription,
   twitterCard = 'summary_large_image',
   schemas,
-  author = 'Akash Kumaravel',
+  author = 'Memo InfoTech',
   lastModified,
   image = ogImage
 }) => {
@@ -51,10 +51,6 @@ const SEO: React.FC<SEOProps> = ({
     "telephone": "+91 6374433734",
     "email": "contact@memoinfotech.com",
     "foundingDate": "2024",
-    "founder": {
-      "@type": "Person",
-      "name": "Akash Kumaravel"
-    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Nagercoil",
